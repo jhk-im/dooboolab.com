@@ -1,0 +1,27 @@
+import clark from '../../assets/profiles/clark.png';
+import daniel from '../../assets/profiles/daniel.png';
+import dean from '../../assets/profiles/dean.png';
+import ethan from '../../assets/profiles/ethan.png';
+import hun from '../../assets/profiles/hun.png';
+import hyo from '../../assets/profiles/hyo.png';
+import jerry from '../../assets/profiles/jerry.png';
+import jessie from '../../assets/profiles/jessie.png';
+import joy from '../../assets/profiles/joy.png';
+import rim from '../../assets/profiles/rim.png';
+import sarah from '../../assets/profiles/sarah.png';
+import song from '../../assets/profiles/song.png';
+import yoon from '../../assets/profiles/yoon.png';
+
+export const HYO_PROFILE = hyo;
+export const SONG_PROFILE = song;
+export const ETHAN_PROFILE = ethan;
+export const DEAN_PROFILE = dean;
+export const HUN_PROFILE = hun;
+export const CLARK_PROFILE = clark;
+export const JERRY_PROFILE = jerry;
+export const DANIEL_PROFILE = daniel;
+export const JESSIE_PROFILE = jessie;
+export const JOY_PROFILE = joy;
+export const SARAH_PROFILE = sarah;
+export const YOON_PROFILE = yoon;
+export const RIM_PROFILE = rim;

@@ -13,5 +13,10 @@
   "GOTO_Temp": "No Page",
   "BACK": "Back",
   "NAVIGATE": "Navigate",
-  "CHANGE_THEME": "Change theme"
+  "CHANGE_THEME": "Change theme",
+  "STORY": "Story",
+  "WORK": "Work",
+  "PEOPLE": "People",
+  "CONTACT": "Contact",
+  "CONTACT_US": "contact us"
 }
