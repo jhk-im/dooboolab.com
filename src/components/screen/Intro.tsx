@@ -12,6 +12,7 @@ import { device } from '../../theme';
 import styled from 'styled-components';
 import { useThemeContext } from '../../providers/ThemeProvider';
 
+// 최상위 컨테이너
 const Container = styled.div`
   width: 100vw;
   

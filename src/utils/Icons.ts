@@ -1,3 +1,6 @@
+import icCoupang from '../../assets/icons/ic-coupang.png';
+import icDoobooUi from '../../assets/icons/ic-dooboo-ui-logo.png';
+import icDooboolab from '../../assets/icons/ic-dooboolab-logo.png';
 import icFacebookW from '../../assets/icons/ic-facebook-white.png';
 import icFacebookW2x from '../../assets/icons/ic-facebook-white@2x.png';
 import icFacebookW3x from '../../assets/icons/ic-facebook-white@3x.png';
