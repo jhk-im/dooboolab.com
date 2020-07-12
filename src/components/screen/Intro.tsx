@@ -1,18 +1,16 @@
-import { DescriptionTextW, Heading2W } from '../../utils/Texts';
+import { BODY1, H1 } from '../../utils/Texts';
 import React, { ReactElement } from 'react';
 
-import ContactButton from '../shared/ContactButton';
 import ContactPage from './ContactPage';
-import { IC_DOOBOOLAB_LOGO } from '../../utils/Icons';
+import Footer from '../shared/Footer';
 import { INTRO_BACKGROUND } from '../../utils/Images';
-import LogoButton from '../shared/LogoButton';
-import MenuButton from '../shared/MenuButton';
+import MenuBar from '../shared/MenuBar';
 import PeoplePage from './PeoplePage';
+import { RoundButton1 } from '../ui/Buttons';
 import StoryPage from './StoryPage';
 import WorkPage from './WorkPage';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
 
 // 최상위 컨테이너
 const Container = styled.div`
@@ -24,35 +22,9 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const MenuBarWrapper = styled.div`
-  display: flex;
-  height: 120px;
-  width: 100%;
-  background: white;
-  position: absolute;
-  align-items: center;
-  justify-content: space-between;
-  @media (max-width: 700px) {
-    justify-content: space-between;
-    flex-direction: column;
-  }
-`;
-
-const MenuButtonWrapper = styled.div`
-  display: flex;
-  width: 50%;
-  height: 60px;
-  margin-top:15px;
-  margin-right: 50px;
-  align-items: center;
-  justify-content: space-around;
-  
-  @media (max-width: 700px) {
-    width: 80%;
-    margin-top: 0px;
-    margin-right: 0px;
-    justify-content: space-around;
-  }
+const MenubarTemp = styled.div`
+  height:120px;
+  width:100%;
 `;
 
 // 인트로 컨테이너
@@ -61,64 +33,81 @@ const IntroContainer = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-content: center;
-  align-items: center;
+  align-items: left;
   width: 100%;
   height: 800px;
   background-image: url(${INTRO_BACKGROUND});
   background-repeat: no-repeat;
   background-size: cover;
 
-  @media (max-width: 1000px) { 
+  @media (max-width: 1000px) {
     height: 600px;
   }
 
   @media (max-width: 800px) {
-   height: 400px;
+    height: 400px;
   }
 
-
- `;
+  @media (max-width: 600px) {
+    height: 300px;
+  }
+`;
 
 // 텍스트 Wrapper
 const TextWrapper = styled.div`
-  display:flex;
-  flex: 1.5;
+  display: flex;
+  flex: 2;
   width: 100%;
   flex-direction: column;
   justify-content: flex-end;
-  align-content: center;
-  align-items: center;
-  background-color: #000;
-  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to right,rgba(0,0,0,0.7), rgba(0,0,0,0));
+
+  @media (max-width: 800px) {
+    flex: 2.5;
+  }
+  @media (max-width: 600px) {
+    flex: 3;
+  }
+
 `;
 
 // 인트로 제목
 const TitleWrapper = styled.div`
-  width: 550px;
-  height: 120px;
-  padding: 10;
-
-  @media (max-width: 1000px) { 
+  width: 600px;
+  padding: 10px;
+  text-align:left;
+  margin-left: 100px;
+  @media (max-width: 1000px) {
     width: 500px;
     margin-left: 80px;
   }
   @media (max-width: 800px) {
-   width: 320px;
-   height: 80px;
+    width: 400px;
+    margin-left: 60px;
+  }
+  @media (max-width: 600px) {
+    width: 250px;
+    margin-left: 40px;
   }
 `;
 // 인트로 내용
 const DescriptionWrapper = styled.div`
-  width: 500px;
-  height: 50px;
-
-  @media (max-width: 1000px) { 
-    width: 400px;
-    height: 40px;
+  width: 600px;
+  height: 60px;
+  padding: 10px;
+  text-align: left;
+  margin-left: 100px;
+  @media (max-width: 1000px) {
+    width: 500px;
+    margin-left: 80px;
   }
   @media (max-width: 800px) {
-   width: 300px;
-   height: 30px;
+    width: 400px;
+    margin-left: 60px;
+  }
+  @media (max-width: 600px) {
+    width: 300px;
+    margin-left: 40px;
   }
 `;
 
@@ -127,68 +116,63 @@ const ContactButtonWrapper = styled.div`
   display: flex;
   flex: 1;
   width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #000;
-  background: rgba(0, 0, 0, 0.5);
-  @media (max-width: 1000px) { 
-    flex: 0.8;
+  justify-content: flex-start;
+  align-items: top;
+  background: linear-gradient(to right,rgba(0,0,0,0.7), rgba(0,0,0,0));
+`;
+
+const ButtonWrapper = styled.div`
+  padding: 10px;
+  margin-left: 100px;
+  @media (max-width: 1000px) {
+    margin-left: 80px;
   }
   @media (max-width: 800px) {
-    flex: 0.5;
+    margin-left: 60px;
+  }
+  @media (max-width: 600px) {
+    margin-left: 40px;
   }
 `;
 
 function Intro(): ReactElement {
-  const history = useHistory();
-
-  const tabChange = (path): void => {
-    const location: Record<string, any> = {
-      pathname: path,
-      state: {},
-    };
-    history.push(location);
-  };
-
   return (
     <Container>
-      <MenuBarWrapper>
-        <LogoButton onClick={(): void => tabChange('/intro')} imgSrc={IC_DOOBOOLAB_LOGO}/>
-        <MenuButtonWrapper>
-          <MenuButton onClick={(): void => tabChange('/story')} text={getString('STORY')}/>
-          <MenuButton onClick={(): void => tabChange('/work')} text={getString('WORK')}/>
-          <MenuButton onClick={(): void => tabChange('/people')} text={getString('PEOPLE')}/>
-          <MenuButton onClick={(): void => tabChange('/contact')} text={getString('CONTACT')}/>
-        </MenuButtonWrapper>
-      </MenuBarWrapper>
+
+      <MenuBar/>
+
+      <MenubarTemp/>
 
       <IntroContainer>
         <TextWrapper>
           <TitleWrapper>
-            <Heading2W>
-            Flexible innovation starts with dooboolab
-            </Heading2W>
+            <H1>Flexible innovation starts with dooboolab?</H1>
           </TitleWrapper>
           <DescriptionWrapper>
-            <DescriptionTextW>
-            We are a strong open source community for individuals, companies, and group of societies
-            </DescriptionTextW>
+            <BODY1>
+              We are a strong open source community for individuals, companies,
+              and group of societies
+            </BODY1>
           </DescriptionWrapper>
         </TextWrapper>
 
         <ContactButtonWrapper>
-          <ContactButton text={getString('CONTACT_US')}></ContactButton>
+          <ButtonWrapper>
+            <RoundButton1>{getString('CONTACT_US')}</RoundButton1>
+          </ButtonWrapper>
         </ContactButtonWrapper>
       </IntroContainer>
 
-      <StoryPage></StoryPage>
+      <StoryPage/>
 
-      <WorkPage></WorkPage>
+      <WorkPage/>
 
-      <PeoplePage></PeoplePage>
+      <PeoplePage/>
 
-      <ContactPage></ContactPage>
+      <ContactPage/>
+
+      <Footer/>
+
     </Container>
   );
 }

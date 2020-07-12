@@ -5,12 +5,14 @@ import {
   ETHAN_PROFILE,
   HUN_PROFILE,
   HYO_PROFILE,
+  JENNY_PROFILE,
   JERRY_PROFILE,
   JESSIE_PROFILE,
   JOY_PROFILE,
   RIM_PROFILE,
   SARAH_PROFILE,
   SONG_PROFILE,
+  TERRY_PROFILE,
   YOON_PROFILE,
 } from '../../utils/Profiles';
 import { DescriptionText, Heading1, SubTitleText } from '../../utils/Texts';
@@ -20,13 +22,15 @@ import styled from 'styled-components';
 
 // People
 const PeopleContainer = styled.div`
-  margin-top:180px;
+  padding: 100px;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  @media (max-width: 800px) {
-   margin-top:150px;
+  background: #D2E2DF;
+  @media (prefers-color-scheme: dark) {
+    background: #2C2C2C;
   }
 `;
 
@@ -38,6 +42,9 @@ const TitleWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  @media (prefers-color-scheme: dark) {
+    color: #D3D8E8;
+  }
 `;
 
 const PeopleTitleWrapper = styled.div`
@@ -49,12 +56,10 @@ const PeopleTitleWrapper = styled.div`
 const PeopleDescriptionWrapper = styled.div`
   padding: 20px;
   width: 550px;
-  margin-bottom: 50px;
 
   @media (max-width: 600px) {
     width: 300px;
   }
-
 `;
 
 const ProfilesWrapper = styled.div`
@@ -86,16 +91,23 @@ const ProfileItemWrapper = styled.div`
   margin:10;
 `;
 
+const TempBox = styled.div`
+  width: 186px;
+`;
+
 const ProfileImage = styled.img`
   width: 186px;
   height: 186px;
   margin-bottom: 5;
-
 `;
+
 const ProfileInfo = styled.text`
   font-size: 15;
   text-align: left;
   font-family: avenir;
+  @media (prefers-color-scheme: dark) {
+    color: #D3D8E8;
+  }
 `;
 
 function People(): ReactElement {
@@ -150,12 +162,16 @@ function People(): ReactElement {
           <ProfileInfo>Daniel / Developer</ProfileInfo>
         </ProfileItemWrapper>
         <ProfileItemWrapper>
-          <ProfileImage ></ProfileImage>
+          <ProfileImage src={TERRY_PROFILE}></ProfileImage>
           <ProfileInfo>Terry / Developer</ProfileInfo>
         </ProfileItemWrapper>
         <ProfileItemWrapper>
           <ProfileImage src={JESSIE_PROFILE}></ProfileImage>
           <ProfileInfo>Jessie / Developer</ProfileInfo>
+        </ProfileItemWrapper>
+        <ProfileItemWrapper>
+          <ProfileImage src={JENNY_PROFILE}></ProfileImage>
+          <ProfileInfo>Jenny / Developer</ProfileInfo>
         </ProfileItemWrapper>
         <ProfileItemWrapper>
           <ProfileImage src={JOY_PROFILE}></ProfileImage>
@@ -172,6 +188,9 @@ function People(): ReactElement {
         <ProfileItemWrapper>
           <ProfileImage src={RIM_PROFILE}></ProfileImage>
           <ProfileInfo>Rim / Desginer</ProfileInfo>
+        </ProfileItemWrapper>
+        <ProfileItemWrapper>
+          <TempBox/>
         </ProfileItemWrapper>
       </ProfilesWrapper>
     </PeopleContainer>

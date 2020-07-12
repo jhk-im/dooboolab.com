@@ -1,14 +1,9 @@
 import React, { ReactElement } from 'react';
 
-import {
-  IC_DOOBOOLAB_LOGO,
-} from '../../utils/Icons';
-import LogoButton from '../shared/LogoButton';
-import MenuButton from '../shared/MenuButton';
+import Footer from '../shared/Footer';
+import MenuBar from '../shared/MenuBar';
 import StoryPage from './StoryPage';
-import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
 
 // 최상위 컨테이너
 const Container = styled.div`
@@ -20,60 +15,79 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const MenuBarWrapper = styled.div`
+const MenubarTemp = styled.div`
+  height:120px;
+  width:100%;
+`;
+
+const FooterWrapper = styled.div`
   display: flex;
-  height: 120;
-  width: 100vw;
-  background: white;
-  position: absolute;
-  align-items: center;
   justify-content: space-between;
-  @media (max-width: 700px) {
-    justify-content: space-between;
-    flex-direction: column;
+  align-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 180px;
+  background: #40444F;
+  @media (max-width: 1000px) {
+    height: 160px;
+  }
+  @media (max-width: 800px) {
+    height: 130px;
+  }
+  @media (max-width: 600px) {
+    height: 100px;
   }
 `;
 
-const MenuButtonWrapper = styled.div`
+const FooterTextWrapper = styled.div`
   display: flex;
-  width: 50%;
-  height: 60px;
-  margin-top:15px;
-  margin-right: 50px;
-  align-items: center;
-  justify-content: space-around;
-  
-  @media (max-width: 700px) {
-    width: 80%;
-    margin-top: 0px;
-    margin-right: 0px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  text-align:left;
+`;
+
+const FooterText1 = styled.div`
+  padding:10px;
+  font-size: 18px;
+  font-family: futura;
+  color: #BEC8E2;
+  @media (max-width: 1000px) {
+    font-size: 12px;
+  }
+  @media (max-width: 800px) {
+    font-size: 10px;
+  }
+`;
+
+const FooterText2 = styled.div`
+  padding: 10px;
+  font-size: 20px;
+  font-family: avenir;
+  color: #ffffff;
+  @media (max-width: 1000px) {
+    font-size: 15px;
+  }
+  @media (max-width: 800px) {
+    font-size: 12px;
+  }
+  @media (max-width: 600px) {
+    font-size: 10px;
   }
 `;
 
 function Intro(): ReactElement {
-  const history = useHistory();
-
-  const tabChange = (path): void => {
-    const location: Record<string, any> = {
-      pathname: path,
-      state: {},
-    };
-    history.push(location);
-  };
-
   return (
     <Container>
 
-      <MenuBarWrapper>
-        <LogoButton onClick={(): void => tabChange('/intro')} imgSrc={IC_DOOBOOLAB_LOGO}/>
-        <MenuButtonWrapper>
-          <MenuButton onClick={(): void => tabChange('/story')} text={getString('STORY')} isSelected={true}/>
-          <MenuButton onClick={(): void => tabChange('/work')} text={getString('WORK')}/>
-          <MenuButton onClick={(): void => tabChange('/people')} text={getString('PEOPLE')}/>
-          <MenuButton onClick={(): void => tabChange('/contact')} text={getString('CONTACT')}/>
-        </MenuButtonWrapper>
-      </MenuBarWrapper>
+      <MenuBar currentPage={1}/>
+
+      <MenubarTemp/>
+
       <StoryPage/>
+
+      <Footer/>
+
     </Container>
   );
 }

@@ -9,22 +9,24 @@ interface Props {
   imgSrc?: string;
   onClick?: () => void;
 }
-
 const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   margin-left: 30px;
+  @media (max-width: 880px) {
+    margin-left: 0;
+  }
 `;
 
 const LogoImg = styled.img`
   width: 150px;
   object-fit: cover;
     
-  @media (max-width: 700px) {
+  @media (max-width: 880px) {
     width: 100px;
-    margin-top: 15px;
+    margin-top: 20px;
   }
 `;
 
