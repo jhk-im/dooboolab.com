@@ -32,12 +32,16 @@ export const ButtonPrimary = styled('button')`
 `;
 
 export const MenuButton = styled('button')`
-  display: flex;
+
   width: 100%;
   height: 100%;
   
-  border: 0;
-  outline: 0; 
+  border: 0px;
+  outline: 0px;
+  font-size: 18px;
+  font-family: avenir;
+  font-weight: 500;
+  padding: 6px 40px;
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
@@ -47,8 +51,6 @@ export const MenuButton = styled('button')`
   background-color: #ffffff;
   background-color: rgba( 255, 255, 255, 0);
 
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
 
   #bottom_line{
@@ -56,29 +58,43 @@ export const MenuButton = styled('button')`
     background: rgba(255, 255, 255, 0);
   }
 
-  &:hover{
-    color: #B446BF;
-    #bottom_line{
-    background: linear-gradient(to right,#393D7A,#B446BF);
+
+  @media (max-width: 880px) {
+    font-size: 20px;
+    padding: 6px 30px;
   }
+  @media (max-width: 600px) {
+    font-size: 15px;
+    padding: 6px 25px;
   }
 
-  &:active {
-    color: #B446BF;
-    #bottom_line{
-    background: linear-gradient(to right,#393D7A,#B446BF);
+  // dark mode
+  @media (prefers-color-scheme: dark) {
+    color: ${darkColor.ON_BACKGROUND_TEXT};
+    &:hover{
+    color: #B290B7;
+      #bottom_line{
+        background: linear-gradient(to right,#9497C2,#B290B7);
+      }
+    }
   }
+  // light mode
+  @media (prefers-color-scheme: light){
+    color: ${lightColor.ON_BACKGROUND_TEXT};
+    &:hover{
+    color: #B446BF;
+      #bottom_line{
+        background: linear-gradient(to right,#393D7A,#B446BF);
+      }
+    }
   }
 
 `;
 
 export const LogoButton = styled('button')`
   display: flex;
-  height: 100%;
-  height: 100%;
-  
-  border: 0;
-  outline: 0; 
+  border: 0px;
+  outline: 0px; 
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
@@ -93,20 +109,84 @@ export const LogoButton = styled('button')`
   cursor: pointer;
 `;
 
-export const ContactButton = styled('button')`
-  border-radius: 100px;
+export const RoundButton1 = styled('button')`
+  border: 0px solid;
+  outline: 0px; 
+  border-radius: 30px;
   border-color: #ffffff;
   border-color: rgba(255, 255, 255, 0);
   background: #02C8A3;
-  //background: linear-gradient(to right, #00FACB, #9846BF);
-  color: #fff;
+  font-family: avenir;
+  font-size: 32px;
+  font-weight: 300;
+  padding: 6px 40px;
+  text-decoration: none;
 
   cursor: pointer;
 
+  @media (max-width: 1000px) {
+    font-size: 25px;
+    padding: 6px 30px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 20px;
+    padding: 6px 25px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 15px;
+    padding: 6px 20px;
+  }
+
+  // dark mode
+  @media (prefers-color-scheme: dark) {
+      background: ${darkColor.BUTTON};
+      color: ${darkColor.ON_BUTTON};
+     &:hover{
+      background: ${darkColor.ON_BUTTON};
+      color: grey;
+    }
+  }
+  // light mode
+  @media (prefers-color-scheme: light){
+      background: ${lightColor.BUTTON};
+      color: ${lightColor.ON_BUTTON};
+    &:hover{
+      background: ${lightColor.ON_BUTTON};
+      color: grey;
+    }
+  }
+
+
+`;
+
+export const LearnMoreButton = styled('button')`
+  border: 2px solid;
+  outline: 1px; 
+  border-radius: 30px;
+  border-color: #02C8A3;
+  background: #ffffff;
+  background: rgba( 255, 255, 255, 0);
+  font-family: avenir;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 25px;
+  text-decoration: none;
+  color: #02C8A3;
+
+  cursor: pointer;
   &:hover {
-    background: #C9C8C8;
-    //background: linear-gradient(to right, #ffffff, #C9C8C8);
-    //color: #000;
+    background: #02C8A3;
+    color: #ffffff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &:hover {
+    background: #00BA90;
+    color: #ffffff;
+  }
+  border-color: #00BA90;
   }
 
 `;

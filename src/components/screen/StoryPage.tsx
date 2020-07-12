@@ -1,27 +1,20 @@
-import { DescriptionText, Heading1 } from '../../utils/Texts';
+import { DescriptionText1, TitleText1, TitleText2 } from '../../utils/Texts';
 import {
-  IC_COUPANG,
   IC_GRAPHQLSEOUL,
-  IC_LUNASOFT,
-  IC_MEGAZONE,
   IC_REACTNATIVESEOUL,
-  IC_TURING,
 } from '../../utils/Icons';
 import React, { ReactElement } from 'react';
 
+import { LearnMoreButton } from '../ui/Buttons';
+import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 // 스토리 컨테이너
-const StoryContainer = styled.div`
-  margin-top:180px;
+const Container = styled.div`
   display:flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  @media (max-width: 800px) {
-   margin-top:150px;
-  }
-
 `;
 
 const TitleWrapper = styled.div`
@@ -32,12 +25,27 @@ const TitleWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  @media (prefers-color-scheme: dark) {
+    color: #D3D8E8;
+  }
+`;
+
+const StoryContainer = styled.div`
+  width: 100vw;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (prefers-color-scheme: dark) {
+    background: #232323;
+  }
 `;
 
 const StroyDescriptionWrapper = styled.div`
   display: flex;
   width: 550px;
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 50px;
   flex-direction: column;
   justify-content: center;
@@ -52,8 +60,7 @@ const StroyDescriptionWrapper = styled.div`
 const VisionDescriptionWrapper = styled.div`
   display: flex;
   width: 520px;
-  padding: 20px;
-  margin-bottom: 50px;
+  padding: 10px;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
@@ -62,26 +69,32 @@ const VisionDescriptionWrapper = styled.div`
   @media (max-width: 600px) {
     width: 350px;
   }
-  
+`;
+
+const CommunityContainer = styled.div`
+  padding: 100px;
+  width: 100vw;
+  background: #EBEAF4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (prefers-color-scheme: dark) {
+    background: #2C2C2C;
+  }
 `;
 
 const CommunityDescriptionWrapper = styled.div`
-  display: flex;
   width: 450px;
   padding: 20px;
   margin-bottom: 20px;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
 
   @media (max-width: 600px) {
     width: 250px;
   }
-  
 `;
 
-const CommunityImageWrapper = styled.div`
+const CommunityImageListWrapper = styled.div`
   display: flex;
   padding: 10px;
   margin-bottom: 20px;
@@ -90,11 +103,17 @@ const CommunityImageWrapper = styled.div`
   align-content: space-evenly;
 `;
 
-const CommunityImage = styled.img`
+const GraphQlImageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   padding: 10px;
   width: 400px;
   height: 400px;
-
+  background-image: url(${IC_GRAPHQLSEOUL});
+  background-repeat: no-repeat;
+  background-size: cover;  
   @media (max-width: 1000px) {
     width: 350px;
     height: 350px;
@@ -104,83 +123,99 @@ const CommunityImage = styled.img`
     width: 200px;
     height: 200px;
   }
-
 `;
 
-const SupportedWrapper = styled.div`
+const ReactNativeImageWrapper = styled.div`
   display: flex;
-  padding: 30px;
-  width:100%;
-  justify-content: space-evenly;
-  justify-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-`;
-
-const SupportImage = styled.img`
   padding: 10px;
-  width: 120px;
-  height: 24px;
+  width: 400px;
+  height: 400px;
+  background-image: url(${IC_REACTNATIVESEOUL});
+  background-repeat: no-repeat;
+  background-size: cover;  
+  @media (max-width: 1000px) {
+    width: 350px;
+    height: 350px;
+  }
 
   @media (max-width: 800px) {
-    width: 100px;
-    height: 18px;
+    width: 200px;
+    height: 200px;
+  }
+`;
+
+const ItemButtonWrapper = styled.div`
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  @media (max-width: 1000px) {
+    padding: 20px;
   }
 
-  @media (max-width: 600px) {
-    width: 60px;
-    height: 12px;
+  @media (max-width: 800px) {
+    padding: 10px;
   }
-
 `;
 
 function Intro(): ReactElement {
   return (
 
-    <StoryContainer>
-      <TitleWrapper>
-        <Heading1>Story</Heading1>
-      </TitleWrapper>
-      <StroyDescriptionWrapper>
-        <DescriptionText>
+    <Container>
+
+      <StoryContainer>
+        <TitleWrapper>
+          <TitleText1>Story</TitleText1>
+        </TitleWrapper>
+        <StroyDescriptionWrapper>
+          <DescriptionText1>
             We aim to find the IT services that the world needs.<br/>
             The goal is to consistently find and commercialize ideas
             that have the potential to change the market.
-        </DescriptionText>
-      </StroyDescriptionWrapper>
-      <TitleWrapper>
-        <Heading1>Vision & Mission</Heading1>
-      </TitleWrapper>
-      <VisionDescriptionWrapper>
-        <DescriptionText>
+          </DescriptionText1>
+        </StroyDescriptionWrapper>
+        <TitleWrapper>
+          <TitleText2>vision & mission</TitleText2>
+        </TitleWrapper>
+        <VisionDescriptionWrapper>
+          <DescriptionText1>
             dooboolab wishes to help out those
             who are in trouble of making better society
             We are a group of experts who contribute to various platforms and open source projects
             to work publicly for creating benefits.
-        </DescriptionText>
-      </VisionDescriptionWrapper>
-      <TitleWrapper>
-        <Heading1>Community</Heading1>
-      </TitleWrapper>
-      <CommunityDescriptionWrapper>
-        <DescriptionText>
+          </DescriptionText1>
+        </VisionDescriptionWrapper>
+      </StoryContainer>
+
+      <CommunityContainer>
+        <TitleWrapper>
+          <TitleText2>Community</TitleText2>
+        </TitleWrapper>
+        <CommunityDescriptionWrapper>
+          <DescriptionText1>
             We are running a strong open source community
             for individuals, companies, and group of societies
-        </DescriptionText>
-      </CommunityDescriptionWrapper>
-      <CommunityImageWrapper>
-        <CommunityImage src={IC_GRAPHQLSEOUL}></CommunityImage>
-        <CommunityImage src={IC_REACTNATIVESEOUL}></CommunityImage>
-      </CommunityImageWrapper>
-      <TitleWrapper>
-        <Heading1>Supported by</Heading1>
-      </TitleWrapper>
-      <SupportedWrapper>
-        <SupportImage src={IC_COUPANG}></SupportImage>
-        <SupportImage src={IC_LUNASOFT}></SupportImage>
-        <SupportImage src={IC_MEGAZONE}></SupportImage>
-        <SupportImage src={IC_TURING}></SupportImage>
-      </SupportedWrapper>
-    </StoryContainer>
+          </DescriptionText1>
+        </CommunityDescriptionWrapper>
+        <CommunityImageListWrapper>
+          <ReactNativeImageWrapper>
+            <ItemButtonWrapper>
+              <LearnMoreButton>{getString('LEARN_MORE')}</LearnMoreButton>
+            </ItemButtonWrapper>
+          </ReactNativeImageWrapper>
+          <GraphQlImageWrapper>
+            <ItemButtonWrapper>
+              <LearnMoreButton>{getString('LEARN_MORE')}</LearnMoreButton>
+            </ItemButtonWrapper>
+          </GraphQlImageWrapper>
+        </CommunityImageListWrapper>
+      </CommunityContainer>
+
+    </Container>
 
   );
 }

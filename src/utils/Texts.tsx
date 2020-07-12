@@ -98,6 +98,9 @@ export const H5 = styled('text')`
   
   @media (max-width: 1000px) {
     font-size: 25px;
+  }  
+  @media (prefers-color-scheme: dark) {
+    color: #D3D8E8;
   }
 
   @media (max-width: 800px) {
@@ -135,6 +138,9 @@ export const H = styled('text')`
 
   @media (prefers-color-scheme: light){
     color: ${lightColor.ON_SUB_BACKGROUND_TEXT};
+  }
+  @media (prefers-color-scheme: dark) {
+    color: #D3D8E8;
   }
 `;
 

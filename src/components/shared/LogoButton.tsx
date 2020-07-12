@@ -10,7 +10,6 @@ interface Props {
   imgSrc?: string;
   onClick?: () => void;
 }
-
 const ButtonWrapper = styled.div`
   margin-left: 20px;
   
