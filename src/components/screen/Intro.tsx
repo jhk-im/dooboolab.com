@@ -151,7 +151,7 @@ function Intro(): ReactElement {
           <DescriptionWrapper>
             <BODY1>
               We are a strong open source community for individuals, companies,
-              and group of societies
+              and group of societies.
             </BODY1>
           </DescriptionWrapper>
         </TextWrapper>
