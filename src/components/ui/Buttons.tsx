@@ -94,17 +94,12 @@ export const LogoButton = styled('button')`
 `;
 
 export const ContactButton = styled('button')`
-  border: 0;
-  outline: 0; 
   border-radius: 100px;
-  border-style: solid;
   border-color: #ffffff;
   border-color: rgba(255, 255, 255, 0);
   background: #02C8A3;
   //background: linear-gradient(to right, #00FACB, #9846BF);
   color: #fff;
-
-  font-size: -10px;
 
   cursor: pointer;
 
