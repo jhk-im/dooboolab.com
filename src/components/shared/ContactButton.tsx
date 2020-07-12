@@ -15,7 +15,6 @@ const ButtonWrapper = styled.div`
   flex: 1;
   width: 235px;
   height: 50px;
-
   display: flex;
   flex-direction: row;
   justify-content: center;

@@ -99,10 +99,9 @@ const TitleWrapper = styled.div`
   padding: 10;
 
   @media (max-width: 1000px) { 
-    width: 400px;
-    height: 100px;
+    width: 500px;
+    margin-left: 80px;
   }
-
   @media (max-width: 800px) {
    width: 320px;
    height: 80px;
@@ -117,12 +116,10 @@ const DescriptionWrapper = styled.div`
     width: 400px;
     height: 40px;
   }
-
   @media (max-width: 800px) {
    width: 300px;
    height: 30px;
   }
-
 `;
 
 // 인트로 버튼
@@ -138,7 +135,6 @@ const ContactButtonWrapper = styled.div`
   @media (max-width: 1000px) { 
     flex: 0.8;
   }
-
   @media (max-width: 800px) {
     flex: 0.5;
   }
@@ -157,7 +153,6 @@ function Intro(): ReactElement {
 
   return (
     <Container>
-
       <MenuBarWrapper>
         <LogoButton onClick={(): void => tabChange('/intro')} imgSrc={IC_DOOBOOLAB_LOGO}/>
         <MenuButtonWrapper>
@@ -194,7 +189,6 @@ function Intro(): ReactElement {
       <PeoplePage></PeoplePage>
 
       <ContactPage></ContactPage>
-
     </Container>
   );
 }
