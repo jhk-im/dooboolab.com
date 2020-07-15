@@ -1,10 +1,12 @@
 import React, { ReactElement } from 'react';
 
+import TextButton2 from '../shared/TextButton2';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 const FooterWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content: center;
   align-items: center;
   width: 100vw;
@@ -27,9 +29,17 @@ const FooterWrapper = styled.div`
 const FooterTextWrapper = styled.div`
 display: flex;
 flex-direction: column;
+align-items: flex-start;
 justify-content: center;
 padding: 20px;
-text-align:left;
+`;
+const ButtonWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: space-between;
 `;
 
 const FooterText1 = styled.div`
@@ -62,13 +72,33 @@ color: #ffffff;
 `;
 
 function Footer(): ReactElement {
+  // 페이지 변경 메소드
+  const history = useHistory();
+  const tabChange = (inputPath): void => {
+    const location: Record<string, any> = {
+      pathname: inputPath,
+      state: {},
+    };
+    history.push(location);
+  };
   return (
     <FooterWrapper>
       <FooterTextWrapper>
         <FooterText1>Address</FooterText1>
         <FooterText2>서울시 강남구 선릉로 94번길 40 203호</FooterText2>
       </FooterTextWrapper>
+
       <FooterTextWrapper>
+        <ButtonWrapper>
+          <TextButton2
+            text="Our vision & mission"
+            onClick={(): void => tabChange('/vision')}
+          />
+          <TextButton2
+            text="Code of conduct"
+            onClick={(): void => tabChange('/codeofconduct')}
+          />
+        </ButtonWrapper>
         <FooterText2>© 2017-2020 dooboolab, All Rights Reserved</FooterText2>
       </FooterTextWrapper>
     </FooterWrapper>

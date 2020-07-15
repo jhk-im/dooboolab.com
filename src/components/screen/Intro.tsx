@@ -6,11 +6,12 @@ import Footer from '../shared/Footer';
 import { INTRO_BACKGROUND } from '../../utils/Images';
 import MenuBar from '../shared/MenuBar';
 import PeoplePage from './PeoplePage';
-import { RoundButton1 } from '../ui/Buttons';
+import RoundButton1 from '../shared/RoundButton1';
 import StoryPage from './StoryPage';
 import WorkPage from './WorkPage';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 // 최상위 컨테이너
 const Container = styled.div`
@@ -20,6 +21,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: bottom;
   align-items: center;
+  
 `;
 
 const MenubarTemp = styled.div`
@@ -136,6 +138,15 @@ const ButtonWrapper = styled.div`
 `;
 
 function Intro(): ReactElement {
+  // 페이지 변경 메소드
+  const history = useHistory();
+  const tabChange = (inputPath): void => {
+    const location: Record<string, any> = {
+      pathname: inputPath,
+      state: {},
+    };
+    history.push(location);
+  };
   return (
     <Container>
 
@@ -158,7 +169,10 @@ function Intro(): ReactElement {
 
         <ContactButtonWrapper>
           <ButtonWrapper>
-            <RoundButton1>{getString('CONTACT_US')}</RoundButton1>
+            <RoundButton1
+              text={getString('CONTACT_US')}
+              onClick={(): void => tabChange('/contact')}
+            />
           </ButtonWrapper>
         </ContactButtonWrapper>
       </IntroContainer>

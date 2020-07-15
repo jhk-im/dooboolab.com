@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 
 import Footer from '../shared/Footer';
 import MenuBar from '../shared/MenuBar';
-import PeoplePage from './PeoplePage';
+import VisionMissionPage from './VisionPage';
 import styled from 'styled-components';
 
 // 최상위 컨테이너
@@ -24,11 +24,11 @@ function People(): ReactElement {
   return (
     <Container>
 
-      <MenuBar currentPage={3}/>
+      <MenuBar/>
 
       <MenubarTemp/>
 
-      <PeoplePage/>
+      <VisionMissionPage/>
 
       <Footer/>
 

@@ -1,7 +1,7 @@
 import { IC_DOOBOO_UI, IC_HACKATALK, IC_PRIME } from '../../utils/Icons';
 import React, { ReactElement } from 'react';
 
-import { LearnMoreButton } from '../ui/Buttons';
+import RoundButton2 from '../shared/RoundButton2';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
@@ -148,6 +148,10 @@ const ItemButtonWrapper = styled.div`
 `;
 
 function Work(): ReactElement {
+  // 외부링크 변경 메소드
+  const moveUrl = (inputPath): void => {
+    window.open(inputPath);
+  };
   return (
     <WorkContainer>
       <TitleWrapper>
@@ -182,7 +186,10 @@ function Work(): ReactElement {
             </DescriptionText>
           </WorkTextWrapper>
           <ItemButtonWrapper>
-            <LearnMoreButton>{getString('LEARN_MORE')}</LearnMoreButton>
+            <RoundButton2
+              text={getString('VIEW_MORE')}
+              onClick={(): void => moveUrl('https://github.com/dooboolab/dooboo-ui')}
+            />
           </ItemButtonWrapper>
         </WorkItemWrapper>
 
@@ -196,7 +203,10 @@ function Work(): ReactElement {
             </DescriptionText>
           </WorkTextWrapper>
           <ItemButtonWrapper>
-            <LearnMoreButton>{getString('LEARN_MORE')}</LearnMoreButton>
+            <RoundButton2
+              text={getString('VIEW_MORE')}
+              onClick={(): void => moveUrl('https://github.com/dooboolab/hackatalk')}
+            />
           </ItemButtonWrapper>
         </WorkItemWrapper>
 

@@ -161,7 +161,7 @@ export const RoundButton1 = styled('button')`
 
 `;
 
-export const LearnMoreButton = styled('button')`
+export const RoundButton2 = styled('button')`
   border: 2px solid;
   outline: 1px; 
   border-radius: 30px;
@@ -187,6 +187,76 @@ export const LearnMoreButton = styled('button')`
     color: #ffffff;
   }
   border-color: #00BA90;
+  }
+
+`;
+
+export const TextButton1 = styled('button')`
+  border: 0px solid;
+  outline: 0px; 
+  background: #ffffff;
+  background: rgba( 255, 255, 255, 0);
+  font-family: avenir;
+  font-size: 20px;
+
+  cursor: pointer;
+
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
+  @media (max-width: 800px) {
+    font-size: 15px;
+  }
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
+
+  @media (prefers-color-scheme: light) {
+    color: ${lightColor.BUTTON};
+    &:hover {
+    color: #393D7A;
+  }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: ${darkColor.BUTTON};
+    &:hover {
+    color: #8A96DC;
+  }
+  }
+
+`;
+
+export const TextButton2 = styled('button')`
+  border: 0px solid;
+  outline: 0px; 
+  background: #ffffff;
+  background: rgba( 255, 255, 255, 0);
+  font-family: avenir;
+  font-size: 20px;
+  color: #BEC8E2;
+  cursor: pointer;
+
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
+  @media (max-width: 800px) {
+    font-size: 15px;
+  }
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
+
+  @media (prefers-color-scheme: light) {
+    &:hover {
+    color: #393D7A;
+  }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &:hover {
+    color: #8A96DC;
+  }
   }
 
 `;
