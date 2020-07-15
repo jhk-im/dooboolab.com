@@ -90,7 +90,6 @@ function Footer(): ReactElement {
     };
     history.push(location);
   };
-
   return (
     <FooterWrapper>
       <FooterTextWrapper>
@@ -99,6 +98,7 @@ function Footer(): ReactElement {
           { getString('ADDRESS') }
         </FooterDescriptionText>
       </FooterTextWrapper>
+
       <FooterTextWrapper>
         <ButtonWrapper>
           <FooterButton

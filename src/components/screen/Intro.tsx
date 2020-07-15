@@ -21,6 +21,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: bottom;
   align-items: center;
+  
 `;
 
 const MenubarEmptyBox = styled.div`

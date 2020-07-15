@@ -99,6 +99,7 @@ const ProfileImage = styled.img`
   width: 186px;
   height: 186px;
   margin-bottom: 5;
+  alt: '';
 `;
 
 const ProfileInfo = styled.text`

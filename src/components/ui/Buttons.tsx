@@ -161,7 +161,7 @@ export const RoundButton1 = styled('button')`
 
 `;
 
-export const LearnMoreButton = styled('button')`
+export const RoundButton2 = styled('button')`
   border: 2px solid;
   outline: 1px; 
   border-radius: 30px;

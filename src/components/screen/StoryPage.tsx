@@ -5,9 +5,11 @@ import {
 } from '../../utils/Icons';
 import React, { ReactElement } from 'react';
 
-import { LearnMoreButton } from '../ui/Buttons';
+import RoundButton2 from '../shared/RoundButton2';
+import TextButton1 from '../shared/TextButton1';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 // 스토리 컨테이너
 const Container = styled.div`
@@ -69,6 +71,16 @@ const VisionDescriptionWrapper = styled.div`
   @media (max-width: 600px) {
     width: 350px;
   }
+`;
+
+const ViewMoreButtonWrapper = styled.div`
+  display: flex;
+  width: 100vw;
+  padding: 20px;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
 `;
 
 const CommunityContainer = styled.div`
@@ -163,6 +175,20 @@ const ItemButtonWrapper = styled.div`
 `;
 
 function Intro(): ReactElement {
+  // 페이지 변경 메소드
+  const history = useHistory();
+  const tabChange = (inputPath): void => {
+    const location: Record<string, any> = {
+      pathname: inputPath,
+      state: {},
+    };
+    history.push(location);
+  };
+
+  // 외부 링크 변경 메소드
+  const moveUrl = (inputPath): void => {
+    window.open(inputPath);
+  };
   return (
 
     <Container>
@@ -188,6 +214,12 @@ function Intro(): ReactElement {
             We are a group of experts who contribute to various platforms and open source projects
             to work publicly for creating benefits.
           </DescriptionText1>
+          <ViewMoreButtonWrapper>
+            <TextButton1
+              onClick={(): void => tabChange('/vision')}
+              text={getString('VIEW_MORE2')}
+            />
+          </ViewMoreButtonWrapper>
         </VisionDescriptionWrapper>
       </StoryContainer>
 
@@ -204,12 +236,18 @@ function Intro(): ReactElement {
         <CommunityImageListWrapper>
           <ReactNativeImageWrapper>
             <ItemButtonWrapper>
-              <LearnMoreButton>{getString('LEARN_MORE')}</LearnMoreButton>
+              <RoundButton2
+                text={getString('VIEW_MORE')}
+                onClick={(): void => moveUrl('https://reactnativeseoul.org/')}
+              />
             </ItemButtonWrapper>
           </ReactNativeImageWrapper>
           <GraphQlImageWrapper>
             <ItemButtonWrapper>
-              <LearnMoreButton>{getString('LEARN_MORE')}</LearnMoreButton>
+              <RoundButton2
+                text={getString('VIEW_MORE')}
+                onClick={(): void => moveUrl('https://medium.com/graphql-seoul')}
+              />
             </ItemButtonWrapper>
           </GraphQlImageWrapper>
         </CommunityImageListWrapper>
