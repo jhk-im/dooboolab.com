@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import { device } from '../../theme';
+=======
+import { darkColor, lightColor } from '../../utils/colorlist';
+
+>>>>>>> 24955d3... dooboolab.com Final completion
 import styled from 'styled-components';
 
 export const ButtonPrimary = styled('button')`
@@ -12,6 +17,13 @@ export const ButtonPrimary = styled('button')`
   border-color: #e3e3e3;
   margin-bottom: 8px;
 
+<<<<<<< HEAD
+=======
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+>>>>>>> 24955d3... dooboolab.com Final completion
   background: ${(props): string => props.theme.btnPrimary};
   opacity: 1;
   // transition: opacity 0.2s;
@@ -28,17 +40,14 @@ export const ButtonPrimary = styled('button')`
   &:active {
     opacity: 0.5;
   }
-
 `;
 
 export const MenuButton = styled('button')`
-
   width: 100%;
   height: 100%;
-  
   border: 0px;
   outline: 0px;
-  font-size: 18px;
+  font-size: 20px;
   font-family: avenir;
   font-weight: 500;
   padding: 6px 40px;
@@ -47,7 +56,6 @@ export const MenuButton = styled('button')`
   border-width: 1px;
   border-color: #ffffff;
   border-color: rgba(255, 255, 255, 0);
-
   background-color: #ffffff;
   background-color: rgba( 255, 255, 255, 0);
 
@@ -58,17 +66,21 @@ export const MenuButton = styled('button')`
     background: rgba(255, 255, 255, 0);
   }
 
-
-  @media (max-width: 880px) {
-    font-size: 20px;
+  @media (max-width: 1000px) {
+    font-size: 18px;
     padding: 6px 30px;
   }
-  @media (max-width: 600px) {
+
+  @media (max-width: 800px) {
     font-size: 15px;
     padding: 6px 25px;
   }
 
-  // dark mode
+  @media (max-width: 500px) {
+    font-size: 12px;
+    padding: 6px 15px;
+  }
+
   @media (prefers-color-scheme: dark) {
     color: ${darkColor.ON_BACKGROUND_TEXT};
     &:hover{
@@ -78,7 +90,7 @@ export const MenuButton = styled('button')`
       }
     }
   }
-  // light mode
+
   @media (prefers-color-scheme: light){
     color: ${lightColor.ON_BACKGROUND_TEXT};
     &:hover{
@@ -88,11 +100,9 @@ export const MenuButton = styled('button')`
       }
     }
   }
-
 `;
 
 export const LogoButton = styled('button')`
-  display: flex;
   border: 0px;
   outline: 0px; 
   border-radius: 3px;
@@ -100,22 +110,21 @@ export const LogoButton = styled('button')`
   border-width: 1px;
   border-color: #ffffff;
   border-color: rgba(255, 255, 255, 0);
-
   background-color: #ffffff;
   background-color: rgba( 255, 255, 255, 0);
-
+  display: flex;
   justify-content: center;
   align-items: center;
+
   cursor: pointer;
 `;
 
-export const RoundButton1 = styled('button')`
+export const IntroRoundButton = styled('button')`
   border: 0px solid;
   outline: 0px; 
   border-radius: 30px;
   border-color: #ffffff;
   border-color: rgba(255, 255, 255, 0);
-  background: #02C8A3;
   font-family: avenir;
   font-size: 32px;
   font-weight: 300;
@@ -126,42 +135,39 @@ export const RoundButton1 = styled('button')`
 
   @media (max-width: 1000px) {
     font-size: 25px;
-    padding: 6px 30px;
+    padding: 6px 35px;
   }
 
   @media (max-width: 800px) {
     font-size: 20px;
-    padding: 6px 25px;
+    padding: 6px 30px;
   }
 
   @media (max-width: 600px) {
     font-size: 15px;
-    padding: 6px 20px;
+    padding: 6px 25px;
   }
 
-  // dark mode
   @media (prefers-color-scheme: dark) {
       background: ${darkColor.BUTTON};
       color: ${darkColor.ON_BUTTON};
      &:hover{
       background: ${darkColor.ON_BUTTON};
-      color: grey;
+      color: ${darkColor.BUTTON};
     }
   }
-  // light mode
+
   @media (prefers-color-scheme: light){
       background: ${lightColor.BUTTON};
       color: ${lightColor.ON_BUTTON};
     &:hover{
       background: ${lightColor.ON_BUTTON};
-      color: grey;
+      color: ${lightColor.BUTTON};
     }
   }
-
-
 `;
 
-export const RoundButton2 = styled('button')`
+export const ViewMoreRoundButton = styled('button')`
   border: 2px solid;
   outline: 1px; 
   border-radius: 30px;
@@ -176,9 +182,26 @@ export const RoundButton2 = styled('button')`
   color: #02C8A3;
 
   cursor: pointer;
+
   &:hover {
     background: #02C8A3;
     color: #ffffff;
+  }
+
+
+  @media (max-width: 1000px) {
+    font-size: 15px;
+    padding: 5px 20px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 10px;
+    padding: 4px 15px;
+  }
+  
+  @media (max-width: 600px) {
+    font-size: 8px;
+    padding: 3px 12px;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -188,10 +211,13 @@ export const RoundButton2 = styled('button')`
   }
   border-color: #00BA90;
   }
-
 `;
 
+<<<<<<< HEAD
 export const MenuButton = styled('button')`
+=======
+export const StoryTextButton = styled('button')`
+>>>>>>> 24955d3... dooboolab.com Final completion
   border: 0px solid;
   outline: 0px; 
   font-size: 12px;
@@ -204,6 +230,7 @@ export const MenuButton = styled('button')`
   border-color: rgba(255, 255, 255, 0);
   background: #ffffff;
   background: rgba( 255, 255, 255, 0);
+<<<<<<< HEAD
   color: ${({ theme }): string => theme.fontColor};
   
   cursor: pointer;
@@ -268,6 +295,21 @@ export const IntroRoundButton = styled('button')`
     font-size: 12px;
     padding: 4px 20px;
   }
+=======
+  font-family: avenir;
+  font-size: 24px;
+
+  cursor: pointer;
+
+  @media (max-width: 1000px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 15px;
+  }
+  
+>>>>>>> 24955d3... dooboolab.com Final completion
 
   @media ${device.mobileL} {
     font-size: 15px;
@@ -311,6 +353,7 @@ export const ViewMoreRoundButton = styled('button')`
     font-size: 10px;
     padding: 4px 15px;
   }
+<<<<<<< HEAD
   
   @media ${device.laptop} {
     font-size: 15px;
@@ -340,6 +383,8 @@ export const StoryTextButton = styled('button')`
   @media ${device.laptop} {
     font-size: 20px;
   }
+=======
+>>>>>>> 24955d3... dooboolab.com Final completion
 `;
 
 export const FooterButton = styled('button')`
@@ -348,9 +393,14 @@ export const FooterButton = styled('button')`
   background: #ffffff;
   background: rgba( 255, 255, 255, 0);
   font-family: avenir;
+<<<<<<< HEAD
   font-size: 10px;
   color: #BEC8E2;
   text-decoration: underline;
+=======
+  font-size: 20px;
+  color: ${lightColor.ON_FOOTER_TEXT};
+>>>>>>> 24955d3... dooboolab.com Final completion
 
   cursor: pointer;
 
@@ -358,15 +408,31 @@ export const FooterButton = styled('button')`
     color: ${({ theme }): string => theme.colorAccent};;
   }
 
+<<<<<<< HEAD
   @media ${device.tablet} {
     font-size: 15px;
   }
 
   @media ${device.laptop} {
     font-size: 18px;
+=======
+  @media (max-width: 800px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 10px;
+  }
+
+  @media (prefers-color-scheme: light) {
+    &:hover {
+    color: ${lightColor.TAB_BUTTON};
+  }
+>>>>>>> 24955d3... dooboolab.com Final completion
   }
 `;
 
+<<<<<<< HEAD
 export const SendEmailRoundButton = styled('button')`
   border: 0px solid;
   outline: 0px; 
@@ -385,15 +451,64 @@ export const SendEmailRoundButton = styled('button')`
 
   &:hover{
     background: gray;
+=======
+  @media (prefers-color-scheme: dark) {
+    &:hover {
+    color: ${darkColor.TAB_BUTTON};
+>>>>>>> 24955d3... dooboolab.com Final completion
   }
 
   @media ${device.tablet} {
     font-size: 20px;
     padding: 4px 25px;
   }
+`;
 
+<<<<<<< HEAD
   @media ${device.laptop} {
     font-size: 25px;
     padding: 5px 30px;
+=======
+export const SendEmailRoundButton = styled('button')`
+  border: 0px solid;
+  outline: 0px; 
+  border-radius: 30px;
+  border-color: #ffffff;
+  border-color: rgba(255, 255, 255, 0);
+  font-family: avenir;
+  font-size: 25px;
+  font-weight: 300;
+  padding: 6px 40px;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  @media (max-width: 800px) {
+    font-size: 20px;
+    padding: 6px 30px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 15px;
+    padding: 6px 25px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+      background: ${darkColor.BUTTON};
+      color: ${darkColor.ON_BUTTON};
+     &:hover{
+      background: ${darkColor.ON_BUTTON};
+      color: ${darkColor.BUTTON};
+    }
+  }
+
+  @media (prefers-color-scheme: light){
+      background: ${lightColor.BUTTON};
+      color: ${lightColor.ON_BUTTON};
+    &:hover{
+      background: ${lightColor.ON_BUTTON};
+      color: ${lightColor.BUTTON};
+    }
+>>>>>>> 24955d3... dooboolab.com Final completion
   }
 `;

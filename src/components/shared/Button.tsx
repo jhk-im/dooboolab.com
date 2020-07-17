@@ -15,7 +15,6 @@ interface Props {
 const ButtonWrapper = styled.div`
   flex: 1;
   height: 100%;
-
   display: flex;
   flex-direction: row;
   justify-content: center;

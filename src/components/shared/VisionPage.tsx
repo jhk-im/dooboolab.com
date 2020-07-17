@@ -7,7 +7,6 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   width: 100vw;
-
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -72,7 +71,6 @@ const SubTitleWrapper = styled.div`
 
 const TitleTextWrapper = styled.div`
   padding: 30px;
-
   display: flex;
   flex-direction: column;
   flex-direction: column;
@@ -139,7 +137,6 @@ const VisionItemLinearWrapper = styled.div`
 
 const VisionItem = styled.div`
   width: 100vw;
-
   display: flex;
   flex-direction: column;
   align-items: center;

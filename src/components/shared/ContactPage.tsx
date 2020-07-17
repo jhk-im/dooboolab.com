@@ -65,7 +65,6 @@ const SendEmailTitleWrapper = styled.div`
   height: 100%;
   flex: 1;
   background: rgba(0,0,0,0.5);
-
   display: flex;
   justify-content: center;
   align-content: center;

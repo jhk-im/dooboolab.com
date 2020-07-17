@@ -1,4 +1,5 @@
 import React, { CSSProperties, ReactElement } from 'react';
+import { darkColor, lightColor } from '../../utils/colorlist';
 
 import { MenuButton } from '../ui/Buttons';
 import { device } from '../../theme';

@@ -1,11 +1,10 @@
 import React, { ReactElement } from 'react';
 
-import CodeOfConductPage from './CodeOfConductPage';
 import Footer from '../shared/Footer';
 import MenuBar from '../shared/MenuBar';
+import StoryPage from '../shared/StoryPage';
 import styled from 'styled-components';
 
-// 최상위 컨테이너
 const Container = styled.div`
   display: flex;
   width: 100vw;
@@ -20,20 +19,15 @@ const MenubarTemp = styled.div`
   width:100%;
 `;
 
-function People(): ReactElement {
+function Intro(): ReactElement {
   return (
     <Container>
-
-      <MenuBar/>
-
+      <MenuBar currentPage={1}/>
       <MenubarTemp/>
-
-      <CodeOfConductPage/>
-
+      <StoryPage/>
       <Footer/>
-
     </Container>
   );
 }
 
-export default People;
+export default Intro;

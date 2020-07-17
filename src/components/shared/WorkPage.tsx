@@ -112,7 +112,6 @@ const WorkItemWrapper = styled.div`
 
 const WorkImageWrapper = styled.div`
   flex: 1;
-
   display: flex;
   justify-content: center;
   align-content: center;
@@ -193,7 +192,6 @@ export const BODY2 = styled('text')`
 
 const ItemButtonWrapper = styled.div`
   flex: 1;
-
   display: flex;
   justify-content: center;
   align-items: center;

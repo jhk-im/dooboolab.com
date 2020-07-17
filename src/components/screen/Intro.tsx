@@ -12,7 +12,6 @@ import { device } from '../../theme';
 import styled from 'styled-components';
 import { useThemeContext } from '../../providers/ThemeProvider';
 
-// 최상위 컨테이너
 const Container = styled.div`
   width: 100vw;
   
@@ -21,7 +20,6 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: bottom;
   align-items: center;
-  
 `;
 
 const MenubarEmptyBox = styled.div`

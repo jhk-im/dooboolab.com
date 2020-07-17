@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import React, { ReactElement } from 'react';
 
 import CodeOfConduct from '../screen/CodeOfConduct';

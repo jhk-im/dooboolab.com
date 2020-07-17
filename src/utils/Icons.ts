@@ -24,7 +24,6 @@ const isRetina = (first: string, second?: string, third?: string): string => {
   return first;
 };
 
-// dark 모드 감지
 const isDarkMode = (darkPath: string, lightPath: string): string => {
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     return darkPath;
