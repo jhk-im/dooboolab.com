@@ -1,13 +1,13 @@
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import React, { ReactElement } from 'react';
 
-import CodeOfConduct from '../screen/CodeOfConductContainer';
-import Contact from '../screen/ContactContainer';
+import CodeOfConduct from '../screen/CodeOfConduct';
+import Contact from '../screen/Contact';
 import Intro from '../screen/Intro';
-import People from '../screen/PeopleContainer';
-import Story from '../screen/StoryContainer';
-import Vision from '../screen/VisionContainer';
-import Work from '../screen/WorkContainer';
+import People from '../screen/People';
+import Story from '../screen/Story';
+import Vision from '../screen/Vision';
+import Work from '../screen/Work';
 
 function SwitchNavigator(): ReactElement {
   return (
@@ -21,8 +21,6 @@ function SwitchNavigator(): ReactElement {
           <Route exact={true} path="/contact"render={(): ReactElement => <Contact />} />
           <Route exact={true} path="/vision"render={(): ReactElement => <Vision />} />
           <Route exact={true} path="/codeofconduct"render={(): ReactElement => <CodeOfConduct />} />
-          <Link to="https://github.com/dooboolab/dooboo-ui"/>
-          <Link to="https://github.com/dooboolab/hackatalk"/>
         </Switch>
       </div>
     </BrowserRouter>

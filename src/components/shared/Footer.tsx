@@ -1,78 +1,97 @@
 import React, { ReactElement } from 'react';
+import { darkColor, lightColor } from '../../utils/colorlist';
 
-import TextButton2 from '../shared/TextButton2';
+import FooterButton from '../shared/FooterButton';
+import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
 const FooterWrapper = styled.div`
+  width: 100vw;
+  height: 100px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-content: center;
   align-items: center;
-  width: 100vw;
-  height: 180px;
-  background: #40444F;
-  @media (max-width: 1000px) {
-    height: 160px;
-  }
+  
   @media (max-width: 800px) {
-    height: 130px;
+    height: 70px;
   }
-  @media (max-width: 600px) {
-    height: 100px;
-  }
+
   @media (prefers-color-scheme: dark) {
-    background: #232323;
+    background: ${darkColor.FOOTER_BACKGROUND};
+  }
+
+  @media (prefers-color-scheme: light){
+    background: ${lightColor.FOOTER_BACKGROUND};
   }
 `;
 
 const FooterTextWrapper = styled.div`
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-justify-content: center;
-padding: 20px;
-`;
-const ButtonWrapper = styled.div`
+  width: 50%;
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ButtonWrapper = styled.div`
+  width: 400px;
   padding: 10px;
+  display: flex;
   justify-content: space-between;
   align-content: space-between;
   align-items: space-between;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    padding: 5px;
+  }
 `;
 
-const FooterText1 = styled.div`
-padding:10px;
-font-size: 18px;
-font-family: futura;
-color: #BEC8E2;
-@media (max-width: 1000px) {
-  font-size: 12px;
-}
-@media (max-width: 800px) {
-  font-size: 10px;
-}
+const FooterTitleText = styled.div`
+  padding:10px;
+  font-size: 20px;
+  font-family: futura;
+  color: ${lightColor.ON_FOOTER_TEXT};
+
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
+  
+  @media (max-width: 800px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 10px;
+  }
+  
+  @media (prefers-color-scheme: light) {
+    color: ${lightColor.ON_FOOTER_TEXT};
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: ${darkColor.ON_FOOTER_TEXT};
+  }
 `;
 
-const FooterText2 = styled.div`
-padding: 10px;
-font-size: 20px;
-font-family: avenir;
-color: #ffffff;
-@media (max-width: 1000px) {
+const FooterDescriptionText = styled.div`
+  padding: 10px;
   font-size: 15px;
-}
-@media (max-width: 800px) {
-  font-size: 12px;
-}
-@media (max-width: 600px) {
-  font-size: 10px;
-}
+  font-family: avenir;
+  color: ${lightColor.ON_FOOTER_SUB_TEXT};
+
+  @media (max-width: 1000px) {
+    font-size: 10px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 5px;
+  }
 `;
 
 function Footer(): ReactElement {
-  // 페이지 변경 메소드
   const history = useHistory();
   const tabChange = (inputPath): void => {
     const location: Record<string, any> = {
@@ -84,22 +103,23 @@ function Footer(): ReactElement {
   return (
     <FooterWrapper>
       <FooterTextWrapper>
-        <FooterText1>Address</FooterText1>
-        <FooterText2>서울시 강남구 선릉로 94번길 40 203호</FooterText2>
+        <FooterTitleText>{ getString('ADDRESS_TITLE') }</FooterTitleText>
+        <FooterDescriptionText>
+          { getString('ADDRESS') }
+        </FooterDescriptionText>
       </FooterTextWrapper>
-
       <FooterTextWrapper>
         <ButtonWrapper>
-          <TextButton2
-            text="Our vision & mission"
-            onClick={(): void => tabChange('/vision')}
-          />
-          <TextButton2
-            text="Code of conduct"
-            onClick={(): void => tabChange('/codeofconduct')}
-          />
+          <FooterButton
+            text={ getString('OUR_VISSION_MISSION') }
+            onClick={(): void => tabChange('/vision')}/>
+          <FooterButton
+            text={ getString('CODE_OF_CONDUCT') }
+            onClick={(): void => tabChange('/codeofconduct')}/>
         </ButtonWrapper>
-        <FooterText2>© 2017-2020 dooboolab, All Rights Reserved</FooterText2>
+        <FooterDescriptionText>
+          © 2017-2020 dooboolab, All Rights Reserved
+        </FooterDescriptionText>
       </FooterTextWrapper>
     </FooterWrapper>
   );

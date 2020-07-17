@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactElement } from 'react';
 
-import { TextButton1 } from '../ui/Buttons';
+import { FooterButton } from '../ui/Buttons';
 import styled from 'styled-components';
 
 interface Props {
@@ -19,19 +19,16 @@ const ButtonWrapper = styled.div`
   justify-content: space-evenly;
   align-content: center;
   align-items: center;
-  @media (max-width: 1000px) {
-    width: 80%;
-  }
 `;
 
 function Button(props: Props): ReactElement {
   const { onClick, text, style } = props;
   return (
-    <TextButton1 style={style} onClick={onClick} >
+    <FooterButton style={ style } onClick={ onClick } >
       <ButtonWrapper>
-        {text}
+        { text }
       </ButtonWrapper>
-    </TextButton1>
+    </FooterButton>
   );
 }
 

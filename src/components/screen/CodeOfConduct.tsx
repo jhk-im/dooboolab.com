@@ -1,11 +1,10 @@
 import React, { ReactElement } from 'react';
 
-import CodeOfConductPage from './CodeOfConductPage';
+import CodeOfConductPage from '../shared/CodeOfConductPage';
 import Footer from '../shared/Footer';
 import MenuBar from '../shared/MenuBar';
 import styled from 'styled-components';
 
-// 최상위 컨테이너
 const Container = styled.div`
   display: flex;
   width: 100vw;
@@ -23,15 +22,10 @@ const MenubarTemp = styled.div`
 function People(): ReactElement {
   return (
     <Container>
-
       <MenuBar/>
-
       <MenubarTemp/>
-
       <CodeOfConductPage/>
-
       <Footer/>
-
     </Container>
   );
 }

@@ -1,60 +1,86 @@
-import { IC_DOOBOO_UI, IC_HACKATALK, IC_PRIME } from '../../utils/Icons';
+import { BODY2, H2 } from '../../utils/texts';
+import { IC_DOOBOO_UI, IC_HACKATALK, IC_PRIME } from '../../utils/icons';
 import React, { ReactElement } from 'react';
+import { darkColor, lightColor } from '../../utils/colorlist';
 
-import RoundButton2 from '../shared/RoundButton2';
+import ViewMoreRoundButton from './ViewMoreRoundButton';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
-// Work 컨테이너
 const WorkContainer = styled.div`
-  padding: 100px;
-  width: 100%;
+  padding: 30px;
+  width: 100vw;
+  height: 1000px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 
   @media (prefers-color-scheme: dark) {
-    background: #232323;
+      background: ${darkColor.BACKGROUND};
+  }
+
+  @media (prefers-color-scheme: light){
+      background: ${lightColor.BACKGROUND};
   }
 `;
 
 const TitleWrapper = styled.div`
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  margin-bottom: 20px;
   flex-direction: column;
   justify-content: center;
   align-content: center;
 
-  @media (prefers-color-scheme: dark) {
-    color: #D3D8E8;
+  @media (max-width: 1000px) {
+    padding: 20px;
+  }
+
+  @media (max-width: 800px) {
+    padding: 10px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 5px;
   }
 `;
 
-const WorkDescriptionWrapper = styled.div`
-  display: flex;
+const DescriptionWrapper = styled.div`
   padding: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
+  @media (max-width: 1000px) {
+    margin-bottom: 15px;
+  }
 
+  @media (max-width: 800px) {
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 5px;
+  }
 `;
 
 const WorkItemListWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
   width: 1000px;
+  padding: 30px;
+  display: flex;
   justify-content: space-around;
   align-content: space-around;
   align-items: center;
-  padding: 20px;
 
   @media (max-width: 1000px) {
-    width: 80%
+    width: 90%
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
   }
 `;
 
@@ -67,7 +93,6 @@ const WorkItemWrapper = styled.div`
   border-color: #EDEDED;
   border-radius: 10px;
   border-style: solid;;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,143 +100,159 @@ const WorkItemWrapper = styled.div`
 
   @media (max-width: 1000px) {
     width: 220px;
-    height: 320px;
-  }
-  @media (max-width: 800px) {
-    width: 220px;
-  height: 320px;
-  }
-  @media (max-width: 600px) {
+    height: 300px;
   }
 
+  @media (max-width: 900px) {
+    width: 70vw;
+    height: 180px;
+  }
+  
   @media (prefers-color-scheme: dark) {
-    background: #2C2C2C;
+    color: ${darkColor.SUB_BACKGROUND};
     border-color: #ffffff;
     border-color: rgba(255, 255, 255, 0);
   }
 
+  @media (prefers-color-scheme: light){
+    color: ${lightColor.SUB_BACKGROUND};
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background: #2C2C2C;
+
+  }
 `;
 
 const WorkImageWrapper = styled.div`
-  display: flex;
   flex: 1;
+  display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
 `;
 
 const WorkImage = styled.img`
-  padding: 10px;
-  width: auto;
-  height: auto;
   max-width: 130px;
   max-height: 40px;
+  width: auto;
+  height: auto;
 `;
 
 const WorkTextWrapper = styled.div`
-  display: flex;
   flex: 3;
   width: 200px;
-  justify-content: top;
-  align-items: center;
   padding: 10px;
-`;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-export const TitleText1 = styled('text')`
-  font-size: 40px;
-  font-weight: bold;
-  font-family: futura;
   @media (max-width: 1000px) {
-    font-size: 30px;
+    flex: 2;
   }
+  
+  @media (max-width: 900px) {
+    flex: 1.5;
+    width: 60vw;
+  }
+
   @media (max-width: 800px) {
-    font-size: 25px;
+    flex: 1;
+  }
+
+  @media (max-width: 600px) {
+    flex: 0.5;
   }
 `;
 
 const DescriptionText = styled.text`
-  font-size: 18px;
+  font-size: 20px;
   line-height: 25px;
   font-family: avenir;
-  color: #545966;
+
+  @media (max-width: 1000px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+    line-height: 10px;
+  }
+
   @media (prefers-color-scheme: dark) {
-    color: #D3D8E8;
+      color: ${darkColor.ON_BACKGROUND_TEXT};
+  }
+
+  @media (prefers-color-scheme: light){
+      color: ${lightColor.ON_BACKGROUND_TEXT};
   }
 `;
 
 const ItemButtonWrapper = styled.div`
-  display: flex;
   flex: 1;
+  display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
 `;
 
 function Work(): ReactElement {
-  // 외부링크 변경 메소드
   const moveUrl = (inputPath): void => {
     window.open(inputPath);
   };
   return (
     <WorkContainer>
       <TitleWrapper>
-        <TitleText1>Work</TitleText1>
+        <H2>{ getString('WORK') }</H2>
       </TitleWrapper>
-      <WorkDescriptionWrapper>
-        <DescriptionText>
-            We are a group of experts in IT technology development.
-        </DescriptionText>
-      </WorkDescriptionWrapper>
-
+      <DescriptionWrapper>
+        <BODY2>{ getString('WORK_DESCRIPTION') }</BODY2>
+      </DescriptionWrapper>
       <WorkItemListWrapper>
         <WorkItemWrapper>
           <WorkImageWrapper>
-            <WorkImage src={IC_PRIME}/>
+            <WorkImage src={ IC_PRIME }/>
           </WorkImageWrapper>
           <WorkTextWrapper>
             <DescriptionText>
               Comming Soon! :)
             </DescriptionText>
           </WorkTextWrapper>
+          <ItemButtonWrapper/>
         </WorkItemWrapper>
-
         <WorkItemWrapper>
           <WorkImageWrapper>
-            <WorkImage src={IC_DOOBOO_UI}/>
+            <WorkImage src={ IC_DOOBOO_UI }/>
           </WorkImageWrapper>
           <WorkTextWrapper>
-            <DescriptionText>
-            We love react-hooks and willing to share our react-native ui components
-            built in functional components using hooks.
-            </DescriptionText>
+            <DescriptionText>{ getString('DOOBOOUI_DESCRIPTION') }</DescriptionText>
           </WorkTextWrapper>
           <ItemButtonWrapper>
-            <RoundButton2
-              text={getString('VIEW_MORE')}
-              onClick={(): void => moveUrl('https://github.com/dooboolab/dooboo-ui')}
-            />
+            <ViewMoreRoundButton
+              text={ getString('VIEW_MORE') }
+              onClick={ (): void => moveUrl('https://github.com/dooboolab/dooboo-ui') }/>
           </ItemButtonWrapper>
         </WorkItemWrapper>
-
         <WorkItemWrapper>
           <WorkImageWrapper>
-            <WorkImage src={IC_HACKATALK}/>
+            <WorkImage src={ IC_HACKATALK }/>
           </WorkImageWrapper>
           <WorkTextWrapper>
-            <DescriptionText>
-            Open source chat app built in expo bare work flow.
-            </DescriptionText>
+            <DescriptionText>{ getString('HACKATALK_DESCRIPTION') }</DescriptionText>
           </WorkTextWrapper>
           <ItemButtonWrapper>
-            <RoundButton2
-              text={getString('VIEW_MORE')}
-              onClick={(): void => moveUrl('https://github.com/dooboolab/hackatalk')}
-            />
+            <ViewMoreRoundButton
+              text={ getString('VIEW_MORE') }
+              onClick={ (): void => moveUrl('https://github.com/dooboolab/hackatalk') }/>
           </ItemButtonWrapper>
         </WorkItemWrapper>
-
       </WorkItemListWrapper>
-
     </WorkContainer>
   );
 }

@@ -1,13 +1,14 @@
 import React, { ReactElement } from 'react';
 
 import Footer from '../shared/Footer';
-import IntroPage from '../shared/IntroPage';
 import MenuBar from '../shared/MenuBar';
+import StoryPage from '../shared/StoryPage';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 100vw;
   display: flex;
+  width: 100vw;
+  align-self: stretch;
   flex-direction: column;
   justify-content: bottom;
   align-items: center;
@@ -21,9 +22,9 @@ const MenubarTemp = styled.div`
 function Intro(): ReactElement {
   return (
     <Container>
-      <MenuBar/>
+      <MenuBar currentPage={1}/>
       <MenubarTemp/>
-      <IntroPage/>
+      <StoryPage/>
       <Footer/>
     </Container>
   );

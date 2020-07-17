@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactElement } from 'react';
 
-import { TextButton2 } from '../ui/Buttons';
+import { IntroRoundButton } from '../ui/Buttons';
 import styled from 'styled-components';
 
 interface Props {
@@ -8,7 +8,6 @@ interface Props {
   style?: CSSProperties;
   text?: string;
   onClick?: () => void;
-  isSelected?: boolean;
 }
 
 const ButtonWrapper = styled.div`
@@ -19,19 +18,17 @@ const ButtonWrapper = styled.div`
   justify-content: space-evenly;
   align-content: center;
   align-items: center;
-  @media (max-width: 1000px) {
-    width: 80%;
-  }
+  
 `;
 
 function Button(props: Props): ReactElement {
   const { onClick, text, style } = props;
   return (
-    <TextButton2 style={style} onClick={onClick} >
+    <IntroRoundButton style={ style } onClick={ onClick } >
       <ButtonWrapper>
-        {text}
+        { text }
       </ButtonWrapper>
-    </TextButton2>
+    </IntroRoundButton>
   );
 }
 

@@ -1,11 +1,10 @@
 import React, { ReactElement } from 'react';
 
-import ContactPage from './ContactPage';
 import Footer from '../shared/Footer';
 import MenuBar from '../shared/MenuBar';
+import WorkPage from '../shared/WorkPage';
 import styled from 'styled-components';
 
-// 최상위 컨테이너
 const Container = styled.div`
   display: flex;
   width: 100vw;
@@ -20,20 +19,15 @@ const MenubarTemp = styled.div`
   width:100%;
 `;
 
-function Intro(): ReactElement {
+function Work(): ReactElement {
   return (
     <Container>
-
-      <MenuBar currentPage={4}/>
-
+      <MenuBar currentPage={2}/>
       <MenubarTemp/>
-
-      <ContactPage/>
-
+      <WorkPage/>
       <Footer/>
-
     </Container>
   );
 }
 
-export default Intro;
+export default Work;

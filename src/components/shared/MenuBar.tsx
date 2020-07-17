@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
-import { darkColor, lightColor } from '../../utils/Colors';
+import { darkColor, lightColor } from '../../utils/colorlist';
 
-import { IC_DOOBOOLAB_LOGO } from '../../utils/Icons';
+import { IC_DOOBOOLAB_LOGO } from '../../utils/icons';
 import LogoButton from '../shared/LogoButton';
 import MenuButton from '../shared/MenuButton';
 import { getString } from '../../../STRINGS';
@@ -12,43 +12,42 @@ interface Props {
   currentPage?: number;
 }
 
-// MenuBar 전체 div
-const MenuBarWrapper = styled.div`
-  display: flex;
+const Container = styled.div`
   height: 120px;
   width: 100vw;
+  display: flex;
   position: absolute;
   align-items: center;
   justify-content: space-between;
-  @media (max-width: 880px) {
+   
+  @media (max-width:1000px) {
     flex-direction: column;
+    justify-content: center;
   }
+
   @media (prefers-color-scheme: dark) {
     background: ${darkColor.BACKGROUND};
   }
-  // light mode
+
   @media (prefers-color-scheme: light){
     background: ${lightColor.BACKGROUND};
   }
 `;
 
-// Menu Button 담고있는 div
 const MenuButtonWrapper = styled.div`
-  display: flex;
-  width: 700px;
+  width: 800px;
   height: 60px;
-  margin-top: 15px;
-  @media (max-width: 880px) {
-    width: 100vw;
-    margin-top: 0;
-  }
-  @media (max-width: 700px) {
+  display: flex;
+
+  @media (max-width: 1000px) {
+    width: 90%;
     justify-content: center;
+    align-items: center;
+    align-content: center;
   }
 `;
 
 function MenuBar(props: Props): ReactElement {
-  // 페이지 변경 메소드
   const history = useHistory();
   const tabChange = (inputPath): void => {
     const location: Record<string, any> = {
@@ -59,34 +58,29 @@ function MenuBar(props: Props): ReactElement {
   };
   const { currentPage } = props;
   return (
-    <MenuBarWrapper>
+    <Container>
       <LogoButton
-        onClick={(): void => tabChange('/intro')}
-        imgSrc={IC_DOOBOOLAB_LOGO}
-      />
+        onClick={ (): void => tabChange('/intro') }
+        imgSrc={ IC_DOOBOOLAB_LOGO }/>
       <MenuButtonWrapper>
         <MenuButton
-          onClick={(): void => tabChange('/story')}
-          text={getString('STORY')}
-          isSelected={ currentPage === 1 && true }
-        />
+          onClick={ (): void => tabChange('/story') }
+          text={ getString('STORY') }
+          isSelected={ currentPage === 1 && true }/>
         <MenuButton
-          onClick={(): void => tabChange('/work')}
-          text={getString('WORK')}
-          isSelected={ currentPage === 2 && true }
-        />
+          onClick={ (): void => tabChange('/work') }
+          text={ getString('WORK') }
+          isSelected={ currentPage === 2 && true }/>
         <MenuButton
-          onClick={(): void => tabChange('/people')}
-          text={getString('PEOPLE')}
-          isSelected={ currentPage === 3 && true }
-        />
+          onClick={ (): void => tabChange('/people') }
+          text={ getString('PEOPLE') }
+          isSelected={ currentPage === 3 && true }/>
         <MenuButton
-          onClick={(): void => tabChange('/contact')}
-          text={getString('CONTACT')}
-          isSelected={ currentPage === 4 && true }
-        />
+          onClick={ (): void => tabChange('/contact') }
+          text={ getString('CONTACT') }
+          isSelected={ currentPage === 4 && true }/>
       </MenuButtonWrapper>
-    </MenuBarWrapper>
+    </Container>
   );
 }
 

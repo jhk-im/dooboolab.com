@@ -2,14 +2,12 @@ import React, { ReactElement } from 'react';
 
 import Footer from '../shared/Footer';
 import MenuBar from '../shared/MenuBar';
-import PeoplePage from './PeoplePage';
+import PeoplePage from '../shared/PeoplePage';
 import styled from 'styled-components';
 
-// 최상위 컨테이너
 const Container = styled.div`
-  display: flex;
   width: 100vw;
-  align-self: stretch;
+  display: flex;
   flex-direction: column;
   justify-content: bottom;
   align-items: center;
@@ -23,15 +21,10 @@ const MenubarTemp = styled.div`
 function People(): ReactElement {
   return (
     <Container>
-
       <MenuBar currentPage={3}/>
-
       <MenubarTemp/>
-
       <PeoplePage/>
-
       <Footer/>
-
     </Container>
   );
 }

@@ -7,7 +7,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const rootElement = document.getElementById('app') as HTMLElement;
 
-const GlobalStyles = createGlobalStyle`
+createGlobalStyle`
   @font-face {
     font-family: 'avenir';
     src: url('../fonts/avenir-book.otf');

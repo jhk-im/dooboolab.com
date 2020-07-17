@@ -1,4 +1,5 @@
 import React, { CSSProperties, ReactElement } from 'react';
+import { darkColor, lightColor } from '../../utils/colorlist';
 
 import { MenuButton } from '../ui/Buttons';
 import styled from 'styled-components';
@@ -13,49 +14,67 @@ interface Props {
 
 const ButtonWrapper = styled.div`
   height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-content: center;
   align-items: center;
-  @media (max-width: 1000px) {
-    width: 80%;
-  }
 `;
 
 const BottomLine = styled.div`
   height: 3px;
-  width: 80px;
+  width: 100px;
+
+  @media (max-width: 1000px) {
+    width: 80px;
+  }
+
+  @media (max-width: 800px) {
+    width: 60px;
+  }
+  
+  @media (max-width: 500px) {
+    width: 50px;
+  }
+
 `;
 
 const SelectedButtonWrapper = styled.div`
   height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-content: center;
   align-items: center;
-  @media (max-width: 1000px) {
-    width: 80%;
-  }
-  // dark mode
+  
   @media (prefers-color-scheme: dark) {
-    color: #B290B7;
+    color: ${darkColor.TAB_BUTTON};
   }
-  // light mode
+
   @media (prefers-color-scheme: light){
-    color: #B446BF;
+    color: ${lightColor.TAB_BUTTON};
   }
 `;
 
 const SelectedBottomLine = styled.div`
   height: 3px;
-  width: 80px;
+  width: 100px;
+
+  @media (max-width: 1000px) {
+    width: 80px;
+  }
+  
+  @media (max-width: 600px) {
+    width: 60px;
+  }
+
+  @media (max-width: 500px) {
+    width: 50px;
+  }
+
+  
   @media (prefers-color-scheme: dark) {
     background: linear-gradient(to right,#9497C2,#B290B7);
   }
+  
   @media (prefers-color-scheme: light){
     background: linear-gradient(to right,#393D7A,#B446BF);
   }
@@ -65,17 +84,17 @@ function Button(props: Props): ReactElement {
   const { onClick, text, style, isSelected } = props;
   return (
     <MenuButton style={style} onClick={onClick} >
-      {isSelected ? (
-        <SelectedButtonWrapper>
-          {text}
-          <SelectedBottomLine></SelectedBottomLine>
-        </SelectedButtonWrapper>
-      ) : (
-        <ButtonWrapper>
-          {text}
-          <BottomLine id="bottom_line"></BottomLine>
-        </ButtonWrapper>
-      )}
+      {
+        isSelected
+          ? <SelectedButtonWrapper>
+            { text }
+            <SelectedBottomLine/>
+          </SelectedButtonWrapper>
+          : <ButtonWrapper>
+            { text }
+            <BottomLine id="bottom_line"/>
+          </ButtonWrapper>
+      }
     </MenuButton>
   );
 }

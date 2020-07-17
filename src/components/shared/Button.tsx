@@ -15,7 +15,6 @@ interface Props {
 const ButtonWrapper = styled.div`
   flex: 1;
   height: 100%;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -43,6 +42,7 @@ const Spinner = styled.div`
   width: 24px;
   height: 24px;
   animation: spin 1s linear infinite;
+
   @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -51,20 +51,21 @@ const Spinner = styled.div`
       transform: rotate(360deg);
     }
   }
+  
 `;
 
 function Button(props: Props): ReactElement {
   const { onClick, imgSrc, text, style, isLoading } = props;
   return (
-    <ButtonPrimary style={style} onClick={onClick}>
-      {isLoading ? (
-        <Spinner id="spinner" />
-      ) : (
-        <ButtonWrapper>
-          {imgSrc ? <LogoImg src={imgSrc} /> : null}
-          <PrimaryText>{text}</PrimaryText>
-        </ButtonWrapper>
-      )}
+    <ButtonPrimary style={ style } onClick={ onClick }>
+      {
+        isLoading
+          ? <Spinner id="spinner" />
+          : <ButtonWrapper>
+            { imgSrc ? <LogoImg src={ imgSrc } /> : null}
+            <PrimaryText>{ text }</PrimaryText>
+          </ButtonWrapper>
+      }
     </ButtonPrimary>
   );
 }

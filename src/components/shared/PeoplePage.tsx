@@ -1,3 +1,4 @@
+import { BODY2, H2, H4 } from '../../utils/texts';
 import {
   CLARK_PROFILE,
   DANIEL_PROFILE,
@@ -14,60 +15,86 @@ import {
   SONG_PROFILE,
   TERRY_PROFILE,
   YOON_PROFILE,
-} from '../../utils/Profiles';
-import { DescriptionText, Heading1, SubTitleText } from '../../utils/Texts';
+} from '../../utils/profiles';
 import React, { ReactElement } from 'react';
+import { darkColor, lightColor } from '../../utils/colorlist';
 
+import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
-// People
 const PeopleContainer = styled.div`
-  padding: 100px;
+  padding: 30px;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  background: #D2E2DF;
+
   @media (prefers-color-scheme: dark) {
-    background: #2C2C2C;
+      background: ${darkColor.SUB_BACKGROUND};
+  }
+
+  @media (prefers-color-scheme: light){
+      background: ${lightColor.SUB_BACKGROUND};
   }
 `;
 
 const TitleWrapper = styled.div`
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  margin-bottom: 20px;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  @media (prefers-color-scheme: dark) {
-    color: #D3D8E8;
+
+  @media (max-width: 1000px) {
+    padding: 20px;
   }
-`;
 
-const PeopleTitleWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-`;
-
-const PeopleDescriptionWrapper = styled.div`
-  padding: 20px;
-  width: 550px;
+  @media (max-width: 800px) {
+    padding: 10px;
+  }
 
   @media (max-width: 600px) {
-    width: 300px;
+    padding: 5px;
   }
+`;
+
+const SubTitleWrapper = styled.div`
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const DescriptionWrapper = styled.div`
+  padding: 20px;
+  width: 800px;
+  line-height: 30px;
+
+  @media (max-width: 1000px) {
+    width: 700px;
+    line-height: 25px;
+  }
+
+  @media (max-width: 800px) {
+    width: 600px;
+    margin-bottom: 10px;
+    line-height: 20px;
+  }
+
+  @media (max-width: 600px) {
+    width: 400px;
+    line-height: 15px;
+  }
+
 `;
 
 const ProfilesWrapper = styled.div`
+  width: 1000px;
+  padding: 5;
+  margin-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
-  padding: 5;
-  width: 1000px;
-  margin-bottom: 50px;
   align-content: space-evenly;
   justify-content: space-evenly;
   align-items: center;
@@ -77,18 +104,17 @@ const ProfilesWrapper = styled.div`
   }
 
   @media (max-width: 800px) {
-    width: 460px;
+    width: 100vw;
   }
-
 `;
 
 const ProfileItemWrapper = styled.div`
+  padding: 10;
+  margin:10;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  padding: 10;
-  margin:10;
 `;
 
 const TempBox = styled.div`
@@ -106,29 +132,30 @@ const ProfileInfo = styled.text`
   font-size: 15;
   text-align: left;
   font-family: avenir;
+  
   @media (prefers-color-scheme: dark) {
-    color: #D3D8E8;
+      color: ${darkColor.ON_BACKGROUND_TEXT};
+  }
+
+  @media (prefers-color-scheme: light){
+      color: ${lightColor.ON_BACKGROUND_TEXT};
   }
 `;
 
 function People(): ReactElement {
   return (
-
     <PeopleContainer>
       <TitleWrapper>
-        <Heading1>People</Heading1>
+        <H2>{ getString('PEOPLE')}</H2>
       </TitleWrapper>
-      <PeopleTitleWrapper>
-        <SubTitleText>Work together</SubTitleText><br></br>
-        <SubTitleText>Grow together</SubTitleText>
-      </PeopleTitleWrapper>
-      <PeopleDescriptionWrapper>
-        <DescriptionText>
-          We are a group of experts in IT technology development.<br></br>
-          We are constantly developing services based on philosophy
-          and ideas by finding the inconveniences facing people in daily life.
-        </DescriptionText>
-      </PeopleDescriptionWrapper>
+      <SubTitleWrapper>
+        <H4>{ getString('PEOPLE_SUBTITLE') }</H4>
+      </SubTitleWrapper>
+      <DescriptionWrapper>
+        <BODY2>
+          { getString('PEOPLE_DESCRIPTION') }
+        </BODY2>
+      </DescriptionWrapper>
       <ProfilesWrapper>
         <ProfileItemWrapper>
           <ProfileImage src={HYO_PROFILE}></ProfileImage>
@@ -195,7 +222,6 @@ function People(): ReactElement {
         </ProfileItemWrapper>
       </ProfilesWrapper>
     </PeopleContainer>
-
   );
 }
 

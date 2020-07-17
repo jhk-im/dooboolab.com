@@ -9,13 +9,15 @@ interface Props {
   imgSrc?: string;
   onClick?: () => void;
 }
+
 const ButtonWrapper = styled.div`
+  margin-left: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-left: 30px;
-  @media (max-width: 880px) {
+
+  @media (max-width: 1000px) {
     margin-left: 0;
   }
 `;
@@ -24,8 +26,8 @@ const LogoImg = styled.img`
   width: 150px;
   object-fit: cover;
     
-  @media (max-width: 880px) {
-    width: 100px;
+  @media (max-width: 1000px) {
+    width: 120px;
     margin-top: 20px;
   }
 `;
