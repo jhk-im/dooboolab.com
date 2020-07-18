@@ -164,6 +164,14 @@ const SponsorWrapper = styled.div`
   justify-content: space-evenly;
   justify-items: center;
   align-items: center;
+
+  @media (prefers-color-scheme: dark) {
+      background: ${darkColor.SUB_BACKGROUND};
+  }
+
+  @media (prefers-color-scheme: light){
+      background: ${lightColor.SUB_BACKGROUND};
+  }
 `;
 
 const SponsorImage = styled.img`

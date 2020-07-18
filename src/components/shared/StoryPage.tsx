@@ -105,7 +105,7 @@ const ViewMoreButtonWrapper = styled.div`
 
 const CommunityContainer = styled.div`
   width: 100vw;
-  padding: 30px;
+  padding: 50px;
   min-height: 400px;
   background: ${({ theme }): string => theme.subBackground};
 
