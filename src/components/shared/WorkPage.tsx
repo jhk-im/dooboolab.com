@@ -68,7 +68,7 @@ const DescriptionWrapper = styled.div`
 `;
 
 const WorkItemListWrapper = styled.div`
-  width: 1000px;
+  width: 90%;
   padding: 30px;
   display: flex;
   justify-content: space-around;
@@ -76,18 +76,14 @@ const WorkItemListWrapper = styled.div`
   align-items: center;
 
   @media (max-width: 1000px) {
-    width: 90%
-  }
-
-  @media (max-width: 900px) {
     flex-direction: column;
   }
 `;
 
 const WorkItemWrapper = styled.div`
   padding: 10px;
-  width: 250px;
-  height: 320px;
+  width: 350px;
+  height: 500px;
   margin-bottom: 20px;
   border-width: 2px;
   border-color: #EDEDED;
@@ -98,12 +94,18 @@ const WorkItemWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 1000px) {
-    width: 220px;
-    height: 300px;
+  @media (max-width: 1300px) {
+    width: 300px;
+    height: 450px;
   }
 
-  @media (max-width: 900px) {
+
+  @media (max-width: 1200px) {
+    width: 250px;
+    height: 400px;
+  }
+
+  @media (max-width: 1000px) {
     width: 70vw;
     height: 180px;
   }
@@ -148,10 +150,6 @@ const WorkTextWrapper = styled.div`
   align-items: center;
 
   @media (max-width: 1000px) {
-    flex: 2;
-  }
-  
-  @media (max-width: 900px) {
     flex: 1.5;
     width: 60vw;
   }
@@ -221,7 +219,7 @@ function Work(): ReactElement {
           </WorkImageWrapper>
           <WorkTextWrapper>
             <DescriptionText>
-              Comming Soon! :)
+              Comming Soon!
             </DescriptionText>
           </WorkTextWrapper>
           <ItemButtonWrapper/>

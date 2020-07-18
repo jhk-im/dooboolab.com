@@ -154,6 +154,14 @@ const SupportedWrapper = styled.div`
   justify-content: space-evenly;
   justify-items: center;
   align-items: center;
+
+  @media (prefers-color-scheme: dark) {
+      background: ${darkColor.SUB_BACKGROUND};
+  }
+
+  @media (prefers-color-scheme: light){
+      background: ${lightColor.SUB_BACKGROUND};
+  }
 `;
 
 const SupportImage = styled.img`
@@ -189,7 +197,7 @@ function Intro(): ReactElement {
           <SendEmailInputText placeholder="Email"/>
           <SendEmailTextArea placeholder="Message"/>
           <SendButtonWrapper>
-            <SendEmailRoundButton text="Send"/>
+            <SendEmailRoundButton text={ getString('SEND') }/>
           </SendButtonWrapper>
         </SendEmailInputWrapper>
       </TopBackgroundWrapper>

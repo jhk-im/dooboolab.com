@@ -21,7 +21,7 @@ const Container = styled.div`
 
 const StoryContainer = styled.div`
   width: 100vw;
-  padding: 30px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -90,7 +90,7 @@ const ViewMoreButtonWrapper = styled.div`
 
 const CommunityContainer = styled.div`
   width: 100vw;
-  padding: 30px;
+  padding: 50px;
   min-height: 400px;
   display: flex;
   flex-direction: column;

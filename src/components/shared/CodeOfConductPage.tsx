@@ -277,7 +277,7 @@ function Vision(): ReactElement {
         </VisionItemLinearWrapper>
         <ItemTitleTextWrapper>
           <H5>
-            { getString('MISSION_SUBTITLE_02') }.
+            { getString('MISSION_SUBTITLE_02') }
           </H5>
         </ItemTitleTextWrapper>
         <VisionItemLinearWrapper>

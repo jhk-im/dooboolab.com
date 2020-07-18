@@ -60,7 +60,7 @@ function MenuBar(props: Props): ReactElement {
   return (
     <Container>
       <LogoButton
-        onClick={ (): void => tabChange('/intro') }
+        onClick={ (): void => tabChange('/') }
         imgSrc={ IC_DOOBOOLAB_LOGO }/>
       <MenuButtonWrapper>
         <MenuButton

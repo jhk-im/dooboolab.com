@@ -23,7 +23,7 @@ import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const PeopleContainer = styled.div`
-  padding: 30px;
+  padding: 50px;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@ const PeopleContainer = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  padding: 30px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   flex-direction: column;
@@ -48,20 +48,20 @@ const TitleWrapper = styled.div`
   align-content: center;
 
   @media (max-width: 1000px) {
-    padding: 20px;
+    padding: 30px;
   }
 
   @media (max-width: 800px) {
-    padding: 10px;
+    padding: 15px;
   }
 
   @media (max-width: 600px) {
-    padding: 5px;
+    padding: 10px;
   }
 `;
 
 const SubTitleWrapper = styled.div`
-  padding: 15px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
 `;
@@ -149,7 +149,8 @@ function People(): ReactElement {
         <H2>{ getString('PEOPLE')}</H2>
       </TitleWrapper>
       <SubTitleWrapper>
-        <H4>{ getString('PEOPLE_SUBTITLE') }</H4>
+        <H4>{ getString('PEOPLE_SUBTITLE_01') }</H4>
+        <H4>{ getString('PEOPLE_SUBTITLE_02') }</H4>
       </SubTitleWrapper>
       <DescriptionWrapper>
         <BODY2>

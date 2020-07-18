@@ -14,7 +14,7 @@ function SwitchNavigator(): ReactElement {
     <BrowserRouter>
       <div style={{ textAlign: 'center' }}>
         <Switch>
-          <Route exact={true} path="/intro" render={(): ReactElement => <Intro />} />
+          <Route exact={true} path="/" render={(): ReactElement => <Intro />} />
           <Route exact={true} path="/story"render={(): ReactElement => <Story />} />
           <Route exact={true} path="/people"render={(): ReactElement => <People />} />
           <Route exact={true} path="/work"render={(): ReactElement => <Work />} />
