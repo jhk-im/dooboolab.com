@@ -6,11 +6,11 @@ import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 100vw;
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: 100vw;
 `;
 
 const HeaderBackgroundWrapper = styled.div`
@@ -59,6 +59,8 @@ const SubTitleWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  padding: 30px;
 
   @media ${device.tablet} {
     padding: 20px;
@@ -70,12 +72,12 @@ const SubTitleWrapper = styled.div`
 `;
 
 const TitleTextWrapper = styled.div`
-  padding: 30px;
   display: flex;
   flex-direction: column;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  padding: 30px;
   
   @media (max-width: 1000px) {
     padding: 20px;
@@ -101,6 +103,10 @@ const DescriptionWrapper = styled.div`
   justify-content: center;
   justify-items: center;
   align-items: center;
+  width: 70%;
+  padding: 20px;
+  margin-bottom: 20px;
+  line-height: 30px;
 
   @media ${device.tablet} {
     margin-bottom: 10px;
@@ -133,13 +139,15 @@ const VisionItemLinearWrapper = styled.div`
   align-content: space-around;
   justify-content: space-around;
   align-items: center; 
+  width: 80vw;
+  padding: 30px;
 `;
 
 const VisionItem = styled.div`
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
 `;
 
 const VisionNumberWrapper = styled.div`
@@ -149,9 +157,14 @@ const VisionNumberWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center; 
+  width: 100px;
+  padding: 20px;
 `;
 
 const VisionItemBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center; 
   width: 80vw;
   margin-bottom: 30px;
   border: 3px solid; 
@@ -184,6 +197,10 @@ const ItemDescriptionWrapper = styled.div`
   justify-content: center;
   justify-items: center;
   align-items: center;
+  width: 80%;
+  padding: 30px;
+  margin-bottom: 20px;
+  line-height: 30px;
 
   @media ${device.tablet} {
     margin-bottom: 10px;

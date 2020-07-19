@@ -32,6 +32,14 @@ const isDarkMode = (darkPath: string, lightPath: string): string => {
   }
 };
 
+const isDarkModePaths = (darkPaths: string[], lightPaths: string[]): string[] => {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    return darkPaths;
+  } else {
+    return lightPaths;
+  }
+};
+
 export const IC_FACEBOOK_W = isRetina(
   icFacebookW,
   icFacebookW2x,
@@ -42,4 +50,9 @@ export const IC_GOOGLE_W = isRetina(icGoogleW, icGoogleW2x, icGoogleW3x);
 export const IC_GRAPHQLSEOUL = icGraphqlSeoul;
 
 export const IC_REACTNATIVESEOUL = icReactNativeSeoul;
+
 export const IC_SMILE = icSmalie;
+
+export const icSponsorDark = [icCoupangDark, icLunaSoftDark, icMegazoneDark, icTuringDark];
+export const icSponsor = [icCoupang, icLunaSoft, icMegazone, icTuring];
+export const IC_SPONSORS = isDarkModePaths(icSponsorDark, icSponsor);

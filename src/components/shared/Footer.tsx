@@ -18,6 +18,8 @@ const FooterWrapper = styled.div`
   justify-content: center;
   align-content: center;
   align-items: center;
+  width: 100vw;
+  height: 100px;
   
   @media ${device.tablet} {
     height: 120px;
@@ -25,11 +27,11 @@ const FooterWrapper = styled.div`
 `;
 
 const FooterTextWrapper = styled.div`
-  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 50%;
 `;
 
 const ButtonWrapper = styled.div`
@@ -40,6 +42,8 @@ const ButtonWrapper = styled.div`
   justify-content: space-between;
   align-content: space-between;
   align-items: space-between;
+  width: 400px;
+  padding: 10px;
 
   @media ${device.laptop} {
     flex-direction: row;
@@ -90,6 +94,7 @@ function Footer(): ReactElement {
     };
     history.push(location);
   };
+
   return (
     <FooterWrapper>
       <FooterTextWrapper>

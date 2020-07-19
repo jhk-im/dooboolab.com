@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react';
 import Footer from '../shared/Footer';
 import MenuBar from '../shared/MenuBar';
 import StoryPage from '../shared/StoryPage';
+import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -22,7 +23,7 @@ const MenubarTemp = styled.div`
 function Intro(): ReactElement {
   return (
     <Container>
-      <MenuBar currentPage={1}/>
+      <MenuBar currentPage={getString('STORY')} />
       <MenubarTemp/>
       <StoryPage/>
       <Footer/>

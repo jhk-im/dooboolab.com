@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react';
 import ProfileItemGrid from '../shared/ProfileItemGrid';
 import { device } from '../../theme';
 import { getString } from '../../../STRINGS';
+import { profiles } from '../../utils/profiles';
 import styled from 'styled-components';
 
 interface Props {
@@ -28,6 +29,7 @@ const TitleWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  padding: 50px;
 
   @media ${device.tablet} {
     padding: 20px;

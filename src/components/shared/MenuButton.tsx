@@ -19,6 +19,7 @@ const ButtonWrapper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  height: 100%;
 `;
 
 const BottomLine = styled.div`

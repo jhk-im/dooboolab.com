@@ -6,11 +6,11 @@ import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 100vw;
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: 100vw;
 `;
 
 const HeaderBackgroundWrapper = styled.div`
@@ -59,6 +59,8 @@ const SubTitleWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  padding: 30px;
 
   @media ${device.tablet} {
     padding: 15px;
@@ -76,6 +78,7 @@ const TitleTextWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  padding: 30px;
   
   @media ${device.tablet} {
     padding: 20px;
@@ -97,6 +100,10 @@ const DescriptionWrapper = styled.div`
   justify-content: center;
   justify-items: center;
   align-items: center;
+  width: 70%;
+  padding: 20px;
+  margin-bottom: 20px;
+  line-height: 30px;
 
   @media ${device.tablet} {
     margin-bottom: 10px;
@@ -129,6 +136,8 @@ const ConductItemLinearWrapper = styled.div`
   align-content: space-around;
   justify-content: space-around;
   align-items: center; 
+  width: 80vw;
+  padding: 30px;
 `;
 
 const ConductItem = styled.div`
@@ -137,6 +146,7 @@ const ConductItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
 `;
 
 const ConductItemBox = styled.div`

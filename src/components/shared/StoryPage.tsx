@@ -101,6 +101,8 @@ const ViewMoreButtonWrapper = styled.div`
   justify-content: center;
   justify-items: center;
   align-items: center;
+  width: 100vw;
+  margin-top: 10px;
 `;
 
 const CommunityContainer = styled.div`
@@ -125,6 +127,10 @@ const CommunityImageListWrapper = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   align-content: space-evenly;
+  padding: 10px;
+  margin-bottom: 50px;
+  width: 80vw;
+  height: 30vw;
 
   @media ${device.tablet} {
     margin-bottom: 30px;
@@ -173,6 +179,8 @@ const ItemButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   align-content: center;
+  width: 100vw;
+  padding: 30px;
 
   @media ${device.tablet} {
     padding: 20px;

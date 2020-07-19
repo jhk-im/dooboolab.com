@@ -49,6 +49,13 @@ const MenuButtonWrapper = styled.div`
 
 `;
 
+const menuButton = new Map<string, string>();
+
+menuButton.set(getString('STORY'), '/story');
+menuButton.set(getString('WORK'), '/work');
+menuButton.set(getString('PEOPLE'), '/people');
+menuButton.set(getString('CONTACT'), '/contact');
+
 function MenuBar(props: Props): ReactElement {
   const history = useHistory();
   const { currentPage } = props;

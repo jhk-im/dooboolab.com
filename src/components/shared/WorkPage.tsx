@@ -1,6 +1,7 @@
 import { Icon, device } from '../../theme';
 import React, { ReactElement } from 'react';
 
+import { IC_WORKS } from '../../utils/icons';
 import ViewMoreRoundButton from './ViewMoreRoundButton';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
@@ -18,6 +19,9 @@ const WorkContainer = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  padding: 30px;
+  width: 100vw;
+  height: 1000px;
 
   @media ${device.laptop} {
     height: 80vh;
@@ -37,6 +41,7 @@ const TitleWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  padding: 30px;
 
   @media ${device.laptop} {
     padding: 20px;
@@ -76,6 +81,8 @@ const WorkItemListWrapper = styled.div`
   justify-content: space-around;
   align-content: space-around;
   align-items: center;
+  width: 90%;
+  padding: 30px;
 
   @media ${device.laptop} {
     flex-direction: row;
@@ -83,6 +90,10 @@ const WorkItemListWrapper = styled.div`
 `;
 
 const WorkItemWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 10px;
   height: 200px;
   width: 65vw;
@@ -111,11 +122,11 @@ const WorkItemWrapper = styled.div`
 `;
 
 const WorkImageWrapper = styled.div`
-  flex: 1;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+  flex: 1;
 `;
 
 const WorkImage = styled.img`
@@ -133,6 +144,9 @@ const WorkTextWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 3;
+  width: 200px;
+  padding: 10px;
 
   @media ${device.tablet} {
     flex: 2;
@@ -191,11 +205,11 @@ export const BODY2 = styled('text')`
 `;
 
 const ItemButtonWrapper = styled.div`
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
+  flex: 1;
 `;
 
 const workItemURLs = [
