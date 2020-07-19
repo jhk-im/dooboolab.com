@@ -9,11 +9,12 @@ import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const Container = styled.div`
+  width: 100vw;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100vw;
 
   @media (prefers-color-scheme: dark) {
     background: ${darkColor.SUB_BACKGROUND};
@@ -25,15 +26,16 @@ const Container = styled.div`
 `;
 
 const TopBackgroundWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center; 
   width: 100vw;
   height: 800px;
   background-image: url(${CONTACT_BACKGROUND});
   background-repeat: no-repeat;
   background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center; 
 
   @media (max-width: 800px) {
     flex-direction: column;
@@ -41,30 +43,32 @@ const TopBackgroundWrapper = styled.div`
 `;
 
 const SendEmailInputWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
   flex: 1;
   background: rgba(0,0,0,0.5);
   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
   @media (max-width: 800px) {
     flex: 3;
   }
 `;
 
 const SendEmailTitleWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
   flex: 1;
   background: rgba(0,0,0,0.5);
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 `;
 
 const SendEmailInputText = styled.input`
@@ -144,12 +148,13 @@ const SendButtonWrapper = styled.div`
 `;
 
 const SponsorWrapper = styled.div`
+  width:80%;
+  padding: 5px;
+
   display: flex;
   justify-content: space-evenly;
   justify-items: center;
   align-items: center;
-  width:80%;
-  padding: 5px;
 
   @media (prefers-color-scheme: dark) {
     background: ${darkColor.SUB_BACKGROUND};

@@ -7,24 +7,26 @@ import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const Container = styled.div`
+  width: 100vw;
+
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100vw;
 `;
 
 const HeaderBackgroundWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-content: center;
-  align-items: center;
   width: 100vw;
   height: 500px;
   background-image: url(${VISION_BACKGROUND});
   background-repeat: no-repeat;
   background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
 
   @media (max-width: 1000px) {
     height: 400px;

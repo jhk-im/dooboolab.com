@@ -12,24 +12,26 @@ import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
 const Container = styled.div`
+  width: 100vw;
+  
   display: flex;
   flex-direction: column;
   justify-content: bottom;
   align-items: center;
-  width: 100vw;
 `;
 
 const IntroContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-content: center;
-  align-items: left;
   width: 100vw;
   height: 600px;
   background-image: url(${INTRO_BACKGROUND});
   background-repeat: no-repeat;
   background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: left;
 
   @media (max-width: 1000px) {
     height: 500px;
@@ -45,12 +47,13 @@ const IntroContainer = styled.div`
 `;
 
 const TextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
   flex: 2;
   width: 100%;
   background: linear-gradient(to right,rgba(0,0,0,0.7), rgba(0,0,0,0));
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 
   @media (max-width: 800px) {
     flex: 2.5;
@@ -115,12 +118,13 @@ const DescriptionWrapper = styled.div`
 `;
 
 const ContactButtonWrapper = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: top;
   flex: 1;
   width: 100%;
   background: linear-gradient(to right,rgba(0,0,0,0.7), rgba(0,0,0,0));
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: top;
 
   @media (max-width: 800px) {
     justify-content: center;

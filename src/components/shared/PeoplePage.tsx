@@ -7,12 +7,13 @@ import { profiles } from '../../utils/profiles';
 import styled from 'styled-components';
 
 const PeopleContainer = styled.div`
+  padding: 50px;
+  width: 100vw;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
-  width: 100vw;
 
   @media (prefers-color-scheme: dark) {
     background: ${darkColor.SUB_BACKGROUND};
@@ -24,12 +25,13 @@ const PeopleContainer = styled.div`
 `;
 
 const TitleWrapper = styled.div`
+  padding: 50px;
+
   display: flex;
   flex-direction: column;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  padding: 50px;
 
   @media (max-width: 1000px) {
     padding: 30px;
@@ -73,14 +75,15 @@ const DescriptionWrapper = styled.div`
 `;
 
 const ProfilesWrapper = styled.div`
+  width: 1000px;
+  padding: 5;
+  margin-bottom: 50px;
+
   display: flex;
   flex-wrap: wrap;
   align-content: space-evenly;
   justify-content: space-evenly;
   align-items: center;
-  width: 1000px;
-  padding: 5;
-  margin-bottom: 50px;
 
   @media (max-width: 1000px) {
     width: 700px;
@@ -92,12 +95,13 @@ const ProfilesWrapper = styled.div`
 `;
 
 const ProfileItemWrapper = styled.div`
+  padding: 10;
+  margin:10;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  padding: 10;
-  margin:10;
 `;
 
 const TempBox = styled.div`

@@ -151,38 +151,42 @@ const VisionListWrapper = styled.div`
 `;
 
 const VisionItemLinearWrapper = styled.div`
+  width: 80vw;
+  padding: 30px;
+
   display: flex;
   flex-direction: column;
   align-content: space-around;
   justify-content: space-around;
   align-items: center; 
-  width: 80vw;
-  padding: 30px;
 `;
 
 const VisionItem = styled.div`
+  width: 100vw;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
 `;
 
 const VisionNumberWrapper = styled.div`
+  width: 100px;
+  padding: 20px;
+
   display: flex;
   align-items: center;
   justify-content: center; 
-  width: 100px;
-  padding: 20px;
 `;
 
 const VisionItemBox = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center; 
   width: 80vw;
   height: 80%;
   border: 3px solid; 
   border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center; 
 
   @media (prefers-color-scheme: dark) {
     border-color: #fff;
@@ -196,15 +200,16 @@ const VisionItemBox = styled.div`
 `;
 
 const ItemDescriptionWrapper = styled.div`
+  width: 80%;
+  padding: 30px;
+  margin-bottom: 20px;
+  line-height: 30px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
-  width: 80%;
-  padding: 30px;
-  margin-bottom: 20px;
-  line-height: 30px;
 
   @media (max-width: 1000px) {
     margin-bottom: 15px;

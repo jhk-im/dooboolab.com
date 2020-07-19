@@ -3,9 +3,6 @@ import { darkColor, lightColor } from '../../utils/colorlist';
 import styled from 'styled-components';
 
 export const ButtonPrimary = styled('button')`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
   border: 0;
@@ -16,10 +13,15 @@ export const ButtonPrimary = styled('button')`
   border-color: #e3e3e3;
   margin-bottom: 8px;
 
-  cursor: pointer;
   background: ${(props): string => props.theme.btnPrimary};
   opacity: 1;
   // transition: opacity 0.2s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
 
   &:hover {
     opacity: 0.5;
@@ -94,9 +96,6 @@ export const MenuButton = styled('button')`
 `;
 
 export const LogoButton = styled('button')`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 0px;
   outline: 0px; 
   border-radius: 3px;
@@ -106,6 +105,10 @@ export const LogoButton = styled('button')`
   border-color: rgba(255, 255, 255, 0);
   background-color: #ffffff;
   background-color: rgba( 255, 255, 255, 0);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   cursor: pointer;
 `;

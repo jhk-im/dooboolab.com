@@ -13,13 +13,14 @@ interface Props {
 }
 
 const Container = styled.div`
+  height: 120px;
+  width: 100vw;
+
   display: flex;
   position: absolute;
   align-items: center;
-  justify-content: space-between;
-  height: 120px;
-  width: 100vw;
-   
+  justify-content: space-between; 
+
   @media (max-width:1000px) {
     flex-direction: column;
     justify-content: center;
@@ -35,12 +36,14 @@ const Container = styled.div`
 `;
 
 const MenuButtonWrapper = styled.div`
-  display: flex;
   width: 800px;
   height: 60px;
 
+  display: flex;
+
   @media (max-width: 1000px) {
     width: 90%;
+    
     justify-content: center;
     align-items: center;
     align-content: center;

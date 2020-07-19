@@ -8,13 +8,14 @@ import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const WorkContainer = styled.div`
+  padding: 30px;
+  width: 100vw;
+  height: 1000px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 30px;
-  width: 100vw;
-  height: 1000px;
 
   @media (prefers-color-scheme: dark) {
       background: ${darkColor.BACKGROUND};
@@ -26,12 +27,13 @@ const WorkContainer = styled.div`
 `;
 
 const TitleWrapper = styled.div`
+  padding: 30px;
+
   display: flex;
   flex-direction: column;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  padding: 30px;
 
   @media (max-width: 1000px) {
     padding: 20px;
@@ -47,13 +49,14 @@ const TitleWrapper = styled.div`
 `;
 
 const DescriptionWrapper = styled.div`
+  padding: 10px;
+  margin-bottom: 20px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
-  padding: 10px;
-  margin-bottom: 20px;
 
   @media (max-width: 1000px) {
     margin-bottom: 15px;
@@ -69,12 +72,13 @@ const DescriptionWrapper = styled.div`
 `;
 
 const WorkItemListWrapper = styled.div`
+  width: 90%;
+  padding: 30px;
+
   display: flex;
   justify-content: space-around;
   align-content: space-around;
   align-items: center;
-  width: 90%;
-  padding: 30px;
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -82,10 +86,6 @@ const WorkItemListWrapper = styled.div`
 `;
 
 const WorkItemWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding: 10px;
   width: 350px;
   height: 500px;
@@ -93,7 +93,12 @@ const WorkItemWrapper = styled.div`
   border-width: 2px;
   border-color: #EDEDED;
   border-radius: 10px;
-  border-style: solid;;
+  border-style: solid;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 1300px) {
     width: 300px;
@@ -128,11 +133,12 @@ const WorkItemWrapper = styled.div`
 `;
 
 const WorkImageWrapper = styled.div`
+  flex: 1;
+
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
-  flex: 1;
 `;
 
 const WorkImage = styled.img`
@@ -143,12 +149,13 @@ const WorkImage = styled.img`
 `;
 
 const WorkTextWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex: 3;
   width: 200px;
   padding: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (max-width: 1000px) {
     flex: 1.5;
@@ -194,11 +201,12 @@ const DescriptionText = styled.text`
 `;
 
 const ItemButtonWrapper = styled.div`
+  flex: 1;
+
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
-  flex: 1;
 `;
 
 const workItemURLs = [
