@@ -42,6 +42,14 @@ const isDarkMode = (darkPath: string, lightPath: string): string => {
   }
 };
 
+const isDarkModePaths = (darkPaths: string[], lightPaths: string[]): string[] => {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    return darkPaths;
+  } else {
+    return lightPaths;
+  }
+};
+
 export const IC_FACEBOOK_W = isRetina(
   icFacebookW,
   icFacebookW2x,
@@ -49,14 +57,19 @@ export const IC_FACEBOOK_W = isRetina(
 );
 
 export const IC_GOOGLE_W = isRetina(icGoogleW, icGoogleW2x, icGoogleW3x);
+
 export const IC_DOOBOOLAB_LOGO = isDarkMode(icDooboolabLogoDark, icDooboolabLogo);
-export const IC_COUPANG = isDarkMode(icCoupangDark, icCoupang);
-export const IC_LUNASOFT = isDarkMode(icLunaSoftDark, icLunaSoft);
-export const IC_MEGAZONE = isDarkMode(icMegazoneDark, icMegazone);
-export const IC_TURING = isDarkMode(icTuringDark, icTuring);
-export const IC_PRIME = isDarkMode(icPrimeDark, icPrime);
-export const IC_DOOBOO_UI = isDarkMode(icDoobooUiDark, icDoobooUi);
-export const IC_HACKATALK = isDarkMode(icHackatalkDark, icHackatalk);
+
+export const icWorks = [icPrime, icDoobooUi, icHackatalk];
+export const icWorksDark = [icPrimeDark, icDoobooUiDark, icHackatalkDark];
+export const IC_WORKS = isDarkModePaths(icWorksDark, icWorks);
+
 export const IC_GRAPHQLSEOUL = icGraphqlSeoul;
+
 export const IC_REACTNATIVESEOUL = icReactNativeSeoul;
+
 export const IC_SMILE = icSmalie;
+
+export const icSponsorDark = [icCoupangDark, icLunaSoftDark, icMegazoneDark, icTuringDark];
+export const icSponsor = [icCoupang, icLunaSoft, icMegazone, icTuring];
+export const IC_SPONSORS = isDarkModePaths(icSponsorDark, icSponsor);

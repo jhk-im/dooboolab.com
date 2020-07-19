@@ -9,16 +9,16 @@ import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
 interface Props {
-  currentPage?: number;
+  currentPage?: string;
 }
 
 const Container = styled.div`
-  height: 120px;
-  width: 100vw;
   display: flex;
   position: absolute;
   align-items: center;
   justify-content: space-between;
+  height: 120px;
+  width: 100vw;
    
   @media (max-width:1000px) {
     flex-direction: column;
@@ -35,9 +35,9 @@ const Container = styled.div`
 `;
 
 const MenuButtonWrapper = styled.div`
+  display: flex;
   width: 800px;
   height: 60px;
-  display: flex;
 
   @media (max-width: 1000px) {
     width: 90%;
@@ -47,38 +47,44 @@ const MenuButtonWrapper = styled.div`
   }
 `;
 
+const menuButton = new Map<string, string>();
+
+menuButton.set(getString('STORY'), '/story');
+menuButton.set(getString('WORK'), '/work');
+menuButton.set(getString('PEOPLE'), '/people');
+menuButton.set(getString('CONTACT'), '/contact');
+
 function MenuBar(props: Props): ReactElement {
   const history = useHistory();
+
+  const { currentPage } = props;
+
   const tabChange = (inputPath): void => {
-    const location: Record<string, any> = {
+    const location: Record<string, unknown> = {
       pathname: inputPath,
       state: {},
     };
     history.push(location);
   };
-  const { currentPage } = props;
+
+  const menuButtons = [];
+
+  for (const [key, value] of menuButton) {
+    menuButtons.push(
+      <MenuButton
+        onClick={ (): void => tabChange(value) }
+        text={ key }
+        isSelected={ currentPage === key && true }/>,
+    );
+  }
+
   return (
     <Container>
       <LogoButton
         onClick={ (): void => tabChange('/') }
         imgSrc={ IC_DOOBOOLAB_LOGO }/>
       <MenuButtonWrapper>
-        <MenuButton
-          onClick={ (): void => tabChange('/story') }
-          text={ getString('STORY') }
-          isSelected={ currentPage === 1 && true }/>
-        <MenuButton
-          onClick={ (): void => tabChange('/work') }
-          text={ getString('WORK') }
-          isSelected={ currentPage === 2 && true }/>
-        <MenuButton
-          onClick={ (): void => tabChange('/people') }
-          text={ getString('PEOPLE') }
-          isSelected={ currentPage === 3 && true }/>
-        <MenuButton
-          onClick={ (): void => tabChange('/contact') }
-          text={ getString('CONTACT') }
-          isSelected={ currentPage === 4 && true }/>
+        {menuButtons}
       </MenuButtonWrapper>
     </Container>
   );

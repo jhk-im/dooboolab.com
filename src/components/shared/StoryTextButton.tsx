@@ -12,23 +12,21 @@ interface Props {
 }
 
 const ButtonWrapper = styled.div`
-  height: 100%;
-  width: 100%;
-  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
 `;
 
 function Button(props: Props): ReactElement {
   const { onClick, text, style } = props;
   return (
     <StoryTextButton style={ style } onClick={ onClick } >
-      <ButtonWrapper>
-        { text }
-      </ButtonWrapper>
+      <ButtonWrapper>{ text }</ButtonWrapper>
     </StoryTextButton>
   );
 }

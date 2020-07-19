@@ -14,18 +14,22 @@ import song from '../../assets/profiles/song.png';
 import terry from '../../assets/profiles/terry.png';
 import yoon from '../../assets/profiles/yoon.png';
 
-export const HYO_PROFILE = hyo;
-export const SONG_PROFILE = song;
-export const ETHAN_PROFILE = ethan;
-export const DEAN_PROFILE = dean;
-export const HUN_PROFILE = hun;
-export const CLARK_PROFILE = clark;
-export const JERRY_PROFILE = jerry;
-export const DANIEL_PROFILE = daniel;
-export const JESSIE_PROFILE = jessie;
-export const JOY_PROFILE = joy;
-export const SARAH_PROFILE = sarah;
-export const YOON_PROFILE = yoon;
-export const RIM_PROFILE = rim;
-export const TERRY_PROFILE = terry;
-export const JENNY_PROFILE = jenny;
+const profile = new Map<string, string>();
+
+profile.set(hyo, 'Hyo / CEO');
+profile.set(song, 'Song / Developer');
+profile.set(ethan, 'Ethan / Developer');
+profile.set(dean, 'Dean / Developer');
+profile.set(hun, 'Hun / Developer');
+profile.set(clark, 'Clark / Developer');
+profile.set(jerry, 'Jerry / Developer');
+profile.set(daniel, 'Daniel / Developer');
+profile.set(terry, 'Terry / Developer');
+profile.set(jessie, 'Jessie / Developer');
+profile.set(jenny, 'Jenny / Developer');
+profile.set(joy, 'Joy / Business');
+profile.set(sarah, 'Sarah / Designer');
+profile.set(yoon, 'Yoon / Designer');
+profile.set(rim, 'Rim / Designer');
+
+export const profiles = profile;

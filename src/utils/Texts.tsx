@@ -10,19 +10,21 @@ export const H1 = styled('text')`
   @media (max-width: 1000px) {
     font-size: 40px;
   }
+  
   @media (max-width: 800px) {
     font-size: 35px;
   }
+  
   @media (max-width: 600px) {
     font-size: 30px;
   }
 
   @media (prefers-color-scheme: dark) {
-      color: ${darkColor.ON_BUTTON};
+    color: ${darkColor.ON_BUTTON};
   }
 
   @media (prefers-color-scheme: light){
-      color: ${lightColor.ON_BUTTON};
+    color: ${lightColor.ON_BUTTON};
   }
 `;
 
@@ -34,16 +36,17 @@ export const H2 = styled('text')`
   @media (max-width: 1000px) {
     font-size: 40px;
   }
+  
   @media (max-width: 800px) {
     font-size: 35px;
   }
 
   @media (prefers-color-scheme: dark) {
-      color: ${darkColor.ON_BACKGROUND_TEXT};
+    color: ${darkColor.ON_BACKGROUND_TEXT};
   }
 
   @media (prefers-color-scheme: light){
-      color: ${lightColor.ON_BACKGROUND_TEXT};
+    color: ${lightColor.ON_BACKGROUND_TEXT};
   }
 `;
 
@@ -54,16 +57,17 @@ export const H3 = styled('text')`
   @media (max-width: 1000px) {
     font-size: 30px;
   }
+  
   @media (max-width: 800px) {
     font-size: 30px;
   }
 
   @media (prefers-color-scheme: dark) {
-      color: ${darkColor.ON_SUB_BACKGROUND_TEXT};
+    color: ${darkColor.ON_SUB_BACKGROUND_TEXT};
   }
 
   @media (prefers-color-scheme: light){
-      color: ${lightColor.ON_SUB_BACKGROUND_TEXT};
+    color: ${lightColor.ON_SUB_BACKGROUND_TEXT};
   }
 `;
 
@@ -79,13 +83,12 @@ export const H4 = styled('text')`
     font-size: 30px;
   }
 
-
   @media (prefers-color-scheme: dark) {
-      color: ${darkColor.ON_SUB_BACKGROUND_TEXT};
+    color: ${darkColor.ON_SUB_BACKGROUND_TEXT};
   }
 
   @media (prefers-color-scheme: light){
-      color: ${lightColor.ON_SUB_BACKGROUND_TEXT};
+    color: ${lightColor.ON_SUB_BACKGROUND_TEXT};
   }
 `;
 
@@ -101,13 +104,12 @@ export const H5 = styled('text')`
     font-size: 20px;
   }
 
-
   @media (prefers-color-scheme: dark) {
-      color: ${darkColor.ON_SUB_BACKGROUND_TEXT};
+    color: ${darkColor.ON_SUB_BACKGROUND_TEXT};
   }
 
   @media (prefers-color-scheme: light){
-      color: ${lightColor.ON_SUB_BACKGROUND_TEXT};
+    color: ${lightColor.ON_SUB_BACKGROUND_TEXT};
   }
 `;
 
@@ -128,11 +130,11 @@ export const H = styled('text')`
   }
 
   @media (prefers-color-scheme: dark) {
-      color: ${darkColor.ON_SUB_BACKGROUND_TEXT};
+    color: ${darkColor.ON_SUB_BACKGROUND_TEXT};
   }
 
   @media (prefers-color-scheme: light){
-      color: ${lightColor.ON_SUB_BACKGROUND_TEXT};
+    color: ${lightColor.ON_SUB_BACKGROUND_TEXT};
   }
 `;
 
@@ -180,10 +182,10 @@ export const BODY2 = styled('text')`
   }
 
   @media (prefers-color-scheme: dark) {
-      color: ${darkColor.ON_BACKGROUND_TEXT};
+    color: ${darkColor.ON_BACKGROUND_TEXT};
   }
 
   @media (prefers-color-scheme: light){
-      color: ${lightColor.ON_BACKGROUND_TEXT};
+    color: ${lightColor.ON_BACKGROUND_TEXT};
   }
 `;

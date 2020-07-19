@@ -11,11 +11,11 @@ interface Props {
 }
 
 const ButtonWrapper = styled.div`
-  margin-left: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-left: 30px;
 
   @media (max-width: 1000px) {
     margin-left: 0;

@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react';
 import Footer from '../shared/Footer';
 import MenuBar from '../shared/MenuBar';
 import PeoplePage from '../shared/PeoplePage';
+import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -21,7 +22,7 @@ const MenubarTemp = styled.div`
 function People(): ReactElement {
   return (
     <Container>
-      <MenuBar currentPage={3}/>
+      <MenuBar currentPage={getString('PEOPLE') }/>
       <MenubarTemp/>
       <PeoplePage/>
       <Footer/>

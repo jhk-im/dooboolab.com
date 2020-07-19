@@ -3,6 +3,9 @@ import { darkColor, lightColor } from '../../utils/colorlist';
 import styled from 'styled-components';
 
 export const ButtonPrimary = styled('button')`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   border: 0;
@@ -13,9 +16,6 @@ export const ButtonPrimary = styled('button')`
   border-color: #e3e3e3;
   margin-bottom: 8px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   background: ${(props): string => props.theme.btnPrimary};
   opacity: 1;
@@ -70,8 +70,10 @@ export const MenuButton = styled('button')`
 
   @media (prefers-color-scheme: dark) {
     color: ${darkColor.ON_BACKGROUND_TEXT};
+    
     &:hover{
-    color: #B290B7;
+      color: #B290B7;
+
       #bottom_line{
         background: linear-gradient(to right,#9497C2,#B290B7);
       }
@@ -80,8 +82,10 @@ export const MenuButton = styled('button')`
 
   @media (prefers-color-scheme: light){
     color: ${lightColor.ON_BACKGROUND_TEXT};
+    
     &:hover{
-    color: #B446BF;
+      color: #B446BF;
+      
       #bottom_line{
         background: linear-gradient(to right,#393D7A,#B446BF);
       }
@@ -90,6 +94,9 @@ export const MenuButton = styled('button')`
 `;
 
 export const LogoButton = styled('button')`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 0px;
   outline: 0px; 
   border-radius: 3px;
@@ -99,9 +106,6 @@ export const LogoButton = styled('button')`
   border-color: rgba(255, 255, 255, 0);
   background-color: #ffffff;
   background-color: rgba( 255, 255, 255, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   cursor: pointer;
 `;
@@ -136,17 +140,19 @@ export const IntroRoundButton = styled('button')`
   }
 
   @media (prefers-color-scheme: dark) {
-      background: ${darkColor.BUTTON};
-      color: ${darkColor.ON_BUTTON};
-     &:hover{
+    background: ${darkColor.BUTTON};
+    color: ${darkColor.ON_BUTTON};
+    
+    &:hover{
       background: ${darkColor.ON_BUTTON};
       color: ${darkColor.BUTTON};
     }
   }
 
   @media (prefers-color-scheme: light){
-      background: ${lightColor.BUTTON};
-      color: ${lightColor.ON_BUTTON};
+    background: ${lightColor.BUTTON};
+    color: ${lightColor.ON_BUTTON};
+    
     &:hover{
       background: ${lightColor.ON_BUTTON};
       color: ${lightColor.BUTTON};
@@ -193,10 +199,10 @@ export const ViewMoreRoundButton = styled('button')`
 
   @media (prefers-color-scheme: dark) {
     &:hover {
-    background: #00BA90;
-    color: #ffffff;
-  }
-  border-color: #00BA90;
+      background: #00BA90;
+      color: #ffffff;
+    }
+    border-color: #00BA90;
   }
 `;
 
@@ -221,16 +227,18 @@ export const StoryTextButton = styled('button')`
 
   @media (prefers-color-scheme: light) {
     color: ${lightColor.BUTTON};
+    
     &:hover {
-    color: #393D7A;
-  }
+      color: #393D7A;
+    }
   }
 
   @media (prefers-color-scheme: dark) {
     color: ${darkColor.BUTTON};
+    
     &:hover {
-    color: #8A96DC;
-  }
+      color: #8A96DC;
+    }
   }
 `;
 
@@ -259,14 +267,14 @@ export const FooterButton = styled('button')`
 
   @media (prefers-color-scheme: light) {
     &:hover {
-    color: ${lightColor.TAB_BUTTON};
-  }
+      color: ${lightColor.TAB_BUTTON};
+    }
   }
 
   @media (prefers-color-scheme: dark) {
     &:hover {
-    color: ${darkColor.TAB_BUTTON};
-  }
+      color: ${darkColor.TAB_BUTTON};
+    }
   }
 `;
 
@@ -295,17 +303,19 @@ export const SendEmailRoundButton = styled('button')`
   }
 
   @media (prefers-color-scheme: dark) {
-      background: ${darkColor.BUTTON};
-      color: ${darkColor.ON_BUTTON};
-     &:hover{
+    background: ${darkColor.BUTTON};
+    color: ${darkColor.ON_BUTTON};
+    
+    &:hover{
       background: ${darkColor.ON_BUTTON};
       color: ${darkColor.BUTTON};
     }
   }
 
   @media (prefers-color-scheme: light){
-      background: ${lightColor.BUTTON};
-      color: ${lightColor.ON_BUTTON};
+    background: ${lightColor.BUTTON};
+    color: ${lightColor.ON_BUTTON};
+    
     &:hover{
       background: ${lightColor.ON_BUTTON};
       color: ${lightColor.BUTTON};

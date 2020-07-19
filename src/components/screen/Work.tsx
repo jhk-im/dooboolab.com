@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react';
 import Footer from '../shared/Footer';
 import MenuBar from '../shared/MenuBar';
 import WorkPage from '../shared/WorkPage';
+import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -22,7 +23,7 @@ const MenubarTemp = styled.div`
 function Work(): ReactElement {
   return (
     <Container>
-      <MenuBar currentPage={2}/>
+      <MenuBar currentPage={getString('WORK')} />
       <MenubarTemp/>
       <WorkPage/>
       <Footer/>

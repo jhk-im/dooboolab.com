@@ -7,21 +7,21 @@ import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 100vw;
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: 100vw;
 `;
 
 const HeaderBackgroundWrapper = styled.div`
-  width: 100vw;
-  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-content: center;
   align-items: center;
+  width: 100vw;
+  height: 500px;
   background-image: url(${VISION_BACKGROUND});
   background-repeat: no-repeat;
   background-size: cover;
@@ -57,12 +57,12 @@ const HeaderTitleTextWrapper = styled.div`
   }
 `;
 const SubTitleWrapper = styled.div`
-  width: 100vw;
-  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  padding: 30px;
 
   @media (max-width: 1000px) {
     padding: 20px;
@@ -86,12 +86,12 @@ const SubTitleWrapper = styled.div`
 `;
 
 const TitleTextWrapper = styled.div`
-  padding: 30px;
   display: flex;
   flex-direction: column;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  padding: 30px;
   
   @media (max-width: 1000px) {
     padding: 20px;
@@ -107,15 +107,15 @@ const TitleTextWrapper = styled.div`
 `;
 
 const DescriptionWrapper = styled.div`
-  width: 70%;
-  padding: 20px;
-  margin-bottom: 20px;
-  line-height: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
+  width: 70%;
+  padding: 20px;
+  margin-bottom: 20px;
+  line-height: 30px;
 
   @media (max-width: 1000px) {
     margin-bottom: 15px;
@@ -134,48 +134,48 @@ const DescriptionWrapper = styled.div`
 `;
 
 const VisionListWrapper = styled.div`
-  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  width: 100vw;
   
   @media (prefers-color-scheme: dark) {
-      background: ${darkColor.SUB_BACKGROUND};
+    background: ${darkColor.SUB_BACKGROUND};
   }
 
   @media (prefers-color-scheme: light){
-      background: ${lightColor.SUB_BACKGROUND};
+    background: ${lightColor.SUB_BACKGROUND};
   }
 `;
 
 const VisionItemLinearWrapper = styled.div`
-  width: 80vw;
-  padding: 30px;
   display: flex;
   flex-direction: column;
   align-content: space-around;
   justify-content: space-around;
   align-items: center; 
+  width: 80vw;
+  padding: 30px;
 `;
 
 const VisionItem = styled.div`
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
 `;
 
 const VisionItemBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  text-align: left;
   width: 80vw;
   max-width: 1200px;
   height: 80%;
   border: 3px solid; 
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center; 
-  text-align: left;
 
   @media (prefers-color-scheme: dark) {
     border-color: #fff;

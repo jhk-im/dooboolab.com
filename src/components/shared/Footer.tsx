@@ -6,13 +6,15 @@ import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
+const thisYear = new Date().getFullYear();
+
 const FooterWrapper = styled.div`
-  width: 100vw;
-  height: 100px;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+  width: 100vw;
+  height: 100px;
   
   @media (max-width: 800px) {
     height: 70px;
@@ -28,20 +30,20 @@ const FooterWrapper = styled.div`
 `;
 
 const FooterTextWrapper = styled.div`
-  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 50%;
 `;
 
 const ButtonWrapper = styled.div`
-  width: 400px;
-  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-content: space-between;
   align-items: space-between;
+  width: 400px;
+  padding: 10px;
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -93,13 +95,15 @@ const FooterDescriptionText = styled.div`
 
 function Footer(): ReactElement {
   const history = useHistory();
+
   const tabChange = (inputPath): void => {
-    const location: Record<string, any> = {
+    const location: Record<string, unknown> = {
       pathname: inputPath,
       state: {},
     };
     history.push(location);
   };
+
   return (
     <FooterWrapper>
       <FooterTextWrapper>
@@ -118,7 +122,7 @@ function Footer(): ReactElement {
             onClick={(): void => tabChange('/codeofconduct')}/>
         </ButtonWrapper>
         <FooterDescriptionText>
-          © 2017-2020 dooboolab, All Rights Reserved
+          © 2017-{thisYear} dooboolab, All Rights Reserved
         </FooterDescriptionText>
       </FooterTextWrapper>
     </FooterWrapper>

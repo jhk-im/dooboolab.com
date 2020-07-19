@@ -20,44 +20,44 @@ const Container = styled.div`
 `;
 
 const StoryContainer = styled.div`
-  width: 100vw;
-  padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  padding: 50px;
 
   @media (max-width: 800px) {
     min-height: 400px;
   }
   
   @media (prefers-color-scheme: dark) {
-      background: ${darkColor.BACKGROUND};
+    background: ${darkColor.BACKGROUND};
   }
 
   @media (prefers-color-scheme: light){
-      background: ${lightColor.BACKGROUND};
+    background: ${lightColor.BACKGROUND};
   }
 `;
 
 const TitleWrapper = styled.div`
-  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  padding: 25px;
 `;
 
 const DescriptionWrapper = styled.div`
-  width: 600px;
-  padding: 20px;
-  margin-bottom: 20px;
-  line-height: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
+  width: 600px;
+  padding: 20px;
+  margin-bottom: 20px;
+  line-height: 30px;
 
   @media (max-width: 1000px) {
     width: 500px;
@@ -79,42 +79,42 @@ const DescriptionWrapper = styled.div`
 `;
 
 const ViewMoreButtonWrapper = styled.div`
-  width: 100vw;
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
+  width: 100vw;
+  margin-top: 10px;
 `;
 
 const CommunityContainer = styled.div`
-  width: 100vw;
-  padding: 50px;
-  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  padding: 30px;
+  min-height: 400px;
   
   @media (prefers-color-scheme: dark) {
-      background: ${darkColor.SUB_BACKGROUND};
+    background: ${darkColor.SUB_BACKGROUND};
   }
 
   @media (prefers-color-scheme: light){
-      background: ${lightColor.SUB_BACKGROUND};
+    background: ${lightColor.SUB_BACKGROUND};
   }
 `;
 
 const CommunityImageListWrapper = styled.div`
-  padding: 10px;
-  margin-bottom: 50px;
-  width: 80vw;
-  height: 30vw;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-content: space-evenly;
+  padding: 10px;
+  margin-bottom: 50px;
+  width: 80vw;
+  height: 30vw;
 
   @media (max-width: 1000px) {
     margin-bottom: 40px;
@@ -130,36 +130,36 @@ const CommunityImageListWrapper = styled.div`
 `;
 
 const GraphQlImageWrapper = styled.div`
-  padding: 10px;
-  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  padding: 10px;
+  width: 40%;
   background-image: url(${IC_GRAPHQLSEOUL});
   background-repeat: no-repeat;
   background-size: cover;
 `;
 
 const ReactNativeImageWrapper = styled.div`
-  padding: 10px;
-  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  padding: 10px;
+  width: 40%;
   background-image: url(${IC_REACTNATIVESEOUL});
   background-repeat: no-repeat;
   background-size: cover;  
 `;
 
 const ItemButtonWrapper = styled.div`
-  width: 100vw;
-  padding: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
+  width: 100vw;
+  padding: 30px;
 
   @media (max-width: 1000px) {
     padding: 20px;
@@ -172,16 +172,19 @@ const ItemButtonWrapper = styled.div`
 
 function Intro(): ReactElement {
   const history = useHistory();
+
   const tabChange = (inputPath): void => {
-    const location: Record<string, any> = {
+    const location: Record<string, unknown> = {
       pathname: inputPath,
       state: {},
     };
     history.push(location);
   };
+
   const moveUrl = (inputPath): void => {
     window.open(inputPath);
   };
+
   return (
     <Container>
       <StoryContainer>

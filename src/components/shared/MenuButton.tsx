@@ -13,11 +13,11 @@ interface Props {
 }
 
 const ButtonWrapper = styled.div`
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  height: 100%;
 `;
 
 const BottomLine = styled.div`
@@ -35,15 +35,14 @@ const BottomLine = styled.div`
   @media (max-width: 500px) {
     width: 50px;
   }
-
 `;
 
 const SelectedButtonWrapper = styled.div`
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  height: 100%;
   
   @media (prefers-color-scheme: dark) {
     color: ${darkColor.TAB_BUTTON};
@@ -69,7 +68,6 @@ const SelectedBottomLine = styled.div`
   @media (max-width: 500px) {
     width: 50px;
   }
-
   
   @media (prefers-color-scheme: dark) {
     background: linear-gradient(to right,#9497C2,#B290B7);

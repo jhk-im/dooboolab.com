@@ -7,21 +7,21 @@ import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 100vw;
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: 100vw;
 `;
 
 const HeaderBackgroundWrapper = styled.div`
-  width: 100vw;
-  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-content: center;
   align-items: center;
+  width: 100vw;
+  height: 500px;
   background-image: url(${VISION_BACKGROUND});
   background-repeat: no-repeat;
   background-size: cover;
@@ -58,12 +58,12 @@ const HeaderTitleTextWrapper = styled.div`
 `;
 
 const SubTitleWrapper = styled.div`
-  width: 100vw;
-  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  padding: 30px;
 
   @media (max-width: 1000px) {
     padding: 20px;
@@ -87,12 +87,12 @@ const SubTitleWrapper = styled.div`
 `;
 
 const TitleTextWrapper = styled.div`
-  padding: 30px;
   display: flex;
   flex-direction: column;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  padding: 30px;
   
   @media (max-width: 1000px) {
     padding: 20px;
@@ -108,15 +108,15 @@ const TitleTextWrapper = styled.div`
 `;
 
 const DescriptionWrapper = styled.div`
-  width: 70%;
-  padding: 20px;
-  margin-bottom: 20px;
-  line-height: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
+  width: 70%;
+  padding: 20px;
+  margin-bottom: 20px;
+  line-height: 30px;
 
   @media (max-width: 1000px) {
     margin-bottom: 15px;
@@ -135,11 +135,11 @@ const DescriptionWrapper = styled.div`
 `;
 
 const VisionListWrapper = styled.div`
-  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  width: 100vw;
   
   @media (prefers-color-scheme: dark) {
       background: ${darkColor.SUB_BACKGROUND};
@@ -151,38 +151,38 @@ const VisionListWrapper = styled.div`
 `;
 
 const VisionItemLinearWrapper = styled.div`
-  width: 80vw;
-  padding: 30px;
   display: flex;
   flex-direction: column;
   align-content: space-around;
   justify-content: space-around;
   align-items: center; 
+  width: 80vw;
+  padding: 30px;
 `;
 
 const VisionItem = styled.div`
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
 `;
 
 const VisionNumberWrapper = styled.div`
-  width: 100px;
-  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center; 
+  width: 100px;
+  padding: 20px;
 `;
 
 const VisionItemBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center; 
   width: 80vw;
   height: 80%;
   border: 3px solid; 
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center; 
 
   @media (prefers-color-scheme: dark) {
     border-color: #fff;
@@ -196,15 +196,15 @@ const VisionItemBox = styled.div`
 `;
 
 const ItemDescriptionWrapper = styled.div`
-  width: 80%;
-  padding: 30px;
-  margin-bottom: 20px;
-  line-height: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
+  width: 80%;
+  padding: 30px;
+  margin-bottom: 20px;
+  line-height: 30px;
 
   @media (max-width: 1000px) {
     margin-bottom: 15px;
@@ -225,7 +225,36 @@ const ItemDescriptionWrapper = styled.div`
   }
 `;
 
+const visionTexts = [
+  getString('VISION_01'),
+  getString('VISION_02'),
+  getString('VISION_03'),
+  getString('VISION_04'),
+  getString('VISION_05'),
+  getString('VISION_06'),
+  getString('VISION_07'),
+];
+
 function Vision(): ReactElement {
+  const visionWrappers = [];
+
+  for (const value of visionTexts) {
+    visionWrappers.push(
+      <VisionItem>
+        <VisionNumberWrapper>
+          <H5>0{ visionTexts.indexOf(value) + 1 }</H5>
+        </VisionNumberWrapper>
+        <VisionItemBox>
+          <ItemDescriptionWrapper>
+            <BODY2>
+              { value }
+            </BODY2>
+          </ItemDescriptionWrapper>
+        </VisionItemBox>
+      </VisionItem>,
+    );
+  }
+
   return (
     <Container>
       <HeaderBackgroundWrapper>
@@ -238,98 +267,11 @@ function Vision(): ReactElement {
           <H3>{ getString('OUR_VISION') }</H3>
         </TitleTextWrapper>
         <DescriptionWrapper>
-          <BODY2>
-            { getString('VISION_MISSION_DESCRIPTION') }
-          </BODY2>
+          <BODY2>{ getString('VISION_MISSION_DESCRIPTION') }</BODY2>
         </DescriptionWrapper>
       </SubTitleWrapper>
       <VisionListWrapper>
-        <VisionItemLinearWrapper>
-          <VisionItem>
-            <VisionNumberWrapper>
-              <H5>01</H5>
-            </VisionNumberWrapper>
-            <VisionItemBox>
-              <ItemDescriptionWrapper>
-                <BODY2>
-                  { getString('VISION_01') }
-                </BODY2>
-              </ItemDescriptionWrapper>
-            </VisionItemBox>
-          </VisionItem>
-          <VisionItem>
-            <VisionNumberWrapper>
-              <H5>02</H5>
-            </VisionNumberWrapper>
-            <VisionItemBox>
-              <ItemDescriptionWrapper>
-                <BODY2>
-                  { getString('VISION_02') }
-                </BODY2>
-              </ItemDescriptionWrapper>
-            </VisionItemBox>
-          </VisionItem>
-          <VisionItem>
-            <VisionNumberWrapper>
-              <H5>03</H5>
-            </VisionNumberWrapper>
-            <VisionItemBox>
-              <ItemDescriptionWrapper>
-                <BODY2>
-                  { getString('VISION_03') }
-                </BODY2>
-              </ItemDescriptionWrapper>
-            </VisionItemBox>
-          </VisionItem>
-          <VisionItem>
-            <VisionNumberWrapper>
-              <H5>04</H5>
-            </VisionNumberWrapper>
-            <VisionItemBox>
-              <ItemDescriptionWrapper>
-                <BODY2>
-                  { getString('VISION_04') }
-                </BODY2>
-              </ItemDescriptionWrapper>
-            </VisionItemBox>
-          </VisionItem>
-          <VisionItem>
-            <VisionNumberWrapper>
-              <H5>05</H5>
-            </VisionNumberWrapper>
-            <VisionItemBox>
-              <ItemDescriptionWrapper>
-                <BODY2>
-                  { getString('VISION_05') }
-                </BODY2>
-              </ItemDescriptionWrapper>
-            </VisionItemBox>
-          </VisionItem>
-          <VisionItem>
-            <VisionNumberWrapper>
-              <H5>06</H5>
-            </VisionNumberWrapper>
-            <VisionItemBox>
-              <ItemDescriptionWrapper>
-                <BODY2>
-                  { getString('VISION_06') }
-                </BODY2>
-              </ItemDescriptionWrapper>
-            </VisionItemBox>
-          </VisionItem>
-          <VisionItem>
-            <VisionNumberWrapper>
-              <H5>07</H5>
-            </VisionNumberWrapper>
-            <VisionItemBox>
-              <ItemDescriptionWrapper>
-                <BODY2>
-                  { getString('VISION_07') }
-                </BODY2>
-              </ItemDescriptionWrapper>
-            </VisionItemBox>
-          </VisionItem>
-        </VisionItemLinearWrapper>
+        <VisionItemLinearWrapper>{ visionWrappers }</VisionItemLinearWrapper>
       </VisionListWrapper>
     </Container>
   );

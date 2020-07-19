@@ -13,12 +13,12 @@ interface Props {
 }
 
 const ButtonWrapper = styled.div`
-  flex: 1;
-  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex: 1;
+  height: 100%;
 `;
 
 const PrimaryText = styled.span`
@@ -28,10 +28,10 @@ const PrimaryText = styled.span`
 `;
 
 const LogoImg = styled.img`
-  position: absolute;
   left: 20px;
   height: 20px;
   width: 20px;
+  position: absolute;
   object-fit: cover;
 `;
 
@@ -56,6 +56,7 @@ const Spinner = styled.div`
 
 function Button(props: Props): ReactElement {
   const { onClick, imgSrc, text, style, isLoading } = props;
+
   return (
     <ButtonPrimary style={ style } onClick={ onClick }>
       {

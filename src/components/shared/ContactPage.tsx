@@ -1,41 +1,36 @@
 import { H1, H3 } from '../../utils/texts';
-import {
-  IC_COUPANG,
-  IC_LUNASOFT,
-  IC_MEGAZONE,
-  IC_TURING,
-} from '../../utils/icons';
 import React, { ReactElement } from 'react';
 import { darkColor, lightColor } from '../../utils/colorlist';
 
 import { CONTACT_BACKGROUND } from '../../utils/images';
+import { IC_SPONSORS } from '../../utils/icons';
 import SendEmailRoundButton from '../shared/SendEmailRoundButton';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: 100vw;
 
   @media (prefers-color-scheme: dark) {
-      background: ${darkColor.SUB_BACKGROUND};
+    background: ${darkColor.SUB_BACKGROUND};
   }
 
   @media (prefers-color-scheme: light){
-      background: ${lightColor.SUB_BACKGROUND};
+    background: ${lightColor.SUB_BACKGROUND};
   }
 `;
 
 const TopBackgroundWrapper = styled.div`
-  width: 100vw;
-  height: 800px;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center; 
+  width: 100vw;
+  height: 800px;
   background-image: url(${CONTACT_BACKGROUND});
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,29 +41,30 @@ const TopBackgroundWrapper = styled.div`
 `;
 
 const SendEmailInputWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  flex: 1;
-  background: rgba(0,0,0,0.5);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  background: rgba(0,0,0,0.5);
+  
   @media (max-width: 800px) {
     flex: 3;
   }
 `;
 
 const SendEmailTitleWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  flex: 1;
-  background: rgba(0,0,0,0.5);
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  background: rgba(0,0,0,0.5);
 `;
 
 const SendEmailInputText = styled.input`
@@ -94,8 +90,8 @@ const SendEmailInputText = styled.input`
 
   :focus{
     ::placeholder{
-    color: transparent;
-  }
+      color: transparent;
+    }
   }
 `;
 
@@ -121,8 +117,8 @@ const SendEmailTextArea = styled.textarea`
 
   :focus{
     ::placeholder{
-    color: transparent;
-  }
+      color: transparent;
+    }
   }
 `;
 
@@ -147,24 +143,24 @@ const SendButtonWrapper = styled.div`
   padding: 50px;
 `;
 
-const SupportedWrapper = styled.div`
-  width:80%;
-  padding: 5px;
+const SponsorWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   justify-items: center;
   align-items: center;
+  width:80%;
+  padding: 5px;
 
   @media (prefers-color-scheme: dark) {
-      background: ${darkColor.SUB_BACKGROUND};
+    background: ${darkColor.SUB_BACKGROUND};
   }
 
   @media (prefers-color-scheme: light){
-      background: ${lightColor.SUB_BACKGROUND};
+    background: ${lightColor.SUB_BACKGROUND};
   }
 `;
 
-const SupportImage = styled.img`
+const SponsorImage = styled.img`
   width: 150px;
   padding: 20px;
 
@@ -181,15 +177,19 @@ const SupportImage = styled.img`
   }
 `;
 
-function Intro(): ReactElement {
+function ContactPage(): ReactElement {
+  const sponsorImages = [];
+
+  for (const value of IC_SPONSORS) {
+    sponsorImages.push(<SponsorImage src={value}/>);
+  }
+
   return (
     <Container>
       <TopBackgroundWrapper>
         <SendEmailTitleWrapper>
           <TextWrapper>
-            <H1>
-              { getString('CONTACT_DESCRIPTION') }
-            </H1>
+            <H1>{ getString('CONTACT_DESCRIPTION') }</H1>
           </TextWrapper>
         </SendEmailTitleWrapper>
         <SendEmailInputWrapper>
@@ -204,14 +204,9 @@ function Intro(): ReactElement {
       <TextWrapper>
         <H3>{ getString('POWERED_BY') }</H3>
       </TextWrapper>
-      <SupportedWrapper>
-        <SupportImage src={ IC_COUPANG }></SupportImage>
-        <SupportImage src={ IC_LUNASOFT }></SupportImage>
-        <SupportImage src={ IC_MEGAZONE }></SupportImage>
-        <SupportImage src={ IC_TURING }></SupportImage>
-      </SupportedWrapper>
+      <SponsorWrapper>{ sponsorImages }</SponsorWrapper>
     </Container>
   );
 }
 
-export default Intro;
+export default ContactPage;

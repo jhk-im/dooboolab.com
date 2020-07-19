@@ -11,21 +11,19 @@ interface Props {
 }
 
 const ButtonWrapper = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-content: center;
   align-items: center;
+  width: 100%;
 `;
 
 function Button(props: Props): ReactElement {
   const { onClick, text, style } = props;
   return (
     <ViewMoreRoundButton style={ style } onClick={ onClick } >
-      <ButtonWrapper>
-        { text }
-      </ButtonWrapper>
+      <ButtonWrapper>{ text }</ButtonWrapper>
     </ViewMoreRoundButton>
   );
 }

@@ -1,20 +1,20 @@
 import { BODY2, H2 } from '../../utils/texts';
-import { IC_DOOBOO_UI, IC_HACKATALK, IC_PRIME } from '../../utils/icons';
 import React, { ReactElement } from 'react';
 import { darkColor, lightColor } from '../../utils/colorlist';
 
+import { IC_WORKS } from '../../utils/icons';
 import ViewMoreRoundButton from './ViewMoreRoundButton';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const WorkContainer = styled.div`
-  padding: 30px;
-  width: 100vw;
-  height: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  padding: 30px;
+  width: 100vw;
+  height: 1000px;
 
   @media (prefers-color-scheme: dark) {
       background: ${darkColor.BACKGROUND};
@@ -26,12 +26,12 @@ const WorkContainer = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  padding: 30px;
   display: flex;
   flex-direction: column;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  padding: 30px;
 
   @media (max-width: 1000px) {
     padding: 20px;
@@ -47,13 +47,14 @@ const TitleWrapper = styled.div`
 `;
 
 const DescriptionWrapper = styled.div`
-  padding: 10px;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+
   @media (max-width: 1000px) {
     margin-bottom: 15px;
   }
@@ -68,12 +69,12 @@ const DescriptionWrapper = styled.div`
 `;
 
 const WorkItemListWrapper = styled.div`
-  width: 90%;
-  padding: 30px;
   display: flex;
   justify-content: space-around;
   align-content: space-around;
   align-items: center;
+  width: 90%;
+  padding: 30px;
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -81,6 +82,10 @@ const WorkItemListWrapper = styled.div`
 `;
 
 const WorkItemWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 10px;
   width: 350px;
   height: 500px;
@@ -89,10 +94,6 @@ const WorkItemWrapper = styled.div`
   border-color: #EDEDED;
   border-radius: 10px;
   border-style: solid;;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
   @media (max-width: 1300px) {
     width: 300px;
@@ -127,11 +128,11 @@ const WorkItemWrapper = styled.div`
 `;
 
 const WorkImageWrapper = styled.div`
-  flex: 1;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+  flex: 1;
 `;
 
 const WorkImage = styled.img`
@@ -142,12 +143,12 @@ const WorkImage = styled.img`
 `;
 
 const WorkTextWrapper = styled.div`
-  flex: 3;
-  width: 200px;
-  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 3;
+  width: 200px;
+  padding: 10px;
 
   @media (max-width: 1000px) {
     flex: 1.5;
@@ -193,17 +194,54 @@ const DescriptionText = styled.text`
 `;
 
 const ItemButtonWrapper = styled.div`
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
+  flex: 1;
 `;
+
+const workItemURLs = [
+  '',
+  'https://github.com/dooboolab/dooboo-ui',
+  'https://github.com/dooboolab/hackatalk',
+];
+
+const workDescriptions = [
+  'Comming Soon!',
+  getString('DOOBOOUI_DESCRIPTION'),
+  getString('HACKATALK_DESCRIPTION'),
+];
 
 function Work(): ReactElement {
   const moveUrl = (inputPath): void => {
     window.open(inputPath);
   };
+
+  const workItemWrappers = [];
+
+  for (const value of IC_WORKS) {
+    workItemWrappers.push(
+      <WorkItemWrapper>
+        <WorkImageWrapper>
+          <WorkImage src={ value }/>
+        </WorkImageWrapper>
+        <WorkTextWrapper>
+          <DescriptionText>{ workDescriptions[IC_WORKS.indexOf(value)] }</DescriptionText>
+        </WorkTextWrapper>
+        <ItemButtonWrapper>
+          {
+            workItemURLs[IC_WORKS.indexOf(value)] === ''
+              ? null
+              : <ViewMoreRoundButton
+                text={ getString('VIEW_MORE') }
+                onClick={ (): void => moveUrl(workItemURLs[IC_WORKS.indexOf(value)]) }/>
+          }
+        </ItemButtonWrapper>
+      </WorkItemWrapper>,
+    );
+  }
+
   return (
     <WorkContainer>
       <TitleWrapper>
@@ -212,45 +250,7 @@ function Work(): ReactElement {
       <DescriptionWrapper>
         <BODY2>{ getString('WORK_DESCRIPTION') }</BODY2>
       </DescriptionWrapper>
-      <WorkItemListWrapper>
-        <WorkItemWrapper>
-          <WorkImageWrapper>
-            <WorkImage src={ IC_PRIME }/>
-          </WorkImageWrapper>
-          <WorkTextWrapper>
-            <DescriptionText>
-              Comming Soon!
-            </DescriptionText>
-          </WorkTextWrapper>
-          <ItemButtonWrapper/>
-        </WorkItemWrapper>
-        <WorkItemWrapper>
-          <WorkImageWrapper>
-            <WorkImage src={ IC_DOOBOO_UI }/>
-          </WorkImageWrapper>
-          <WorkTextWrapper>
-            <DescriptionText>{ getString('DOOBOOUI_DESCRIPTION') }</DescriptionText>
-          </WorkTextWrapper>
-          <ItemButtonWrapper>
-            <ViewMoreRoundButton
-              text={ getString('VIEW_MORE') }
-              onClick={ (): void => moveUrl('https://github.com/dooboolab/dooboo-ui') }/>
-          </ItemButtonWrapper>
-        </WorkItemWrapper>
-        <WorkItemWrapper>
-          <WorkImageWrapper>
-            <WorkImage src={ IC_HACKATALK }/>
-          </WorkImageWrapper>
-          <WorkTextWrapper>
-            <DescriptionText>{ getString('HACKATALK_DESCRIPTION') }</DescriptionText>
-          </WorkTextWrapper>
-          <ItemButtonWrapper>
-            <ViewMoreRoundButton
-              text={ getString('VIEW_MORE') }
-              onClick={ (): void => moveUrl('https://github.com/dooboolab/hackatalk') }/>
-          </ItemButtonWrapper>
-        </WorkItemWrapper>
-      </WorkItemListWrapper>
+      <WorkItemListWrapper>{ workItemWrappers }</WorkItemListWrapper>
     </WorkContainer>
   );
 }
