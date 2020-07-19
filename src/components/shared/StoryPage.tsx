@@ -101,8 +101,6 @@ const ViewMoreButtonWrapper = styled.div`
   justify-content: center;
   justify-items: center;
   align-items: center;
-  width: 100vw;
-  margin-top: 10px;
 `;
 
 const CommunityContainer = styled.div`
@@ -179,8 +177,6 @@ const ItemButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   align-content: center;
-  width: 100vw;
-  padding: 30px;
 
   @media ${device.tablet} {
     padding: 20px;

@@ -19,8 +19,6 @@ const ButtonWrapper = styled.div`
   justify-content: space-evenly;
   align-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
 `;
 
 function Button(props: Props): ReactElement {

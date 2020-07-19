@@ -104,6 +104,10 @@ export const LogoButton = styled('button')`
   justify-content: center;
   align-items: center;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   cursor: pointer;
 `;
 

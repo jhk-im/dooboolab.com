@@ -13,12 +13,13 @@ interface Props {
 }
 
 const ButtonWrapper = styled.div`
+  flex: 1;
+  height: 100%;
+
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex: 1;
-  height: 100%;
 `;
 
 const PrimaryText = styled.span`

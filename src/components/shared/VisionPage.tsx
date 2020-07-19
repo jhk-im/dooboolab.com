@@ -139,15 +139,14 @@ const VisionItemLinearWrapper = styled.div`
   align-content: space-around;
   justify-content: space-around;
   align-items: center; 
-  width: 80vw;
-  padding: 30px;
 `;
 
 const VisionItem = styled.div`
+  width: 100vw;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
 `;
 
 const VisionNumberWrapper = styled.div`
@@ -159,12 +158,13 @@ const VisionNumberWrapper = styled.div`
   justify-content: center; 
   width: 100px;
   padding: 20px;
-`;
 
-const VisionItemBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center; 
+`;
+
+const VisionItemBox = styled.div`
   width: 80vw;
   margin-bottom: 30px;
   border: 3px solid; 
@@ -197,10 +197,6 @@ const ItemDescriptionWrapper = styled.div`
   justify-content: center;
   justify-items: center;
   align-items: center;
-  width: 80%;
-  padding: 30px;
-  margin-bottom: 20px;
-  line-height: 30px;
 
   @media ${device.tablet} {
     margin-bottom: 10px;

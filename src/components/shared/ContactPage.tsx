@@ -62,14 +62,15 @@ const SendEmailInputWrapper = styled.div`
 `;
 
 const SendEmailTitleWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
   flex: 1;
   background: rgba(0,0,0,0.5);
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 `;
 
 const SendEmailInputText = styled.input`
@@ -165,8 +166,6 @@ const SponsorWrapper = styled.div`
   justify-content: space-evenly;
   justify-items: center;
   align-items: center;
-  width:80%;
-  padding: 5px;
 
   @media (prefers-color-scheme: dark) {
     background: ${darkColor.SUB_BACKGROUND};
