@@ -20,11 +20,11 @@ export const H1 = styled('text')`
   }
 
   @media (prefers-color-scheme: dark) {
-    color: ${darkColor.ON_BUTTON};
+    color: #D3D8E8;
   }
 
   @media (prefers-color-scheme: light){
-    color: ${lightColor.ON_BUTTON};
+    color: #FFFFFF;
   }
 `;
 
@@ -42,11 +42,11 @@ export const H2 = styled('text')`
   }
 
   @media (prefers-color-scheme: dark) {
-    color: ${darkColor.ON_BACKGROUND_TEXT};
+    color: #D3D8E8;
   }
 
   @media (prefers-color-scheme: light){
-    color: ${lightColor.ON_BACKGROUND_TEXT};
+    color: #000000;
   }
 `;
 
@@ -63,11 +63,11 @@ export const H3 = styled('text')`
   }
 
   @media (prefers-color-scheme: dark) {
-    color: ${darkColor.ON_SUB_BACKGROUND_TEXT};
+    color: #8A96DC;
   }
 
   @media (prefers-color-scheme: light){
-    color: ${lightColor.ON_SUB_BACKGROUND_TEXT};
+    color: #393D7A;
   }
 `;
 
@@ -156,11 +156,11 @@ export const BODY1 = styled('text')`
   }
 
   @media (prefers-color-scheme: dark) {
-      color: ${darkColor.ON_BUTTON};
+      color: #D3D8E8;
   }
 
   @media (prefers-color-scheme: light){
-      color: ${lightColor.ON_BUTTON};
+      color: #FFFFFF;
   }
 `;
 

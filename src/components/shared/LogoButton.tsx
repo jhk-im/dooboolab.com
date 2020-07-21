@@ -1,6 +1,7 @@
 import React, { CSSProperties, ReactElement } from 'react';
 
 import { LogoButton } from '../ui/Buttons';
+import { device } from '../../theme';
 import styled from 'styled-components';
 
 interface Props {
@@ -11,26 +12,24 @@ interface Props {
 }
 
 const ButtonWrapper = styled.div`
-  margin-left: 30px;
-
+  margin-left: 20px;
+  
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
-  @media (max-width: 1000px) {
-    margin-left: 0;
-  }
 `;
 
 const LogoImg = styled.img`
-  width: 150px;
+  margin-top: 5px;
+  width: 100px;
   object-fit: cover;
-    
-  @media (max-width: 1000px) {
+
+
+  @media ${device.tablet} {
+    margin-top: 0px;
     width: 120px;
-    margin-top: 20px;
-  }
+  }    
 `;
 
 function Button(props: Props): ReactElement {

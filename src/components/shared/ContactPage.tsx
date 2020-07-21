@@ -1,28 +1,20 @@
-import { H1, H3 } from '../../utils/texts';
+import { DarkMode, device } from '../../theme';
 import React, { ReactElement } from 'react';
-import { darkColor, lightColor } from '../../utils/colorlist';
+import { icSponsor, icSponsorDark } from '../../utils/icons';
 
 import { CONTACT_BACKGROUND } from '../../utils/images';
-import { IC_SPONSORS } from '../../utils/icons';
 import SendEmailRoundButton from '../shared/SendEmailRoundButton';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const Container = styled.div`
   width: 100vw;
+  background: ${({ theme }): string => theme.background};
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
-  @media (prefers-color-scheme: dark) {
-    background: ${darkColor.SUB_BACKGROUND};
-  }
-
-  @media (prefers-color-scheme: light){
-    background: ${lightColor.SUB_BACKGROUND};
-  }
 `;
 
 const TopBackgroundWrapper = styled.div`
@@ -33,19 +25,25 @@ const TopBackgroundWrapper = styled.div`
   background-size: cover;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center; 
 
-  @media (max-width: 800px) {
-    flex-direction: column;
+  @media ${device.tablet} {
+    height: 90vh;
+  }
+  
+  @media ${device.laptop} {
+    height: 95vh;
+    flex-direction: row;
   }
 `;
 
 const SendEmailInputWrapper = styled.div`
   width: 100%;
   height: 100%;
-  flex: 1;
+  flex: 3;
   background: rgba(0,0,0,0.5);
   
   display: flex;
@@ -54,8 +52,8 @@ const SendEmailInputWrapper = styled.div`
   align-content: center;
   align-items: center;
 
-  @media (max-width: 800px) {
-    flex: 3;
+  @media ${device.laptop} {
+    flex: 1;
   }
 `;
 
@@ -127,19 +125,17 @@ const SendEmailTextArea = styled.textarea`
 `;
 
 const TextWrapper = styled.div`
-  width: 400px;
-  padding: 20px;
+  width: 280px;
+  padding: 30px;
   
-  @media (max-width: 1000px) {
+  @media ${device.tablet} {
     width: 300px;
+    padding: 40px;
   }
 
-  @media (max-width: 800px) {
-    width: 280px;
-  }
-
-  @media (max-width: 600px) {
-    width: 230px;
+  @media ${device.laptop} {
+    width: 400px;
+    padding: 50px;
   }
 `;
 
@@ -148,45 +144,73 @@ const SendButtonWrapper = styled.div`
 `;
 
 const SponsorWrapper = styled.div`
-  width:80%;
-  padding: 5px;
-
+  width:90%;
+  padding: 10px;
+  margin-bottom: 30px;
+  background: ${({ theme }): string => theme.background};
+  
   display: flex;
   justify-content: space-evenly;
   justify-items: center;
   align-items: center;
-
-  @media (prefers-color-scheme: dark) {
-    background: ${darkColor.SUB_BACKGROUND};
-  }
-
-  @media (prefers-color-scheme: light){
-    background: ${lightColor.SUB_BACKGROUND};
-  }
 `;
 
 const SponsorImage = styled.img`
-  width: 150px;
-  padding: 20px;
+  width: 70px;
 
-  @media (max-width: 1000px) {
-    width: 120px;
+  @media ${device.mobileL} {
+    width: 80px;
   }
 
-  @media (max-width: 800px) {
+  @media ${device.tablet} {
     width: 100px;
   }
 
-  @media (max-width: 600px) {
-    width: 80px;
+  @media ${device.laptop} {
+    width: 120px;
+  }
+`;
+
+export const H1 = styled('text')`
+  font-size: 35px;
+  font-family: futura;
+  font-weight: 300;
+  color: ${({ theme }): string => theme.btnPrimaryLight};
+
+  @media ${device.tablet} {
+    font-size: 40px;
+  }
+
+  @media ${device.laptop} {
+    font-size: 50px;
+  }
+`;
+
+export const H3 = styled('text')`
+  font-size: 25px;
+  font-family: avenir;
+  color: ${({ theme }): string => theme.colorAccentLight};
+
+  @media ${device.tablet} {
+    font-size: 30px;
+  }
+  
+  @media ${device.laptop} {
+    font-size: 35px;
   }
 `;
 
 function ContactPage(): ReactElement {
   const sponsorImages = [];
 
-  for (const value of IC_SPONSORS) {
-    sponsorImages.push(<SponsorImage src={value}/>);
+  if (DarkMode.isDark) {
+    for (const value of icSponsorDark) {
+      sponsorImages.push(<SponsorImage src={value}/>);
+    }
+  } else {
+    for (const value of icSponsor) {
+      sponsorImages.push(<SponsorImage src={value}/>);
+    }
   }
 
   return (

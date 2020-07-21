@@ -16,7 +16,7 @@ const Container = styled.div`
 `;
 
 const MenubarTemp = styled.div`
-  height:120px;
+  height:80px;
   width:100%;
 `;
 

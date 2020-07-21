@@ -1,7 +1,7 @@
 import React, { CSSProperties, ReactElement } from 'react';
-import { darkColor, lightColor } from '../../utils/colorlist';
 
 import { MenuButton } from '../ui/Buttons';
+import { device } from '../../theme';
 import styled from 'styled-components';
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
 
 const ButtonWrapper = styled.div`
   height: 100%;
-
+  
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -23,64 +23,36 @@ const ButtonWrapper = styled.div`
 
 const BottomLine = styled.div`
   height: 3px;
-  width: 100px;
+  width: 70%;
 
-  @media (max-width: 1000px) {
-    width: 80px;
-  }
-
-  @media (max-width: 800px) {
-    width: 60px;
-  }
-  
-  @media (max-width: 500px) {
-    width: 50px;
-  }
+  @media ${device.tablet} {
+    width: 80%;
+  }   
 `;
 
 const SelectedButtonWrapper = styled.div`
+  height: 100%;
+  color: ${({ theme }): string => theme.colorAccent};
+  
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 100%;
-  
-  @media (prefers-color-scheme: dark) {
-    color: ${darkColor.TAB_BUTTON};
-  }
-
-  @media (prefers-color-scheme: light){
-    color: ${lightColor.TAB_BUTTON};
-  }
 `;
 
 const SelectedBottomLine = styled.div`
   height: 3px;
-  width: 100px;
+  width: 70%;
+  background: ${({ theme }): string => theme.btnGradient};
 
-  @media (max-width: 1000px) {
-    width: 80px;
-  }
-  
-  @media (max-width: 600px) {
-    width: 60px;
-  }
-
-  @media (max-width: 500px) {
-    width: 50px;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    background: linear-gradient(to right,#9497C2,#B290B7);
-  }
-  
-  @media (prefers-color-scheme: light){
-    background: linear-gradient(to right,#393D7A,#B446BF);
-  }
+  @media ${device.tablet} {
+    width: 80%;
+  }    
 `;
 
 function Button(props: Props): ReactElement {
   const { onClick, text, style, isSelected } = props;
+
   return (
     <MenuButton style={style} onClick={onClick} >
       {

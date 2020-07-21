@@ -1,8 +1,7 @@
-import { BODY2, H1, H3, H5 } from '../../utils/texts';
 import React, { ReactElement } from 'react';
-import { darkColor, lightColor } from '../../utils/colorlist';
 
 import { VISION_BACKGROUND } from '../../utils/images';
+import { device } from '../../theme';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
@@ -17,7 +16,7 @@ const Container = styled.div`
 
 const HeaderBackgroundWrapper = styled.div`
   width: 100vw;
-  height: 500px;
+  height: 300px;
   background-image: url(${VISION_BACKGROUND});
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,211 +27,229 @@ const HeaderBackgroundWrapper = styled.div`
   align-content: center;
   align-items: center;
 
-  @media (max-width: 1000px) {
+  @media ${device.tablet} {
     height: 400px;
   }
 
-  @media (max-width: 800px) {
-    height: 300px;
-  }
-
-  @media (max-width: 600px) {
-    height: 200px;
+  @media ${device.laptop} {
+    height: 500px;
   }
 `;
 
 const HeaderTitleTextWrapper = styled.div`
-  width: 600px;
-  padding: 80px;
-  
-  @media (max-width: 1000px) {
+  width: 300px;
+  padding: 40px;
+
+  @media ${device.tablet} {
+    width: 400px;
+    padding: 50px;
+  }
+
+  @media ${device.laptop} {
     width: 500px;
     padding: 60px;
   }
-  @media (max-width: 800px) {
-    width: 400px;
-    padding: 40px;
-  }
-  @media (max-width: 600px) {
-    width: 250px;
-    padding: 30px;
-  }
 `;
+
 const SubTitleWrapper = styled.div`
+  width: 100vw;
+  padding: 10px;
+  background: ${({ theme }): string => theme.subBackground};
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  padding: 30px;
 
-  @media (max-width: 1000px) {
-    padding: 20px;
-  }
-
-  @media (max-width: 800px) {
+  @media ${device.tablet} {
     padding: 15px;
   }
 
-  @media (max-width: 600px) {
-    padding: 10px;
-  }
-
-  @media (prefers-color-scheme: dark) {
-      background: ${darkColor.BACKGROUND};
-  }
-
-  @media (prefers-color-scheme: light){
-      background: ${lightColor.BACKGROUND};
+  @media ${device.laptop} {
+    padding: 20px;
   }
 `;
 
 const TitleTextWrapper = styled.div`
+  padding: 10px;
+
   display: flex;
   flex-direction: column;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  padding: 30px;
   
-  @media (max-width: 1000px) {
+  @media ${device.tablet} {
     padding: 20px;
   }
 
-  @media (max-width: 800px) {
-    padding: 10px;
-  }
-
-  @media (max-width: 600px) {
-    padding: 5px;
+  @media ${device.laptop} {
+    padding: 30px;
   }
 `;
 
 const DescriptionWrapper = styled.div`
+  width: 60%;
+  padding: 20px;
+  margin-bottom: 5px;
+  line-height: 20px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
-  width: 70%;
-  padding: 20px;
-  margin-bottom: 20px;
-  line-height: 30px;
 
-  @media (max-width: 1000px) {
-    margin-bottom: 15px;
+  @media ${device.tablet} {
+    margin-bottom: 10px;
     line-height: 25px;
   }
 
-  @media (max-width: 800px) {
-    margin-bottom: 10px;
-    line-height: 20px;
-  }
-
-  @media (max-width: 600px) {
-    margin-bottom: 5px;
-    line-height: 15px;
+  @media ${device.laptop} {
+    margin-bottom: 15px;
+    line-height: 30px;
   }
 `;
 
 const VisionListWrapper = styled.div`
+  width: 100vw;
+  padding: 50px;
+  background: ${({ theme }): string => theme.background};
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
-  
-  @media (prefers-color-scheme: dark) {
-    background: ${darkColor.SUB_BACKGROUND};
-  }
-
-  @media (prefers-color-scheme: light){
-    background: ${lightColor.SUB_BACKGROUND};
-  }
 `;
 
 const VisionItemLinearWrapper = styled.div`
+  width: 80vw;
+  padding: 30px;
+
   display: flex;
   flex-direction: column;
   align-content: space-around;
   justify-content: space-around;
   align-items: center; 
-  width: 80vw;
-  padding: 30px;
 `;
 
 const VisionItem = styled.div`
+  width: 100vw;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
 `;
 
 const VisionItemBox = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center; 
   text-align: left;
   width: 80vw;
   max-width: 1200px;
   height: 80%;
   border: 3px solid; 
   border-radius: 10px;
+  border-color: ${({ theme }): string => theme.itemBorder};
+  border-color: ${({ theme }): string => theme.itemBorderTransparent};
 
-  @media (prefers-color-scheme: dark) {
-    border-color: #fff;
-    border-color: rgba( 255, 255, 255, 0.1);
-  }
-
-  @media (prefers-color-scheme: light){
-    border-color: #000;
-    border-color: rgba( 0, 0, 0, 0.2);
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center; 
 `;
 
 const ItemTitleTextWrapper = styled.div`
-  width: 600px;
-  padding: 50px;
+  width: 350px;
+  padding: 5px;
   margin-top: 20px;
+  line-height: 30px;
 
-  @media (max-width: 1000px) {
-    width: 500px;
-    padding: 15px;
-  }
-
-  @media (max-width: 800px) {
-    width: 400px;
+  @media ${device.tablet} {
+    width: 450px;
     padding: 10px;
+    line-height: 35px;
   }
 
-  @media (max-width: 600px) {
-    width: 300px;
-    padding: 5px;
+  @media ${device.laptop} {
+    width: 550px;
+    padding: 15px;
+    line-height: 40px;
   }
 `;
 
 const ItemDescriptionWrapper = styled.div`
   width: 80%;
-  padding: 30px;
-  margin-bottom: 20px;
-  line-height: 40px;
+  margin-bottom: 5px;
+  line-height: 25px;
+  padding: 15px;
 
-  @media (max-width: 1000px) {
-    margin-bottom: 15px;
-    line-height: 35px;
-    padding: 25px;
-  }
-
-  @media (max-width: 800px) {
+  @media ${device.tablet} {
     margin-bottom: 10px;
     line-height: 30px;
     padding: 20px;
   }
 
-  @media (max-width: 600px) {
-    margin-bottom: 5px;
-    line-height: 25px;
-    padding: 15px;
+  @media ${device.laptop} {
+    margin-bottom: 15px;
+    line-height: 35px;
+    padding: 25px;
+  }
+`;
+
+export const H1 = styled('text')`
+  font-size: 35px;
+  font-family: futura;
+  font-weight: 300;
+  color: ${({ theme }): string => theme.btnPrimaryLight};
+
+  @media ${device.tablet} {
+    font-size: 40px;
+  }
+
+  @media ${device.laptop} {
+    font-size: 50px;
+  }
+`;
+
+export const BODY2 = styled('text')`
+  font-size: 15px;
+  font-family: avenir;
+  font-weight: lighter;
+  color: ${({ theme }): string => theme.btnPrimaryLightFont};
+
+  @media ${device.tablet} {
+    font-size: 18px;
+  }
+  
+  @media ${device.laptop} {
+    font-size: 20px;
+  }
+`;
+
+export const H3 = styled('text')`
+  font-size: 25px;
+  font-family: avenir;
+  color: ${({ theme }): string => theme.colorAccentLight};
+
+  @media ${device.tablet} {
+    font-size: 30px;
+  }
+  
+  @media ${device.laptop} {
+    font-size: 35px;
+  }
+`;
+
+export const H5 = styled('text')`
+  font-size: 20px;
+  font-family: futura;
+  color: ${({ theme }): string => theme.colorAccentLight};
+
+
+  @media ${device.tablet} {
+    font-size: 25px;
+  }
+  
+  @media ${device.laptop} {
+    font-size: 30px;
   }
 `;
 

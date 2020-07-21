@@ -1,7 +1,7 @@
+import { DarkMode, device } from '../../theme';
 import React, { ReactElement } from 'react';
-import { darkColor, lightColor } from '../../utils/colorlist';
+import { icLogo, icLogoDark } from '../../utils/icons';
 
-import { IC_DOOBOOLAB_LOGO } from '../../utils/icons';
 import LogoButton from '../shared/LogoButton';
 import MenuButton from '../shared/MenuButton';
 import { getString } from '../../../STRINGS';
@@ -13,49 +13,44 @@ interface Props {
 }
 
 const Container = styled.div`
-  height: 120px;
+  height: 100px;
   width: 100vw;
+  background: ${({ theme }): string => theme.background};
 
   display: flex;
   position: absolute;
   align-items: center;
-  justify-content: space-between; 
-
-  @media (max-width:1000px) {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    background: ${darkColor.BACKGROUND};
-  }
-
-  @media (prefers-color-scheme: light){
-    background: ${lightColor.BACKGROUND};
-  }
+  flex-direction: column;
+  justify-content: center;
+  
+  @media ${device.tablet} {
+    height: 70px;
+    flex-direction: row;
+    justify-content: space-between; 
+  }    
 `;
 
 const MenuButtonWrapper = styled.div`
-  width: 800px;
-  height: 60px;
-
+  width: 300px;
+  height: 80%;
+  
   display: flex;
+  justify-content: center;
+  align-content: center;
 
-  @media (max-width: 1000px) {
-    width: 90%;
-    
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
+  @media ${device.mobileM} {
+    width: 400px;
+  } 
+
+  @media ${device.mobileL} {
+    width: 500px;
+  }  
+
+  @media ${device.tablet} {
+    margin-top: 5px;
+    width: 600px;
+  }    
 `;
-
-const menuButton = new Map<string, string>();
-
-menuButton.set(getString('STORY'), '/story');
-menuButton.set(getString('WORK'), '/work');
-menuButton.set(getString('PEOPLE'), '/people');
-menuButton.set(getString('CONTACT'), '/contact');
 
 function MenuBar(props: Props): ReactElement {
   const history = useHistory();
@@ -70,14 +65,28 @@ function MenuBar(props: Props): ReactElement {
     history.push(location);
   };
 
+  const titles = [
+    getString('STORY'),
+    getString('WORK'),
+    getString('PEOPLE'),
+    getString('CONTACT'),
+  ];
+
+  const paths = [
+    '/story',
+    '/work',
+    '/people',
+    '/contact',
+  ];
+
   const menuButtons = [];
 
-  for (const [key, value] of menuButton) {
+  for (let i = 0; i < titles.length; i++) {
     menuButtons.push(
       <MenuButton
-        onClick={ (): void => tabChange(value) }
-        text={ key }
-        isSelected={ currentPage === key && true }/>,
+        onClick={ (): void => tabChange(paths[i]) }
+        text={ titles[i] }
+        isSelected={ currentPage === titles[i] && true }/>,
     );
   }
 
@@ -85,7 +94,11 @@ function MenuBar(props: Props): ReactElement {
     <Container>
       <LogoButton
         onClick={ (): void => tabChange('/') }
-        imgSrc={ IC_DOOBOOLAB_LOGO }/>
+        imgSrc={
+          DarkMode.isDark === true
+            ? icLogoDark
+            : icLogo
+        }/>
       <MenuButtonWrapper>
         {menuButtons}
       </MenuButtonWrapper>

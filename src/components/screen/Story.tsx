@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react';
 import Footer from '../shared/Footer';
 import MenuBar from '../shared/MenuBar';
 import StoryPage from '../shared/StoryPage';
+import { device } from '../../theme';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
@@ -17,8 +18,12 @@ const Container = styled.div`
 `;
 
 const MenubarTemp = styled.div`
-  height:120px;
-  width:100%;
+  height: 100px;
+  width: 100vw;
+
+  @media ${device.tablet} {
+    height: 70px;
+  }    
 `;
 
 function Intro(): ReactElement {

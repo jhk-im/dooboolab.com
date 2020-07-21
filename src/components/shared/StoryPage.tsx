@@ -1,13 +1,12 @@
-import { BODY2, H2, H3 } from '../../utils/texts';
 import {
   IC_GRAPHQLSEOUL,
   IC_REACTNATIVESEOUL,
 } from '../../utils/icons';
 import React, { ReactElement } from 'react';
-import { darkColor, lightColor } from '../../utils/colorlist';
 
 import StoryTextButton from '../shared/StoryTextButton';
 import ViewMoreRoundButton from '../shared/ViewMoreRoundButton';
+import { device } from '../../theme';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
@@ -21,69 +20,70 @@ const Container = styled.div`
 
 const StoryContainer = styled.div`
   width: 100vw;
-  padding: 50px;
-
+  padding: 10px;
+  height: 500px;
+  background: ${({ theme }): string => theme.background};
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 800px) {
-    min-height: 400px;
+  @media ${device.tablet} {
+    height: 80vh;
+    min-height: 600px;
   }
   
-  @media (prefers-color-scheme: dark) {
-    background: ${darkColor.BACKGROUND};
-  }
-
-  @media (prefers-color-scheme: light){
-    background: ${lightColor.BACKGROUND};
+  @media ${device.laptop} {
+    height: 80vh;
+    min-height: 700px;
   }
 `;
 
 const TitleWrapper = styled.div`
-  padding: 25px;
+  padding: 10px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+
+  @media ${device.tablet} {
+    padding: 40px;
+  }
+
+  @media ${device.laptop} {
+    padding: 50px;
+  }
 `;
 
 const DescriptionWrapper = styled.div`
-  width: 600px;
-  padding: 20px;
-  margin-bottom: 20px;
-  line-height: 30px;
+  width: 400px;
+  line-height: 20px;
+  padding: 5px;
+  margin-bottom : 20px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
-
-  @media (max-width: 1000px) {
+  
+  @media ${device.tablet} {
     width: 500px;
-    margin-bottom: 20px;
-    line-height: 25px;
+    line-height: 30px;
   }
 
-  @media (max-width: 800px) {
-    width: 400px;
-    margin-bottom: 15px;
-    line-height: 20px;
-  }
-
-  @media (max-width: 600px) {
-    width: 300px;
-    margin-bottom: 10px;
-    line-height: 15px;
+  @media ${device.laptop} {
+    width: 650px;
+    line-height: 35px;
   }
 `;
 
 const ViewMoreButtonWrapper = styled.div`
   width: 100vw;
-  margin-top: 10px;
+  margin-right: 10px;
+  margin-top: 30px;
 
   display: flex;
   flex-direction: column;
@@ -96,42 +96,35 @@ const CommunityContainer = styled.div`
   width: 100vw;
   padding: 30px;
   min-height: 400px;
+  background: ${({ theme }): string => theme.subBackground};
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  @media (prefers-color-scheme: dark) {
-    background: ${darkColor.SUB_BACKGROUND};
-  }
-
-  @media (prefers-color-scheme: light){
-    background: ${lightColor.SUB_BACKGROUND};
-  }
 `;
 
 const CommunityImageListWrapper = styled.div`
-  padding: 10px;
-  margin-bottom: 50px;
-  width: 80vw;
-  height: 30vw;
+  padding: 30px;
+  margin-bottom: 20px;
+  width: 85vw;
+  height: 35vw;
 
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-content: space-evenly;
 
-  @media (max-width: 1000px) {
-    margin-bottom: 40px;
+  @media ${device.tablet} {
+    margin-bottom: 30px;
+    width: 70vw;
+    height: 30vw;
   }
 
-  @media (max-width: 800px) {
-    margin-bottom: 30px;
-  }
-  
-  @media (max-width: 600px) {
-    margin-bottom: 0px;
+  @media ${device.laptop} {
+    margin-bottom: 40px;
+    width: 60vw;
+    height: 25vw;
   }
 `;
 
@@ -163,19 +156,65 @@ const ReactNativeImageWrapper = styled.div`
 
 const ItemButtonWrapper = styled.div`
   width: 100vw;
-  padding: 30px;
+  padding: 10px;
 
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
 
-  @media (max-width: 1000px) {
+  @media ${device.tablet} {
     padding: 20px;
+    margin-left: 10px;
   }
+  
+  @media ${device.laptop} {
+    padding: 30px;
+    margin-left: 15px;
+  }
+`;
 
-  @media (max-width: 800px) {
-    padding: 0px;
+export const H2 = styled('text')`
+  font-size: 20px;
+  font-weight: bold;
+  font-family: futura;
+  color: ${({ theme }): string => theme.btnPrimaryLightFont};
+
+  @media ${device.tablet} {
+    font-size: 30px;
+  }
+  
+  @media ${device.laptop} {
+    font-size: 40px;
+  }
+`;
+
+export const H3 = styled('text')`
+  font-size: 25px;
+  font-family: avenir;
+  color: ${({ theme }): string => theme.colorAccentLight};
+
+  @media ${device.tablet} {
+    font-size: 30px;
+  }
+  
+  @media ${device.laptop} {
+    font-size: 35px;
+  }
+`;
+
+export const BODY2 = styled('text')`
+  font-size: 15px;
+  font-family: avenir;
+  font-weight: lighter;
+  color: ${({ theme }): string => theme.btnPrimaryLightFont};
+
+  @media ${device.tablet} {
+    font-size: 18px;
+  }
+  
+  @media ${device.laptop} {
+    font-size: 20px;
   }
 `;
 

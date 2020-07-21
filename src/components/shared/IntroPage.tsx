@@ -1,4 +1,3 @@
-import { BODY1, H1 } from '../../utils/texts';
 import React, { ReactElement } from 'react';
 
 import ContactPage from './ContactPage';
@@ -7,9 +6,11 @@ import IntroRoundButton from '../shared/IntroRoundButton';
 import PeoplePage from './PeoplePage';
 import StoryPage from './StoryPage';
 import WorkPage from './WorkPage';
+import { device } from '../../theme';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import { useThemeContext } from '../../providers/ThemeProvider';
 
 const Container = styled.div`
   width: 100vw;
@@ -22,7 +23,7 @@ const Container = styled.div`
 
 const IntroContainer = styled.div`
   width: 100vw;
-  height: 600px;
+  height: 400px;
   background-image: url(${INTRO_BACKGROUND});
   background-repeat: no-repeat;
   background-size: cover;
@@ -33,87 +34,82 @@ const IntroContainer = styled.div`
   align-content: center;
   align-items: left;
 
-  @media (max-width: 1000px) {
-    height: 500px;
+  @media ${device.tablet} {
+    height: 80vh;
+    min-height: 600px;
+    flex: 2;
+    align-items: flex-start;
   }
-
-  @media (max-width: 800px) {
-    height: 400px;
-  }
-
-  @media (max-width: 600px) {
-    height: 300px;
+  @media ${device.laptop} {
+    height: 95vh;
+    min-height: 700px;
+    flex: 1.5;
+    align-items: flex-start;
   }
 `;
 
 const TextWrapper = styled.div`
-  flex: 2;
+  flex: 2;  
   width: 100%;
   background: linear-gradient(to right,rgba(0,0,0,0.7), rgba(0,0,0,0));
 
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: center;
 
-  @media (max-width: 800px) {
-    flex: 2.5;
-    align-items: center;
+  @media ${device.tablet} {
+    flex: 1.8;
+    align-items: flex-start;
   }
   
-  @media (max-width: 600px) {
-    flex: 3;
+  @media ${device.laptop} {
+    flex: 1.5;
+    align-items: flex-start;
   }
 `;
 
 const TitleWrapper = styled.div`
-  width: 600px;
+  width: 400px;
   padding: 10px;
-  margin-left: 100px;
-  line-height: 60px;
-  text-align:left;
-
-  @media (max-width: 1000px) {
-    width: 500px;
+  line-height: 40px;
+  margin-left: 0px;
+  text-align:center;
+  
+  @media ${device.tablet} {
+    width: 450px;
     margin-left: 80px;
     line-height: 50px;
+    text-align: left;
   }
-
-  @media (max-width: 800px) {
-    width: 450px;
-    margin-left: 0px;
-    line-height: 40px;
-    text-align:center;
-  }
-
-  @media (max-width: 600px) {
-    width: 350px;
-    line-height: 30px;
+  @media ${device.laptop} {
+    width: 600px;
+    margin-left: 100px;
+    line-height: 60px;
+    text-align:left;
   }
 `;
 
 const DescriptionWrapper = styled.div`
-  width: 600px;
-  height: 60px;
+  width: 400px;
   padding: 10px;
-  margin-left: 100px;
-  line-height: 25px;
-  text-align: left;
+  margin-left: 0px;
+  line-height: 20px;
 
-  @media (max-width: 1000px) {
+  @media ${device.tablet} {
     width: 500px;
+    padding: 10px;
     margin-left: 80px;
-    line-height: 20px;
+    line-height: 25px;
+    text-align: left;
   }
-  
-  @media (max-width: 800px) {
-    width: 400px;
-    margin-left: 0px;
-    line-height: 15px;
-    text-align: center;
-  }
-
-  @media (max-width: 600px) {
-    width: 300px;
+  @media ${device.laptop} {
+    width: 600px;
+    height: 60px;
+    padding: 10px;
+    margin-left: 100px;
+    line-height: 30px;
+    text-align: left;
   }
 `;
 
@@ -121,31 +117,65 @@ const ContactButtonWrapper = styled.div`
   flex: 1;
   width: 100%;
   background: linear-gradient(to right,rgba(0,0,0,0.7), rgba(0,0,0,0));
-
+  
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: top;
 
-  @media (max-width: 800px) {
-    justify-content: center;
+  @media ${device.tablet} {
+    justify-content: flex-start;
   }
 `;
 
 const ButtonWrapper = styled.div`
   padding: 10px;
-  margin-left: 100px;
+  margin-left: 0px;
+  margin-top: 30px;
   
-  @media (max-width: 1000px) {
+  @media ${device.tablet} {
     margin-left: 80px;
+    margin-top: 20px;
   }
   
-  @media (max-width: 800px) {
-    margin-left: 0px;
+  @media ${device.laptop} {
+    margin-left: 100px;
+    margin-top: 20px;
+  }
+`;
+
+export const H1 = styled('text')`
+  font-size: 35px;
+  font-family: futura;
+  font-weight: 300;
+  color: ${({ theme }): string => theme.btnPrimaryLight};
+
+  @media ${device.tablet} {
+    font-size: 40px;
+  }
+
+  @media ${device.laptop} {
+    font-size: 50px;
+  }
+`;
+
+export const BODY1 = styled('text')`
+  font-size: 15px;
+  font-family: avenir;
+  font-weight: lighter;
+  color: ${({ theme }): string => theme.btnPrimaryLight};
+  
+  @media ${device.tablet} {
+    font-size: 20px;
+  }
+
+  @media ${device.laptop} {
+    font-size: 24px;
   }
 `;
 
 function IntroPage(): ReactElement {
   const history = useHistory();
+  const { changeThemeType } = useThemeContext();
 
   const tabChange = (inputPath): void => {
     const location: Record<string, unknown> = {
@@ -159,7 +189,7 @@ function IntroPage(): ReactElement {
     <Container>
       <IntroContainer>
         <TextWrapper>
-          <TitleWrapper>
+          <TitleWrapper onClick={(): void => changeThemeType()}>
             <H1>{ getString('INTRO_TITLE') }</H1>
           </TitleWrapper>
           <DescriptionWrapper>

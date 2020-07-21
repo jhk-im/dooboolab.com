@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react';
 import Footer from '../shared/Footer';
 import IntroPage from '../shared/IntroPage';
 import MenuBar from '../shared/MenuBar';
+import { device } from '../../theme';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -15,8 +16,12 @@ const Container = styled.div`
 `;
 
 const MenubarTemp = styled.div`
-  height:120px;
-  width:100%;
+  height: 100px;
+  width: 100vw;
+
+  @media ${device.tablet} {
+    height: 70px;
+  }    
 `;
 
 function Intro(): ReactElement {

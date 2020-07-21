@@ -1,33 +1,34 @@
-import { BODY2, H2 } from '../../utils/texts';
+import { DarkMode, device } from '../../theme';
 import React, { ReactElement } from 'react';
-import { darkColor, lightColor } from '../../utils/colorlist';
+import { icWorks, icWorksDark } from '../../utils/icons';
 
-import { IC_WORKS } from '../../utils/icons';
 import ViewMoreRoundButton from './ViewMoreRoundButton';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const WorkContainer = styled.div`
-  padding: 30px;
+  padding: 50px;
   width: 100vw;
-  height: 1000px;
-
+  background: ${({ theme }): string => theme.background};
+  
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 
-  @media (prefers-color-scheme: dark) {
-      background: ${darkColor.BACKGROUND};
+  @media ${device.tablet} {
+    height: 80vh;
+    min-height: 600px;
   }
-
-  @media (prefers-color-scheme: light){
-      background: ${lightColor.BACKGROUND};
+  
+  @media ${device.laptop} {
+    height: 80vh;
+    min-height: 700px;
   }
 `;
 
 const TitleWrapper = styled.div`
-  padding: 30px;
+  padding: 10px;
 
   display: flex;
   flex-direction: column;
@@ -35,101 +36,76 @@ const TitleWrapper = styled.div`
   justify-content: center;
   align-content: center;
 
-  @media (max-width: 1000px) {
+  @media ${device.tablet} {
     padding: 20px;
-  }
+  }  
 
-  @media (max-width: 800px) {
-    padding: 10px;
-  }
-
-  @media (max-width: 600px) {
-    padding: 5px;
+  @media ${device.laptop} {
+    padding: 30px;
   }
 `;
 
 const DescriptionWrapper = styled.div`
   padding: 10px;
-  margin-bottom: 20px;
-
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
 
-  @media (max-width: 1000px) {
+  @media ${device.tablet} {
     margin-bottom: 15px;
-  }
+  }  
 
-  @media (max-width: 800px) {
-    margin-bottom: 10px;
-  }
-
-  @media (max-width: 600px) {
-    margin-bottom: 5px;
-  }
+  @media ${device.laptop} {
+    margin-bottom: 20px;
+  }  
 `;
 
 const WorkItemListWrapper = styled.div`
-  width: 90%;
+  width: 80%;
   padding: 30px;
+  max-width: 1100px;
 
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-around;
   align-content: space-around;
   align-items: center;
 
-  @media (max-width: 1000px) {
-    flex-direction: column;
-  }
+  @media ${device.laptop} {
+    flex-direction: row;
+  }  
 `;
 
 const WorkItemWrapper = styled.div`
   padding: 10px;
-  width: 350px;
-  height: 500px;
+  height: 200px;
+  width: 75vw;
   margin-bottom: 20px;
   border-width: 2px;
-  border-color: #EDEDED;
+  border-color: ${({ theme }): string => theme.itemBorder};
+  border-color: ${({ theme }): string => theme.itemBorderTransparent};
   border-radius: 10px;
   border-style: solid;
+  background: ${({ theme }): string => theme.itemBackground};
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 1300px) {
+  @media ${device.tablet} {
+    width: 80vw;
+    height: 250px;
+  }  
+
+  @media ${device.laptop} {
     width: 300px;
-    height: 450px;
-  }
-
-
-  @media (max-width: 1200px) {
-    width: 250px;
-    height: 400px;
-  }
-
-  @media (max-width: 1000px) {
-    width: 70vw;
-    height: 180px;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    color: ${darkColor.SUB_BACKGROUND};
-    border-color: #ffffff;
-    border-color: rgba(255, 255, 255, 0);
-  }
-
-  @media (prefers-color-scheme: light){
-    color: ${lightColor.SUB_BACKGROUND};
-  }
-
-  @media (prefers-color-scheme: dark) {
-    background: #2C2C2C;
-
-  }
+    height: 350px;
+  }  
 `;
 
 const WorkImageWrapper = styled.div`
@@ -149,54 +125,67 @@ const WorkImage = styled.img`
 `;
 
 const WorkTextWrapper = styled.div`
-  flex: 3;
-  width: 200px;
+  flex: 1;
+  width: 80%;
   padding: 10px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 1000px) {
-    flex: 1.5;
-    width: 60vw;
+  @media ${device.tablet} {
+    flex: 2;
   }
-
-  @media (max-width: 800px) {
-    flex: 1;
-  }
-
-  @media (max-width: 600px) {
-    flex: 0.5;
+  
+  @media ${device.laptop} {
+    flex: 3;
   }
 `;
 
 const DescriptionText = styled.text`
-  font-size: 20px;
-  line-height: 25px;
+  font-size: 12px;
+  line-height: 15px;
   font-family: avenir;
+  color: ${({ theme }): string => theme.btnPrimaryLightFont};
 
-  @media (max-width: 1000px) {
-    font-size: 18px;
+  @media ${device.tablet} {
+    font-size: 15px;
     line-height: 20px;
   }
-
-  @media (max-width: 800px) {
-    font-size: 15px;
-    line-height: 15px;
+  
+  @media ${device.laptop} {
+    font-size: 18px;
+    line-height: 25px;
   }
+`;
 
-  @media (max-width: 600px) {
-    font-size: 12px;
-    line-height: 10px;
+export const H2 = styled('text')`
+  font-size: 25px;
+  font-weight: bold;
+  font-family: futura;
+  color: ${({ theme }): string => theme.btnPrimaryLightFont};
+
+  @media ${device.tablet} {
+    font-size: 30px;
   }
-
-  @media (prefers-color-scheme: dark) {
-      color: ${darkColor.ON_BACKGROUND_TEXT};
+  
+  @media ${device.laptop} {
+    font-size: 35px;
   }
+`;
 
-  @media (prefers-color-scheme: light){
-      color: ${lightColor.ON_BACKGROUND_TEXT};
+export const BODY2 = styled('text')`
+  font-size: 15px;
+  font-family: avenir;
+  font-weight: lighter;
+  color: ${({ theme }): string => theme.btnPrimaryLightFont};
+
+  @media ${device.tablet} {
+    font-size: 18px;
+  }
+  
+  @media ${device.laptop} {
+    font-size: 20px;
   }
 `;
 
@@ -226,24 +215,32 @@ function Work(): ReactElement {
     window.open(inputPath);
   };
 
+  const workIcons = { list: [] };
+
+  if (DarkMode.isDark) {
+    workIcons.list = icWorksDark;
+  } else {
+    workIcons.list = icWorks;
+  }
+
   const workItemWrappers = [];
 
-  for (const value of IC_WORKS) {
+  for (const value of workIcons.list) {
     workItemWrappers.push(
       <WorkItemWrapper>
         <WorkImageWrapper>
           <WorkImage src={ value }/>
         </WorkImageWrapper>
         <WorkTextWrapper>
-          <DescriptionText>{ workDescriptions[IC_WORKS.indexOf(value)] }</DescriptionText>
+          <DescriptionText>{ workDescriptions[workIcons.list.indexOf(value)] }</DescriptionText>
         </WorkTextWrapper>
         <ItemButtonWrapper>
           {
-            workItemURLs[IC_WORKS.indexOf(value)] === ''
+            workItemURLs[workIcons.list.indexOf(value)] === ''
               ? null
               : <ViewMoreRoundButton
                 text={ getString('VIEW_MORE') }
-                onClick={ (): void => moveUrl(workItemURLs[IC_WORKS.indexOf(value)]) }/>
+                onClick={ (): void => moveUrl(workItemURLs[workIcons.list.indexOf(value)]) }/>
           }
         </ItemButtonWrapper>
       </WorkItemWrapper>,

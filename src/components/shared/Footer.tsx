@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
-import { darkColor, lightColor } from '../../utils/colorlist';
 
 import FooterButton from '../shared/FooterButton';
+import { device } from '../../theme';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
@@ -10,23 +10,16 @@ const thisYear = new Date().getFullYear();
 
 const FooterWrapper = styled.div`
   width: 100vw;
-  height: 100px;
+  height: 80px;
+  background: ${({ theme }): string => theme.footerBackground};
 
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
   
-  @media (max-width: 800px) {
-    height: 70px;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    background: ${darkColor.FOOTER_BACKGROUND};
-  }
-
-  @media (prefers-color-scheme: light){
-    background: ${lightColor.FOOTER_BACKGROUND};
+  @media ${device.tablet} {
+    height: 120px;
   }
 `;
 
@@ -41,58 +34,49 @@ const FooterTextWrapper = styled.div`
 
 const ButtonWrapper = styled.div`
   width: 400px;
-  padding: 10px;
-
+  
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-content: space-between;
   align-items: space-between;
 
-  @media (max-width: 1000px) {
-    flex-direction: column;
-    padding: 5px;
+  @media ${device.laptop} {
+    flex-direction: row;
+    padding: 10px;
   }
+
 `;
 
 const FooterTitleText = styled.div`
   padding:10px;
-  font-size: 20px;
+  font-size: 10px;
   font-family: futura;
-  color: ${lightColor.ON_FOOTER_TEXT};
+  color: #BEC8E2;
 
-  @media (max-width: 1000px) {
-    font-size: 18px;
-  }
-  
-  @media (max-width: 800px) {
+  @media ${device.tablet} {
     font-size: 15px;
   }
 
-  @media (max-width: 600px) {
-    font-size: 10px;
-  }
-  
-  @media (prefers-color-scheme: light) {
-    color: ${lightColor.ON_FOOTER_TEXT};
-  }
-
-  @media (prefers-color-scheme: dark) {
-    color: ${darkColor.ON_FOOTER_TEXT};
+  @media ${device.laptop} {
+    font-size: 18px;
   }
 `;
 
 const FooterDescriptionText = styled.div`
   padding: 10px;
-  font-size: 15px;
+  font-size: 5px;
   font-family: avenir;
-  color: ${lightColor.ON_FOOTER_SUB_TEXT};
+  color: #FFFFFF;
 
-  @media (max-width: 1000px) {
+  @media ${device.tablet} {
     font-size: 10px;
+    padding: 10px;
   }
 
-  @media (max-width: 800px) {
-    font-size: 5px;
+  @media ${device.laptop} {
+    font-size: 15px;
+    padding: 15px;
   }
 `;
 

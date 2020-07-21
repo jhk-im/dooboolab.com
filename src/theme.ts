@@ -1,6 +1,8 @@
 import { DefaultTheme } from 'styled-components';
 import { ThemeType } from './types';
 
+export const DarkMode = { isDark: true };
+
 const size = {
   mobileS: '320px',
   mobileM: '375px',
@@ -20,35 +22,65 @@ const colors = {
   mediumGray: 'rgb(134,154,183)',
   paleGray: 'rgb(221,226,236)',
   lightBackground: 'white',
-  lightBackgroundLight: '#f7f6f3',
-  darkBackground: '#323739',
-  darkBackgroundLight: '#393241',
+  lightBackgroundLight: '#EAEBF4',
+  darkBackground: '#232323',
+  darkBackgroundLight: '#2C2C2C',
+  lightWhite: '#EAEBF4',
+  accentLight: '#393D7A',
+  accentLightDark: '#8A96DC',
+  accent: '#B446BF',
+  accentDark: '#B290B7',
+  btnPrimary: '#02C8A3',
+  btnPrimaryDark: '#00BA90',
+  blackLight: '#232323',
+  lightBlack: '#2C2C2C',
+  lightGray: '#40444F',
+  whiteLight: '#EDEDED',
+  lightW: '#D3D8E8',
 };
 
 const light = {
-  background: `linear-gradient(
-    to bottom right,
-    ${colors.lightBackground},
-    ${colors.lightBackgroundLight})`,
-  btnPrimary: colors.skyBlue,
+  background: 'white',
+  subBackground: colors.lightWhite,
+  footerBackground: colors.lightGray,
+  btnPrimary: colors.btnPrimary,
   btnPrimaryFont: 'white',
-  btnPrimaryLight: colors.whiteGray,
+  btnPrimaryLight: 'white',
   btnPrimaryLightFont: 'black',
   fontColor: 'black',
+  colorAccentLight: colors.accentLight,
+  colorAccent: colors.accent,
+  btnGradient: `linear-gradient(
+    to right,
+    ${colors.accentLight},
+    ${colors.accent})`,
+  itemBackground: 'white',
+  itemBorder: colors.whiteLight,
+  itemBorderTransparent: colors.whiteLight,
+  iconHover: colors.accent,
 };
 
 export type Theme = typeof light;
 
-const dark: Theme = {
-  background: `linear-gradient(
-      to bottom right,
-      ${colors.darkBackground},
-      ${colors.darkBackgroundLight})`,
-  btnPrimary: colors.skyBlue,
+const dark = {
+  background: colors.blackLight,
+  subBackground: colors.lightBlack,
+  footerBackground: colors.blackLight,
+  btnPrimary: colors.btnPrimary,
   btnPrimaryFont: 'white',
-  btnPrimaryLight: colors.whiteGray,
-  btnPrimaryLightFont: 'black',
+  btnPrimaryLight: colors.lightW,
+  btnPrimaryLightFont: colors.lightW,
   fontColor: 'white',
+  colorAccentLight: colors.accentLightDark,
+  colorAccent: colors.accentDark,
+  btnGradient: `linear-gradient(
+    to right,
+    ${colors.accentLightDark},
+    ${colors.accentDark}`,
+  itemBackground: colors.lightBlack,
+  itemBorder: 'white',
+  itemBorderTransparent: 'rgba(255, 255, 255, 0)',
+  iconHover: colors.accentLightDark,
 };
 
 const theme = {
@@ -59,8 +91,10 @@ const theme = {
 export const createTheme = (type = ThemeType.LIGHT): DefaultTheme => {
   switch (type) {
     case ThemeType.LIGHT:
+      DarkMode.isDark = false;
       return theme.light;
     case ThemeType.DARK:
+      DarkMode.isDark = true;
       return theme.dark;
   }
 };
