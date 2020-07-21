@@ -6,11 +6,12 @@ import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
 const Container = styled.div`
+  width: 100vw;
+
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100vw;
 `;
 
 const HeaderBackgroundWrapper = styled.div`
@@ -59,8 +60,6 @@ const SubTitleWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  padding: 30px;
 
   @media ${device.tablet} {
     padding: 20px;
@@ -72,12 +71,13 @@ const SubTitleWrapper = styled.div`
 `;
 
 const TitleTextWrapper = styled.div`
+  padding: 30px;
+
   display: flex;
   flex-direction: column;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  padding: 30px;
   
   @media (max-width: 1000px) {
     padding: 20px;

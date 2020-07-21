@@ -42,13 +42,19 @@ export const H2 = styled('text')`
   }
 
   @media (prefers-color-scheme: dark) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> b35bae9... Adjust Layout Ratio and Complete Profile page
     color: #D3D8E8;
   }
 
   @media (prefers-color-scheme: light){
     color: #000000;
+<<<<<<< HEAD
     color: ${darkColor.ON_BACKGROUND_TEXT};
+=======
+>>>>>>> b35bae9... Adjust Layout Ratio and Complete Profile page
   }
 `;
 
@@ -65,11 +71,12 @@ export const H3 = styled('text')`
   }
 
   @media (prefers-color-scheme: dark) {
-    color: ${darkColor.ON_SUB_BACKGROUND_TEXT};
+    color: #8A96DC;
   }
 
   @media (prefers-color-scheme: light){
     color: #393D7A;
+<<<<<<< HEAD
   }
 `;
 
@@ -104,6 +111,8 @@ export const H5 = styled('text')`
 
   @media (prefers-color-scheme: light){
     color: ${lightColor.ON_SUB_BACKGROUND_TEXT};
+=======
+>>>>>>> b35bae9... Adjust Layout Ratio and Complete Profile page
   }
 `;
 

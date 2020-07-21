@@ -53,6 +53,6 @@ export const IC_REACTNATIVESEOUL = icReactNativeSeoul;
 
 export const IC_SMILE = icSmalie;
 
-export const icSponsorDark = [icCoupangDark, icLunaSoftDark, icMegazoneDark, icTuringDark];
-export const icSponsor = [icCoupang, icLunaSoft, icMegazone, icTuring];
+export const icSponsorDark = [icCoupangDark, icMegazoneDark, icLunaSoftDark, icTuringDark];
+export const icSponsor = [icCoupang, icMegazone, icLunaSoft, icTuring];
 export const IC_SPONSORS = isDarkModePaths(icSponsorDark, icSponsor);

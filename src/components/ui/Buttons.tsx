@@ -35,10 +35,10 @@ export const MenuButton = styled('button')`
   height: 100%;
   border: 0px;
   outline: 0px;
-  font-size: 20px;
+  font-size: 12px;
+  padding: 6px 25px;
   font-family: avenir;
   font-weight: 500;
-  padding: 6px 40px;
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
@@ -46,7 +46,15 @@ export const MenuButton = styled('button')`
   border-color: rgba(255, 255, 255, 0);
   background-color: #ffffff;
   background-color: rgba( 255, 255, 255, 0);
-
+  color: ${({ theme }): string => theme.fontColor};
+    
+  &:hover{
+    color: ${({ theme }): string => theme.colorAccent};
+    #bottom_line{
+      background: ${({ theme }): string => theme.btnGradient};
+    }
+  }
+  
   cursor: pointer;
 
   #bottom_line{
@@ -54,7 +62,7 @@ export const MenuButton = styled('button')`
     background: rgba(255, 255, 255, 0);
   }
 
-  @media (max-width: 1000px) {
+  @media ${device.tablet} {
     font-size: 18px;
     padding: 6px 30px;
   }
@@ -108,7 +116,7 @@ export const LogoButton = styled('button')`
   justify-content: center;
   align-items: center;
 
-  cursor: pointer;
+  cursor: pointer; 
 `;
 
 export const IntroRoundButton = styled('button')`
@@ -118,19 +126,20 @@ export const IntroRoundButton = styled('button')`
   border-color: #ffffff;
   border-color: rgba(255, 255, 255, 0);
   font-family: avenir;
-  font-size: 32px;
   font-weight: 300;
-  padding: 6px 40px;
+  font-size: 15px;
+  padding: 6px 25px;
   text-decoration: none;
+  background: ${({ theme }): string => theme.btnPrimary};
+  color: ${({ theme }): string => theme.btnPrimaryLight};
 
   cursor: pointer;
 
-  @media (max-width: 1000px) {
-    font-size: 25px;
-    padding: 6px 35px;
+  &:hover{
+    background: gray;
   }
 
-  @media (max-width: 800px) {
+  @media ${device.tablet} {
     font-size: 20px;
     padding: 6px 30px;
   }
@@ -163,7 +172,7 @@ export const ViewMoreRoundButton = styled('button')`
   border: 2px solid;
   outline: 1px; 
   border-radius: 30px;
-  border-color: #02C8A3;
+  border-color: ${({ theme }): string => theme.btnPrimary};
   background: #ffffff;
   background: rgba( 255, 255, 255, 0);
   font-family: avenir;
@@ -171,15 +180,14 @@ export const ViewMoreRoundButton = styled('button')`
   font-weight: bold;
   padding: 5px 25px;
   text-decoration: none;
-  color: #02C8A3;
+  color: ${({ theme }): string => theme.btnPrimary};
 
   cursor: pointer;
 
   &:hover {
-    background: #02C8A3;
-    color: #ffffff;
+    background: ${({ theme }): string => theme.btnPrimary};
+    color: ${({ theme }): string => theme.btnPrimaryLight};
   }
-
 
   @media (max-width: 1000px) {
     font-size: 15px;

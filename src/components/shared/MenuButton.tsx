@@ -1,5 +1,4 @@
 import React, { CSSProperties, ReactElement } from 'react';
-import { darkColor, lightColor } from '../../utils/colorlist';
 
 import { MenuButton } from '../ui/Buttons';
 import { device } from '../../theme';
@@ -16,7 +15,7 @@ interface Props {
 
 const ButtonWrapper = styled.div`
   height: 100%;
-
+  
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

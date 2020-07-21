@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-import { darkColor, lightColor } from '../../utils/colorlist';
 
 import FooterButton from '../shared/FooterButton';
 import { device } from '../../theme';

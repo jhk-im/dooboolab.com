@@ -1,7 +1,6 @@
 import { Icon, device } from '../../theme';
 import React, { ReactElement } from 'react';
 
-import { IC_WORKS } from '../../utils/icons';
 import ViewMoreRoundButton from './ViewMoreRoundButton';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';

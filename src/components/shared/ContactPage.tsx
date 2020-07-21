@@ -2,7 +2,6 @@ import { Icon, device } from '../../theme';
 import React, { ReactElement } from 'react';
 
 import { CONTACT_BACKGROUND } from '../../utils/images';
-import { IC_SPONSORS } from '../../utils/icons';
 import SendEmailRoundButton from '../shared/SendEmailRoundButton';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
@@ -166,13 +165,21 @@ const SponsorWrapper = styled.div`
   justify-content: space-evenly;
   justify-items: center;
   align-items: center;
+`;
 
-  @media (prefers-color-scheme: dark) {
-    background: ${darkColor.SUB_BACKGROUND};
+const SponsorImage = styled.img`
+  width: 70px;
+
+  @media ${device.mobileL} {
+    width: 80px;
   }
 
-  @media (prefers-color-scheme: light){
-    background: ${lightColor.SUB_BACKGROUND};
+  @media ${device.tablet} {
+    width: 100px;
+  }
+
+  @media ${device.laptop} {
+    width: 120px;
   }
 `;
 

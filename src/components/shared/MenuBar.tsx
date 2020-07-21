@@ -47,14 +47,15 @@ const MenuButtonWrapper = styled.div`
     justify-content: space-between;
   }    
 
+  @media ${device.mobileL} {
+    width: 500px;
+  }  
+
+  @media ${device.tablet} {
+    margin-top: 5px;
+    width: 600px;
+  }    
 `;
-
-const menuButton = new Map<string, string>();
-
-menuButton.set(getString('STORY'), '/story');
-menuButton.set(getString('WORK'), '/work');
-menuButton.set(getString('PEOPLE'), '/people');
-menuButton.set(getString('CONTACT'), '/contact');
 
 function MenuBar(props: Props): ReactElement {
   const history = useHistory();
