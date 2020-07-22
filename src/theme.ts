@@ -80,8 +80,6 @@ const IC_DOOBOOUI_DARK = isRetina(icDoobooUiDark, icDoobooUiDark2x, icDoobooUiDa
 const IC_HACKATALK = isRetina(icHackatalk, icHackatalk2x, icHackatalk3x);
 const IC_HACKATALK_DARK = isRetina(icHackatalkDark, icHackatalkDark2x, icHackatalkDark3x);
 
-export const DarkMode = { isDark: true };
-
 const size = {
   mobileS: '320px',
   mobileM: '375px',

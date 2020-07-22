@@ -23,6 +23,7 @@ const ButtonWrapper = styled.div`
 
 function Button(props: Props): ReactElement {
   const { onClick, text, style } = props;
+
   return (
     <FooterButton style={ style } onClick={ onClick } >
       <ButtonWrapper>
