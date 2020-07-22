@@ -1,9 +1,12 @@
 import React, { ReactElement } from 'react';
 
+import DarkModeToggle from '../shared/DarkModeToggle';
 import Footer from '../shared/Footer';
 import MenuBar from '../shared/MenuBar';
 import VisionMissionPage from '../shared/VisionPage';
+import { device } from '../../theme';
 import styled from 'styled-components';
+import { useThemeContext } from '../../providers/ThemeProvider';
 
 const Container = styled.div`
   width: 100vw;
@@ -16,14 +19,21 @@ const Container = styled.div`
 `;
 
 const MenubarTemp = styled.div`
-  height:80px;
-  width:100%;
+  height: 100px;
+  width: 100vw;
+
+  @media ${device.tablet} {
+    height: 70px;
+  }    
 `;
 
-function People(): ReactElement {
+function Vision(): ReactElement {
+  const { changeThemeType } = useThemeContext();
+
   return (
     <Container>
       <MenuBar/>
+      <DarkModeToggle onClick={(): void => changeThemeType()} />
       <MenubarTemp/>
       <VisionMissionPage/>
       <Footer/>
@@ -31,4 +41,4 @@ function People(): ReactElement {
   );
 }
 
-export default People;
+export default Vision;

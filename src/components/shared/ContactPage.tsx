@@ -1,6 +1,5 @@
-import { DarkMode, device } from '../../theme';
+import { Icon, device } from '../../theme';
 import React, { ReactElement } from 'react';
-import { icSponsor, icSponsorDark } from '../../utils/icons';
 
 import { CONTACT_BACKGROUND } from '../../utils/images';
 import SendEmailRoundButton from '../shared/SendEmailRoundButton';
@@ -9,7 +8,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   width: 100vw;
-  background: ${({ theme }): string => theme.background};
+  background: ${({ theme }): string => theme.subBackground};
 
   display: flex;
   flex-direction: column;
@@ -147,7 +146,7 @@ const SponsorWrapper = styled.div`
   width:90%;
   padding: 10px;
   margin-bottom: 30px;
-  background: ${({ theme }): string => theme.background};
+  background: ${({ theme }): string => theme.subBackground};
   
   display: flex;
   justify-content: space-evenly;
@@ -203,14 +202,8 @@ export const H3 = styled('text')`
 function ContactPage(): ReactElement {
   const sponsorImages = [];
 
-  if (DarkMode.isDark) {
-    for (const value of icSponsorDark) {
-      sponsorImages.push(<SponsorImage src={value}/>);
-    }
-  } else {
-    for (const value of icSponsor) {
-      sponsorImages.push(<SponsorImage src={value}/>);
-    }
+  for (const value of Icon.sponsor) {
+    sponsorImages.push(<SponsorImage src={value}/>);
   }
 
   return (

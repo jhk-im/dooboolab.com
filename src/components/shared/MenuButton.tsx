@@ -23,10 +23,10 @@ const ButtonWrapper = styled.div`
 
 const BottomLine = styled.div`
   height: 3px;
-  width: 70%;
+  width: 50px;
 
   @media ${device.tablet} {
-    width: 80%;
+    width: 80px;
   }   
 `;
 
@@ -42,11 +42,10 @@ const SelectedButtonWrapper = styled.div`
 
 const SelectedBottomLine = styled.div`
   height: 3px;
-  width: 70%;
-  background: ${({ theme }): string => theme.btnGradient};
+  width: 50px;
 
   @media ${device.tablet} {
-    width: 80%;
+    width: 80px;
   }    
 `;
 
@@ -63,7 +62,7 @@ function Button(props: Props): ReactElement {
           </SelectedButtonWrapper>
           : <ButtonWrapper>
             { text }
-            <BottomLine id="bottom_line"/>
+            <BottomLine className="bottom_line"/>
           </ButtonWrapper>
       }
     </MenuButton>

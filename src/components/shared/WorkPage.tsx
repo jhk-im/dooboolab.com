@@ -1,10 +1,10 @@
-import { DarkMode, device } from '../../theme';
+import { Icon, device } from '../../theme';
 import React, { ReactElement } from 'react';
-import { icWorks, icWorksDark } from '../../utils/icons';
 
 import ViewMoreRoundButton from './ViewMoreRoundButton';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
+import { useThemeContext } from '../../providers/ThemeProvider';
 
 const WorkContainer = styled.div`
   padding: 50px;
@@ -16,12 +16,11 @@ const WorkContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     height: 80vh;
-    min-height: 600px;
   }
   
-  @media ${device.laptop} {
+  @media ${device.laptopL} {
     height: 80vh;
     min-height: 700px;
   }
@@ -36,7 +35,7 @@ const TitleWrapper = styled.div`
   justify-content: center;
   align-content: center;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     padding: 20px;
   }  
 
@@ -54,11 +53,11 @@ const DescriptionWrapper = styled.div`
   justify-items: center;
   align-items: center;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     margin-bottom: 15px;
   }  
 
-  @media ${device.laptop} {
+  @media ${device.laptopL} {
     margin-bottom: 20px;
   }  
 `;
@@ -69,7 +68,6 @@ const WorkItemListWrapper = styled.div`
   max-width: 1100px;
 
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
   align-content: space-around;
@@ -83,7 +81,7 @@ const WorkItemListWrapper = styled.div`
 const WorkItemWrapper = styled.div`
   padding: 10px;
   height: 200px;
-  width: 75vw;
+  width: 65vw;
   margin-bottom: 20px;
   border-width: 2px;
   border-color: ${({ theme }): string => theme.itemBorder};
@@ -97,12 +95,12 @@ const WorkItemWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media ${device.tablet} {
-    width: 80vw;
-    height: 250px;
+  @media ${device.laptop} {
+    width: 250px;
+    height: 300px;
   }  
 
-  @media ${device.laptop} {
+  @media ${device.laptopL} {
     width: 300px;
     height: 350px;
   }  
@@ -211,36 +209,28 @@ const workDescriptions = [
 ];
 
 function Work(): ReactElement {
+  const workIcons = [];
+
   const moveUrl = (inputPath): void => {
     window.open(inputPath);
   };
 
-  const workIcons = { list: [] };
-
-  if (DarkMode.isDark) {
-    workIcons.list = icWorksDark;
-  } else {
-    workIcons.list = icWorks;
-  }
-
-  const workItemWrappers = [];
-
-  for (const value of workIcons.list) {
-    workItemWrappers.push(
-      <WorkItemWrapper>
+  for (const value of Icon.works) {
+    workIcons.push(
+      <WorkItemWrapper >
         <WorkImageWrapper>
           <WorkImage src={ value }/>
         </WorkImageWrapper>
         <WorkTextWrapper>
-          <DescriptionText>{ workDescriptions[workIcons.list.indexOf(value)] }</DescriptionText>
+          <DescriptionText>{ workDescriptions[Icon.works.indexOf(value)] }</DescriptionText>
         </WorkTextWrapper>
         <ItemButtonWrapper>
           {
-            workItemURLs[workIcons.list.indexOf(value)] === ''
+            workItemURLs[Icon.works.indexOf(value)] === ''
               ? null
               : <ViewMoreRoundButton
                 text={ getString('VIEW_MORE') }
-                onClick={ (): void => moveUrl(workItemURLs[workIcons.list.indexOf(value)]) }/>
+                onClick={ (): void => moveUrl(workItemURLs[Icon.works.indexOf(value)]) }/>
           }
         </ItemButtonWrapper>
       </WorkItemWrapper>,
@@ -255,7 +245,7 @@ function Work(): ReactElement {
       <DescriptionWrapper>
         <BODY2>{ getString('WORK_DESCRIPTION') }</BODY2>
       </DescriptionWrapper>
-      <WorkItemListWrapper>{ workItemWrappers }</WorkItemListWrapper>
+      <WorkItemListWrapper>{ workIcons }</WorkItemListWrapper>
     </WorkContainer>
   );
 }

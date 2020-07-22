@@ -1,6 +1,5 @@
-import { DarkMode, device } from '../../theme';
+import { Icon, device } from '../../theme';
 import React, { ReactElement } from 'react';
-import { icLogo, icLogoDark } from '../../utils/icons';
 
 import LogoButton from '../shared/LogoButton';
 import MenuButton from '../shared/MenuButton';
@@ -35,7 +34,7 @@ const MenuButtonWrapper = styled.div`
   height: 80%;
   
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-content: center;
 
   @media ${device.mobileM} {
@@ -49,13 +48,22 @@ const MenuButtonWrapper = styled.div`
   @media ${device.tablet} {
     margin-top: 5px;
     width: 600px;
+    margin-right: 80px;
   }    
+
 `;
+
+const titles = [
+  getString('STORY'),
+  getString('WORK'),
+  getString('PEOPLE'),
+  getString('CONTACT'),
+];
 
 function MenuBar(props: Props): ReactElement {
   const history = useHistory();
-
   const { currentPage } = props;
+  const menuButtons = { list: [] };
 
   const tabChange = (inputPath): void => {
     const location: Record<string, unknown> = {
@@ -65,28 +73,12 @@ function MenuBar(props: Props): ReactElement {
     history.push(location);
   };
 
-  const titles = [
-    getString('STORY'),
-    getString('WORK'),
-    getString('PEOPLE'),
-    getString('CONTACT'),
-  ];
-
-  const paths = [
-    '/story',
-    '/work',
-    '/people',
-    '/contact',
-  ];
-
-  const menuButtons = [];
-
   for (let i = 0; i < titles.length; i++) {
-    menuButtons.push(
+    menuButtons.list.push(
       <MenuButton
-        onClick={ (): void => tabChange(paths[i]) }
         text={ titles[i] }
-        isSelected={ currentPage === titles[i] && true }/>,
+        isSelected={ currentPage === titles[i] && true }
+      />,
     );
   }
 
@@ -94,13 +86,9 @@ function MenuBar(props: Props): ReactElement {
     <Container>
       <LogoButton
         onClick={ (): void => tabChange('/') }
-        imgSrc={
-          DarkMode.isDark === true
-            ? icLogoDark
-            : icLogo
-        }/>
+        imgSrc={Icon.logo}/>
       <MenuButtonWrapper>
-        {menuButtons}
+        { menuButtons.list }
       </MenuButtonWrapper>
     </Container>
   );

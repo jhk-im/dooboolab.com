@@ -1,7 +1,37 @@
 import { DefaultTheme } from 'styled-components';
 import { ThemeType } from './types';
+import icCoupang from '../assets/icons/ic-coupang.png';
+import icCoupangDark from '../assets/icons/ic-coupang-dark.png';
+import icDoobooUi from '../assets/icons/ic-dooboo-ui-logo.png';
+import icDoobooUiDark from '../assets/icons/ic-dooboo-ui-logo-dark.png';
+import icDooboolabLogo from '../assets/icons/ic-dooboolab-logo.png';
+import icDooboolabLogoDark from '../assets/icons/ic-dooboolab-logo-dark.png';
+import icHackatalk from '../assets/icons/ic-hackatalk-logo.png';
+import icHackatalkDark from '../assets/icons/ic-hackatalk-logo-dark.png';
+import icLunaSoft from '../assets/icons/ic-lunasoft.png';
+import icLunaSoftDark from '../assets/icons/ic-lunasoft-dark.png';
+import icMegazone from '../assets/icons/ic-megazone.png';
+import icMegazoneDark from '../assets/icons/ic-megazone-dark.png';
+import icPrime from '../assets/icons/ic-prime-logo.png';
+import icPrimeDark from '../assets/icons/ic-prime-logo-dark.png';
+import icTuring from '../assets/icons/ic-turing.png';
+import icTuringDark from '../assets/icons/ic-turing-dark.png';
+import toggle from '../assets/svg/toggle-light.svg';
+import toggleButton from '../assets/svg/toggle-button-light.svg';
+import toggleButtonDark from '../assets/svg/toggle-button-dark.svg';
+import toggleDark from '../assets/svg/toggle-dark.svg';
+import toggleIcon from '../assets/svg/toggle-icon-light.svg';
+import toggleIconDark from '../assets/svg/toggle-icon-dark.svg';
+import toggleRact from '../assets/svg/toggle-ract-light.svg';
+import toggleRactDark from '../assets/svg/toggle-ract-dark.svg';
 
-export const DarkMode = { isDark: true };
+export const Icon = {
+  logo: icDooboolabLogo,
+  works: [],
+  sponsor: [],
+  toggle: [],
+  toggle_darkMode: null,
+};
 
 const size = {
   mobileS: '320px',
@@ -22,65 +52,52 @@ const colors = {
   mediumGray: 'rgb(134,154,183)',
   paleGray: 'rgb(221,226,236)',
   lightBackground: 'white',
-  lightBackgroundLight: '#EAEBF4',
-  darkBackground: '#232323',
-  darkBackgroundLight: '#2C2C2C',
-  lightWhite: '#EAEBF4',
-  accentLight: '#393D7A',
-  accentLightDark: '#8A96DC',
-  accent: '#B446BF',
-  accentDark: '#B290B7',
-  btnPrimary: '#02C8A3',
-  btnPrimaryDark: '#00BA90',
-  blackLight: '#232323',
-  lightBlack: '#2C2C2C',
-  lightGray: '#40444F',
-  whiteLight: '#EDEDED',
-  lightW: '#D3D8E8',
 };
 
 const light = {
   background: 'white',
-  subBackground: colors.lightWhite,
-  footerBackground: colors.lightGray,
-  btnPrimary: colors.btnPrimary,
+  subBackground: '#EAEBF4',
+  footerBackground: '#40444F',
+  btnPrimary: '#02C8A3',
   btnPrimaryFont: 'white',
   btnPrimaryLight: 'white',
   btnPrimaryLightFont: 'black',
   fontColor: 'black',
-  colorAccentLight: colors.accentLight,
-  colorAccent: colors.accent,
+  colorAccentLight: '#393D7A',
+  colorAccent: '#B446BF',
   btnGradient: `linear-gradient(
     to right,
-    ${colors.accentLight},
-    ${colors.accent})`,
+    ${'#393D7A'},
+    ${'#B446BF'})`,
   itemBackground: 'white',
-  itemBorder: colors.whiteLight,
-  itemBorderTransparent: colors.whiteLight,
-  iconHover: colors.accent,
+  itemBorder: '#EDEDED',
+  itemBorderTransparent: '#EDEDED',
+  iconHover: '#B446BF',
+  itemBox: '#EDEDED',
 };
 
 export type Theme = typeof light;
 
 const dark = {
-  background: colors.blackLight,
-  subBackground: colors.lightBlack,
-  footerBackground: colors.blackLight,
-  btnPrimary: colors.btnPrimary,
+  background: '#232323',
+  subBackground: '#2C2C2C',
+  footerBackground: '#232323',
+  btnPrimary: '#00BA90',
   btnPrimaryFont: 'white',
-  btnPrimaryLight: colors.lightW,
-  btnPrimaryLightFont: colors.lightW,
+  btnPrimaryLight: '#D3D8E8',
+  btnPrimaryLightFont: '#D3D8E8',
   fontColor: 'white',
-  colorAccentLight: colors.accentLightDark,
-  colorAccent: colors.accentDark,
+  colorAccentLight: '#8A96DC',
+  colorAccent: '#B290B7',
   btnGradient: `linear-gradient(
     to right,
-    ${colors.accentLightDark},
-    ${colors.accentDark}`,
-  itemBackground: colors.lightBlack,
+    ${'#8A96DC'},
+    ${'#B290B7'}`,
+  itemBackground: '#2C2C2C',
   itemBorder: 'white',
   itemBorderTransparent: 'rgba(255, 255, 255, 0)',
-  iconHover: colors.accentLightDark,
+  iconHover: '#8A96DC',
+  itemBox: '#2C2C2C',
 };
 
 const theme = {
@@ -91,10 +108,18 @@ const theme = {
 export const createTheme = (type = ThemeType.LIGHT): DefaultTheme => {
   switch (type) {
     case ThemeType.LIGHT:
-      DarkMode.isDark = false;
+      Icon.logo = icDooboolabLogo;
+      Icon.works = [icPrime, icDoobooUi, icHackatalk];
+      Icon.sponsor = [icCoupang, icMegazone, icLunaSoft, icTuring];
+      Icon.toggle = [toggleButton, toggleIcon, toggleRact];
+      Icon.toggle_darkMode = toggle;
       return theme.light;
     case ThemeType.DARK:
-      DarkMode.isDark = true;
+      Icon.logo = icDooboolabLogoDark;
+      Icon.works = [icPrimeDark, icDoobooUiDark, icHackatalkDark];
+      Icon.sponsor = [icCoupangDark, icMegazoneDark, icLunaSoftDark, icTuringDark];
+      Icon.toggle = [toggleButtonDark, toggleIconDark, toggleRactDark];
+      Icon.toggle_darkMode = toggleDark;
       return theme.dark;
   }
 };

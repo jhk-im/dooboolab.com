@@ -1,25 +1,10 @@
 import React, { ReactElement } from 'react';
 
-import ContactPage from './ContactPage';
 import { INTRO_BACKGROUND } from '../../utils/images';
 import IntroRoundButton from '../shared/IntroRoundButton';
-import PeoplePage from './PeoplePage';
-import StoryPage from './StoryPage';
-import WorkPage from './WorkPage';
 import { device } from '../../theme';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
-import { useThemeContext } from '../../providers/ThemeProvider';
-
-const Container = styled.div`
-  width: 100vw;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: bottom;
-  align-items: center;
-`;
 
 const IntroContainer = styled.div`
   width: 100vw;
@@ -174,43 +159,25 @@ export const BODY1 = styled('text')`
 `;
 
 function IntroPage(): ReactElement {
-  const history = useHistory();
-  const { changeThemeType } = useThemeContext();
-
-  const tabChange = (inputPath): void => {
-    const location: Record<string, unknown> = {
-      pathname: inputPath,
-      state: {},
-    };
-    history.push(location);
-  };
-
   return (
-    <Container>
-      <IntroContainer>
-        <TextWrapper>
-          <TitleWrapper onClick={(): void => changeThemeType()}>
-            <H1>{ getString('INTRO_TITLE') }</H1>
-          </TitleWrapper>
-          <DescriptionWrapper>
-            <BODY1>
-              { getString('INTRO_DESCRIPTION') }
-            </BODY1>
-          </DescriptionWrapper>
-        </TextWrapper>
-        <ContactButtonWrapper>
-          <ButtonWrapper>
-            <IntroRoundButton
-              text={ getString('CONTACT_US') }
-              onClick={ (): void => tabChange('/contact') }/>
-          </ButtonWrapper>
-        </ContactButtonWrapper>
-      </IntroContainer>
-      <StoryPage/>
-      <WorkPage/>
-      <PeoplePage/>
-      <ContactPage/>
-    </Container>
+    <IntroContainer>
+      <TextWrapper>
+        <TitleWrapper>
+          <H1>{ getString('INTRO_TITLE') }</H1>
+        </TitleWrapper>
+        <DescriptionWrapper>
+          <BODY1>
+            { getString('INTRO_DESCRIPTION') }
+          </BODY1>
+        </DescriptionWrapper>
+      </TextWrapper>
+      <ContactButtonWrapper>
+        <ButtonWrapper>
+          <IntroRoundButton
+            text={ getString('CONTACT_US') }/>
+        </ButtonWrapper>
+      </ContactButtonWrapper>
+    </IntroContainer>
   );
 }
 

@@ -154,13 +154,12 @@ const VisionNumberWrapper = styled.div`
 `;
 
 const VisionItemBox = styled.div`
-  width: 60vw;
   height: 80%;
+  width: 80vw;
   margin-bottom: 30px;
   border: 3px solid; 
   border-radius: 10px;
-  border-color: ${({ theme }): string => theme.itemBorder};
-  border-color: ${({ theme }): string => theme.itemBorderTransparent};
+  border-color: ${({ theme }): string => theme.itemBox};
 
   display: flex;
   align-items: center;
@@ -168,10 +167,12 @@ const VisionItemBox = styled.div`
 
   @media ${device.tablet} {
     margin-bottom: 40px;
+    max-width: 600px;
   }
 
   @media ${device.laptop} {
     margin-bottom: 50px;
+    max-width: 800px;
   }
 `;
 

@@ -25,7 +25,6 @@ const LogoImg = styled.img`
   width: 100px;
   object-fit: cover;
 
-
   @media ${device.tablet} {
     margin-top: 0px;
     width: 120px;

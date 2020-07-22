@@ -111,7 +111,7 @@ const DescriptionWrapper = styled.div`
   }
 `;
 
-const VisionListWrapper = styled.div`
+const ConductListWrapper = styled.div`
   width: 100vw;
   padding: 50px;
   background: ${({ theme }): string => theme.background};
@@ -122,7 +122,7 @@ const VisionListWrapper = styled.div`
   align-items: center;
 `;
 
-const VisionItemLinearWrapper = styled.div`
+const ConductItemLinearWrapper = styled.div`
   width: 80vw;
   padding: 30px;
 
@@ -133,7 +133,7 @@ const VisionItemLinearWrapper = styled.div`
   align-items: center; 
 `;
 
-const VisionItem = styled.div`
+const ConductItem = styled.div`
   width: 100vw;
 
   display: flex;
@@ -141,19 +141,25 @@ const VisionItem = styled.div`
   align-items: center;
 `;
 
-const VisionItemBox = styled.div`
+const ConductItemBox = styled.div`
   text-align: left;
   width: 80vw;
-  max-width: 1200px;
   height: 80%;
   border: 3px solid; 
   border-radius: 10px;
-  border-color: ${({ theme }): string => theme.itemBorder};
-  border-color: ${({ theme }): string => theme.itemBorderTransparent};
-
+  border-color: ${({ theme }): string => theme.itemBox};
+  
   display: flex;
   align-items: center;
   justify-content: center; 
+
+  @media ${device.tablet} {
+    max-width: 800px;
+  }
+
+  @media ${device.laptop} {
+    max-width: 1000px;
+  }
 `;
 
 const ItemTitleTextWrapper = styled.div`
@@ -271,15 +277,15 @@ function Vision(): ReactElement {
           </BODY2>
         </DescriptionWrapper>
       </SubTitleWrapper>
-      <VisionListWrapper>
+      <ConductListWrapper>
         <ItemTitleTextWrapper>
           <H5>
             { getString('MISSION_SUBTITLE_01') }
           </H5>
         </ItemTitleTextWrapper>
-        <VisionItemLinearWrapper>
-          <VisionItem>
-            <VisionItemBox>
+        <ConductItemLinearWrapper>
+          <ConductItem>
+            <ConductItemBox>
               <ItemDescriptionWrapper>
                 <BODY2>
                   { getString('MISSION_DESCRIPTION_01_1') }<br/>
@@ -291,17 +297,17 @@ function Vision(): ReactElement {
                   { getString('MISSION_DESCRIPTION_01_7') }
                 </BODY2>
               </ItemDescriptionWrapper>
-            </VisionItemBox>
-          </VisionItem>
-        </VisionItemLinearWrapper>
+            </ConductItemBox>
+          </ConductItem>
+        </ConductItemLinearWrapper>
         <ItemTitleTextWrapper>
           <H5>
             { getString('MISSION_SUBTITLE_02') }
           </H5>
         </ItemTitleTextWrapper>
-        <VisionItemLinearWrapper>
-          <VisionItem>
-            <VisionItemBox>
+        <ConductItemLinearWrapper>
+          <ConductItem>
+            <ConductItemBox>
               <ItemDescriptionWrapper>
                 <BODY2>
                   { getString('MISSION_DESCRIPTION_02_1') }<br/>
@@ -312,10 +318,10 @@ function Vision(): ReactElement {
                   { getString('MISSION_DESCRIPTION_02_6') }
                 </BODY2>
               </ItemDescriptionWrapper>
-            </VisionItemBox>
-          </VisionItem>
-        </VisionItemLinearWrapper>
-      </VisionListWrapper>
+            </ConductItemBox>
+          </ConductItem>
+        </ConductItemLinearWrapper>
+      </ConductListWrapper>
     </Container>
   );
 }

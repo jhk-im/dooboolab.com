@@ -31,35 +31,27 @@ export const ButtonPrimary = styled('button')`
 `;
 
 export const MenuButton = styled('button')`
-  width: 100%;
-  height: 100%;
-  border: 0px;
-  outline: 0px;
+  border: 0px solid;
+  outline: 0px; 
   font-size: 12px;
   padding: 6px 25px;
   font-family: avenir;
   font-weight: 500;
   border-radius: 3px;
-  border-style: solid;
   border-width: 1px;
   border-color: #ffffff;
   border-color: rgba(255, 255, 255, 0);
-  background-color: #ffffff;
-  background-color: rgba( 255, 255, 255, 0);
+  background: #ffffff;
+  background: rgba( 255, 255, 255, 0);
   color: ${({ theme }): string => theme.fontColor};
-    
-  &:hover{
-    color: ${({ theme }): string => theme.colorAccent};
-    #bottom_line{
-      background: ${({ theme }): string => theme.btnGradient};
-    }
-  }
   
   cursor: pointer;
 
-  #bottom_line{
-    background: #fff;
-    background: rgba(255, 255, 255, 0);
+  &:hover{
+    color: ${({ theme }): string => theme.colorAccent};
+    .bottom_line{
+      background: ${({ theme }): string => theme.colorAccent};
+    }
   }
 
   @media ${device.tablet} {
@@ -69,7 +61,7 @@ export const MenuButton = styled('button')`
 `;
 
 export const LogoButton = styled('button')`
-  border: 0px;
+  border: 0px solid;
   outline: 0px; 
   border-radius: 3px;
   border-style: solid;
@@ -121,13 +113,14 @@ export const ViewMoreRoundButton = styled('button')`
   border: 2px solid;
   outline: 1px; 
   border-radius: 30px;
+  
   border-color: ${({ theme }): string => theme.btnPrimary};
   background: #ffffff;
   background: rgba( 255, 255, 255, 0);
   font-family: avenir;
-  font-size: 20px;
   font-weight: bold;
-  padding: 5px 25px;
+  font-size: 8px;
+  padding: 3px 12px;
   text-decoration: none;
   color: ${({ theme }): string => theme.btnPrimary};
 
@@ -136,6 +129,16 @@ export const ViewMoreRoundButton = styled('button')`
   &:hover {
     background: ${({ theme }): string => theme.btnPrimary};
     color: ${({ theme }): string => theme.btnPrimaryLight};
+  }
+
+  @media ${device.tablet} {
+    font-size: 10px;
+    padding: 4px 15px;
+  }
+  
+  @media ${device.laptop} {
+    font-size: 15px;
+    padding: 5px 20px;
   }
 
   @media (max-width: 1000px) {
@@ -187,12 +190,11 @@ export const FooterButton = styled('button')`
   font-size: 10px;
   color: #BEC8E2;
   text-decoration: underline;
-  color: ${({ theme }): string => theme.colorAccent};
 
   cursor: pointer;
 
   &:hover {
-    color: #BEC8E2;
+    color: ${({ theme }): string => theme.colorAccent};;
   }
 
   @media ${device.tablet} {

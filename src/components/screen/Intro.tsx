@@ -1,21 +1,28 @@
 import React, { ReactElement } from 'react';
 
+import ContactPage from '../shared/ContactPage';
+import DarkModeToggle from '../shared/DarkModeToggle';
 import Footer from '../shared/Footer';
 import IntroPage from '../shared/IntroPage';
 import MenuBar from '../shared/MenuBar';
+import PeoplePage from '../shared/PeoplePage';
+import StoryPage from '../shared/StoryPage';
+import WorkPage from '../shared/WorkPage';
 import { device } from '../../theme';
 import styled from 'styled-components';
+import { useThemeContext } from '../../providers/ThemeProvider';
 
 const Container = styled.div`
   width: 100vw;
   
   display: flex;
+  align-self: stretch;
   flex-direction: column;
   justify-content: bottom;
   align-items: center;
 `;
 
-const MenubarTemp = styled.div`
+const MenubarEmptyBox = styled.div`
   height: 100px;
   width: 100vw;
 
@@ -25,11 +32,18 @@ const MenubarTemp = styled.div`
 `;
 
 function Intro(): ReactElement {
+  const { changeThemeType } = useThemeContext();
+
   return (
     <Container>
       <MenuBar/>
-      <MenubarTemp/>
+      <DarkModeToggle onClick={(): void => changeThemeType()} />
+      <MenubarEmptyBox/>
       <IntroPage/>
+      <StoryPage/>
+      <WorkPage/>
+      <PeoplePage/>
+      <ContactPage/>
       <Footer/>
     </Container>
   );
