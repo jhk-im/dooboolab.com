@@ -19,6 +19,7 @@ export const Members = JSON.parse(JSON.stringify(infos));
 
 export const MemberImages = [
   hyo,
+  terry,
   joy,
   song,
   jerry,
@@ -28,9 +29,8 @@ export const MemberImages = [
   hun,
   yoon,
   ethan,
-  dean,
   jessie,
   daniel,
   jenny,
-  terry,
+  dean,
 ];

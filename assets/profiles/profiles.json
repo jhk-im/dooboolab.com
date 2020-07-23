@@ -9,8 +9,17 @@
     }
   },
   {
+    "name": "Terry",
+    "position": "Developer",
+    "sns": {
+      "linkedin": "https://www.linkedin.com/in/jongtaek-choi-259796117",
+      "twitter": "",
+      "github": "https://github.com/JongtaekChoi"
+    }
+  },
+  {
     "name": "Joy",
-    "position": "Bussiness",
+    "position": "Marketer",
     "sns": {
       "linkedin": "",
       "twitter": "",
@@ -90,15 +99,6 @@
     }
   },
   {
-    "name": "Dean",
-    "position": "Developer",
-    "sns": {
-      "linkedin": "https://www.linkedin.com/in/donghwi-yun-5b80621a8/",
-      "twitter": "https://twitter.com/DevYuns",
-      "github": "https://github.com/DevYuns"
-    }
-  },
-  {
     "name": "Jessie",
     "position": "Developer",
     "sns": {
@@ -126,12 +126,12 @@
     }
   },
   {
-    "name": "Terry",
+    "name": "Dean",
     "position": "Developer",
     "sns": {
-      "linkedin": "",
-      "twitter": "",
-      "github": ""
+      "linkedin": "https://www.linkedin.com/in/donghwi-yun-5b80621a8/",
+      "twitter": "https://twitter.com/DevYuns",
+      "github": "https://github.com/DevYuns"
     }
   }
 ]
