@@ -168,7 +168,7 @@ const SponsorWrapper = styled.div`
 `;
 
 const SponsorImage = styled.img`
-  width: 70px;
+  width: 60px;
 
   @media ${device.mobileL} {
     width: 80px;

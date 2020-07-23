@@ -33,7 +33,7 @@ const MenuButtonWrapper = styled.div`
   width: 90vw;
   
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-content: center;
 
   @media ${device.mobileL} {
@@ -55,16 +55,10 @@ const MenuButtonWrapper = styled.div`
     margin-top: 5px;
     width: 600px;
     margin-right: 80px;
+    justify-content: space-between;
   }    
 
 `;
-
-const titles = [
-  getString('STORY'),
-  getString('WORK'),
-  getString('PEOPLE'),
-  getString('CONTACT'),
-];
 
 function MenuBar(props: Props): ReactElement {
   const history = useHistory();
@@ -92,7 +86,7 @@ function MenuBar(props: Props): ReactElement {
   };
 
   for (let i = 0; i < titles.length; i++) {
-    menuButtons.list.push(
+    menuButtons.push(
       <MenuButton
         onClick = { (): void => tabChange('/') }
         href = { hrefs[i] }

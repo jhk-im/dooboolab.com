@@ -4,7 +4,10 @@ import React, { ReactElement } from 'react';
 import ViewMoreRoundButton from './ViewMoreRoundButton';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
-import { useThemeContext } from '../../providers/ThemeProvider';
+
+interface Props {
+  id?: string;
+}
 
 interface Props {
   id?: string;
