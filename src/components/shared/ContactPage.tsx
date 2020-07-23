@@ -6,6 +6,10 @@ import SendEmailRoundButton from '../shared/SendEmailRoundButton';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
+interface Props {
+  id?: string;
+}
+
 const Container = styled.div`
   width: 100vw;
   background: ${({ theme }): string => theme.subBackground};
@@ -18,7 +22,7 @@ const Container = styled.div`
 
 const TopBackgroundWrapper = styled.div`
   width: 100vw;
-  height: 800px;
+  height: 600px;
   background-image: url(${CONTACT_BACKGROUND});
   background-repeat: no-repeat;
   background-size: cover;
@@ -97,7 +101,7 @@ const SendEmailInputText = styled.input`
 `;
 
 const SendEmailTextArea = styled.textarea`
-  height: 300px;
+  height: 200px;
   padding: 10px;
   font-family: avenir;
   font-size: 15px;
@@ -124,9 +128,14 @@ const SendEmailTextArea = styled.textarea`
 `;
 
 const TextWrapper = styled.div`
-  width: 280px;
+  width: 230px;
   padding: 30px;
   
+  @media ${device.mobileL} {
+    width: 240px;
+    padding: 30px;
+  }
+
   @media ${device.tablet} {
     width: 300px;
     padding: 40px;
@@ -139,7 +148,11 @@ const TextWrapper = styled.div`
 `;
 
 const SendButtonWrapper = styled.div`
-  padding: 50px;
+  width: 90%;
+  padding: 20px;
+  
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const SponsorWrapper = styled.div`
@@ -155,7 +168,7 @@ const SponsorWrapper = styled.div`
 `;
 
 const SponsorImage = styled.img`
-  width: 70px;
+  width: 60px;
 
   @media ${device.mobileL} {
     width: 80px;
@@ -171,10 +184,14 @@ const SponsorImage = styled.img`
 `;
 
 export const H1 = styled('text')`
-  font-size: 35px;
+  font-size: 30px;
   font-family: futura;
   font-weight: 300;
   color: ${({ theme }): string => theme.btnPrimaryLight};
+
+  @media ${device.mobileL} {
+    width: 35px;
+  }
 
   @media ${device.tablet} {
     font-size: 40px;
@@ -199,15 +216,16 @@ export const H3 = styled('text')`
   }
 `;
 
-function ContactPage(): ReactElement {
+function ContactPage(props: Props): ReactElement {
   const sponsorImages = [];
+  const { id } = props;
 
   for (const value of Icon.sponsor) {
     sponsorImages.push(<SponsorImage src={value}/>);
   }
 
   return (
-    <Container>
+    <Container id={ id }>
       <TopBackgroundWrapper>
         <SendEmailTitleWrapper>
           <TextWrapper>

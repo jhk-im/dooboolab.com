@@ -34,7 +34,7 @@ export const MenuButton = styled('button')`
   border: 0px solid;
   outline: 0px; 
   font-size: 12px;
-  padding: 6px 25px;
+  padding: 6px 20px;
   font-family: avenir;
   font-weight: 500;
   border-radius: 3px;
@@ -49,11 +49,16 @@ export const MenuButton = styled('button')`
 
   &:hover{
     color: ${({ theme }): string => theme.colorAccent};
+    
     .bottom_line{
       background: ${({ theme }): string => theme.colorAccent};
     }
   }
-
+  
+  @media ${device.mobileL} {
+    font-size: 16px;
+    padding: 6px 25px;
+  }
   @media ${device.tablet} {
     font-size: 18px;
     padding: 8px 30px;
@@ -86,8 +91,8 @@ export const IntroRoundButton = styled('button')`
   border-color: rgba(255, 255, 255, 0);
   font-family: avenir;
   font-weight: 300;
-  font-size: 15px;
-  padding: 6px 25px;
+  font-size: 10px;
+  padding: 3px 10px;
   text-decoration: none;
   background: ${({ theme }): string => theme.btnPrimary};
   color: ${({ theme }): string => theme.btnPrimaryLight};
@@ -96,6 +101,16 @@ export const IntroRoundButton = styled('button')`
 
   &:hover{
     background: gray;
+  }
+
+  @media ${device.mobileM} {
+    font-size: 12px;
+    padding: 4px 20px;
+  }
+
+  @media ${device.mobileL} {
+    font-size: 15px;
+    padding: 5px 25px;
   }
 
   @media ${device.tablet} {
@@ -139,21 +154,6 @@ export const ViewMoreRoundButton = styled('button')`
   @media ${device.laptop} {
     font-size: 15px;
     padding: 5px 20px;
-  }
-
-  @media (max-width: 1000px) {
-    font-size: 15px;
-    padding: 5px 20px;
-  }
-
-  @media (max-width: 800px) {
-    font-size: 10px;
-    padding: 4px 15px;
-  }
-  
-  @media (max-width: 600px) {
-    font-size: 8px;
-    padding: 3px 12px;
   }
 `;
 

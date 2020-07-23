@@ -17,9 +17,8 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  svg {
-    
-  }
+
+  cursor: pointer;
 
   @media ${device.tablet} {
     height: 70px;

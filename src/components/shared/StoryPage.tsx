@@ -11,6 +11,10 @@ import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
+interface Props {
+  id?: string;
+}
+
 const Container = styled.div`
   display:flex;
   flex-direction: column;
@@ -20,33 +24,32 @@ const Container = styled.div`
 
 const StoryContainer = styled.div`
   width: 100vw;
-  padding: 10px;
-  height: 500px;
+  padding: 50px;
   background: ${({ theme }): string => theme.background};
   
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: center;
   align-items: center;
-
-  @media ${device.tablet} {
-    height: 80vh;
-    min-height: 600px;
-  }
-  
-  @media ${device.laptop} {
-    height: 80vh;
-    min-height: 700px;
-  }
 `;
 
 const TitleWrapper = styled.div`
+  width: 100vw;
   padding: 10px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+
+  @media ${device.mobileM} {
+    padding: 20px;
+  }
+
+  @media ${device.mobileL} {
+    padding: 30px;
+  }
 
   @media ${device.tablet} {
     padding: 40px;
@@ -58,8 +61,8 @@ const TitleWrapper = styled.div`
 `;
 
 const DescriptionWrapper = styled.div`
-  width: 400px;
-  line-height: 20px;
+  width: 90vw;
+  line-height: 15px;
   padding: 5px;
   margin-bottom : 20px;
 
@@ -69,6 +72,14 @@ const DescriptionWrapper = styled.div`
   justify-items: center;
   align-items: center;
   
+  @media ${device.mobileM} {
+    line-height: 20px;
+  }
+
+  @media ${device.mobileL} {
+    line-height: 25px;
+  }
+
   @media ${device.tablet} {
     width: 500px;
     line-height: 30px;
@@ -175,10 +186,18 @@ const ItemButtonWrapper = styled.div`
 `;
 
 export const H2 = styled('text')`
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   font-family: futura;
   color: ${({ theme }): string => theme.btnPrimaryLightFont};
+
+  @media ${device.mobileM} {
+    font-size: 20px;
+  }
+
+  @media ${device.mobileL} {
+    font-size: 25px;
+  }
 
   @media ${device.tablet} {
     font-size: 30px;
@@ -190,9 +209,17 @@ export const H2 = styled('text')`
 `;
 
 export const H3 = styled('text')`
-  font-size: 25px;
+  font-size: 18px;
   font-family: avenir;
   color: ${({ theme }): string => theme.colorAccentLight};
+
+  @media ${device.mobileM} {
+    font-size: 20px;
+  }
+
+  @media ${device.mobileL} {
+    font-size: 25px;
+  }
 
   @media ${device.tablet} {
     font-size: 30px;
@@ -204,10 +231,18 @@ export const H3 = styled('text')`
 `;
 
 export const BODY2 = styled('text')`
-  font-size: 15px;
+  font-size: 12px;
   font-family: avenir;
   font-weight: lighter;
   color: ${({ theme }): string => theme.btnPrimaryLightFont};
+
+  @media ${device.mobileM} {
+    font-size: 14px;
+  }
+
+  @media ${device.mobileL} {
+    font-size: 16px;
+  }
 
   @media ${device.tablet} {
     font-size: 18px;
@@ -218,7 +253,8 @@ export const BODY2 = styled('text')`
   }
 `;
 
-function Intro(): ReactElement {
+function Intro(props: Props): ReactElement {
+  const { id } = props;
   const history = useHistory();
 
   const tabChange = (inputPath): void => {
@@ -234,7 +270,7 @@ function Intro(): ReactElement {
   };
 
   return (
-    <Container>
+    <Container id={ id }>
       <StoryContainer>
         <TitleWrapper>
           <H2>{ getString('STORY') }</H2>

@@ -75,7 +75,6 @@ const TitleTextWrapper = styled.div`
 
   display: flex;
   flex-direction: column;
-  flex-direction: column;
   justify-content: center;
   align-content: center;
   
@@ -142,9 +141,8 @@ const ConductItem = styled.div`
 `;
 
 const ConductItemBox = styled.div`
-  text-align: left;
   width: 80vw;
-  height: 80%;
+  text-align: left;
   border: 3px solid; 
   border-radius: 10px;
   border-color: ${({ theme }): string => theme.itemBox};

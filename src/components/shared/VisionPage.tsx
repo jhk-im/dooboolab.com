@@ -93,15 +93,16 @@ const TitleTextWrapper = styled.div`
 `;
 
 const DescriptionWrapper = styled.div`
+  width: 70%;
+  padding: 20px;
+  margin-bottom: 5px;
+  line-height: 15px;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
-  width: 70%;
-  padding: 20px;
-  margin-bottom: 5px;
-    line-height: 15px;
 
   @media ${device.tablet} {
     margin-bottom: 10px;
@@ -154,7 +155,6 @@ const VisionNumberWrapper = styled.div`
 `;
 
 const VisionItemBox = styled.div`
-  height: 80%;
   width: 80vw;
   margin-bottom: 30px;
   border: 3px solid; 

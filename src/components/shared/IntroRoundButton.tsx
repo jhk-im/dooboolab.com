@@ -7,11 +7,11 @@ interface Props {
   id?: string;
   style?: CSSProperties;
   text?: string;
+  href?: string;
   onClick?: () => void;
 }
 
 const ButtonWrapper = styled.div`
-  height: 100%;
   width: 100%;  
 
   display: flex;
@@ -22,13 +22,16 @@ const ButtonWrapper = styled.div`
 `;
 
 function Button(props: Props): ReactElement {
-  const { onClick, text, style } = props;
+  const { onClick, text, style, href } = props;
+
   return (
-    <IntroRoundButton style={ style } onClick={ onClick } >
-      <ButtonWrapper>
-        { text }
-      </ButtonWrapper>
-    </IntroRoundButton>
+    <a href = { href } >
+      <IntroRoundButton style={ style } onClick={ onClick } >
+        <ButtonWrapper>
+          { text }
+        </ButtonWrapper>
+      </IntroRoundButton>
+    </a>
   );
 }
 

@@ -53,17 +53,22 @@ const ProfileImage = styled.img`
 
 const ProfileIconWrapper = styled.div`
   width: 165px;
-  height: 25px;
   padding: 5px;
 
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  
 `;
 
 const ProfileIconImageWrapper = styled.div`
+  width: 100px;
+  height: 30px;
+
   color: ${({ theme }): string => theme.btnPrimaryLightFont};
   
+  cursor: pointer;
+
   &:hover{
     color: ${({ theme }): string => theme.iconHover};
   }
@@ -81,7 +86,6 @@ function ProfileItemGrid(): ReactElement {
   const moveUrl = (inputPath): void => {
     window.open(inputPath);
   };
-
   const profileItems = [];
 
   for (let i = 0; i < MemberImages.length; i++) {
@@ -135,7 +139,6 @@ function ProfileItemGrid(): ReactElement {
         <EmptyBox/>
       </ProfileItemWrapper>
     </ProfilesWrapper>
-
   );
 }
 

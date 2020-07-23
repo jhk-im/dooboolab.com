@@ -1,37 +1,84 @@
 import { DefaultTheme } from 'styled-components';
 import { ThemeType } from './types';
 import icCoupang from '../assets/icons/ic-coupang.png';
+import icCoupang2x from '../assets/icons/ic-coupang@x2.png';
+import icCoupang3x from '../assets/icons/ic-coupang@x3.png';
 import icCoupangDark from '../assets/icons/ic-coupang-dark.png';
+import icCoupangDark2x from '../assets/icons/ic-coupang-dark@x2.png';
+import icCoupangDark3x from '../assets/icons/ic-coupang-dark@x3.png';
 import icDoobooUi from '../assets/icons/ic-dooboo-ui-logo.png';
+import icDoobooUi2x from '../assets/icons/ic-dooboo-ui-logo@x2.png';
+import icDoobooUi3x from '../assets/icons/ic-dooboo-ui-logo@x3.png';
 import icDoobooUiDark from '../assets/icons/ic-dooboo-ui-logo-dark.png';
+import icDoobooUiDark2x from '../assets/icons/ic-dooboo-ui-logo-dark@x2.png';
+import icDoobooUiDark3x from '../assets/icons/ic-dooboo-ui-logo-dark@x3.png';
 import icDooboolabLogo from '../assets/icons/ic-dooboolab-logo.png';
 import icDooboolabLogoDark from '../assets/icons/ic-dooboolab-logo-dark.png';
 import icHackatalk from '../assets/icons/ic-hackatalk-logo.png';
+import icHackatalk2x from '../assets/icons/ic-hackatalk-logo@x2.png';
+import icHackatalk3x from '../assets/icons/ic-hackatalk-logo@x3.png';
 import icHackatalkDark from '../assets/icons/ic-hackatalk-logo-dark.png';
+import icHackatalkDark2x from '../assets/icons/ic-hackatalk-logo-dark@x2.png';
+import icHackatalkDark3x from '../assets/icons/ic-hackatalk-logo-dark@x3.png';
 import icLunaSoft from '../assets/icons/ic-lunasoft.png';
+import icLunaSoft2x from '../assets/icons/ic-lunasoft@x2.png';
+import icLunaSoft3x from '../assets/icons/ic-lunasoft@x3.png';
 import icLunaSoftDark from '../assets/icons/ic-lunasoft-dark.png';
+import icLunaSoftDark2x from '../assets/icons/ic-lunasoft-dark@x2.png';
+import icLunaSoftDark3x from '../assets/icons/ic-lunasoft-dark@x3.png';
 import icMegazone from '../assets/icons/ic-megazone.png';
+import icMegazone2x from '../assets/icons/ic-megazone@x2.png';
+import icMegazone3x from '../assets/icons/ic-megazone@x3.png';
 import icMegazoneDark from '../assets/icons/ic-megazone-dark.png';
+import icMegazoneDark2x from '../assets/icons/ic-megazone-dark@x2.png';
+import icMegazoneDark3x from '../assets/icons/ic-megazone-dark@x3.png';
 import icPrime from '../assets/icons/ic-prime-logo.png';
+import icPrime2x from '../assets/icons/ic-prime-logo@x2.png';
+import icPrime3x from '../assets/icons/ic-prime-logo@x3.png';
 import icPrimeDark from '../assets/icons/ic-prime-logo-dark.png';
+import icPrimeDark2x from '../assets/icons/ic-prime-logo-dark@x2.png';
+import icPrimeDark3x from '../assets/icons/ic-prime-logo-dark@x3.png';
 import icTuring from '../assets/icons/ic-turing.png';
+import icTuring2x from '../assets/icons/ic-turing@x2.png';
+import icTuring3x from '../assets/icons/ic-turing@x3.png';
 import icTuringDark from '../assets/icons/ic-turing-dark.png';
+import icTuringDark2x from '../assets/icons/ic-turing-dark@x2.png';
+import icTuringDark3x from '../assets/icons/ic-turing-dark@x3.png';
 import toggle from '../assets/svg/toggle-light.svg';
-import toggleButton from '../assets/svg/toggle-button-light.svg';
-import toggleButtonDark from '../assets/svg/toggle-button-dark.svg';
 import toggleDark from '../assets/svg/toggle-dark.svg';
-import toggleIcon from '../assets/svg/toggle-icon-light.svg';
-import toggleIconDark from '../assets/svg/toggle-icon-dark.svg';
-import toggleRact from '../assets/svg/toggle-ract-light.svg';
-import toggleRactDark from '../assets/svg/toggle-ract-dark.svg';
+
+const isRetina = (first: string, second?: string, third?: string): string => {
+  if (window.devicePixelRatio >= 1 && third) {
+    return third;
+  }
+  if (window.devicePixelRatio >= 0.5 && second) {
+    return second;
+  }
+  return first;
+};
 
 export const Icon = {
-  logo: icDooboolabLogo,
+  logo: null,
   works: [],
   sponsor: [],
   toggle: [],
   toggle_darkMode: null,
 };
+
+const IC_COUPANG = isRetina(icCoupang, icCoupang2x, icCoupang3x);
+const IC_COUPANG_DARK = isRetina(icCoupangDark, icCoupangDark2x, icCoupangDark3x);
+const IC_TURING = isRetina(icTuring, icTuring2x, icTuring3x);
+const IC_TURING_DARK = isRetina(icTuringDark, icTuringDark2x, icTuringDark3x);
+const IC_MEGAZONE = isRetina(icMegazone, icMegazone2x, icMegazone3x);
+const IC_MEGAZONE_DARK = isRetina(icMegazoneDark, icMegazoneDark2x, icMegazoneDark3x);
+const IC_LUNASOFT = isRetina(icLunaSoft, icLunaSoft2x, icLunaSoft3x);
+const IC_LUNASOFT_DARK = isRetina(icLunaSoftDark, icLunaSoftDark2x, icLunaSoftDark3x);
+const IC_PRIME = isRetina(icPrime, icPrime2x, icPrime3x);
+const IC_PRIME_DARK = isRetina(icPrimeDark, icPrimeDark2x, icPrimeDark3x);
+const IC_DOOBOOUI = isRetina(icDoobooUi, icDoobooUi2x, icDoobooUi3x);
+const IC_DOOBOOUI_DARK = isRetina(icDoobooUiDark, icDoobooUiDark2x, icDoobooUiDark3x);
+const IC_HACKATALK = isRetina(icHackatalk, icHackatalk2x, icHackatalk3x);
+const IC_HACKATALK_DARK = isRetina(icHackatalkDark, icHackatalkDark2x, icHackatalkDark3x);
 
 const size = {
   mobileS: '320px',
@@ -43,16 +90,16 @@ const size = {
   desktop: '2560px',
 };
 
-const colors = {
-  skyBlue: '#069ccd',
-  whiteGray: '#f7f6f3',
-  dusk: 'rgb(65,77,107)',
-  green: 'rgb(29,211,168)',
-  greenBlue: 'rgb(36,205,151)',
-  mediumGray: 'rgb(134,154,183)',
-  paleGray: 'rgb(221,226,236)',
-  lightBackground: 'white',
-};
+// const colors = {
+//   skyBlue: '#069ccd',
+//   whiteGray: '#f7f6f3',
+//   dusk: 'rgb(65,77,107)',
+//   green: 'rgb(29,211,168)',
+//   greenBlue: 'rgb(36,205,151)',
+//   mediumGray: 'rgb(134,154,183)',
+//   paleGray: 'rgb(221,226,236)',
+//   lightBackground: 'white',
+// };
 
 const light = {
   background: 'white',
@@ -109,17 +156,17 @@ export const createTheme = (type = ThemeType.LIGHT): DefaultTheme => {
   switch (type) {
     case ThemeType.LIGHT:
       Icon.logo = icDooboolabLogo;
-      Icon.works = [icPrime, icDoobooUi, icHackatalk];
-      Icon.sponsor = [icCoupang, icMegazone, icLunaSoft, icTuring];
-      Icon.toggle = [toggleButton, toggleIcon, toggleRact];
+      Icon.works = [IC_PRIME, IC_DOOBOOUI, IC_HACKATALK];
+      Icon.sponsor = [IC_COUPANG, IC_MEGAZONE, IC_LUNASOFT, IC_TURING];
       Icon.toggle_darkMode = toggle;
+      localStorage.setItem('isDarkMode', 'light');
       return theme.light;
     case ThemeType.DARK:
       Icon.logo = icDooboolabLogoDark;
-      Icon.works = [icPrimeDark, icDoobooUiDark, icHackatalkDark];
-      Icon.sponsor = [icCoupangDark, icMegazoneDark, icLunaSoftDark, icTuringDark];
-      Icon.toggle = [toggleButtonDark, toggleIconDark, toggleRactDark];
+      Icon.works = [IC_PRIME_DARK, IC_DOOBOOUI_DARK, IC_HACKATALK_DARK];
+      Icon.sponsor = [IC_COUPANG_DARK, IC_MEGAZONE_DARK, IC_LUNASOFT_DARK, IC_TURING_DARK];
       Icon.toggle_darkMode = toggleDark;
+      localStorage.setItem('isDarkMode', 'dark');
       return theme.dark;
   }
 };

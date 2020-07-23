@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react';
 
 import CodeOfConduct from '../screen/CodeOfConduct';
 import Intro from '../screen/Intro';
-import Vision from '../screen/vision';
+import Vision from '../screen/Vision';
 
 function SwitchNavigator(): ReactElement {
   return (

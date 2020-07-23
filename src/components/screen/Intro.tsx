@@ -40,10 +40,10 @@ function Intro(): ReactElement {
       <DarkModeToggle onClick={(): void => changeThemeType()} />
       <MenubarEmptyBox/>
       <IntroPage/>
-      <StoryPage/>
-      <WorkPage/>
-      <PeoplePage/>
-      <ContactPage/>
+      <StoryPage id="story"/>
+      <WorkPage id="work"/>
+      <PeoplePage id="people"/>
+      <ContactPage id="contact"/>
       <Footer/>
     </Container>
   );

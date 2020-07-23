@@ -8,13 +8,12 @@ interface Props {
   id?: string;
   style?: CSSProperties;
   text?: string;
+  href?: string;
   onClick?: () => void;
   isSelected?: boolean;
 }
 
 const ButtonWrapper = styled.div`
-  height: 100%;
-  
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -31,7 +30,7 @@ const BottomLine = styled.div`
 `;
 
 const SelectedButtonWrapper = styled.div`
-  height: 100%;
+  height: 80%;
   color: ${({ theme }): string => theme.colorAccent};
   
   display: flex;
@@ -50,22 +49,24 @@ const SelectedBottomLine = styled.div`
 `;
 
 function Button(props: Props): ReactElement {
-  const { onClick, text, style, isSelected } = props;
+  const { onClick, text, style, isSelected, href } = props;
 
   return (
-    <MenuButton style={style} onClick={onClick} >
-      {
-        isSelected
-          ? <SelectedButtonWrapper>
-            { text }
-            <SelectedBottomLine/>
-          </SelectedButtonWrapper>
-          : <ButtonWrapper>
-            { text }
-            <BottomLine className="bottom_line"/>
-          </ButtonWrapper>
-      }
-    </MenuButton>
+    <a href = { href } >
+      <MenuButton style={style} onClick={onClick} >
+        {
+          isSelected
+            ? <SelectedButtonWrapper>
+              { text }
+              <SelectedBottomLine/>
+            </SelectedButtonWrapper>
+            : <ButtonWrapper>
+              { text }
+              <BottomLine className="bottom_line"/>
+            </ButtonWrapper>
+        }
+      </MenuButton>
+    </a>
   );
 }
 

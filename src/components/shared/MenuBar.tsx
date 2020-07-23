@@ -30,16 +30,11 @@ const Container = styled.div`
 `;
 
 const MenuButtonWrapper = styled.div`
-  width: 300px;
-  height: 80%;
+  width: 90vw;
   
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-content: center;
-
-  @media ${device.mobileM} {
-    width: 400px;
-  } 
 
   @media ${device.mobileL} {
     width: 500px;
@@ -49,33 +44,41 @@ const MenuButtonWrapper = styled.div`
     margin-top: 5px;
     width: 600px;
     margin-right: 80px;
+    justify-content: space-between;
   }    
 
 `;
 
-const titles = [
-  getString('STORY'),
-  getString('WORK'),
-  getString('PEOPLE'),
-  getString('CONTACT'),
-];
-
 function MenuBar(props: Props): ReactElement {
   const history = useHistory();
   const { currentPage } = props;
-  const menuButtons = { list: [] };
+  const menuButtons = [];
+  const titles = [
+    getString('STORY'),
+    getString('WORK'),
+    getString('PEOPLE'),
+    getString('CONTACT'),
+  ];
+  const hrefs = [
+    '#story',
+    '#work',
+    '#people',
+    '#contact',
+  ];
 
   const tabChange = (inputPath): void => {
     const location: Record<string, unknown> = {
       pathname: inputPath,
-      state: {},
+      state: { },
     };
     history.push(location);
   };
 
   for (let i = 0; i < titles.length; i++) {
-    menuButtons.list.push(
+    menuButtons.push(
       <MenuButton
+        onClick = { (): void => tabChange('/') }
+        href = { hrefs[i] }
         text={ titles[i] }
         isSelected={ currentPage === titles[i] && true }
       />,
@@ -88,7 +91,7 @@ function MenuBar(props: Props): ReactElement {
         onClick={ (): void => tabChange('/') }
         imgSrc={Icon.logo}/>
       <MenuButtonWrapper>
-        { menuButtons.list }
+        { menuButtons }
       </MenuButtonWrapper>
     </Container>
   );

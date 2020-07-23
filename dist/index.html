@@ -27,6 +27,18 @@
         overflow-x: hidden;
       }
 
+      @media (prefers-color-scheme: light) {
+        body {
+          background: white;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body{
+          background: #232323;
+        }
+      }
+
       body {
         line-height:1;
         width: 100vw;
@@ -34,6 +46,7 @@
 
         display: grid;
         grid-template: 1fr/1fr;
+
       }
 
       article,aside,details,figcaption,figure,

@@ -5,6 +5,10 @@ import { device } from '../../theme';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
+interface Props {
+  id?: string;
+}
+
 const PeopleContainer = styled.div`
   padding: 50px;
   width: 100vw;
@@ -115,9 +119,11 @@ export const BODY2 = styled('text')`
   }
 `;
 
-function PeoplePage(): ReactElement {
+function PeoplePage(props: Props): ReactElement {
+  const { id } = props;
+
   return (
-    <PeopleContainer>
+    <PeopleContainer id={ id }>
       <TitleWrapper>
         <H2>{ getString('PEOPLE')}</H2>
       </TitleWrapper>

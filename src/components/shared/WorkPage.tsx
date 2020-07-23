@@ -4,7 +4,10 @@ import React, { ReactElement } from 'react';
 import ViewMoreRoundButton from './ViewMoreRoundButton';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
-import { useThemeContext } from '../../providers/ThemeProvider';
+
+interface Props {
+  id?: string;
+}
 
 const WorkContainer = styled.div`
   padding: 50px;
@@ -47,6 +50,7 @@ const TitleWrapper = styled.div`
 const DescriptionWrapper = styled.div`
   padding: 10px;
   margin-bottom: 10px;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -208,7 +212,8 @@ const workDescriptions = [
   getString('HACKATALK_DESCRIPTION'),
 ];
 
-function Work(): ReactElement {
+function Work(props: Props): ReactElement {
+  const { id } = props;
   const workIcons = [];
 
   const moveUrl = (inputPath): void => {
@@ -238,7 +243,7 @@ function Work(): ReactElement {
   }
 
   return (
-    <WorkContainer>
+    <WorkContainer id={ id }>
       <TitleWrapper>
         <H2>{ getString('WORK') }</H2>
       </TitleWrapper>
