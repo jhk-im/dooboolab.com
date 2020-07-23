@@ -1,9 +1,9 @@
-import { MemberImages, Members } from '../../utils/Profiles';
 import React, { ReactElement } from 'react';
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { device } from '../../theme';
+import { members } from '../../utils/Profiles';
 import styled from 'styled-components';
 
 const ProfilesWrapper = styled.div`
@@ -41,8 +41,8 @@ const EmptyBox = styled.div`
 `;
 
 const ProfileImage = styled.img`
-  width: 186px;
-  height: 186px;
+  width: 156px;
+  height: 156px;
   border-radius: 100px;
   border-style: solid;
   border-color: #fff;
@@ -62,7 +62,7 @@ const ProfileIconWrapper = styled.div`
 `;
 
 const ProfileIconImageWrapper = styled.div`
-  width: 100px;
+  width: 40px;
   height: 30px;
 
   color: ${({ theme }): string => theme.btnPrimaryLightFont};
@@ -88,40 +88,40 @@ function ProfileItemGrid(): ReactElement {
   };
   const profileItems = [];
 
-  for (let i = 0; i < MemberImages.length; i++) {
+  for (const member of members) {
     profileItems.push(
       <ProfileItemWrapper>
-        <ProfileImage src={ MemberImages[i] }></ProfileImage>
-        <ProfileInfo>{Members[i].name} / {Members[i].position}</ProfileInfo>
+        <ProfileImage src={ member.image }></ProfileImage>
+        <ProfileInfo>{member.name} / {member.position}</ProfileInfo>
         <ProfileIconWrapper>
           <ProfileIconImageWrapper>
             {
-              Members[i].sns.github === ''
+              member.sns.github === ''
                 ? <FontAwesomeIcon icon={ faGithub } size="lg" color="gray"/>
                 : <FontAwesomeIcon
                   icon={ faGithub }
                   size="lg"
-                  onClick= { () : void => moveUrl(Members[i].sns.github) }/>
+                  onClick= { () : void => moveUrl(member.sns.github) }/>
             }
           </ProfileIconImageWrapper>
           <ProfileIconImageWrapper>
             {
-              Members[i].sns.linkedin === ''
+              member.sns.linkedin === ''
                 ? <FontAwesomeIcon icon={ faLinkedin } size="lg" color="gray"/>
                 : <FontAwesomeIcon
                   icon={ faLinkedin }
                   size="lg"
-                  onClick= { () : void => moveUrl(Members[i].sns.linkedin) }/>
+                  onClick= { () : void => moveUrl(member.sns.linkedin) }/>
             }
           </ProfileIconImageWrapper>
           <ProfileIconImageWrapper>
             {
-              Members[i].sns.twitter === ''
+              member.sns.twitter === ''
                 ? <FontAwesomeIcon icon={ faTwitter } size="lg" color="gray"/>
                 : <FontAwesomeIcon
                   icon={ faTwitter }
                   size="lg"
-                  onClick= { () : void => moveUrl(Members[i].sns.twitter) }/>
+                  onClick= { () : void => moveUrl(member.sns.twitter) }/>
             }
           </ProfileIconImageWrapper>
         </ProfileIconWrapper>
