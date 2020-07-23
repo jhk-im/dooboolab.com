@@ -29,10 +29,10 @@ const PrimaryText = styled.span`
 `;
 
 const LogoImg = styled.img`
-  position: absolute;
   left: 20px;
   height: 20px;
   width: 20px;
+  position: absolute;
   object-fit: cover;
 `;
 
@@ -43,6 +43,7 @@ const Spinner = styled.div`
   width: 24px;
   height: 24px;
   animation: spin 1s linear infinite;
+
   @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -51,20 +52,22 @@ const Spinner = styled.div`
       transform: rotate(360deg);
     }
   }
+  
 `;
 
 function Button(props: Props): ReactElement {
   const { onClick, imgSrc, text, style, isLoading } = props;
+
   return (
-    <ButtonPrimary style={style} onClick={onClick}>
-      {isLoading ? (
-        <Spinner id="spinner" />
-      ) : (
-        <ButtonWrapper>
-          {imgSrc ? <LogoImg src={imgSrc} /> : null}
-          <PrimaryText>{text}</PrimaryText>
-        </ButtonWrapper>
-      )}
+    <ButtonPrimary style={ style } onClick={ onClick }>
+      {
+        isLoading
+          ? <Spinner id="spinner" />
+          : <ButtonWrapper>
+            { imgSrc ? <LogoImg src={ imgSrc } /> : null}
+            <PrimaryText>{ text }</PrimaryText>
+          </ButtonWrapper>
+      }
     </ButtonPrimary>
   );
 }

@@ -1,8 +1,9 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import React, { ReactElement } from 'react';
 
+import CodeOfConduct from '../screen/CodeOfConduct';
 import Intro from '../screen/Intro';
-import Temp from '../screen/Temp';
+import Vision from '../screen/Vision';
 
 function SwitchNavigator(): ReactElement {
   return (
@@ -10,7 +11,8 @@ function SwitchNavigator(): ReactElement {
       <div style={{ textAlign: 'center' }}>
         <Switch>
           <Route exact={true} path="/" render={(): ReactElement => <Intro />} />
-          <Route render={(): ReactElement => <Temp />} />
+          <Route exact={true} path="/vision"render={(): ReactElement => <Vision />} />
+          <Route exact={true} path="/codeofconduct"render={(): ReactElement => <CodeOfConduct />} />
         </Switch>
       </div>
     </BrowserRouter>

@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Hyo",
+    "position": "CEO",
+    "sns": {
+      "linkedin": "https://www.linkedin.com/in/hyo-chan-jang-b88a82192/",
+      "twitter": "https://twitter.com/dooboolab",
+      "github": "https://github.com/hyochan"
+    }
+  },
+  {
+    "name": "Joy",
+    "position": "Bussiness",
+    "sns": {
+      "linkedin": "",
+      "twitter": "",
+      "github": "https://github.com/joy-rt"
+    }
+  },
+  {
+    "name": "Song",
+    "position": "Developer",
+    "sns": {
+      "linkedin": "www.linkedin.com/in/songc92",
+      "twitter": "https://twitter.com/songc___",
+      "github": "https://github.com/s-ong-c"
+    }
+  },
+  {
+    "name": "Jerry",
+    "position": "Developer",
+    "sns": {
+      "linkedin": "www.linkedin.com/in/coffsun",
+      "twitter": "https://twitter.com/dooboolab_Jerry",
+      "github": "https://github.com/coffsun"
+    }
+  },
+  {
+    "name": "Rim",
+    "position": "Designer",
+    "sns": {
+      "linkedin": "https://www.linkedin.com/in/%EC%98%88%EB%A6%BC-%EA%B9%80-b910391b3/",
+      "twitter": "https://twitter.com/j0OdaiV2PH0CsaG",
+      "github": "https://github.com/Kimyerim1935"
+    }
+  },
+  {
+    "name": "Sarah",
+    "position": "Designer",
+    "sns": {
+      "linkedin": "https://www.linkedin.com/in/daseul-kim-830167186",
+      "twitter": "https://twitter.com/daseul62030774",
+      "github": "https://github.com/daseul-sarah"
+    }
+  },
+  {
+    "name": "Clark",
+    "position": "Developer",
+    "sns": {
+      "linkedin": "https://www.linkedin.com/in/clark-song-b5791b8a/",
+      "twitter": "https://twitter.com/smallbee37",
+      "github": "https://github.com/smallbee3"
+    }
+  },
+  {
+    "name": "Hun",
+    "position": "Developer",
+    "sns": {
+      "linkedin": "https://www.linkedin.com/in/jeong-hun-kim-09a21b1ab/",
+      "twitter": "https://twitter.com/wanted0301",
+      "github": "https://github.com/ll0301"
+    }
+  },
+  {
+    "name": "Yoon",
+    "position": "Designer",
+    "sns": {
+      "linkedin": "http://www.linkedin.com/yoonyart",
+      "twitter": "",
+      "github": "https://github.com/yoonyjang5"
+    }
+  },
+  {
+    "name": "Ethan",
+    "position": "Developer",
+    "sns": {
+      "linkedin": "https://www.linkedin.com/in/devethan/",
+      "twitter": "https://twitter.com/devethan2",
+      "github": "https://github.com/devethan"
+    }
+  },
+  {
+    "name": "Dean",
+    "position": "Developer",
+    "sns": {
+      "linkedin": "https://www.linkedin.com/in/donghwi-yun-5b80621a8/",
+      "twitter": "https://twitter.com/DevYuns",
+      "github": "https://github.com/DevYuns"
+    }
+  },
+  {
+    "name": "Jessie",
+    "position": "Developer",
+    "sns": {
+      "linkedin": "https://www.linkedin.com/in/seung-hee-jessie-lee-3a188519b/",
+      "twitter": "https://twitter.com/JessieL98396686",
+      "github": "https://github.com/shljessie"
+    }
+  },
+  {
+    "name": "Daniel",
+    "position": "Developer",
+    "sns": {
+      "linkedin": "https://www.linkedin.com/in/filoscoder/",
+      "twitter": "https://twitter.com/WonjangSon",
+      "github": "https://github.com/filoscoder"
+    }
+  },
+  {
+    "name": "Jenny",
+    "position": "Developer",
+    "sns": {
+      "linkedin": "https://www.linkedin.com/in/ayoung-lee-6180351b3/",
+      "twitter": "https://twitter.com/amdagy",
+      "github": "https://github.com/jennyay"
+    }
+  },
+  {
+    "name": "Terry",
+    "position": "Developer",
+    "sns": {
+      "linkedin": "",
+      "twitter": "",
+      "github": ""
+    }
+  }
+]

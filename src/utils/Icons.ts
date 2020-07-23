@@ -4,6 +4,9 @@ import icFacebookW3x from '../../assets/icons/ic-facebook-white@3x.png';
 import icGoogleW from '../../assets/icons/ic-google-white.png';
 import icGoogleW2x from '../../assets/icons/ic-google-white@2x.png';
 import icGoogleW3x from '../../assets/icons/ic-google-white@3x.png';
+import icGraphqlSeoul from '../../assets/icons/ic-graphql-seoul.png';
+import icReactNativeSeoul from '../../assets/icons/ic-react-native-seoul.png';
+import icSmalie from '../../assets/icons/ic-smile.png';
 
 const isRetina = (first: string, second?: string, third?: string): string => {
   if (window.devicePixelRatio >= 1 && third) {
@@ -22,3 +25,9 @@ export const IC_FACEBOOK_W = isRetina(
 );
 
 export const IC_GOOGLE_W = isRetina(icGoogleW, icGoogleW2x, icGoogleW3x);
+
+export const IC_GRAPHQLSEOUL = icGraphqlSeoul;
+
+export const IC_REACTNATIVESEOUL = icReactNativeSeoul;
+
+export const IC_SMILE = icSmalie;

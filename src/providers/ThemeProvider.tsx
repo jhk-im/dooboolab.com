@@ -15,7 +15,9 @@ interface Context {
 }
 const [useCtx, Provider] = createCtx<Context>();
 
-export const defaultThemeType: ThemeType = ThemeType.LIGHT;
+const isDarkMode = localStorage.getItem('isDarkMode');
+
+export const defaultThemeType: ThemeType = isDarkMode === 'light' ? ThemeType.LIGHT : ThemeType.DARK;
 
 interface Props {
   children?: React.ReactElement;
