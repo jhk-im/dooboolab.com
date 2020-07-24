@@ -9,10 +9,6 @@ interface Props {
   id?: string;
 }
 
-interface Props {
-  id?: string;
-}
-
 const WorkContainer = styled.div`
   padding: 50px;
   width: 100vw;
