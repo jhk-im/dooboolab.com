@@ -16,35 +16,39 @@ interface Props {
 const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 `;
 
 const BottomLine = styled.div`
   height: 3px;
   width: 50px;
+  margin-top: 3px;
 
   @media ${device.tablet} {
     width: 80px;
+    margin-top: 5px;
   }   
 `;
 
 const SelectedButtonWrapper = styled.div`
-  height: 80%;
   color: ${({ theme }): string => theme.colorAccent};
   
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 `;
 
 const SelectedBottomLine = styled.div`
   height: 3px;
   width: 50px;
+  margin-top: 3px;
+  background: ${({ theme }): string => theme.colorAccent};
 
   @media ${device.tablet} {
     width: 80px;
+    margin-top: 5px;
   }    
 `;
 
