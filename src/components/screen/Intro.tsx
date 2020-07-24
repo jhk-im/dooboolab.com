@@ -23,7 +23,6 @@ const Container = styled.div`
 `;
 
 const MenubarEmptyBox = styled.div`
-  height: 100px;
   width: 100vw;
 
   @media ${device.tablet} {
