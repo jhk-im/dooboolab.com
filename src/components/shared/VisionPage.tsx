@@ -5,6 +5,10 @@ import { device } from '../../theme';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
+interface Props {
+  id?: string;
+}
+
 const Container = styled.div`
   width: 100vw;
 
@@ -292,8 +296,9 @@ const visionTexts = [
   getString('VISION_07'),
 ];
 
-function Vision(): ReactElement {
+function Vision(props:Props): ReactElement {
   const visionWrappers = [];
+  const { id } = props;
 
   for (const value of visionTexts) {
     visionWrappers.push(
@@ -313,7 +318,7 @@ function Vision(): ReactElement {
   }
 
   return (
-    <Container>
+    <Container id={ id }>
       <HeaderBackgroundWrapper>
         <HeaderTitleTextWrapper>
           <H1>{ getString('VISION_MISSION') }</H1>

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useEffect } from 'react';
 
 import ContactPage from '../shared/ContactPage';
 import DarkModeToggle from '../shared/DarkModeToggle';
@@ -34,12 +34,19 @@ const MenubarEmptyBox = styled.div`
 function Intro(): ReactElement {
   const { changeThemeType } = useThemeContext();
 
+  function ScrollToTopOnMount() : void {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+    return null;
+  }
+
   return (
-    <Container>
+    <Container onClick={() : void => ScrollToTopOnMount()}>
       <MenuBar/>
       <DarkModeToggle onClick={(): void => changeThemeType()} />
       <MenubarEmptyBox/>
-      <IntroPage/>
+      <IntroPage id="intro"/>
       <StoryPage id="story"/>
       <WorkPage id="work"/>
       <PeoplePage id="people"/>

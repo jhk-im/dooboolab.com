@@ -1,7 +1,7 @@
 import {
   IC_GRAPHQLSEOUL,
   IC_REACTNATIVESEOUL,
-} from '../../utils/icons';
+} from '../../utils/Icons';
 import React, { ReactElement } from 'react';
 
 import StoryTextButton from '../shared/StoryTextButton';
@@ -201,28 +201,6 @@ export const H2 = styled('text')`
 
   @media ${device.mobileL} {
     font-size: 25px;
-  }
-  
-  @media ${device.laptop} {
-    font-size: 40px;
-  }
-`;
-
-export const H3 = styled('text')`
-  font-size: 25px;
-  font-family: avenir;
-  color: ${({ theme }): string => theme.colorAccentLight};
-
-  @media ${device.tablet} {
-    font-size: 30px;
-  }
-  
-  @media ${device.laptop} {
-    font-size: 35px;
-  }
-
-  @media ${device.tablet} {
-    font-size: 30px;
   }
   
   @media ${device.laptop} {

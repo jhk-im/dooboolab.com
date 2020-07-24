@@ -35,7 +35,7 @@ function Vision(): ReactElement {
       <MenuBar/>
       <DarkModeToggle onClick={(): void => changeThemeType()} />
       <MenubarTemp/>
-      <VisionMissionPage/>
+      <VisionMissionPage id="vision"/>
       <Footer/>
     </Container>
   );

@@ -4,7 +4,6 @@ import dean from '../../assets/profiles/dean.png';
 import ethan from '../../assets/profiles/ethan.png';
 import hun from '../../assets/profiles/hun.png';
 import hyo from '../../assets/profiles/hyo.png';
-import infos from '../../assets/profiles/profiles.json';
 import jenny from '../../assets/profiles/jenny.png';
 import jerry from '../../assets/profiles/jerry.png';
 import jessie from '../../assets/profiles/jessie.png';

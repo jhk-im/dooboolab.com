@@ -5,6 +5,10 @@ import { device } from '../../theme';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
+interface Props {
+  id?: string;
+}
+
 const Container = styled.div`
   width: 100vw;
 
@@ -257,9 +261,11 @@ export const H5 = styled('text')`
   }
 `;
 
-function Vision(): ReactElement {
+function Vision(props: Props): ReactElement {
+  const { id } = props;
+
   return (
-    <Container>
+    <Container id={ id }>
       <HeaderBackgroundWrapper>
         <HeaderTitleTextWrapper>
           <H1>{ getString('VISION_MISSION') }</H1>

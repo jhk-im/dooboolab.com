@@ -35,7 +35,7 @@ function CodeOfConduct(): ReactElement {
       <MenuBar/>
       <DarkModeToggle onClick={(): void => changeThemeType()} />
       <MenubarTemp/>
-      <CodeOfConductPage/>
+      <CodeOfConductPage id="code"/>
       <Footer/>
     </Container>
   );

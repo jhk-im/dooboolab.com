@@ -183,22 +183,6 @@ const SponsorImage = styled.img`
   }
 `;
 
-const SponsorImage = styled.img`
-  width: 60px;
-
-  @media ${device.mobileL} {
-    width: 80px;
-  }
-
-  @media ${device.tablet} {
-    width: 100px;
-  }
-
-  @media ${device.laptop} {
-    width: 120px;
-  }
-`;
-
 export const H1 = styled('text')`
   font-size: 30px;
   font-family: futura;

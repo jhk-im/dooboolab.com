@@ -87,6 +87,7 @@ function MenuBar(): ReactElement {
   return (
     <Container>
       <LogoButton
+        href = { '#intro' }
         onClick={ (): void => tabChange('/', 5) }
         imgSrc={Icon.logo}/>
       <MenuButtonWrapper>
