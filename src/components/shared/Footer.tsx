@@ -102,9 +102,11 @@ function Footer(): ReactElement {
       <FooterTextWrapper>
         <ButtonWrapper>
           <FooterButton
+            href = "#vision"
             text={ getString('OUR_VISSION_MISSION') }
             onClick={(): void => tabChange('/vision')}/>
           <FooterButton
+            href = "#code"
             text={ getString('CODE_OF_CONDUCT') }
             onClick={(): void => tabChange('/codeofconduct')}/>
         </ButtonWrapper>

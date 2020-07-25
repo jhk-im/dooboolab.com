@@ -5,6 +5,10 @@ import { device } from '../../theme';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 
+interface Props {
+  id?: string;
+}
+
 const Container = styled.div`
   width: 100vw;
 
@@ -103,6 +107,10 @@ const DescriptionWrapper = styled.div`
   justify-content: center;
   justify-items: center;
   align-items: center;
+  width: 70%;
+  padding: 20px;
+  margin-bottom: 20px;
+  line-height: 30px;
 
   @media ${device.tablet} {
     margin-bottom: 10px;
@@ -148,6 +156,12 @@ const VisionItem = styled.div`
 const VisionNumberWrapper = styled.div`
   width: 100px;
   padding: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  width: 100px;
+  padding: 20px;
 
   display: flex;
   align-items: center;
@@ -282,8 +296,9 @@ const visionTexts = [
   getString('VISION_07'),
 ];
 
-function Vision(): ReactElement {
+function Vision(props:Props): ReactElement {
   const visionWrappers = [];
+  const { id } = props;
 
   for (const value of visionTexts) {
     visionWrappers.push(
@@ -303,7 +318,7 @@ function Vision(): ReactElement {
   }
 
   return (
-    <Container>
+    <Container id={ id }>
       <HeaderBackgroundWrapper>
         <HeaderTitleTextWrapper>
           <H1>{ getString('VISION_MISSION') }</H1>

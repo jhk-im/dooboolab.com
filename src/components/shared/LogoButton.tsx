@@ -8,6 +8,7 @@ interface Props {
   id?: string;
   style?: CSSProperties;
   imgSrc?: string;
+  href?: string;
   onClick?: () => void;
 }
 
@@ -32,13 +33,15 @@ const LogoImg = styled.img`
 `;
 
 function Button(props: Props): ReactElement {
-  const { onClick, imgSrc, style } = props;
+  const { onClick, imgSrc, style, href } = props;
   return (
-    <LogoButton style={style} onClick={onClick}>
-      <ButtonWrapper>
-        <LogoImg src={imgSrc}></LogoImg>
-      </ButtonWrapper>
-    </LogoButton>
+    <a href = { href } >
+      <LogoButton style={style} onClick={onClick}>
+        <ButtonWrapper>
+          <LogoImg src={imgSrc}></LogoImg>
+        </ButtonWrapper>
+      </LogoButton>
+    </a>
   );
 }
 

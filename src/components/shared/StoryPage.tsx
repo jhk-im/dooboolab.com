@@ -1,7 +1,7 @@
 import {
   IC_GRAPHQLSEOUL,
   IC_REACTNATIVESEOUL,
-} from '../../utils/icons';
+} from '../../utils/Icons';
 import React, { ReactElement } from 'react';
 
 import StoryTextButton from '../shared/StoryTextButton';
@@ -105,7 +105,7 @@ const ViewMoreButtonWrapper = styled.div`
 
 const CommunityContainer = styled.div`
   width: 100vw;
-  padding: 30px;
+  padding: 50px;
   min-height: 400px;
   background: ${({ theme }): string => theme.subBackground};
 
@@ -125,6 +125,10 @@ const CommunityImageListWrapper = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   align-content: space-evenly;
+  padding: 10px;
+  margin-bottom: 50px;
+  width: 80vw;
+  height: 30vw;
 
   @media ${device.tablet} {
     margin-bottom: 30px;
@@ -197,10 +201,6 @@ export const H2 = styled('text')`
 
   @media ${device.mobileL} {
     font-size: 25px;
-  }
-
-  @media ${device.tablet} {
-    font-size: 30px;
   }
   
   @media ${device.laptop} {

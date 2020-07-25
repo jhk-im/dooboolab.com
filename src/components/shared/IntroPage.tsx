@@ -5,6 +5,11 @@ import IntroRoundButton from '../shared/IntroRoundButton';
 import { device } from '../../theme';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
+
+interface Props {
+  id?: string;
+}
 
 const IntroContainer = styled.div`
   width: 100vw;
@@ -197,9 +202,21 @@ export const BODY1 = styled('text')`
   }
 `;
 
-function IntroPage(): ReactElement {
+function IntroPage(props: Props): ReactElement {
+  const history = useHistory();
+  const { id } = props;
+
+  const tabChange = (inputPath, pageNumber): void => {
+    const location: Record<string, unknown> = {
+      pathname: inputPath,
+      state: { },
+    };
+    history.push(location);
+    localStorage.setItem('currentPage', pageNumber);
+  };
+
   return (
-    <IntroContainer>
+    <IntroContainer id={ id }>
       <TextWrapper>
         <TitleWrapper>
           <H1>{ getString('INTRO_TITLE') }</H1>
@@ -213,6 +230,7 @@ function IntroPage(): ReactElement {
       <ContactButtonWrapper>
         <ButtonWrapper>
           <IntroRoundButton
+            onClick = { (): void => tabChange('/', 3) }
             text={ getString('CONTACT_US') }
             href="#contact"/>
         </ButtonWrapper>

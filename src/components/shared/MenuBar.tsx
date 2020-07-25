@@ -7,12 +7,8 @@ import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
-interface Props {
-  currentPage?: string;
-}
-
+localStorage.getItem('isDarkMode');
 const Container = styled.div`
-  height: 100px;
   width: 100vw;
   background: ${({ theme }): string => theme.background};
 
@@ -47,40 +43,43 @@ const MenuButtonWrapper = styled.div`
     justify-content: space-between;
   }    
 
+  @media ${device.mobileL} {
+    width: 500px;
+  }  
+
+  @media ${device.tablet} {
+    margin-top: 5px;
+    width: 600px;
+    margin-right: 80px;
+    justify-content: space-between;
+  }    
+
 `;
 
-function MenuBar(props: Props): ReactElement {
+function MenuBar(): ReactElement {
   const history = useHistory();
-  const { currentPage } = props;
   const menuButtons = [];
-  const titles = [
-    getString('STORY'),
-    getString('WORK'),
-    getString('PEOPLE'),
-    getString('CONTACT'),
-  ];
-  const hrefs = [
-    '#story',
-    '#work',
-    '#people',
-    '#contact',
-  ];
+  const titles = [getString('STORY'), getString('WORK'), getString('PEOPLE'), getString('CONTACT')];
+  const hrefs = ['#story', '#work', '#people', '#contact'];
 
-  const tabChange = (inputPath): void => {
+  const tabChange = (inputPath, pageNumber): void => {
     const location: Record<string, unknown> = {
       pathname: inputPath,
       state: { },
     };
     history.push(location);
+    localStorage.setItem('currentPage', pageNumber);
   };
+
+  const currentPage = localStorage.getItem('currentPage');
 
   for (let i = 0; i < titles.length; i++) {
     menuButtons.push(
       <MenuButton
-        onClick = { (): void => tabChange('/') }
+        onClick = { (): void => tabChange('/', i) }
         href = { hrefs[i] }
         text={ titles[i] }
-        isSelected={ currentPage === titles[i] && true }
+        isSelected={ currentPage === i.toString() && true }
       />,
     );
   }
@@ -88,7 +87,8 @@ function MenuBar(props: Props): ReactElement {
   return (
     <Container>
       <LogoButton
-        onClick={ (): void => tabChange('/') }
+        href = { '#intro' }
+        onClick={ (): void => tabChange('/', 5) }
         imgSrc={Icon.logo}/>
       <MenuButtonWrapper>
         { menuButtons }

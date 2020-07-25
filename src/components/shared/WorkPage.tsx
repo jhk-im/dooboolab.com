@@ -134,6 +134,9 @@ const WorkTextWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 3;
+  width: 200px;
+  padding: 10px;
 
   @media ${device.tablet} {
     flex: 2;

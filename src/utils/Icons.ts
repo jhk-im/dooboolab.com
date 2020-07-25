@@ -25,7 +25,6 @@ export const IC_FACEBOOK_W = isRetina(
 );
 
 export const IC_GOOGLE_W = isRetina(icGoogleW, icGoogleW2x, icGoogleW3x);
-
 export const IC_GRAPHQLSEOUL = icGraphqlSeoul;
 
 export const IC_REACTNATIVESEOUL = icReactNativeSeoul;
