@@ -5,8 +5,8 @@
   "postinstall": "tsc",
   "scripts": {
     "tsc": "tsc",
-    "dev": "webpack-dev-server",
-    "start": "webpack-dashboard -- webpack-dev-server -d --hot --config webpack.config.js --watch",
+    "dev": "webpack-dev-server",	
+    "start": "webpack-dev-server -d --hot --config webpack.config.js --watch",
     "test": "jest --coverage",
     "production": "cross-env NODE_ENV=production webpack -p --config webpack.config.prod.js",
     "lint": "eslint **/*.ts && eslint **/*.tsx",
