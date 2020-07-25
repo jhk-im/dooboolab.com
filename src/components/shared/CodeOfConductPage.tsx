@@ -202,7 +202,7 @@ const ItemDescriptionWrapper = styled.div`
   }
 `;
 
-export const H1 = styled('text')`
+export const H1 = styled.text`
   font-size: 35px;
   font-family: futura;
   font-weight: 300;
@@ -217,7 +217,7 @@ export const H1 = styled('text')`
   }
 `;
 
-export const BODY2 = styled('text')`
+export const BODY2 = styled.text`
   font-size: 15px;
   font-family: avenir;
   font-weight: lighter;
@@ -232,7 +232,7 @@ export const BODY2 = styled('text')`
   }
 `;
 
-export const H3 = styled('text')`
+export const H3 = styled.text`
   font-size: 25px;
   font-family: avenir;
   color: ${({ theme }): string => theme.colorAccentLight};
@@ -246,7 +246,7 @@ export const H3 = styled('text')`
   }
 `;
 
-export const H5 = styled('text')`
+export const H5 = styled.text`
   font-size: 20px;
   font-family: futura;
   color: ${({ theme }): string => theme.colorAccentLight};

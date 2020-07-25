@@ -1,10 +1,12 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import { device, icon } from '../../theme';
 
 import { CONTACT_BACKGROUND } from '../../utils/images';
 import SendEmailRoundButton from '../shared/SendEmailRoundButton';
+import firebase from 'firebase/app';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
+import { validateEmail } from '../../utils/functions';
 
 interface Props {
   id?: string;
@@ -172,7 +174,7 @@ const SponsorImage = styled.img`
   margin: 8px 24px;
 `;
 
-export const H1 = styled('text')`
+export const H1 = styled.text`
   font-size: 30px;
   font-family: futura;
   font-weight: 300;
@@ -191,7 +193,7 @@ export const H1 = styled('text')`
   }
 `;
 
-export const H3 = styled('text')`
+export const H3 = styled.text`
   font-size: 25px;
   font-family: avenir;
   color: ${({ theme }): string => theme.colorAccentLight};
@@ -208,6 +210,31 @@ export const H3 = styled('text')`
 function ContactPage(props: Props): ReactElement {
   const { id } = props;
   const sponsors = icon.sponsors;
+  const [loading, setLoading] = useState<boolean>(false);
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+
+  const sendContact = async (): Promise<void> => {
+    if (!name || !email || !message) return;
+
+    if (!validateEmail(email)) {
+      alert('Email is not valid!');
+      return;
+    }
+
+    const db = firebase.firestore();
+
+    try {
+      setLoading(true);
+      await db.collection('contacts')
+        .add({ email, name, message });
+    } catch (err) {
+      alert(`Failed sending contacts.\n${err.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <Container id={ id }>
@@ -218,11 +245,33 @@ function ContactPage(props: Props): ReactElement {
           </TextWrapper>
         </SendEmailTitleWrapper>
         <SendEmailInputWrapper>
-          <SendEmailInputText placeholder="Name"/>
-          <SendEmailInputText placeholder="Email"/>
-          <SendEmailTextArea placeholder="Message"/>
+          <SendEmailInputText
+            placeholder="Your name"
+            value={name}
+            onChange={(e): void => {
+              setName(e.target.value);
+            }}
+          />
+          <SendEmailInputText
+            placeholder="email@email.com"
+            value={email}
+            onChange={(e): void => {
+              setEmail(e.target.value);
+            }}
+          />
+          <SendEmailTextArea
+            placeholder="Tell us your stories."
+            value={message}
+            onChange={(e): void => {
+              setMessage(e.target.value);
+            }}
+          />
           <SendButtonWrapper>
-            <SendEmailRoundButton text={ getString('SEND') }/>
+            <SendEmailRoundButton
+              loading={loading}
+              text={ getString('SEND') }
+              onClick={sendContact}
+            />
           </SendButtonWrapper>
         </SendEmailInputWrapper>
       </TopBackgroundWrapper>

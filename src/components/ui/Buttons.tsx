@@ -1,7 +1,7 @@
 import { device } from '../../theme';
 import styled from 'styled-components';
 
-export const ButtonPrimary = styled('button')`
+export const ButtonPrimary = styled.button`
   width: 100%;
   height: 100%;
   border: 0;
@@ -30,7 +30,7 @@ export const ButtonPrimary = styled('button')`
   }
 `;
 
-export const MenuButton = styled('button')`
+export const MenuButton = styled.button`
   border: 0px solid;
   outline: 0px; 
   font-size: 12px;
@@ -65,7 +65,7 @@ export const MenuButton = styled('button')`
   }
 `;
 
-export const LogoButton = styled('button')`
+export const LogoButton = styled.button`
   border: 0px solid;
   outline: 0px; 
   border-radius: 3px;
@@ -83,7 +83,7 @@ export const LogoButton = styled('button')`
   cursor: pointer; 
 `;
 
-export const IntroRoundButton = styled('button')`
+export const IntroRoundButton = styled.button`
   border: 0px solid;
   outline: 0px; 
   border-radius: 30px;
@@ -124,7 +124,7 @@ export const IntroRoundButton = styled('button')`
   }
 `;
 
-export const ViewMoreRoundButton = styled('button')`
+export const ViewMoreRoundButton = styled.button`
   border: 2px solid;
   outline: 1px; 
   border-radius: 30px;
@@ -157,7 +157,7 @@ export const ViewMoreRoundButton = styled('button')`
   }
 `;
 
-export const StoryTextButton = styled('button')`
+export const StoryTextButton = styled.button`
   border: 0px solid;
   outline: 0px; 
   background: #ffffff;
@@ -181,7 +181,7 @@ export const StoryTextButton = styled('button')`
   }
 `;
 
-export const FooterButton = styled('button')`
+export const FooterButton = styled.button`
   border: 0px solid;
   outline: 0px; 
   background: #ffffff;
@@ -206,7 +206,7 @@ export const FooterButton = styled('button')`
   }
 `;
 
-export const SendEmailRoundButton = styled('button')`
+export const SendEmailRoundButton = styled.button`
   border: 0px solid;
   outline: 0px; 
   border-radius: 30px;
@@ -215,7 +215,8 @@ export const SendEmailRoundButton = styled('button')`
   font-family: avenir;
   font-weight: 300;
   font-size: 15px;
-  padding: 3px 20px;
+  padding: 4px 28px;
+  height: 48px;
   text-decoration: none;
   background: ${({ theme }): string => theme.btnPrimary};
   color: ${({ theme }): string => theme.btnPrimaryLight};

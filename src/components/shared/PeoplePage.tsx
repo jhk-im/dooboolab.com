@@ -75,7 +75,7 @@ const DescriptionWrapper = styled.div`
   }
 `;
 
-export const H2 = styled('text')`
+export const H2 = styled.text`
   font-size: 30px;
   font-weight: bold;
   font-family: futura;
@@ -90,7 +90,7 @@ export const H2 = styled('text')`
   }
 `;
 
-export const H4 = styled('text')`
+export const H4 = styled.text`
   font-size: 20px;
   font-family: avenir;
   color: ${({ theme }): string => theme.colorAccentLight};
@@ -104,7 +104,7 @@ export const H4 = styled('text')`
   }
 `;
 
-export const BODY2 = styled('text')`
+export const BODY2 = styled.text`
   font-size: 15px;
   font-family: avenir;
   font-weight: lighter;

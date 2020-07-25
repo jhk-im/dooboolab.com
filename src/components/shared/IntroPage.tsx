@@ -156,7 +156,7 @@ const ButtonWrapper = styled.div`
   }
 `;
 
-export const H1 = styled('text')`
+export const H1 = styled.text`
   font-size: 15px;
   font-family: futura;
   font-weight: 300;
@@ -179,7 +179,7 @@ export const H1 = styled('text')`
   }
 `;
 
-export const BODY1 = styled('text')`
+export const BODY1 = styled.text`
   font-size: 8px;
   font-family: avenir;
   font-weight: lighter;

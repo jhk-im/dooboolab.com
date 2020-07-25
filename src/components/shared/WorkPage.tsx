@@ -166,7 +166,7 @@ const DescriptionText = styled.text`
   }
 `;
 
-export const H2 = styled('text')`
+export const H2 = styled.text`
   font-size: 25px;
   font-weight: bold;
   font-family: futura;
@@ -181,7 +181,7 @@ export const H2 = styled('text')`
   }
 `;
 
-export const BODY2 = styled('text')`
+export const BODY2 = styled.text`
   font-size: 15px;
   font-family: avenir;
   font-weight: lighter;
