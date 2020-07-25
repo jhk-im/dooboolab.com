@@ -297,25 +297,7 @@ const visionTexts = [
 ];
 
 function Vision(props:Props): ReactElement {
-  const visionWrappers = [];
   const { id } = props;
-
-  for (const value of visionTexts) {
-    visionWrappers.push(
-      <VisionItem>
-        <VisionNumberWrapper>
-          <H5>0{ visionTexts.indexOf(value) + 1 }</H5>
-        </VisionNumberWrapper>
-        <VisionItemBox>
-          <ItemDescriptionWrapper>
-            <BODY2>
-              { value }
-            </BODY2>
-          </ItemDescriptionWrapper>
-        </VisionItemBox>
-      </VisionItem>,
-    );
-  }
 
   return (
     <Container id={ id }>
@@ -333,7 +315,24 @@ function Vision(props:Props): ReactElement {
         </DescriptionWrapper>
       </SubTitleWrapper>
       <VisionListWrapper>
-        <VisionItemLinearWrapper>{ visionWrappers }</VisionItemLinearWrapper>
+        <VisionItemLinearWrapper>
+          {
+            visionTexts.map((value, i) => {
+              return <VisionItem key={i}>
+                <VisionNumberWrapper>
+                  <H5>0{ visionTexts.indexOf(value) + 1 }</H5>
+                </VisionNumberWrapper>
+                <VisionItemBox>
+                  <ItemDescriptionWrapper>
+                    <BODY2>
+                      { value }
+                    </BODY2>
+                  </ItemDescriptionWrapper>
+                </VisionItemBox>
+              </VisionItem>;
+            })
+          }
+        </VisionItemLinearWrapper>
       </VisionListWrapper>
     </Container>
   );

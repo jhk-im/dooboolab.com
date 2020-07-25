@@ -1,5 +1,5 @@
-import { Icon, device } from '../../theme';
 import React, { ReactElement } from 'react';
+import { device, icon } from '../../theme';
 
 import { CONTACT_BACKGROUND } from '../../utils/images';
 import SendEmailRoundButton from '../shared/SendEmailRoundButton';
@@ -157,7 +157,6 @@ const SendButtonWrapper = styled.div`
 
 const SponsorWrapper = styled.div`
   width:90%;
-  padding: 10px;
   margin-bottom: 30px;
   background: ${({ theme }): string => theme.subBackground};
   
@@ -165,22 +164,12 @@ const SponsorWrapper = styled.div`
   justify-content: space-evenly;
   justify-items: center;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
 const SponsorImage = styled.img`
-  width: 60px;
-
-  @media ${device.mobileL} {
-    width: 80px;
-  }
-
-  @media ${device.tablet} {
-    width: 100px;
-  }
-
-  @media ${device.laptop} {
-    width: 120px;
-  }
+  height: 28px;
+  margin: 8px 24px;
 `;
 
 export const H1 = styled('text')`
@@ -217,12 +206,8 @@ export const H3 = styled('text')`
 `;
 
 function ContactPage(props: Props): ReactElement {
-  const sponsorImages = [];
   const { id } = props;
-
-  for (const value of Icon.sponsor) {
-    sponsorImages.push(<SponsorImage src={value}/>);
-  }
+  const sponsors = icon.sponsors;
 
   return (
     <Container id={ id }>
@@ -244,7 +229,18 @@ function ContactPage(props: Props): ReactElement {
       <TextWrapper>
         <H3>{ getString('POWERED_BY') }</H3>
       </TextWrapper>
-      <SponsorWrapper>{ sponsorImages }</SponsorWrapper>
+      <SponsorWrapper>
+        {
+          sponsors.map((sponsor, i) => {
+            if (i === 3) { // Turing icon is bigger than others
+              return <SponsorImage key={i} src={sponsor} style={{
+                height: 20,
+              }}/>;
+            }
+            return <SponsorImage key={i} src={sponsor}/>;
+          })
+        }
+      </SponsorWrapper>
     </Container>
   );
 }

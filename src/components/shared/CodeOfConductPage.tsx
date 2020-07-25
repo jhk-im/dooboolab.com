@@ -261,20 +261,17 @@ export const H5 = styled('text')`
   }
 `;
 
-function Vision(props: Props): ReactElement {
+function CodeOfConduct(props: Props): ReactElement {
   const { id } = props;
 
   return (
     <Container id={ id }>
       <HeaderBackgroundWrapper>
         <HeaderTitleTextWrapper>
-          <H1>{ getString('VISION_MISSION') }</H1>
+          <H1>{ getString('CODE_OF_CONDUCT') }</H1>
         </HeaderTitleTextWrapper>
       </HeaderBackgroundWrapper>
       <SubTitleWrapper>
-        <TitleTextWrapper>
-          <H3>{ getString('OUR_MISSION') }</H3>
-        </TitleTextWrapper>
         <DescriptionWrapper>
           <BODY2>
             { getString('MISSION_DESCRIPTION') }
@@ -331,4 +328,4 @@ function Vision(props: Props): ReactElement {
   );
 }
 
-export default Vision;
+export default CodeOfConduct;

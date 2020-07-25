@@ -57,10 +57,10 @@ const isRetina = (first: string, second?: string, third?: string): string => {
   return first;
 };
 
-export const Icon = {
+export const icon = {
   logo: null,
   works: [],
-  sponsor: [],
+  sponsors: [],
   toggle: [],
   toggle_darkMode: null,
 };
@@ -155,17 +155,17 @@ const theme = {
 export const createTheme = (type = ThemeType.LIGHT): DefaultTheme => {
   switch (type) {
     case ThemeType.LIGHT:
-      Icon.logo = icDooboolabLogo;
-      Icon.works = [IC_PRIME, IC_DOOBOOUI, IC_HACKATALK];
-      Icon.sponsor = [IC_COUPANG, IC_MEGAZONE, IC_LUNASOFT, IC_TURING];
-      Icon.toggle_darkMode = toggle;
+      icon.logo = icDooboolabLogo;
+      icon.works = [IC_PRIME, IC_DOOBOOUI, IC_HACKATALK];
+      icon.sponsors = [IC_COUPANG, IC_MEGAZONE, IC_LUNASOFT, IC_TURING];
+      icon.toggle_darkMode = toggle;
       localStorage.setItem('isDarkMode', 'light');
       return theme.light;
     case ThemeType.DARK:
-      Icon.logo = icDooboolabLogoDark;
-      Icon.works = [IC_PRIME_DARK, IC_DOOBOOUI_DARK, IC_HACKATALK_DARK];
-      Icon.sponsor = [IC_COUPANG_DARK, IC_MEGAZONE_DARK, IC_LUNASOFT_DARK, IC_TURING_DARK];
-      Icon.toggle_darkMode = toggleDark;
+      icon.logo = icDooboolabLogoDark;
+      icon.works = [IC_PRIME_DARK, IC_DOOBOOUI_DARK, IC_HACKATALK_DARK];
+      icon.sponsors = [IC_COUPANG_DARK, IC_MEGAZONE_DARK, IC_LUNASOFT_DARK, IC_TURING_DARK];
+      icon.toggle_darkMode = toggleDark;
       localStorage.setItem('isDarkMode', 'dark');
       return theme.dark;
   }
