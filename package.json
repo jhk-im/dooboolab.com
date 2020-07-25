@@ -5,7 +5,7 @@
   "postinstall": "tsc",
   "scripts": {
     "tsc": "tsc",
-    "dev": "webpack-dev-server",	
+    "dev": "webpack-dev-server",
     "start": "webpack-dev-server -d --hot --config webpack.config.js --watch",
     "test": "jest --coverage",
     "production": "cross-env NODE_ENV=production webpack -p --config webpack.config.prod.js",
@@ -22,6 +22,8 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@material-ui/core": "^4.11.0",
     "@svgr/webpack": "^5.4.0",
+    "Base64": "^1.1.0",
+    "firebase": "^7.17.1",
     "i18n-js": "^3.7.1",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
@@ -41,7 +43,7 @@
     "@babel/plugin-proposal-function-sent": "^7.10.4",
     "@babel/plugin-proposal-numeric-separator": "^7.10.4",
     "@babel/plugin-proposal-throw-expressions": "^7.10.4",
-    "@babel/plugin-transform-runtime": "7.10.5",
+    "@babel/plugin-transform-runtime": "^7.10.5",
     "@babel/preset-env": "7.10.4",
     "@babel/preset-flow": "^7.10.4",
     "@babel/preset-react": "7.10.4",
@@ -64,6 +66,7 @@
     "babel-jest": "^26.1.0",
     "babel-loader": "^8.1.0",
     "codecov": "^3.7.2",
+    "cross-env": "^6.0.0",
     "css-loader": "^3.6.0",
     "eslint": "^7.5.0",
     "expect": "^26.1.0",
@@ -82,8 +85,7 @@
     "typescript": "3.9.7",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "cross-env": "^6.0.0"
+    "webpack-dev-server": "^3.11.0"
   },
   "browserslist": [
     "> 1%",

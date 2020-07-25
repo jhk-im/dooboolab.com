@@ -9,6 +9,8 @@ package-lock.json
 # vscode
 .vscode/*
 
+config.ts
+
 # functions
 /functions/lib/*
 firebase-debug.log
