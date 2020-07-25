@@ -295,7 +295,7 @@ function CodeOfConduct(props: Props): ReactElement {
                   { getString('MISSION_DESCRIPTION_01_4') }<br/>
                   { getString('MISSION_DESCRIPTION_01_5') }<br/>
                   { getString('MISSION_DESCRIPTION_01_6') }<br/>
-                  { getString('MISSION_DESCRIPTION_01_7') }
+                  { getString('MISSION_DESCRIPTION_01_7') }<br/>
                   { getString('MISSION_DESCRIPTION_01_8') }
                 </BODY2>
               </ItemDescriptionWrapper>
