@@ -11,4 +11,4 @@ package-lock.json
 
 # functions
 /functions/lib/*
-/functions/firebase-debug.log
+firebase-debug.log
