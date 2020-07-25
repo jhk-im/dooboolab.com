@@ -35,6 +35,12 @@ jobs:
             - node_modules
 
       - run:
+          name: Copy config
+          working_directory: .
+          command: |
+            cp config.sample.ts config.ts
+
+      - run:
           name: Lint Test
           working_directory: .
           command: |

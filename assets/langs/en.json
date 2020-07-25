@@ -67,5 +67,10 @@
   "ADDRESS": "203, 40, Seolleung-ro 93-gil, Gangnam-gu, Seoul, Republic of Korea",
   "OUR_VISSION_MISSION": "Our vision & mission",
   "CODE_OF_CONDUCT": "Code of conduct",
-  "SEND": "Send"
+  "SEND": "Send",
+  "PLZ_WRITE_NAME": "Please write your name",
+  "TELL_US_YOUR_STORY": "Please tell us your stories",
+  "EMAIL_NOT_VALID": "Email is not valid.",
+  "FAILED_SENDING_STORY": "Failed in sending your story. Please try again.",
+  "SUCCESS_SENDING_STORY": "Thank you for sharing your story 🙏."
 }

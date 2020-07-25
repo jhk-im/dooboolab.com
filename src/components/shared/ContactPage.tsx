@@ -90,7 +90,7 @@ const SendEmailInputText = styled.input`
   border-color: #E0E0E0;
 
   ::placeholder{
-    color: white;
+    color: #ccc;
     font-family: avenir;
     font-size: 15px;
   }
@@ -117,7 +117,7 @@ const SendEmailTextArea = styled.textarea`
   border-color: #E0E0E0;
   
   ::placeholder{
-    color: white;
+    color: #ccc;
     font-family: avenir;
     font-size: 15px;
   }
@@ -219,7 +219,7 @@ function ContactPage(props: Props): ReactElement {
     if (!name || !email || !message) return;
 
     if (!validateEmail(email)) {
-      alert('Email is not valid!');
+      alert(getString('EMAIL_NOT_VALID'));
       return;
     }
 
@@ -229,6 +229,12 @@ function ContactPage(props: Props): ReactElement {
       setLoading(true);
       await db.collection('contacts')
         .add({ email, name, message });
+
+      alert(getString('SUCCESS_SENDING_STORY'));
+
+      setEmail('');
+      setName('');
+      setMessage('');
     } catch (err) {
       alert(`Failed sending contacts.\n${err.message}`);
     } finally {
@@ -246,7 +252,7 @@ function ContactPage(props: Props): ReactElement {
         </SendEmailTitleWrapper>
         <SendEmailInputWrapper>
           <SendEmailInputText
-            placeholder="Your name"
+            placeholder={getString('PLZ_WRITE_NAME')}
             value={name}
             onChange={(e): void => {
               setName(e.target.value);
@@ -260,7 +266,7 @@ function ContactPage(props: Props): ReactElement {
             }}
           />
           <SendEmailTextArea
-            placeholder="Tell us your stories."
+            placeholder={getString('TELL_US_YOUR_STORY')}
             value={message}
             onChange={(e): void => {
               setMessage(e.target.value);

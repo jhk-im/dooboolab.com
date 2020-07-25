@@ -67,5 +67,10 @@
   "ADDRESS": "서울시 강남구 선릉로 93길 40 203호",
   "OUR_VISSION_MISSION": "우리의 비전 & 미션",
   "CODE_OF_CONDUCT": "행동강령",
-  "SEND": "보내기"
+  "SEND": "보내기",
+  "PLZ_WRITE_NAME": "이름을 입력해주세요",
+  "EMAIL_NOT_VALID": "올바른 이메일 주소가 아닙니다.",
+  "TELL_US_YOUR_STORY": "여러분의 이야기를 들려주세요.",
+  "FAILED_SENDING_STORY": "이야기를 전송하지 못했습니다. 다시 시도해주세요.",
+  "SUCCESS_SENDING_STORY": "이야기를 공유해주셔서 감사합니다 🙏."
 }

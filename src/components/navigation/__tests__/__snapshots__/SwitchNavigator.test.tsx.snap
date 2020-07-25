@@ -1595,18 +1595,18 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
               class="sc-fzoant fqfNkj"
             >
               <input
-                class="sc-fzqAbL cqAwkQ"
-                placeholder="Your name"
+                class="sc-fzqAbL hzLapP"
+                placeholder="Please write your name"
                 value=""
               />
               <input
-                class="sc-fzqAbL cqAwkQ"
+                class="sc-fzqAbL hzLapP"
                 placeholder="email@email.com"
                 value=""
               />
               <textarea
-                class="sc-fzqMAW fRuvUK"
-                placeholder="Tell us your stories."
+                class="sc-fzqMAW ijAVTx"
+                placeholder="Please tell us your stories"
               />
               <div
                 class="sc-fzoJMP OKKfl"
