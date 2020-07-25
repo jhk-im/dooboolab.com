@@ -1,15 +1,17 @@
 {
-  "name": "dooboolab",
+  "name": "dooboolab.com",
   "version": "1.0.0",
-  "description": "Build react app with typescript.",
+  "description": "dooboolab`'s homepage",
   "postinstall": "tsc",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "start": "webpack-dev-server -d --hot --config webpack.config.js --watch",
     "tsc": "tsc",
-    "test": "jest",
-    "production": "NODE_ENV=production webpack -p --config webpack.config.prod.js",
-    "lint": "eslint src --ext .ts,.tsx,.js,.jsx"
+    "dev": "webpack-dev-server",
+    "start": "webpack-dashboard -- webpack-dev-server -d --hot --config webpack.config.js --watch",
+    "test": "jest --coverage",
+    "production": "cross-env NODE_ENV=production webpack -p --config webpack.config.prod.js",
+    "lint": "eslint **/*.ts && eslint **/*.tsx",
+    "codecov": "codecov",
+    "deploy": "yarn production && firebase deploy --only hosting"
   },
   "author": "hyochan",
   "license": "MIT",
@@ -80,7 +82,8 @@
     "typescript": "3.9.7",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "cross-env": "^6.0.0"
   },
   "browserslist": [
     "> 1%",

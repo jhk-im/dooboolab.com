@@ -1,3 +1,4 @@
+.firebase/
 .DS_Store
 node_modules/
 /dist/*
@@ -5,3 +6,9 @@ node_modules/
 !/dist/favicon.ico
 coverage/
 package-lock.json
+# vscode
+.vscode/*
+
+# functions
+/functions/lib/*
+/functions/firebase-debug.log
