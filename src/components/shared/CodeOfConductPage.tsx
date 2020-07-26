@@ -74,23 +74,6 @@ const SubTitleWrapper = styled.div`
   }
 `;
 
-const TitleTextWrapper = styled.div`
-  padding: 10px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  
-  @media ${device.tablet} {
-    padding: 20px;
-  }
-
-  @media ${device.laptop} {
-    padding: 30px;
-  }
-`;
-
 const DescriptionWrapper = styled.div`
   width: 60%;
   padding: 20px;
@@ -202,7 +185,7 @@ const ItemDescriptionWrapper = styled.div`
   }
 `;
 
-export const H1 = styled('text')`
+export const H1 = styled.text`
   font-size: 35px;
   font-family: futura;
   font-weight: 300;
@@ -217,7 +200,7 @@ export const H1 = styled('text')`
   }
 `;
 
-export const BODY2 = styled('text')`
+export const BODY2 = styled.text`
   font-size: 15px;
   font-family: avenir;
   font-weight: lighter;
@@ -232,7 +215,7 @@ export const BODY2 = styled('text')`
   }
 `;
 
-export const H3 = styled('text')`
+export const H3 = styled.text`
   font-size: 25px;
   font-family: avenir;
   color: ${({ theme }): string => theme.colorAccentLight};
@@ -246,7 +229,7 @@ export const H3 = styled('text')`
   }
 `;
 
-export const H5 = styled('text')`
+export const H5 = styled.text`
   font-size: 20px;
   font-family: futura;
   color: ${({ theme }): string => theme.colorAccentLight};
@@ -261,20 +244,17 @@ export const H5 = styled('text')`
   }
 `;
 
-function Vision(props: Props): ReactElement {
+function CodeOfConduct(props: Props): ReactElement {
   const { id } = props;
 
   return (
     <Container id={ id }>
       <HeaderBackgroundWrapper>
         <HeaderTitleTextWrapper>
-          <H1>{ getString('VISION_MISSION') }</H1>
+          <H1>{ getString('CODE_OF_CONDUCT') }</H1>
         </HeaderTitleTextWrapper>
       </HeaderBackgroundWrapper>
       <SubTitleWrapper>
-        <TitleTextWrapper>
-          <H3>{ getString('OUR_MISSION') }</H3>
-        </TitleTextWrapper>
         <DescriptionWrapper>
           <BODY2>
             { getString('MISSION_DESCRIPTION') }
@@ -298,7 +278,7 @@ function Vision(props: Props): ReactElement {
                   { getString('MISSION_DESCRIPTION_01_4') }<br/>
                   { getString('MISSION_DESCRIPTION_01_5') }<br/>
                   { getString('MISSION_DESCRIPTION_01_6') }<br/>
-                  { getString('MISSION_DESCRIPTION_01_7') }
+                  { getString('MISSION_DESCRIPTION_01_7') }<br/>
                   { getString('MISSION_DESCRIPTION_01_8') }
                 </BODY2>
               </ItemDescriptionWrapper>
@@ -331,4 +311,4 @@ function Vision(props: Props): ReactElement {
   );
 }
 
-export default Vision;
+export default CodeOfConduct;

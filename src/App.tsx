@@ -1,9 +1,23 @@
+import 'firebase/firestore';
+
 import React, { ReactElement } from 'react';
 import { hydrate, render } from 'react-dom';
 
+import Base64 from 'Base64';
 import RootProvider from './providers';
 import SwitchNavigator from './components/navigation/SwitchNavigator';
 import { createGlobalStyle } from 'styled-components';
+import firebase from 'firebase/app';
+import { firebaseConfig } from '../config';
+
+!firebase.apps.length
+  ? firebase.initializeApp(firebaseConfig).firestore()
+  : firebase.app().firestore();
+
+// @ts-ignore
+global.btoa = Base64.btoa;
+// @ts-ignore
+global.atob = Base64.atob;
 
 const rootElement = document.getElementById('app') as HTMLElement;
 

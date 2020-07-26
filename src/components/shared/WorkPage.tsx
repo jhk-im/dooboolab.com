@@ -1,5 +1,5 @@
-import { Icon, device } from '../../theme';
 import React, { ReactElement } from 'react';
+import { device, icon } from '../../theme';
 
 import ViewMoreRoundButton from './ViewMoreRoundButton';
 import { getString } from '../../../STRINGS';
@@ -49,13 +49,15 @@ const TitleWrapper = styled.div`
 
 const DescriptionWrapper = styled.div`
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 0 40px 10px 40px;
   
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
+
+  line-height: 150%;
 
   @media ${device.laptop} {
     margin-bottom: 15px;
@@ -84,9 +86,10 @@ const WorkItemListWrapper = styled.div`
 
 const WorkItemWrapper = styled.div`
   padding: 10px;
-  height: 200px;
+  height: auto;
   width: 65vw;
-  margin-bottom: 20px;
+  padding: 20px;
+  margin: 0 20px 40px 20px;
   border-width: 2px;
   border-color: ${({ theme }): string => theme.itemBorder};
   border-color: ${({ theme }): string => theme.itemBorderTransparent};
@@ -129,14 +132,13 @@ const WorkImage = styled.img`
 const WorkTextWrapper = styled.div`
   flex: 1;
   width: 80%;
-  padding: 10px;
 
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 3;
-  width: 200px;
-  padding: 10px;
+  padding: 10px 40px;
+  margin: 16px 0px;
 
   @media ${device.tablet} {
     flex: 2;
@@ -164,7 +166,7 @@ const DescriptionText = styled.text`
   }
 `;
 
-export const H2 = styled('text')`
+export const H2 = styled.text`
   font-size: 25px;
   font-weight: bold;
   font-family: futura;
@@ -179,7 +181,7 @@ export const H2 = styled('text')`
   }
 `;
 
-export const BODY2 = styled('text')`
+export const BODY2 = styled.text`
   font-size: 15px;
   font-family: avenir;
   font-weight: lighter;
@@ -217,33 +219,12 @@ const workDescriptions = [
 
 function Work(props: Props): ReactElement {
   const { id } = props;
-  const workIcons = [];
 
-  const moveUrl = (inputPath): void => {
+  const moveUrl = (inputPath: string): void => {
     window.open(inputPath);
   };
 
-  for (const value of Icon.works) {
-    workIcons.push(
-      <WorkItemWrapper >
-        <WorkImageWrapper>
-          <WorkImage src={ value }/>
-        </WorkImageWrapper>
-        <WorkTextWrapper>
-          <DescriptionText>{ workDescriptions[Icon.works.indexOf(value)] }</DescriptionText>
-        </WorkTextWrapper>
-        <ItemButtonWrapper>
-          {
-            workItemURLs[Icon.works.indexOf(value)] === ''
-              ? null
-              : <ViewMoreRoundButton
-                text={ getString('VIEW_MORE') }
-                onClick={ (): void => moveUrl(workItemURLs[Icon.works.indexOf(value)]) }/>
-          }
-        </ItemButtonWrapper>
-      </WorkItemWrapper>,
-    );
-  }
+  const works = icon.works;
 
   return (
     <WorkContainer id={ id }>
@@ -253,7 +234,28 @@ function Work(props: Props): ReactElement {
       <DescriptionWrapper>
         <BODY2>{ getString('WORK_DESCRIPTION') }</BODY2>
       </DescriptionWrapper>
-      <WorkItemListWrapper>{ workIcons }</WorkItemListWrapper>
+      <WorkItemListWrapper>{
+        works.map((work, i) => {
+          return <WorkItemWrapper key={i}>
+            <WorkImageWrapper>
+              <WorkImage src={ work }/>
+            </WorkImageWrapper>
+            <WorkTextWrapper>
+              <DescriptionText>{ workDescriptions[works.indexOf(work)] }</DescriptionText>
+            </WorkTextWrapper>
+            <ItemButtonWrapper>
+              {
+                workItemURLs[works.indexOf(work)] === ''
+                  ? null
+                  : <ViewMoreRoundButton
+                    text={ getString('VIEW_MORE') }
+                    onClick={ (): void => moveUrl(workItemURLs[works.indexOf(work)]) }
+                  />
+              }
+            </ItemButtonWrapper>
+          </WorkItemWrapper>;
+        })
+      }</WorkItemListWrapper>
     </WorkContainer>
   );
 }

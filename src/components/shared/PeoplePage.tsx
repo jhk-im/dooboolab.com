@@ -53,29 +53,7 @@ const SubTitleWrapper = styled.div`
   }
 `;
 
-const DescriptionWrapper = styled.div`
-  width: 300px;
-  padding: 20px;
-  line-height: 20px;
-
-  @media ${device.mobileL} {
-    width: 380px;
-    margin-bottom: 10px;
-    line-height: 25px;
-  }
-
-  @media ${device.tablet} {
-    width: 600px;
-    line-height: 30px;
-  }
-
-  @media ${device.laptop} {
-    width: 700px;
-    line-height: 35px;
-  }
-`;
-
-export const H2 = styled('text')`
+export const H2 = styled.text`
   font-size: 30px;
   font-weight: bold;
   font-family: futura;
@@ -90,7 +68,7 @@ export const H2 = styled('text')`
   }
 `;
 
-export const H4 = styled('text')`
+export const H4 = styled.text`
   font-size: 20px;
   font-family: avenir;
   color: ${({ theme }): string => theme.colorAccentLight};
@@ -104,7 +82,7 @@ export const H4 = styled('text')`
   }
 `;
 
-export const BODY2 = styled('text')`
+export const BODY2 = styled.text`
   font-size: 15px;
   font-family: avenir;
   font-weight: lighter;
@@ -131,9 +109,6 @@ function PeoplePage(props: Props): ReactElement {
         <H4>{ getString('PEOPLE_SUBTITLE_01') }</H4>
         <H4>{ getString('PEOPLE_SUBTITLE_02') }</H4>
       </SubTitleWrapper>
-      <DescriptionWrapper>
-        <BODY2>{ getString('PEOPLE_DESCRIPTION') }</BODY2>
-      </DescriptionWrapper>
       <ProfileItemGrid/>
     </PeopleContainer>
   );

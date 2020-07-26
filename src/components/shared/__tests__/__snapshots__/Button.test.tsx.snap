@@ -2,7 +2,7 @@
 
 exports[`[Button] shared component test component and snapshot matches 1`] = `
 <button
-  className="sc-AxjAm iKUiQc"
+  className="sc-AxjAm kmjAeC"
   style={
     Object {
       "display": "flex",
@@ -11,10 +11,10 @@ exports[`[Button] shared component test component and snapshot matches 1`] = `
   }
 >
   <div
-    className="sc-AxirZ gvdnJD"
+    className="sc-AxmLO bIiHiw"
   >
     <span
-      className="sc-AxiKw kULcIu"
+      className="sc-fzozJi jInwIY"
     >
       Button 2nd test
     </span>

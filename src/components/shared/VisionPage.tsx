@@ -83,16 +83,12 @@ const TitleTextWrapper = styled.div`
   justify-content: center;
   align-content: center;
   
-  @media (max-width: 1000px) {
+  @media ${device.tablet} {
     padding: 20px;
   }
 
-  @media (max-width: 800px) {
-    padding: 10px;
-  }
-
-  @media (max-width: 600px) {
-    padding: 5px;
+  @media ${device.laptop} {
+    padding: 30px;
   }
 `;
 
@@ -107,10 +103,6 @@ const DescriptionWrapper = styled.div`
   justify-content: center;
   justify-items: center;
   align-items: center;
-  width: 70%;
-  padding: 20px;
-  margin-bottom: 20px;
-  line-height: 30px;
 
   @media ${device.tablet} {
     margin-bottom: 10px;
@@ -214,7 +206,7 @@ const ItemDescriptionWrapper = styled.div`
   }
 `;
 
-export const H1 = styled('text')`
+export const H1 = styled.text`
   font-size: 35px;
   font-family: futura;
   font-weight: 300;
@@ -229,7 +221,7 @@ export const H1 = styled('text')`
   }
 `;
 
-export const BODY2 = styled('text')`
+export const BODY2 = styled.text`
   font-size: 15px;
   font-family: avenir;
   font-weight: lighter;
@@ -244,9 +236,10 @@ export const BODY2 = styled('text')`
   }
 `;
 
-export const H3 = styled('text')`
+export const H3 = styled.text`
   font-size: 25px;
   font-family: avenir;
+  color: ${({ theme }): string => theme.colorAccentLight};
 
   @media ${device.tablet} {
     font-size: 30px;
@@ -255,19 +248,12 @@ export const H3 = styled('text')`
   @media ${device.laptop} {
     font-size: 35px;
   }
-
-  @media (prefers-color-scheme: dark) {
-    color: #8A96DC;
-  }
-
-  @media (prefers-color-scheme: light){
-    color: #393D7A;
-  }
 `;
 
-export const H5 = styled('text')`
+export const H5 = styled.text`
   font-size: 20px;
   font-family: futura;
+  color: ${({ theme }): string => theme.colorAccentLight};
 
   @media ${device.tablet} {
     font-size: 25px;
@@ -275,14 +261,6 @@ export const H5 = styled('text')`
   
   @media ${device.laptop} {
     font-size: 30px;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    color: #8A96DC;
-  }
-
-  @media (prefers-color-scheme: light){
-    color: #393D7A;
   }
 `;
 
@@ -297,25 +275,7 @@ const visionTexts = [
 ];
 
 function Vision(props:Props): ReactElement {
-  const visionWrappers = [];
   const { id } = props;
-
-  for (const value of visionTexts) {
-    visionWrappers.push(
-      <VisionItem>
-        <VisionNumberWrapper>
-          <H5>0{ visionTexts.indexOf(value) + 1 }</H5>
-        </VisionNumberWrapper>
-        <VisionItemBox>
-          <ItemDescriptionWrapper>
-            <BODY2>
-              { value }
-            </BODY2>
-          </ItemDescriptionWrapper>
-        </VisionItemBox>
-      </VisionItem>,
-    );
-  }
 
   return (
     <Container id={ id }>
@@ -333,7 +293,24 @@ function Vision(props:Props): ReactElement {
         </DescriptionWrapper>
       </SubTitleWrapper>
       <VisionListWrapper>
-        <VisionItemLinearWrapper>{ visionWrappers }</VisionItemLinearWrapper>
+        <VisionItemLinearWrapper>
+          {
+            visionTexts.map((value, i) => {
+              return <VisionItem key={i}>
+                <VisionNumberWrapper>
+                  <H5>0{ visionTexts.indexOf(value) + 1 }</H5>
+                </VisionNumberWrapper>
+                <VisionItemBox>
+                  <ItemDescriptionWrapper>
+                    <BODY2>
+                      { value }
+                    </BODY2>
+                  </ItemDescriptionWrapper>
+                </VisionItemBox>
+              </VisionItem>;
+            })
+          }
+        </VisionItemLinearWrapper>
       </VisionListWrapper>
     </Container>
   );

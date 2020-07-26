@@ -1,5 +1,5 @@
-import { Icon, device } from '../../theme';
 import React, { ReactElement } from 'react';
+import { device, icon } from '../../theme';
 
 import LogoButton from '../shared/LogoButton';
 import MenuButton from '../shared/MenuButton';
@@ -58,7 +58,6 @@ const MenuButtonWrapper = styled.div`
 
 function MenuBar(): ReactElement {
   const history = useHistory();
-  const menuButtons = [];
   const titles = [getString('STORY'), getString('WORK'), getString('PEOPLE'), getString('CONTACT')];
   const hrefs = ['#story', '#work', '#people', '#contact'];
 
@@ -73,25 +72,24 @@ function MenuBar(): ReactElement {
 
   const currentPage = localStorage.getItem('currentPage');
 
-  for (let i = 0; i < titles.length; i++) {
-    menuButtons.push(
-      <MenuButton
-        onClick = { (): void => tabChange('/', i) }
-        href = { hrefs[i] }
-        text={ titles[i] }
-        isSelected={ currentPage === i.toString() && true }
-      />,
-    );
-  }
-
   return (
     <Container>
       <LogoButton
         href = { '#intro' }
         onClick={ (): void => tabChange('/', 5) }
-        imgSrc={Icon.logo}/>
+        imgSrc={icon.logo}/>
       <MenuButtonWrapper>
-        { menuButtons }
+        {
+          titles.map((title, i) => {
+            return <MenuButton
+              key={i}
+              onClick = { (): void => tabChange('/', i) }
+              href = { hrefs[i] }
+              text={ titles[i] }
+              isSelected={ currentPage === i.toString() && true }
+            />;
+          })
+        }
       </MenuButtonWrapper>
     </Container>
   );

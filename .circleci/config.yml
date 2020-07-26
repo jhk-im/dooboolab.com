@@ -1,0 +1,77 @@
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.5
+jobs:
+  node:
+    working_directory: ~/dooboo
+    docker:
+      - image: circleci/node:12
+        environment:
+          TZ: "Asia/Seoul"
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: yarn-v3-{{ checksum "yarn.lock" }}-{{ arch }}
+
+      - restore_cache:
+          key: node-v3-{{ checksum "package.json" }}-{{ arch }}
+
+      - run: yarn install
+
+      - save_cache:
+          key: yarn-v3-{{ checksum "yarn.lock" }}-{{ arch }}
+          paths:
+            - ~/.cache/yarn
+
+      - save_cache:
+          key: node-v3-{{ checksum "package.json" }}-{{ arch }}
+          paths:
+            - node_modules
+
+      - persist_to_workspace:
+          root: ~/dooboo
+          paths:
+            - node_modules
+
+      - run:
+          name: Copy config
+          working_directory: .
+          command: |
+            cp config.sample.ts config.ts
+
+      - run:
+          name: Lint Test
+          working_directory: .
+          command: |
+            yarn lint
+
+      - run:
+          name: TS Test
+          working_directory: .
+          command: |
+            yarn tsc
+
+      - run:
+          name: Jest Test
+          command: |
+            mkdir -p coverage
+            yarn jest --coverage --max-workers=2 --silent
+          environment:
+            JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
+
+      - codecov/upload:
+          file: ./coverage/lcov.info
+          token: e7137332-7df3-491f-8639-cdf11bfaf7f4
+
+      - store_test_results:
+          path: coverage
+
+      - store_artifacts:
+          path: coverage
+
+workflows:
+  version: 2
+  node-android-ios:
+    jobs:
+      - node
