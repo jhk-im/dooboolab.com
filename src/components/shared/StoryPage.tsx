@@ -189,7 +189,7 @@ const ItemButtonWrapper = styled.div`
   }
 `;
 
-export const H2 = styled('text')`
+export const H2 = styled.h2`
   font-size: 15px;
   font-weight: bold;
   font-family: futura;
@@ -208,7 +208,7 @@ export const H2 = styled('text')`
   }
 `;
 
-export const H3 = styled('text')`
+export const H3 = styled.h3`
   font-size: 18px;
   font-family: avenir;
   color: ${({ theme }): string => theme.colorAccentLight};
@@ -230,7 +230,7 @@ export const H3 = styled('text')`
   }
 `;
 
-export const BODY2 = styled('text')`
+export const BODY2 = styled.text`
   font-size: 12px;
   font-family: avenir;
   font-weight: lighter;

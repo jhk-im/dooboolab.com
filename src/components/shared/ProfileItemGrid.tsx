@@ -83,55 +83,52 @@ const ProfileInfo = styled.text`
 `;
 
 function ProfileItemGrid(): ReactElement {
-  const moveUrl = (inputPath): void => {
+  const moveUrl = (inputPath: string): void => {
     window.open(inputPath);
   };
-  const profileItems = [];
-
-  for (const member of members) {
-    profileItems.push(
-      <ProfileItemWrapper>
-        <ProfileImage src={ member.image }></ProfileImage>
-        <ProfileInfo>{member.name} / {member.position}</ProfileInfo>
-        <ProfileIconWrapper>
-          <ProfileIconImageWrapper>
-            {
-              member.sns.github === ''
-                ? <FontAwesomeIcon icon={ faGithub } size="lg" color="gray"/>
-                : <FontAwesomeIcon
-                  icon={ faGithub }
-                  size="lg"
-                  onClick= { () : void => moveUrl(member.sns.github) }/>
-            }
-          </ProfileIconImageWrapper>
-          <ProfileIconImageWrapper>
-            {
-              member.sns.linkedin === ''
-                ? <FontAwesomeIcon icon={ faLinkedin } size="lg" color="gray"/>
-                : <FontAwesomeIcon
-                  icon={ faLinkedin }
-                  size="lg"
-                  onClick= { () : void => moveUrl(member.sns.linkedin) }/>
-            }
-          </ProfileIconImageWrapper>
-          <ProfileIconImageWrapper>
-            {
-              member.sns.twitter === ''
-                ? <FontAwesomeIcon icon={ faTwitter } size="lg" color="gray"/>
-                : <FontAwesomeIcon
-                  icon={ faTwitter }
-                  size="lg"
-                  onClick= { () : void => moveUrl(member.sns.twitter) }/>
-            }
-          </ProfileIconImageWrapper>
-        </ProfileIconWrapper>
-      </ProfileItemWrapper>,
-    );
-  }
 
   return (
     <ProfilesWrapper>
-      { profileItems }
+      {
+        members.map((member, i) => {
+          return <ProfileItemWrapper key={i}>
+            <ProfileImage src={ member.image }></ProfileImage>
+            <ProfileInfo>{member.name} / {member.position}</ProfileInfo>
+            <ProfileIconWrapper>
+              <ProfileIconImageWrapper>
+                {
+                  member.sns.github === ''
+                    ? <FontAwesomeIcon icon={ faGithub } size="lg" color="gray"/>
+                    : <FontAwesomeIcon
+                      icon={ faGithub }
+                      size="lg"
+                      onClick= { () : void => moveUrl(member.sns.github) }/>
+                }
+              </ProfileIconImageWrapper>
+              <ProfileIconImageWrapper>
+                {
+                  member.sns.linkedin === ''
+                    ? <FontAwesomeIcon icon={ faLinkedin } size="lg" color="gray"/>
+                    : <FontAwesomeIcon
+                      icon={ faLinkedin }
+                      size="lg"
+                      onClick= { () : void => moveUrl(member.sns.linkedin) }/>
+                }
+              </ProfileIconImageWrapper>
+              <ProfileIconImageWrapper>
+                {
+                  member.sns.twitter === ''
+                    ? <FontAwesomeIcon icon={ faTwitter } size="lg" color="gray"/>
+                    : <FontAwesomeIcon
+                      icon={ faTwitter }
+                      size="lg"
+                      onClick= { () : void => moveUrl(member.sns.twitter) }/>
+                }
+              </ProfileIconImageWrapper>
+            </ProfileIconWrapper>
+          </ProfileItemWrapper>;
+        })
+      }
       <ProfileItemWrapper>
         <EmptyBox/>
         <EmptyBox/>

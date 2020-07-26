@@ -57,10 +57,10 @@ const isRetina = (first: string, second?: string, third?: string): string => {
   return first;
 };
 
-export const Icon = {
+export const icon = {
   logo: null,
   works: [],
-  sponsor: [],
+  sponsors: [],
   toggle: [],
   toggle_darkMode: null,
 };
@@ -89,17 +89,6 @@ const size = {
   laptopL: '1440px',
   desktop: '2560px',
 };
-
-// const colors = {
-//   skyBlue: '#069ccd',
-//   whiteGray: '#f7f6f3',
-//   dusk: 'rgb(65,77,107)',
-//   green: 'rgb(29,211,168)',
-//   greenBlue: 'rgb(36,205,151)',
-//   mediumGray: 'rgb(134,154,183)',
-//   paleGray: 'rgb(221,226,236)',
-//   lightBackground: 'white',
-// };
 
 const light = {
   background: 'white',
@@ -155,17 +144,17 @@ const theme = {
 export const createTheme = (type = ThemeType.LIGHT): DefaultTheme => {
   switch (type) {
     case ThemeType.LIGHT:
-      Icon.logo = icDooboolabLogo;
-      Icon.works = [IC_PRIME, IC_DOOBOOUI, IC_HACKATALK];
-      Icon.sponsor = [IC_COUPANG, IC_MEGAZONE, IC_LUNASOFT, IC_TURING];
-      Icon.toggle_darkMode = toggle;
+      icon.logo = icDooboolabLogo;
+      icon.works = [IC_PRIME, IC_DOOBOOUI, IC_HACKATALK];
+      icon.sponsors = [IC_COUPANG, IC_MEGAZONE, IC_LUNASOFT, IC_TURING];
+      icon.toggle_darkMode = toggle;
       localStorage.setItem('isDarkMode', 'light');
       return theme.light;
     case ThemeType.DARK:
-      Icon.logo = icDooboolabLogoDark;
-      Icon.works = [IC_PRIME_DARK, IC_DOOBOOUI_DARK, IC_HACKATALK_DARK];
-      Icon.sponsor = [IC_COUPANG_DARK, IC_MEGAZONE_DARK, IC_LUNASOFT_DARK, IC_TURING_DARK];
-      Icon.toggle_darkMode = toggleDark;
+      icon.logo = icDooboolabLogoDark;
+      icon.works = [IC_PRIME_DARK, IC_DOOBOOUI_DARK, IC_HACKATALK_DARK];
+      icon.sponsors = [IC_COUPANG_DARK, IC_MEGAZONE_DARK, IC_LUNASOFT_DARK, IC_TURING_DARK];
+      icon.toggle_darkMode = toggleDark;
       localStorage.setItem('isDarkMode', 'dark');
       return theme.dark;
   }

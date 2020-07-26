@@ -27,7 +27,7 @@ export const members = [
   },
   {
     name: 'Terry',
-    position: 'Developer',
+    position: 'Lead Developer',
     image: terry,
     sns: {
       linkedin: 'https://www.linkedin.com/in/jongtaek-choi-259796117',

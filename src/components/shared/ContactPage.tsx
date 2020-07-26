@@ -1,10 +1,12 @@
-import { Icon, device } from '../../theme';
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
+import { device, icon } from '../../theme';
 
 import { CONTACT_BACKGROUND } from '../../utils/images';
 import SendEmailRoundButton from '../shared/SendEmailRoundButton';
+import firebase from 'firebase/app';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
+import { validateEmail } from '../../utils/functions';
 
 interface Props {
   id?: string;
@@ -88,7 +90,7 @@ const SendEmailInputText = styled.input`
   border-color: #E0E0E0;
 
   ::placeholder{
-    color: white;
+    color: #ccc;
     font-family: avenir;
     font-size: 15px;
   }
@@ -115,7 +117,7 @@ const SendEmailTextArea = styled.textarea`
   border-color: #E0E0E0;
   
   ::placeholder{
-    color: white;
+    color: #ccc;
     font-family: avenir;
     font-size: 15px;
   }
@@ -157,7 +159,6 @@ const SendButtonWrapper = styled.div`
 
 const SponsorWrapper = styled.div`
   width:90%;
-  padding: 10px;
   margin-bottom: 30px;
   background: ${({ theme }): string => theme.subBackground};
   
@@ -165,25 +166,15 @@ const SponsorWrapper = styled.div`
   justify-content: space-evenly;
   justify-items: center;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
 const SponsorImage = styled.img`
-  width: 60px;
-
-  @media ${device.mobileL} {
-    width: 80px;
-  }
-
-  @media ${device.tablet} {
-    width: 100px;
-  }
-
-  @media ${device.laptop} {
-    width: 120px;
-  }
+  height: 28px;
+  margin: 8px 24px;
 `;
 
-export const H1 = styled('text')`
+export const H1 = styled.text`
   font-size: 30px;
   font-family: futura;
   font-weight: 300;
@@ -202,7 +193,7 @@ export const H1 = styled('text')`
   }
 `;
 
-export const H3 = styled('text')`
+export const H3 = styled.text`
   font-size: 25px;
   font-family: avenir;
   color: ${({ theme }): string => theme.colorAccentLight};
@@ -217,12 +208,39 @@ export const H3 = styled('text')`
 `;
 
 function ContactPage(props: Props): ReactElement {
-  const sponsorImages = [];
   const { id } = props;
+  const sponsors = icon.sponsors;
+  const [loading, setLoading] = useState<boolean>(false);
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
 
-  for (const value of Icon.sponsor) {
-    sponsorImages.push(<SponsorImage src={value}/>);
-  }
+  const sendContact = async (): Promise<void> => {
+    if (!name || !email || !message) return;
+
+    if (!validateEmail(email)) {
+      alert(getString('EMAIL_NOT_VALID'));
+      return;
+    }
+
+    const db = firebase.firestore();
+
+    try {
+      setLoading(true);
+      await db.collection('contacts')
+        .add({ email, name, message });
+
+      alert(getString('SUCCESS_SENDING_STORY'));
+
+      setEmail('');
+      setName('');
+      setMessage('');
+    } catch (err) {
+      alert(`Failed sending contacts.\n${err.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <Container id={ id }>
@@ -233,18 +251,51 @@ function ContactPage(props: Props): ReactElement {
           </TextWrapper>
         </SendEmailTitleWrapper>
         <SendEmailInputWrapper>
-          <SendEmailInputText placeholder="Name"/>
-          <SendEmailInputText placeholder="Email"/>
-          <SendEmailTextArea placeholder="Message"/>
+          <SendEmailInputText
+            placeholder={getString('PLZ_WRITE_NAME')}
+            value={name}
+            onChange={(e): void => {
+              setName(e.target.value);
+            }}
+          />
+          <SendEmailInputText
+            placeholder="email@email.com"
+            value={email}
+            onChange={(e): void => {
+              setEmail(e.target.value);
+            }}
+          />
+          <SendEmailTextArea
+            placeholder={getString('TELL_US_YOUR_STORY')}
+            value={message}
+            onChange={(e): void => {
+              setMessage(e.target.value);
+            }}
+          />
           <SendButtonWrapper>
-            <SendEmailRoundButton text={ getString('SEND') }/>
+            <SendEmailRoundButton
+              loading={loading}
+              text={ getString('SEND') }
+              onClick={sendContact}
+            />
           </SendButtonWrapper>
         </SendEmailInputWrapper>
       </TopBackgroundWrapper>
       <TextWrapper>
         <H3>{ getString('POWERED_BY') }</H3>
       </TextWrapper>
-      <SponsorWrapper>{ sponsorImages }</SponsorWrapper>
+      <SponsorWrapper>
+        {
+          sponsors.map((sponsor, i) => {
+            if (i === 3) { // Turing icon is bigger than others
+              return <SponsorImage key={i} src={sponsor} style={{
+                height: 20,
+              }}/>;
+            }
+            return <SponsorImage key={i} src={sponsor}/>;
+          })
+        }
+      </SponsorWrapper>
     </Container>
   );
 }

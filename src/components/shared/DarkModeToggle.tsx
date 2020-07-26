@@ -1,5 +1,5 @@
-import { Icon, device } from '../../theme';
 import React, { ReactElement } from 'react';
+import { device, icon } from '../../theme';
 
 import styled from 'styled-components';
 
@@ -30,7 +30,7 @@ function Toggle(props: Props): ReactElement {
   // const ToggleButton = Icon.toggle[0];
   // const ToggleIcon = Icon.toggle[1];
   // const ToggleRact = Icon.toggle[2];
-  const ToggleButton = Icon.toggle_darkMode;
+  const ToggleButton = icon.toggle_darkMode;
 
   return (
     <Container>
