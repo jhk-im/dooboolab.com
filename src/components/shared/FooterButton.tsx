@@ -22,15 +22,33 @@ const ButtonWrapper = styled.div`
   align-items: center;
 `;
 
+const SelectedButtonWrapper = styled.div`
+  width: 100%;
+  color: ${({ theme }): string => theme.colorAccent};;
+  text-decoration: underline;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+`;
+
 function Button(props: Props): ReactElement {
-  const { onClick, text, style, href } = props;
+  const { onClick, text, style, href, isSelected } = props;
 
   return (
     <a href = { href }>
       <FooterButton style={ style } onClick={ onClick } >
-        <ButtonWrapper>
-          { text }
-        </ButtonWrapper>
+        {
+          isSelected
+            ? <SelectedButtonWrapper>
+              { text }
+            </SelectedButtonWrapper>
+            : <ButtonWrapper>
+              { text }
+            </ButtonWrapper>
+        }
       </FooterButton>
     </a>
   );

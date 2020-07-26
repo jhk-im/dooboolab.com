@@ -7,6 +7,7 @@ interface Props {
   id?: string;
   style?: CSSProperties;
   text?: string;
+  href?: string;
   onClick?: () => void;
   isSelected?: boolean;
 }
@@ -17,11 +18,13 @@ const ButtonWrapper = styled.div`
 `;
 
 function Button(props: Props): ReactElement {
-  const { onClick, text, style } = props;
+  const { onClick, text, style, href } = props;
   return (
-    <StoryTextButton style={ style } onClick={ onClick } >
-      <ButtonWrapper>{ text }</ButtonWrapper>
-    </StoryTextButton>
+    <a href={ href }>
+      <StoryTextButton style={ style } onClick={ onClick } >
+        <ButtonWrapper>{ text }</ButtonWrapper>
+      </StoryTextButton>
+    </a>
   );
 }
 

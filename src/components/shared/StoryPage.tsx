@@ -257,12 +257,13 @@ function Intro(props: Props): ReactElement {
   const { id } = props;
   const history = useHistory();
 
-  const tabChange = (inputPath): void => {
+  const tabChange = (inputPath, pageNumber): void => {
     const location: Record<string, unknown> = {
       pathname: inputPath,
       state: {},
     };
     history.push(location);
+    localStorage.setItem('currentPage', pageNumber);
   };
 
   const moveUrl = (inputPath): void => {
@@ -285,7 +286,8 @@ function Intro(props: Props): ReactElement {
           <BODY2>{ getString('VISION_DESCRIPTION') }</BODY2>
           <ViewMoreButtonWrapper>
             <StoryTextButton
-              onClick={(): void => tabChange('/vision')}
+              href = {'/vision'}
+              onClick={(): void => tabChange('/vision', 6)}
               text={getString('VIEW_MORE2')}/>
           </ViewMoreButtonWrapper>
         </DescriptionWrapper>

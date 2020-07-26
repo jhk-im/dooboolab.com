@@ -82,14 +82,19 @@ const FooterDescriptionText = styled.div`
 
 function Footer(): ReactElement {
   const history = useHistory();
+  const titles = [getString('OUR_VISSION_MISSION'), getString('CODE_OF_CONDUCT')];
+  const hrefs = ['/vision', '/codeofconduct'];
 
-  const tabChange = (inputPath): void => {
+  const tabChange = (inputPath, pageNumber): void => {
     const location: Record<string, unknown> = {
       pathname: inputPath,
       state: {},
     };
     history.push(location);
+    localStorage.setItem('currentPage', pageNumber);
   };
+
+  const currentPage = localStorage.getItem('currentPage');
 
   return (
     <FooterWrapper>
@@ -101,14 +106,17 @@ function Footer(): ReactElement {
       </FooterTextWrapper>
       <FooterTextWrapper>
         <ButtonWrapper>
-          <FooterButton
-            href = "#vision"
-            text={ getString('OUR_VISSION_MISSION') }
-            onClick={(): void => tabChange('/vision')}/>
-          <FooterButton
-            href = "#code"
-            text={ getString('CODE_OF_CONDUCT') }
-            onClick={(): void => tabChange('/codeofconduct')}/>
+          {
+            titles.map((title, i) => {
+              return <FooterButton
+                key={i}
+                href = { hrefs[i] }
+                text={ titles[i] }
+                onClick={(): void => tabChange(hrefs[i], i + 6)}
+                isSelected={ Number(currentPage) === i + 6 && true }
+              />;
+            })
+          }
         </ButtonWrapper>
         <FooterDescriptionText>
           © 2017-{thisYear} dooboolab, All Rights Reserved

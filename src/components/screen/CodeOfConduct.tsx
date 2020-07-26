@@ -18,7 +18,7 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const MenubarTemp = styled.div`
+const MenubarEmptyBox = styled.div`
   height: 100px;
   width: 100vw;
 
@@ -30,12 +30,16 @@ const MenubarTemp = styled.div`
 function CodeOfConduct(): ReactElement {
   const { changeThemeType } = useThemeContext();
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Container>
       <MenuBar/>
       <DarkModeToggle onClick={(): void => changeThemeType()} />
-      <MenubarTemp/>
-      <CodeOfConductPage id="code"/>
+      <MenubarEmptyBox/>
+      <CodeOfConductPage/>
       <Footer/>
     </Container>
   );

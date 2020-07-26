@@ -7,7 +7,6 @@ import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
-localStorage.getItem('isDarkMode');
 const Container = styled.div`
   width: 100vw;
   background: ${({ theme }): string => theme.background};
@@ -75,7 +74,7 @@ function MenuBar(): ReactElement {
   return (
     <Container>
       <LogoButton
-        href = { '#intro' }
+        href = { '/' }
         onClick={ (): void => tabChange('/', 5) }
         imgSrc={icon.logo}/>
       <MenuButtonWrapper>
@@ -86,7 +85,7 @@ function MenuBar(): ReactElement {
               onClick = { (): void => tabChange('/', i) }
               href = { hrefs[i] }
               text={ titles[i] }
-              isSelected={ currentPage === i.toString() && true }
+              isSelected={ Number(currentPage) === i && true }
             />;
           })
         }
