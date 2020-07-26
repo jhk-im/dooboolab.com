@@ -55,11 +55,11 @@ const FooterTitleText = styled.div`
   color: #BEC8E2;
 
   @media ${device.tablet} {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   @media ${device.laptop} {
-    font-size: 18px;
+    font-size: 20px;
   }
 `;
 
@@ -70,7 +70,7 @@ const FooterDescriptionText = styled.div`
   color: #FFFFFF;
 
   @media ${device.tablet} {
-    font-size: 10px;
+    font-size: 14px;
     padding: 10px;
   }
 

@@ -7,7 +7,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
       style="text-align: center;"
     >
       <div
-        class="sc-pjSSY hCQifE"
+        class="sc-paXsP dPpicd"
       >
         <div
           class="sc-fzqBkg cgyXWS"
@@ -104,7 +104,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
           <test-file-stub />
         </div>
         <div
-          class="sc-prOVx SwblE"
+          class="sc-pjSSY fbJDxU"
         />
         <div
           class="sc-fzomuh huLmzD"
@@ -127,7 +127,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
               <text
                 class="sc-fznyYp fjOApR"
               >
-                We are a strong open source community for individuals, companies,and group of societies.
+                We manage strong open source community for individuals, companies,and group of societies.
               </text>
             </div>
           </div>
@@ -154,55 +154,55 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
           </div>
         </div>
         <div
-          class="sc-fzoPby jIIuqs"
+          class="sc-fzoCCn pSALZ"
           id="story"
         >
           <div
-            class="sc-fzpdbB iPlzxt"
+            class="sc-fzoPby sDQdd"
           >
             <div
-              class="sc-fzppAM esLVVj"
+              class="sc-fzpdbB bDZlov"
             >
               <h2
-                class="sc-fzoOEf jWiCKo"
+                class="sc-fzoCUK esUtnB"
               >
                 Story
               </h2>
             </div>
             <div
-              class="sc-fznBtT dTDJHF"
+              class="sc-fzppAM fyghLV"
             >
               <text
-                class="sc-fzppip keJoro"
+                class="sc-fzpdyU jWHwWJ"
               >
                 We aim to find the IT services that the world needs. The goal is to consistently find and commercialize ideas that have the potential to change the market.
               </text>
             </div>
             <div
-              class="sc-fzppAM esLVVj"
+              class="sc-fzpdbB bDZlov"
             >
               <h3
-                class="sc-fzpdyU eElojN"
+                class="sc-fzoOEf jqXUy"
               >
                 vision & mission
               </h3>
             </div>
             <div
-              class="sc-fznBtT dTDJHF"
+              class="sc-fzppAM fyghLV"
             >
               <text
-                class="sc-fzppip keJoro"
+                class="sc-fzpdyU jWHwWJ"
               >
                 dooboolab wishes to help out those who are in trouble of making better society. We are a group of experts who contribute to various platforms and open source projects to work publicly for creating benefits.
               </text>
               <div
-                class="sc-fznNTe jKLhyS"
+                class="sc-fznBtT bNIiqb"
               >
                 <button
                   class="sc-fzpjYC jMwqFb"
                 >
                   <div
-                    class="sc-fzqOul jiZOPt"
+                    class="sc-fzqzEs kskpBr"
                   >
                     view more &gt;
                   </div>
@@ -211,40 +211,40 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
             </div>
           </div>
           <div
-            class="sc-fzobTh dYPOPO"
+            class="sc-fznNTe hqIeUK"
           >
             <div
-              class="sc-fzppAM esLVVj"
+              class="sc-fzpdbB bDZlov"
             >
               <h3
-                class="sc-fzpdyU eElojN"
+                class="sc-fzoOEf jqXUy"
               >
                 Community
               </h3>
             </div>
             <div
-              class="sc-fznBtT dTDJHF"
+              class="sc-fzppAM fyghLV"
             >
               <text
-                class="sc-fzppip keJoro"
+                class="sc-fzpdyU jWHwWJ"
               >
-                We are holding open source communities for individuals, companies, and group of societies
+                Here are communities we are driving to collaborate with great people outside the company.
               </text>
             </div>
             <div
-              class="sc-fzooss gGFDvE"
+              class="sc-fzobTh HyCet"
             >
               <div
-                class="sc-fzqKVi LCyjg"
+                class="sc-fzqyvX dxOflT"
               >
                 <div
-                  class="sc-fzoCUK fEYOwD"
+                  class="sc-fzqKVi jUjSgQ"
                 >
                   <button
                     class="sc-fzoXzr cEmZbm"
                   >
                     <div
-                      class="sc-fzoCCn gZGnWs"
+                      class="sc-fzqOul dBXZza"
                     >
                       View more
                     </div>
@@ -252,16 +252,16 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqyvX kROoMH"
+                class="sc-fzooss ihODox"
               >
                 <div
-                  class="sc-fzoCUK fEYOwD"
+                  class="sc-fzqKVi jUjSgQ"
                 >
                   <button
                     class="sc-fzoXzr cEmZbm"
                   >
                     <div
-                      class="sc-fzoCCn gZGnWs"
+                      class="sc-fzqOul dBXZza"
                     >
                       View more
                     </div>
@@ -272,100 +272,100 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
           </div>
         </div>
         <div
-          class="sc-fznBMq hmBMuZ"
+          class="sc-fzppip bVmxpo"
           id="work"
         >
           <div
-            class="sc-fznNvL VtSsv"
+            class="sc-fznBMq hwqcV"
           >
             <text
-              class="sc-pZBmh dpmaxr"
+              class="sc-pRFjI jNZTEp"
             >
               Work
             </text>
           </div>
           <div
-            class="sc-fzocqA bScDzU"
+            class="sc-fznNvL dKosBy"
           >
             <text
-              class="sc-oTbqq lTdwg"
+              class="sc-pZBmh bFVaXM"
             >
-              Come and check out what we do and work with us. We wish to get together with more great people around the world.
+              Below are what we are currently working on. We wish to get together with more great people around the world.
             </text>
           </div>
           <div
-            class="sc-fzonZV bEYmmf"
+            class="sc-fzocqA gHbYXq"
           >
             <div
-              class="sc-fzqyOu cVpNCJ"
+              class="sc-fzonZV hSqJby"
             >
               <div
-                class="sc-fzqKxP kPLbpS"
+                class="sc-fzqyOu kzzQca"
               >
                 <img
-                  class="sc-pANHa lcXfmI"
+                  class="sc-fzqKxP gRvxVE"
                   src="test-file-stub"
                 />
               </div>
               <div
-                class="sc-pIJJz eGYSlj"
+                class="sc-pANHa lmTVpu"
               >
                 <text
-                  class="sc-pRFjI fbdOhh"
+                  class="sc-pIJJz jSMJBR"
                 >
                   Comming Soon!
                 </text>
               </div>
               <div
-                class="sc-paXsP edtDtG"
+                class="sc-oTbqq fsXqFZ"
               />
             </div>
             <div
-              class="sc-fzqyOu cVpNCJ"
+              class="sc-fzonZV hSqJby"
             >
               <div
-                class="sc-fzqKxP kPLbpS"
+                class="sc-fzqyOu kzzQca"
               >
                 <img
-                  class="sc-pANHa lcXfmI"
+                  class="sc-fzqKxP gRvxVE"
                   src="test-file-stub"
                 />
               </div>
               <div
-                class="sc-pIJJz eGYSlj"
+                class="sc-pANHa lmTVpu"
               >
                 <text
-                  class="sc-pRFjI fbdOhh"
+                  class="sc-pIJJz jSMJBR"
                 >
                   Comming Soon!
                 </text>
               </div>
               <div
-                class="sc-paXsP edtDtG"
+                class="sc-oTbqq fsXqFZ"
               />
             </div>
             <div
-              class="sc-fzqyOu cVpNCJ"
+              class="sc-fzonZV hSqJby"
             >
               <div
-                class="sc-fzqKxP kPLbpS"
+                class="sc-fzqyOu kzzQca"
               >
                 <img
-                  class="sc-pANHa lcXfmI"
+                  class="sc-fzqKxP gRvxVE"
                   src="test-file-stub"
                 />
               </div>
               <div
-                class="sc-pIJJz eGYSlj"
+                class="sc-pANHa lmTVpu"
               >
                 <text
-                  class="sc-pRFjI fbdOhh"
+                  class="sc-pIJJz jSMJBR"
                 >
                   Comming Soon!
                 </text>
               </div>
               <div
-                class="sc-paXsP edtDtG"
+                class="sc-oTbqq fsXqFZ"
               />
             </div>
           </div>
@@ -378,7 +378,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
             class="sc-fzplgP FySVg"
           >
             <text
-              class="sc-fznYue hgUAYG"
+              class="sc-fznOgF hqpaTR"
             >
               People
             </text>
@@ -387,23 +387,14 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
             class="sc-fznzqM chhmaf"
           >
             <text
-              class="sc-fzonjX iKVrpo"
+              class="sc-fznYue dZOAfA"
             >
               Work together
             </text>
             <text
-              class="sc-fzonjX iKVrpo"
+              class="sc-fznYue dZOAfA"
             >
               Grow together
-            </text>
-          </div>
-          <div
-            class="sc-fznOgF drusZT"
-          >
-            <text
-              class="sc-fzqzEs jaJbnc"
-            >
-              We are consistently developing services based on philosophy and ideas by finding the inconveniences facing people in daily life.
             </text>
           </div>
           <div
@@ -1661,12 +1652,12 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
             class="sc-fzqARJ dlSWWz"
           >
             <div
-              class="sc-fzoyTs cUSBCo"
+              class="sc-fzoyTs gmIsLe"
             >
               Address
             </div>
             <div
-              class="sc-fzoNJl fzxrZG"
+              class="sc-fzoNJl iIIBBC"
             >
               203, 40, Seolleung-ro 93-gil, Gangnam-gu, Seoul, Republic of Korea
             </div>
@@ -1705,7 +1696,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
               </a>
             </div>
             <div
-              class="sc-fzoNJl fzxrZG"
+              class="sc-fzoNJl iIIBBC"
             >
               © 2017-
               2020
