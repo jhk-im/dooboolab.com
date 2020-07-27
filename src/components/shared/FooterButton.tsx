@@ -39,10 +39,10 @@ function Button(props: Props): ReactElement {
 
   return (
     <a href = { href }>
-      <FooterButton style={ style } onClick={ onClick } >
+      <FooterButton style={ style } onClick={ onClick }>
         {
           isSelected
-            ? <SelectedButtonWrapper>
+            ? <SelectedButtonWrapper >
               { text }
             </SelectedButtonWrapper>
             : <ButtonWrapper>

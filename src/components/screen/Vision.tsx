@@ -30,9 +30,7 @@ const MenubarEmptyBox = styled.div`
 function Vision(): ReactElement {
   const { changeThemeType } = useThemeContext();
 
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  localStorage.setItem('currentPage', '6');
 
   return (
     <Container>

@@ -69,6 +69,7 @@ const SendEmailTitleWrapper = styled.div`
   background: rgba(0,0,0,0.5);
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -130,23 +131,8 @@ const SendEmailTextArea = styled.textarea`
 `;
 
 const TextWrapper = styled.div`
-  width: 230px;
-  padding: 30px;
-  
-  @media ${device.mobileL} {
-    width: 240px;
-    padding: 30px;
-  }
-
-  @media ${device.tablet} {
-    width: 300px;
-    padding: 40px;
-  }
-
-  @media ${device.laptop} {
-    width: 400px;
-    padding: 50px;
-  }
+  width: 90%;
+  padding: 20px;
 `;
 
 const SendButtonWrapper = styled.div`
@@ -243,11 +229,14 @@ function ContactPage(props: Props): ReactElement {
   };
 
   return (
-    <Container id={ id }>
+    <Container>
       <TopBackgroundWrapper>
         <SendEmailTitleWrapper>
           <TextWrapper>
-            <H1>{ getString('CONTACT_DESCRIPTION') }</H1>
+            <H1>{ getString('CONTACT_DESCRIPTION_1') }</H1>
+          </TextWrapper>
+          <TextWrapper>
+            <H1>{ getString('CONTACT_DESCRIPTION_2') }</H1>
           </TextWrapper>
         </SendEmailTitleWrapper>
         <SendEmailInputWrapper>

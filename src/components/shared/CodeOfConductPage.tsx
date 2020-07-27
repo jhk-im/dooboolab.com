@@ -75,7 +75,7 @@ const SubTitleWrapper = styled.div`
 `;
 
 const DescriptionWrapper = styled.div`
-  width: 60%;
+  width: 90%;
   padding: 20px;
   margin-bottom: 5px;
   line-height: 20px;
@@ -86,14 +86,19 @@ const DescriptionWrapper = styled.div`
   justify-items: center;
   align-items: center;
 
-  @media ${device.tablet} {
+  @media ${device.mobileL} {
     margin-bottom: 10px;
     line-height: 25px;
   }
 
+  @media ${device.tablet} {
+    margin-bottom: 10px;
+    line-height: 30px;
+  }
+
   @media ${device.laptop} {
     margin-bottom: 15px;
-    line-height: 30px;
+    line-height: 35px;
   }
 `;
 
@@ -109,7 +114,7 @@ const ConductListWrapper = styled.div`
 `;
 
 const ConductItemLinearWrapper = styled.div`
-  width: 80vw;
+  width: 90vw;
   padding: 30px;
 
   display: flex;
@@ -128,7 +133,7 @@ const ConductItem = styled.div`
 `;
 
 const ConductItemBox = styled.div`
-  width: 80vw;
+  width: 90vw;
   text-align: left;
   border: 3px solid; 
   border-radius: 10px;
@@ -143,24 +148,39 @@ const ConductItemBox = styled.div`
   }
 
   @media ${device.laptop} {
-    max-width: 1000px;
+    max-width: 1200px;
   }
 `;
 
 const ItemTitleTextWrapper = styled.div`
-  width: 350px;
+  width: 80%;
   padding: 5px;
-  margin-top: 20px;
+  margin-top: 10px;
   line-height: 30px;
 
+  display: flex;
+  flex-direction: column;
+
+  @media ${device.mobileS} {
+    line-height: 15px;
+  }
+
+  @media ${device.mobileM} {
+    padding: 5px;
+    line-height: 20px;
+  }
+
+  @media ${device.mobileL} {
+    padding: 10px;
+    line-height: 25px;
+  }
+
   @media ${device.tablet} {
-    width: 450px;
     padding: 10px;
     line-height: 35px;
   }
 
   @media ${device.laptop} {
-    width: 550px;
     padding: 15px;
     line-height: 40px;
   }
@@ -171,6 +191,9 @@ const ItemDescriptionWrapper = styled.div`
   margin-bottom: 5px;
   line-height: 25px;
   padding: 15px;
+
+  display: flex;
+  flex-direction: column;
 
   @media ${device.tablet} {
     margin-bottom: 10px;
@@ -183,6 +206,11 @@ const ItemDescriptionWrapper = styled.div`
     line-height: 35px;
     padding: 25px;
   }
+`;
+const ItemDescriptionTextWrapper = styled.div`
+  width: 100%;
+
+  display: flex;
 `;
 
 export const H1 = styled.text`
@@ -230,13 +258,13 @@ export const H3 = styled.text`
 `;
 
 export const H5 = styled.text`
-  font-size: 20px;
+  font-size: 15px;
   font-family: futura;
   color: ${({ theme }): string => theme.colorAccentLight};
 
 
   @media ${device.tablet} {
-    font-size: 25px;
+    font-size: 20px;
   }
   
   @media ${device.laptop} {
@@ -256,52 +284,75 @@ function CodeOfConduct(props: Props): ReactElement {
       </HeaderBackgroundWrapper>
       <SubTitleWrapper>
         <DescriptionWrapper>
-          <BODY2>
-            { getString('MISSION_DESCRIPTION') }
-          </BODY2>
+          <BODY2>{ getString('MISSION_DESCRIPTION_1') }</BODY2>
+          <BODY2>{ getString('MISSION_DESCRIPTION_2') }</BODY2>
+          <BODY2>{ getString('MISSION_DESCRIPTION_3') }</BODY2>
+          <BODY2>{ getString('MISSION_DESCRIPTION_4') }</BODY2>
         </DescriptionWrapper>
       </SubTitleWrapper>
       <ConductListWrapper>
         <ItemTitleTextWrapper>
-          <H5>
-            { getString('MISSION_SUBTITLE_01') }
-          </H5>
+          <H5>{ getString('MISSION_SUBTITLE_01_1') }</H5>
+          <H5>{ getString('MISSION_SUBTITLE_01_2') }</H5>
+          <H5>{ getString('MISSION_SUBTITLE_01_3') }</H5>
         </ItemTitleTextWrapper>
         <ConductItemLinearWrapper>
           <ConductItem>
             <ConductItemBox>
               <ItemDescriptionWrapper>
                 <BODY2>
-                  { getString('MISSION_DESCRIPTION_01_1') }<br/>
-                  { getString('MISSION_DESCRIPTION_01_2') }<br/>
-                  { getString('MISSION_DESCRIPTION_01_3') }<br/>
-                  { getString('MISSION_DESCRIPTION_01_4') }<br/>
-                  { getString('MISSION_DESCRIPTION_01_5') }<br/>
-                  { getString('MISSION_DESCRIPTION_01_6') }<br/>
-                  { getString('MISSION_DESCRIPTION_01_7') }<br/>
-                  { getString('MISSION_DESCRIPTION_01_8') }
+                  <ItemDescriptionTextWrapper>
+                    <BODY2>•&ensp;</BODY2><BODY2>{ getString('MISSION_DESCRIPTION_01_1') }</BODY2>
+                  </ItemDescriptionTextWrapper>
+                  <ItemDescriptionTextWrapper>
+                    <BODY2>•&ensp;</BODY2><BODY2>{ getString('MISSION_DESCRIPTION_01_2') }</BODY2>
+                  </ItemDescriptionTextWrapper>
+                  <ItemDescriptionTextWrapper>
+                    <BODY2>•&ensp;</BODY2><BODY2>{ getString('MISSION_DESCRIPTION_01_3') }</BODY2>
+                  </ItemDescriptionTextWrapper>
+                  <ItemDescriptionTextWrapper>
+                    <BODY2>•&ensp;</BODY2><BODY2>{ getString('MISSION_DESCRIPTION_01_4') }</BODY2>
+                  </ItemDescriptionTextWrapper>
+                  <ItemDescriptionTextWrapper>
+                    <BODY2>•&ensp;</BODY2><BODY2>{ getString('MISSION_DESCRIPTION_01_5') }</BODY2>
+                  </ItemDescriptionTextWrapper>
+                  <ItemDescriptionTextWrapper>
+                    <BODY2>•&ensp;</BODY2><BODY2>{ getString('MISSION_DESCRIPTION_01_6') }</BODY2>
+                  </ItemDescriptionTextWrapper>
+                  <ItemDescriptionTextWrapper>
+                    <BODY2>•&ensp;</BODY2><BODY2>{ getString('MISSION_DESCRIPTION_01_7') }</BODY2>
+                  </ItemDescriptionTextWrapper>
                 </BODY2>
               </ItemDescriptionWrapper>
             </ConductItemBox>
           </ConductItem>
         </ConductItemLinearWrapper>
         <ItemTitleTextWrapper>
-          <H5>
-            { getString('MISSION_SUBTITLE_02') }
-          </H5>
+          <H5>{ getString('MISSION_SUBTITLE_02_1') }</H5>
+          <H5>{ getString('MISSION_SUBTITLE_02_2') }</H5>
         </ItemTitleTextWrapper>
         <ConductItemLinearWrapper>
           <ConductItem>
             <ConductItemBox>
               <ItemDescriptionWrapper>
-                <BODY2>
-                  { getString('MISSION_DESCRIPTION_02_1') }<br/>
-                  { getString('MISSION_DESCRIPTION_02_2') }<br/>
-                  { getString('MISSION_DESCRIPTION_02_3') }<br/>
-                  { getString('MISSION_DESCRIPTION_02_4') }<br/>
-                  { getString('MISSION_DESCRIPTION_02_5') }<br/>
-                  { getString('MISSION_DESCRIPTION_02_6') }
-                </BODY2>
+                <ItemDescriptionTextWrapper>
+                  <BODY2>•&ensp;</BODY2><BODY2>{ getString('MISSION_DESCRIPTION_02_1') }</BODY2>
+                </ItemDescriptionTextWrapper>
+                <ItemDescriptionTextWrapper>
+                  <BODY2>•&ensp;</BODY2><BODY2>{ getString('MISSION_DESCRIPTION_02_2') }</BODY2>
+                </ItemDescriptionTextWrapper>
+                <ItemDescriptionTextWrapper>
+                  <BODY2>•&ensp;</BODY2><BODY2>{ getString('MISSION_DESCRIPTION_02_3') }</BODY2>
+                </ItemDescriptionTextWrapper>
+                <ItemDescriptionTextWrapper>
+                  <BODY2>•&ensp;</BODY2><BODY2>{ getString('MISSION_DESCRIPTION_02_4') }</BODY2>
+                </ItemDescriptionTextWrapper>
+                <ItemDescriptionTextWrapper>
+                  <BODY2>•&ensp;</BODY2><BODY2>{ getString('MISSION_DESCRIPTION_02_5') }</BODY2>
+                </ItemDescriptionTextWrapper>
+                <ItemDescriptionTextWrapper>
+                  <BODY2>•&ensp;</BODY2><BODY2>{ getString('MISSION_DESCRIPTION_02_6') }</BODY2>
+                </ItemDescriptionTextWrapper>
               </ItemDescriptionWrapper>
             </ConductItemBox>
           </ConductItem>

@@ -9,6 +9,13 @@ interface Props {
   id?: string;
 }
 
+const Container = styled.div`
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 const WorkContainer = styled.div`
   padding: 50px;
   width: 100vw;
@@ -69,14 +76,14 @@ const DescriptionWrapper = styled.div`
 `;
 
 const WorkItemListWrapper = styled.div`
-  width: 80%;
+  width: 90vw;
   padding: 30px;
-  max-width: 1100px;
+  max-width: 1300px;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-content: space-around;
+  justify-content: center;
+  align-content: center;
   align-items: center;
 
   @media ${device.laptop} {
@@ -86,10 +93,8 @@ const WorkItemListWrapper = styled.div`
 
 const WorkItemWrapper = styled.div`
   padding: 10px;
-  height: auto;
-  width: 65vw;
-  padding: 20px;
-  margin: 0 20px 40px 20px;
+  width: 80vw;
+  margin: 0 20px 20px 20px;
   border-width: 2px;
   border-color: ${({ theme }): string => theme.itemBorder};
   border-color: ${({ theme }): string => theme.itemBorderTransparent};
@@ -99,23 +104,16 @@ const WorkItemWrapper = styled.div`
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
 
   @media ${device.laptop} {
-    width: 250px;
-    height: 300px;
-  }  
-
-  @media ${device.laptopL} {
-    width: 300px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
   }  
 `;
 
 const WorkImageWrapper = styled.div`
-  flex: 1;
-
   display: flex;
   justify-content: center;
   align-content: center;
@@ -130,23 +128,15 @@ const WorkImage = styled.img`
 `;
 
 const WorkTextWrapper = styled.div`
-  flex: 1;
-  width: 80%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 3;
+  width: 90%;
+  height: auto;
   padding: 10px 40px;
   margin: 16px 0px;
-
-  @media ${device.tablet} {
-    flex: 2;
-  }
   
-  @media ${device.laptop} {
-    flex: 3;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 const DescriptionText = styled.text`
@@ -197,28 +187,36 @@ export const BODY2 = styled.text`
 `;
 
 const ItemButtonWrapper = styled.div`
-  flex: 1;
-
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
 `;
 
-const workItemURLs = [
-  '',
-  'https://github.com/dooboolab/dooboo-ui',
-  'https://github.com/dooboolab/hackatalk',
-];
+const NextPageMenubar = styled.div`
+  width: 100vw;
+  position: relative;
+  bottom: 100px;
 
-const workDescriptions = [
-  'Comming Soon!',
-  getString('DOOBOOUI_DESCRIPTION'),
-  getString('HACKATALK_DESCRIPTION'),
-];
+  @media ${device.tablet} {
+    bottom: 70px;
+  }  
+`;
 
 function Work(props: Props): ReactElement {
   const { id } = props;
+
+  const workItemURLs = [
+    '',
+    'https://github.com/dooboolab/dooboo-ui',
+    'https://github.com/dooboolab/hackatalk',
+  ];
+
+  const workDescriptions = [
+    ['Comming Soon!', '', ''],
+    [getString('DOOBOOUI_DESCRIPTION_1'), getString('DOOBOOUI_DESCRIPTION_2'), getString('DOOBOOUI_DESCRIPTION_3')],
+    [getString('HACKATALK_DESCRIPTION_1'), getString('HACKATALK_DESCRIPTION_2'), getString('HACKATALK_DESCRIPTION_3')],
+  ];
 
   const moveUrl = (inputPath: string): void => {
     window.open(inputPath);
@@ -227,36 +225,43 @@ function Work(props: Props): ReactElement {
   const works = icon.works;
 
   return (
-    <WorkContainer id={ id }>
-      <TitleWrapper>
-        <H2>{ getString('WORK') }</H2>
-      </TitleWrapper>
-      <DescriptionWrapper>
-        <BODY2>{ getString('WORK_DESCRIPTION') }</BODY2>
-      </DescriptionWrapper>
-      <WorkItemListWrapper>{
-        works.map((work, i) => {
-          return <WorkItemWrapper key={i}>
-            <WorkImageWrapper>
-              <WorkImage src={ work }/>
-            </WorkImageWrapper>
-            <WorkTextWrapper>
-              <DescriptionText>{ workDescriptions[works.indexOf(work)] }</DescriptionText>
-            </WorkTextWrapper>
-            <ItemButtonWrapper>
-              {
-                workItemURLs[works.indexOf(work)] === ''
-                  ? null
-                  : <ViewMoreRoundButton
-                    text={ getString('VIEW_MORE') }
-                    onClick={ (): void => moveUrl(workItemURLs[works.indexOf(work)]) }
-                  />
-              }
-            </ItemButtonWrapper>
-          </WorkItemWrapper>;
-        })
-      }</WorkItemListWrapper>
-    </WorkContainer>
+    <Container>
+      <WorkContainer>
+        <TitleWrapper>
+          <H2>{ getString('WORK') }</H2>
+        </TitleWrapper>
+        <DescriptionWrapper>
+          <BODY2>{ getString('WORK_DESCRIPTION_1') }</BODY2>
+          <BODY2>{ getString('WORK_DESCRIPTION_2') }</BODY2>
+          <BODY2>{ getString('WORK_DESCRIPTION_3') }</BODY2>
+        </DescriptionWrapper>
+        <WorkItemListWrapper>{
+          works.map((work, i) => {
+            return <WorkItemWrapper key={i}>
+              <WorkImageWrapper>
+                <WorkImage src={ work }/>
+              </WorkImageWrapper>
+              <WorkTextWrapper>
+                <DescriptionText>{ workDescriptions[works.indexOf(work)][0] }</DescriptionText>
+                <DescriptionText>{ workDescriptions[works.indexOf(work)][1] }</DescriptionText>
+                <DescriptionText>{ workDescriptions[works.indexOf(work)][2] }</DescriptionText>
+              </WorkTextWrapper>
+              <ItemButtonWrapper>
+                {
+                  workItemURLs[works.indexOf(work)] === ''
+                    ? null
+                    : <ViewMoreRoundButton
+                      text={ getString('VIEW_MORE') }
+                      onClick={ (): void => moveUrl(workItemURLs[works.indexOf(work)]) }
+                    />
+                }
+              </ItemButtonWrapper>
+            </WorkItemWrapper>;
+          })
+        }</WorkItemListWrapper>
+      </WorkContainer>
+      <NextPageMenubar id={ id }/>
+    </Container>
   );
 }
 

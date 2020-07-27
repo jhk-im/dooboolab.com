@@ -12,6 +12,7 @@ import { device } from '../../theme';
 import styled from 'styled-components';
 import { useThemeContext } from '../../providers/ThemeProvider';
 
+localStorage.setItem('currentPage', '5');
 const Container = styled.div`
   width: 100vw;
   
@@ -34,20 +35,16 @@ const MenubarEmptyBox = styled.div`
 function Intro(): ReactElement {
   const { changeThemeType } = useThemeContext();
 
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <Container>
       <MenuBar/>
       <DarkModeToggle onClick={(): void => changeThemeType()} />
       <MenubarEmptyBox/>
-      <IntroPage/>
-      <StoryPage id="story"/>
-      <WorkPage id="work"/>
-      <PeoplePage id="people"/>
-      <ContactPage id="contact"/>
+      <IntroPage id="story"/>
+      <StoryPage id="work"/>
+      <WorkPage id="people"/>
+      <PeoplePage id="contact"/>
+      <ContactPage/>
       <Footer/>
     </Container>
   );

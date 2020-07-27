@@ -92,10 +92,10 @@ const TitleTextWrapper = styled.div`
 `;
 
 const DescriptionWrapper = styled.div`
-  width: 70%;
-  padding: 20px;
+  width: 90%;
+  padding: 10px;
   margin-bottom: 5px;
-  line-height: 15px;
+  line-height: 20px;
   
   display: flex;
   flex-direction: column;
@@ -105,12 +105,12 @@ const DescriptionWrapper = styled.div`
 
   @media ${device.tablet} {
     margin-bottom: 10px;
-    line-height: 20px;
+    line-height: 25px;
   }
   
   @media ${device.laptop} {
     margin-bottom: 15px;
-    line-height: 25px;
+    line-height: 30px;
   }
 `;
 
@@ -126,7 +126,7 @@ const VisionListWrapper = styled.div`
 `;
 
 const VisionItemLinearWrapper = styled.div`
-  width: 80vw;
+  width: 100vw;
   padding: 10px;
 
   display: flex;
@@ -146,12 +146,6 @@ const VisionItem = styled.div`
 
 const VisionNumberWrapper = styled.div`
   width: 100px;
-  padding: 30px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center; 
-  width: 100px;
   padding: 20px;
 
   display: flex;
@@ -160,7 +154,7 @@ const VisionNumberWrapper = styled.div`
 `;
 
 const VisionItemBox = styled.div`
-  width: 80vw;
+  width: 95vw;
   margin-bottom: 30px;
   border: 3px solid; 
   border-radius: 10px;
@@ -182,10 +176,9 @@ const VisionItemBox = styled.div`
 `;
 
 const ItemDescriptionWrapper = styled.div`
-  width: 70%;
-  margin-bottom: 5px;
+  width: 100%;
   line-height: 15px;
-  padding: 30px;
+  padding: 25px;
 
   display: flex;
   flex-direction: column;
@@ -194,14 +187,10 @@ const ItemDescriptionWrapper = styled.div`
   align-items: center;
 
   @media ${device.tablet} {
-    margin-bottom: 10px;
     line-height: 20px;
-    padding: 20px;
   }
   @media ${device.laptop} {
-    margin-bottom: 15px;
     line-height: 25px;
-    padding: 25px;
   }
 `;
 
@@ -221,13 +210,13 @@ export const H1 = styled.text`
 `;
 
 export const BODY2 = styled.text`
-  font-size: 15px;
+  font-size: 12px;
   font-family: avenir;
   font-weight: lighter;
   color: ${({ theme }): string => theme.btnPrimaryLightFont};
 
   @media ${device.tablet} {
-    font-size: 18px;
+    font-size: 15px;
   }
   
   @media ${device.laptop} {
@@ -264,13 +253,13 @@ export const H5 = styled.text`
 `;
 
 const visionTexts = [
-  getString('VISION_01'),
-  getString('VISION_02'),
-  getString('VISION_03'),
-  getString('VISION_04'),
-  getString('VISION_05'),
-  getString('VISION_06'),
-  getString('VISION_07'),
+  [getString('VISION_01_1'), getString('VISION_01_2'), getString('VISION_01_3')],
+  [getString('VISION_02_1'), getString('VISION_02_2'), getString('VISION_02_3'), getString('VISION_02_4')],
+  [getString('VISION_03_1'), getString('VISION_03_2'), getString('VISION_03_3'), getString('VISION_03_4')],
+  [getString('VISION_04_1'), getString('VISION_04_2')],
+  [getString('VISION_05_1'), getString('VISION_05_2')],
+  [getString('VISION_06_1'), getString('VISION_06_2')],
+  [getString('VISION_07_1'), getString('VISION_07_2')],
 ];
 
 function Vision(props:Props): ReactElement {
@@ -288,7 +277,10 @@ function Vision(props:Props): ReactElement {
           <H3>{ getString('OUR_VISION') }</H3>
         </TitleTextWrapper>
         <DescriptionWrapper>
-          <BODY2>{ getString('VISION_MISSION_DESCRIPTION') }</BODY2>
+          <BODY2>{ getString('VISION_MISSION_DESCRIPTION_1') }</BODY2>
+          <BODY2>{ getString('VISION_MISSION_DESCRIPTION_2') }</BODY2>
+          <BODY2>{ getString('VISION_MISSION_DESCRIPTION_3') }</BODY2>
+          <BODY2>{ getString('VISION_MISSION_DESCRIPTION_4') }</BODY2>
         </DescriptionWrapper>
       </SubTitleWrapper>
       <VisionListWrapper>
@@ -301,9 +293,10 @@ function Vision(props:Props): ReactElement {
                 </VisionNumberWrapper>
                 <VisionItemBox>
                   <ItemDescriptionWrapper>
-                    <BODY2>
-                      { value }
-                    </BODY2>
+                    <BODY2>{ value[0] }</BODY2>
+                    <BODY2>{ value[1] }</BODY2>
+                    <BODY2>{ value[2] }</BODY2>
+                    <BODY2>{ value[3] }</BODY2>
                   </ItemDescriptionWrapper>
                 </VisionItemBox>
               </VisionItem>;

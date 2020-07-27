@@ -9,6 +9,7 @@ import { useHistory } from 'react-router-dom';
 
 const Container = styled.div`
   width: 100vw;
+  height: 100px;
   background: ${({ theme }): string => theme.background};
 
   display: flex;
@@ -41,18 +42,6 @@ const MenuButtonWrapper = styled.div`
     margin-right: 80px;
     justify-content: space-between;
   }    
-
-  @media ${device.mobileL} {
-    width: 500px;
-  }  
-
-  @media ${device.tablet} {
-    margin-top: 5px;
-    width: 600px;
-    margin-right: 80px;
-    justify-content: space-between;
-  }    
-
 `;
 
 function MenuBar(): ReactElement {

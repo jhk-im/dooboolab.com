@@ -92,7 +92,7 @@ export const IntroRoundButton = styled.button`
   font-family: avenir;
   font-weight: 300;
   font-size: 10px;
-  padding: 3px 10px;
+  padding: 5px 20px;
   text-decoration: none;
   background: ${({ theme }): string => theme.btnPrimary};
   color: ${({ theme }): string => theme.btnPrimaryLight};
@@ -105,7 +105,7 @@ export const IntroRoundButton = styled.button`
 
   @media ${device.mobileM} {
     font-size: 12px;
-    padding: 4px 20px;
+    padding: 5px 20px;
   }
 
   @media ${device.mobileL} {

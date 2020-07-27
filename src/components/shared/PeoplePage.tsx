@@ -9,6 +9,13 @@ interface Props {
   id?: string;
 }
 
+const Container = styled.div`
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 const PeopleContainer = styled.div`
   padding: 50px;
   width: 100vw;
@@ -97,20 +104,33 @@ export const BODY2 = styled.text`
   }
 `;
 
+const NextPageMenubar = styled.div`
+  width: 100vw;
+  position: relative;
+  bottom: 100px;
+  
+  @media ${device.tablet} {
+    bottom: 70px;
+  }  
+`;
+
 function PeoplePage(props: Props): ReactElement {
   const { id } = props;
 
   return (
-    <PeopleContainer id={ id }>
-      <TitleWrapper>
-        <H2>{ getString('PEOPLE')}</H2>
-      </TitleWrapper>
-      <SubTitleWrapper>
-        <H4>{ getString('PEOPLE_SUBTITLE_01') }</H4>
-        <H4>{ getString('PEOPLE_SUBTITLE_02') }</H4>
-      </SubTitleWrapper>
-      <ProfileItemGrid/>
-    </PeopleContainer>
+    <Container>
+      <PeopleContainer>
+        <TitleWrapper>
+          <H2>{ getString('PEOPLE')}</H2>
+        </TitleWrapper>
+        <SubTitleWrapper>
+          <H4>{ getString('PEOPLE_SUBTITLE_01') }</H4>
+          <H4>{ getString('PEOPLE_SUBTITLE_02') }</H4>
+        </SubTitleWrapper>
+        <ProfileItemGrid/>
+      </PeopleContainer>
+      <NextPageMenubar id={ id }/>
+    </Container>
   );
 }
 

@@ -38,11 +38,6 @@ const TitleWrapper = styled.div`
   width: 100vw;
   padding: 10px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-
   @media ${device.mobileM} {
     padding: 20px;
   }
@@ -81,12 +76,10 @@ const DescriptionWrapper = styled.div`
   }
 
   @media ${device.tablet} {
-    width: 500px;
     line-height: 30px;
   }
 
   @media ${device.laptop} {
-    width: 650px;
     line-height: 35px;
   }
 `;
@@ -116,19 +109,15 @@ const CommunityContainer = styled.div`
 `;
 
 const CommunityImageListWrapper = styled.div`
-  padding: 30px;
-  margin-bottom: 20px;
-  width: 85vw;
-  height: 35vw;
+  padding: 10px;
+  margin-bottom: 50px;
+  width: 80vw;
+  height: 30vw;
 
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-content: space-evenly;
-  padding: 10px;
-  margin-bottom: 50px;
-  width: 80vw;
-  height: 30vw;
 
   @media ${device.tablet} {
     margin-bottom: 30px;
@@ -193,6 +182,7 @@ export const H2 = styled.h2`
   font-size: 15px;
   font-weight: bold;
   font-family: futura;
+  padding: 5px;
   color: ${({ theme }): string => theme.btnPrimaryLightFont};
 
   @media ${device.mobileM} {
@@ -211,6 +201,7 @@ export const H2 = styled.h2`
 export const H3 = styled.h3`
   font-size: 18px;
   font-family: avenir;
+  padding :5px;
   color: ${({ theme }): string => theme.colorAccentLight};
 
   @media ${device.mobileM} {
@@ -253,6 +244,16 @@ export const BODY2 = styled.text`
   }
 `;
 
+const NextPageMenubar = styled.div`
+  width: 100vw;
+  position: relative;
+  bottom: 100px;
+
+  @media ${device.tablet} {
+    bottom: 70px;
+  }  
+`;
+
 function Intro(props: Props): ReactElement {
   const { id } = props;
   const history = useHistory();
@@ -271,19 +272,25 @@ function Intro(props: Props): ReactElement {
   };
 
   return (
-    <Container id={ id }>
+    <Container>
       <StoryContainer>
         <TitleWrapper>
           <H2>{ getString('STORY') }</H2>
         </TitleWrapper>
         <DescriptionWrapper>
-          <BODY2>{ getString('STORY_DESCRIPTION') }</BODY2>
+          <BODY2>{ getString('STORY_DESCRIPTION_1') }</BODY2>
+          <BODY2>{ getString('STORY_DESCRIPTION_2') }</BODY2>
+          <BODY2>{ getString('STORY_DESCRIPTION_3') }</BODY2>
+          <BODY2>{ getString('STORY_DESCRIPTION_4') }</BODY2>
         </DescriptionWrapper>
         <TitleWrapper>
           <H3>{ getString('VISION_MISSION') }</H3>
         </TitleWrapper>
         <DescriptionWrapper>
-          <BODY2>{ getString('VISION_DESCRIPTION') }</BODY2>
+          <BODY2>{ getString('VISION_DESCRIPTION_1') }</BODY2>
+          <BODY2>{ getString('VISION_DESCRIPTION_2') }</BODY2>
+          <BODY2>{ getString('VISION_DESCRIPTION_3') }</BODY2>
+          <BODY2>{ getString('VISION_DESCRIPTION_4') }</BODY2>
           <ViewMoreButtonWrapper>
             <StoryTextButton
               href = {'/vision'}
@@ -297,14 +304,15 @@ function Intro(props: Props): ReactElement {
           <H3>{ getString('COMMUNITY') }</H3>
         </TitleWrapper>
         <DescriptionWrapper>
-          <BODY2>{ getString('COMMUNITY_DESCRIPTION') }</BODY2>
+          <BODY2>{ getString('COMMUNITY_DESCRIPTION_1') }</BODY2>
+          <BODY2>{ getString('COMMUNITY_DESCRIPTION_2') }</BODY2>
         </DescriptionWrapper>
         <CommunityImageListWrapper>
           <ReactNativeImageWrapper>
             <ItemButtonWrapper>
               <ViewMoreRoundButton
                 text={ getString('VIEW_MORE') }
-                onClick={ (): void => moveUrl('https://reactnativeseoul.org/') }/>
+                onClick={ (): void => moveUrl('https://github.com/react-native-seoul/community-resource ') }/>
             </ItemButtonWrapper>
           </ReactNativeImageWrapper>
           <GraphQlImageWrapper>
@@ -316,6 +324,7 @@ function Intro(props: Props): ReactElement {
           </GraphQlImageWrapper>
         </CommunityImageListWrapper>
       </CommunityContainer>
+      <NextPageMenubar id={ id }/>
     </Container>
   );
 }
