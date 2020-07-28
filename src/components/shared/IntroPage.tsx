@@ -52,6 +52,7 @@ const TitleWrapper = styled.div`
   line-height: 20px;
   margin-left: 0px;
   text-align:center;
+  white-space: pre-wrap;
 
   display: flex;
   flex-direction: column;
@@ -80,27 +81,28 @@ const DescriptionWrapper = styled.div`
   width: 90vw;
   padding: 5px;
   margin-left: 0px;
-  line-height: 12px;
+  line-height: 15px;
+  white-space: pre-wrap;
 
   display: flex;
   flex-direction: column;
 
   @media ${device.mobileM} {
-    line-height: 15px;
+    line-height: 20px;
   }
 
   @media ${device.mobileL} {
-    line-height: 20px;
+    line-height: 25px;
   }
 
   @media ${device.tablet} {
     margin-left: 80px;
-    line-height: 25px;
+    line-height: 30px;
     text-align: left;
   }
   @media ${device.laptop} {
     margin-left: 100px;
-    line-height: 30px;
+    line-height: 35px;
     text-align: left;
   }
 `;
@@ -208,12 +210,10 @@ function IntroPage(props: Props): ReactElement {
     <IntroContainer>
       <TextWrapper>
         <TitleWrapper>
-          <H1>{ getString('INTRO_TITLE_1') }</H1>
-          <H1>{ getString('INTRO_TITLE_2') }</H1>
+          <H1>{ getString('INTRO_TITLE') }</H1>
         </TitleWrapper>
         <DescriptionWrapper>
-          <BODY1>{ getString('INTRO_DESCRIPTION_1') }</BODY1>
-          <BODY1>{ getString('INTRO_DESCRIPTION_2') }</BODY1>
+          <BODY1>{ getString('INTRO_DESCRIPTION') }</BODY1>
         </DescriptionWrapper>
       </TextWrapper>
       <ContactButtonWrapper>

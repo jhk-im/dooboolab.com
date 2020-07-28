@@ -59,6 +59,7 @@ const SubTitleWrapper = styled.div`
   width: 100vw;
   padding: 10px;
   background: ${({ theme }): string => theme.subBackground};
+  white-space: pre-wrap;
 
   display: flex;
   flex-direction: column;
@@ -75,7 +76,7 @@ const SubTitleWrapper = styled.div`
 `;
 
 const TitleTextWrapper = styled.div`
-  padding: 30px;
+  padding: 10px;
 
   display: flex;
   flex-direction: column;
@@ -92,10 +93,11 @@ const TitleTextWrapper = styled.div`
 `;
 
 const DescriptionWrapper = styled.div`
-  width: 90%;
+  width: 80%;
   padding: 10px;
   margin-bottom: 5px;
   line-height: 20px;
+  white-space: pre-wrap;
   
   display: flex;
   flex-direction: column;
@@ -177,8 +179,9 @@ const VisionItemBox = styled.div`
 
 const ItemDescriptionWrapper = styled.div`
   width: 100%;
-  line-height: 15px;
+  line-height: 20px;
   padding: 25px;
+  white-space: pre-wrap;
 
   display: flex;
   flex-direction: column;
@@ -187,10 +190,10 @@ const ItemDescriptionWrapper = styled.div`
   align-items: center;
 
   @media ${device.tablet} {
-    line-height: 20px;
+    line-height: 25px;
   }
   @media ${device.laptop} {
-    line-height: 25px;
+    line-height: 30px;
   }
 `;
 
@@ -253,13 +256,13 @@ export const H5 = styled.text`
 `;
 
 const visionTexts = [
-  [getString('VISION_01_1'), getString('VISION_01_2'), getString('VISION_01_3')],
-  [getString('VISION_02_1'), getString('VISION_02_2'), getString('VISION_02_3'), getString('VISION_02_4')],
-  [getString('VISION_03_1'), getString('VISION_03_2'), getString('VISION_03_3'), getString('VISION_03_4')],
-  [getString('VISION_04_1'), getString('VISION_04_2')],
-  [getString('VISION_05_1'), getString('VISION_05_2')],
-  [getString('VISION_06_1'), getString('VISION_06_2')],
-  [getString('VISION_07_1'), getString('VISION_07_2')],
+  getString('VISION_01'),
+  getString('VISION_02'),
+  getString('VISION_03'),
+  getString('VISION_04'),
+  getString('VISION_05'),
+  getString('VISION_06'),
+  getString('VISION_07'),
 ];
 
 function Vision(props:Props): ReactElement {
@@ -277,10 +280,7 @@ function Vision(props:Props): ReactElement {
           <H3>{ getString('OUR_VISION') }</H3>
         </TitleTextWrapper>
         <DescriptionWrapper>
-          <BODY2>{ getString('VISION_MISSION_DESCRIPTION_1') }</BODY2>
-          <BODY2>{ getString('VISION_MISSION_DESCRIPTION_2') }</BODY2>
-          <BODY2>{ getString('VISION_MISSION_DESCRIPTION_3') }</BODY2>
-          <BODY2>{ getString('VISION_MISSION_DESCRIPTION_4') }</BODY2>
+          <BODY2>{ getString('VISION_MISSION_DESCRIPTION') }</BODY2>
         </DescriptionWrapper>
       </SubTitleWrapper>
       <VisionListWrapper>
@@ -289,14 +289,11 @@ function Vision(props:Props): ReactElement {
             visionTexts.map((value, i) => {
               return <VisionItem key={i}>
                 <VisionNumberWrapper>
-                  <H5>0{ visionTexts.indexOf(value) + 1 }</H5>
+                  <H5>0{ visionTexts.indexOf(value) + 1}</H5>
                 </VisionNumberWrapper>
                 <VisionItemBox>
                   <ItemDescriptionWrapper>
-                    <BODY2>{ value[0] }</BODY2>
-                    <BODY2>{ value[1] }</BODY2>
-                    <BODY2>{ value[2] }</BODY2>
-                    <BODY2>{ value[3] }</BODY2>
+                    <BODY2>{ value }</BODY2>
                   </ItemDescriptionWrapper>
                 </VisionItemBox>
               </VisionItem>;

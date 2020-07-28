@@ -50,6 +50,7 @@ const SubTitleWrapper = styled.div`
   flex-direction: column;
   padding: 20px;
   line-height: 30px;
+  white-space: pre-wrap;
   
   @media ${device.tablet} {
     line-height: 40px;
@@ -124,8 +125,7 @@ function PeoplePage(props: Props): ReactElement {
           <H2>{ getString('PEOPLE')}</H2>
         </TitleWrapper>
         <SubTitleWrapper>
-          <H4>{ getString('PEOPLE_SUBTITLE_01') }</H4>
-          <H4>{ getString('PEOPLE_SUBTITLE_02') }</H4>
+          <H4>{ getString('PEOPLE_SUBTITLE') }</H4>
         </SubTitleWrapper>
         <ProfileItemGrid/>
       </PeopleContainer>

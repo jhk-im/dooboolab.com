@@ -60,6 +60,7 @@ const DescriptionWrapper = styled.div`
   line-height: 15px;
   padding: 5px;
   margin-bottom : 20px;
+  white-space: pre-wrap;
 
   display: flex;
   flex-direction: column;
@@ -69,18 +70,22 @@ const DescriptionWrapper = styled.div`
   
   @media ${device.mobileM} {
     line-height: 20px;
+    width: 85vw;
   }
 
   @media ${device.mobileL} {
     line-height: 25px;
+    width: 80vw;
   }
 
   @media ${device.tablet} {
     line-height: 30px;
+    width: 75vw;
   }
 
   @media ${device.laptop} {
     line-height: 35px;
+    width: 70vw;
   }
 `;
 
@@ -278,19 +283,13 @@ function Intro(props: Props): ReactElement {
           <H2>{ getString('STORY') }</H2>
         </TitleWrapper>
         <DescriptionWrapper>
-          <BODY2>{ getString('STORY_DESCRIPTION_1') }</BODY2>
-          <BODY2>{ getString('STORY_DESCRIPTION_2') }</BODY2>
-          <BODY2>{ getString('STORY_DESCRIPTION_3') }</BODY2>
-          <BODY2>{ getString('STORY_DESCRIPTION_4') }</BODY2>
+          <BODY2>{ getString('STORY_DESCRIPTION') }</BODY2>
         </DescriptionWrapper>
         <TitleWrapper>
           <H3>{ getString('VISION_MISSION') }</H3>
         </TitleWrapper>
         <DescriptionWrapper>
-          <BODY2>{ getString('VISION_DESCRIPTION_1') }</BODY2>
-          <BODY2>{ getString('VISION_DESCRIPTION_2') }</BODY2>
-          <BODY2>{ getString('VISION_DESCRIPTION_3') }</BODY2>
-          <BODY2>{ getString('VISION_DESCRIPTION_4') }</BODY2>
+          <BODY2>{ getString('VISION_DESCRIPTION') }</BODY2>
           <ViewMoreButtonWrapper>
             <StoryTextButton
               href = {'/vision'}
@@ -304,8 +303,7 @@ function Intro(props: Props): ReactElement {
           <H3>{ getString('COMMUNITY') }</H3>
         </TitleWrapper>
         <DescriptionWrapper>
-          <BODY2>{ getString('COMMUNITY_DESCRIPTION_1') }</BODY2>
-          <BODY2>{ getString('COMMUNITY_DESCRIPTION_2') }</BODY2>
+          <BODY2>{ getString('COMMUNITY_DESCRIPTION') }</BODY2>
         </DescriptionWrapper>
         <CommunityImageListWrapper>
           <ReactNativeImageWrapper>

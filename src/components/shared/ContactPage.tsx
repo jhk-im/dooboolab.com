@@ -133,6 +133,7 @@ const SendEmailTextArea = styled.textarea`
 const TextWrapper = styled.div`
   width: 90%;
   padding: 20px;
+  white-space: pre-wrap;
 `;
 
 const SendButtonWrapper = styled.div`
@@ -233,10 +234,7 @@ function ContactPage(props: Props): ReactElement {
       <TopBackgroundWrapper>
         <SendEmailTitleWrapper>
           <TextWrapper>
-            <H1>{ getString('CONTACT_DESCRIPTION_1') }</H1>
-          </TextWrapper>
-          <TextWrapper>
-            <H1>{ getString('CONTACT_DESCRIPTION_2') }</H1>
+            <H1>{ getString('CONTACT_DESCRIPTION') }</H1>
           </TextWrapper>
         </SendEmailTitleWrapper>
         <SendEmailInputWrapper>

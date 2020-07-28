@@ -55,10 +55,28 @@ const HeaderTitleTextWrapper = styled.div`
   }
 `;
 
+const TitleTextWrapper = styled.div`
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  
+  @media ${device.tablet} {
+    padding: 20px;
+  }
+
+  @media ${device.laptop} {
+    padding: 30px;
+  }
+`;
+
 const SubTitleWrapper = styled.div`
   width: 100vw;
   padding: 10px;
   background: ${({ theme }): string => theme.subBackground};
+  white-space: pre-wrap;
 
   display: flex;
   flex-direction: column;
@@ -66,17 +84,17 @@ const SubTitleWrapper = styled.div`
   align-items: center;
 
   @media ${device.tablet} {
-    padding: 15px;
+    padding: 20px;
   }
 
   @media ${device.laptop} {
-    padding: 20px;
+    padding: 30px;
   }
 `;
 
 const DescriptionWrapper = styled.div`
   width: 90%;
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 5px;
   line-height: 20px;
 
@@ -86,19 +104,14 @@ const DescriptionWrapper = styled.div`
   justify-items: center;
   align-items: center;
 
-  @media ${device.mobileL} {
+  @media ${device.tablet} {
     margin-bottom: 10px;
     line-height: 25px;
   }
 
-  @media ${device.tablet} {
-    margin-bottom: 10px;
-    line-height: 30px;
-  }
-
   @media ${device.laptop} {
     margin-bottom: 15px;
-    line-height: 35px;
+    line-height: 30px;
   }
 `;
 
@@ -157,6 +170,7 @@ const ItemTitleTextWrapper = styled.div`
   padding: 5px;
   margin-top: 10px;
   line-height: 30px;
+  white-space: pre-wrap;
 
   display: flex;
   flex-direction: column;
@@ -189,22 +203,21 @@ const ItemTitleTextWrapper = styled.div`
 const ItemDescriptionWrapper = styled.div`
   width: 80%;
   margin-bottom: 5px;
-  line-height: 25px;
-  padding: 15px;
+  line-height: 20px;
+  padding: 25px;
 
   display: flex;
   flex-direction: column;
 
   @media ${device.tablet} {
     margin-bottom: 10px;
-    line-height: 30px;
-    padding: 20px;
+    line-height: 25px;
+
   }
 
   @media ${device.laptop} {
     margin-bottom: 15px;
-    line-height: 35px;
-    padding: 25px;
+    line-height: 30px;
   }
 `;
 const ItemDescriptionTextWrapper = styled.div`
@@ -283,18 +296,16 @@ function CodeOfConduct(props: Props): ReactElement {
         </HeaderTitleTextWrapper>
       </HeaderBackgroundWrapper>
       <SubTitleWrapper>
+        <TitleTextWrapper>
+          <H3>{ getString('OUR_MISSION') }</H3>
+        </TitleTextWrapper>
         <DescriptionWrapper>
-          <BODY2>{ getString('MISSION_DESCRIPTION_1') }</BODY2>
-          <BODY2>{ getString('MISSION_DESCRIPTION_2') }</BODY2>
-          <BODY2>{ getString('MISSION_DESCRIPTION_3') }</BODY2>
-          <BODY2>{ getString('MISSION_DESCRIPTION_4') }</BODY2>
+          <BODY2>{ getString('MISSION_DESCRIPTION') }</BODY2>
         </DescriptionWrapper>
       </SubTitleWrapper>
       <ConductListWrapper>
         <ItemTitleTextWrapper>
-          <H5>{ getString('MISSION_SUBTITLE_01_1') }</H5>
-          <H5>{ getString('MISSION_SUBTITLE_01_2') }</H5>
-          <H5>{ getString('MISSION_SUBTITLE_01_3') }</H5>
+          <H5>{ getString('MISSION_SUBTITLE_01') }</H5>
         </ItemTitleTextWrapper>
         <ConductItemLinearWrapper>
           <ConductItem>
@@ -328,8 +339,7 @@ function CodeOfConduct(props: Props): ReactElement {
           </ConductItem>
         </ConductItemLinearWrapper>
         <ItemTitleTextWrapper>
-          <H5>{ getString('MISSION_SUBTITLE_02_1') }</H5>
-          <H5>{ getString('MISSION_SUBTITLE_02_2') }</H5>
+          <H5>{ getString('MISSION_SUBTITLE_02') }</H5>
         </ItemTitleTextWrapper>
         <ConductItemLinearWrapper>
           <ConductItem>

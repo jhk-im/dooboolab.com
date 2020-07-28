@@ -26,14 +26,6 @@ const WorkContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  @media ${device.laptop} {
-    height: 80vh;
-  }
-  
-  @media ${device.laptopL} {
-    height: 80vh;
-    min-height: 700px;
-  }
 `;
 
 const TitleWrapper = styled.div`
@@ -56,7 +48,9 @@ const TitleWrapper = styled.div`
 
 const DescriptionWrapper = styled.div`
   padding: 10px;
+  line-height: 15px;
   margin: 0 40px 10px 40px;
+  white-space: pre-wrap;
   
   display: flex;
   flex-direction: column;
@@ -64,21 +58,28 @@ const DescriptionWrapper = styled.div`
   justify-items: center;
   align-items: center;
 
-  line-height: 150%;
+  @media ${device.mobileM} {
+    line-height: 20px;
+  }
+
+  @media ${device.mobileL} {
+    line-height: 25px;
+  }
+
+  @media ${device.tablet} {
+    line-height: 30px;
+    margin-bottom: 15px;
+  }
 
   @media ${device.laptop} {
-    margin-bottom: 15px;
-  }  
-
-  @media ${device.laptopL} {
+    line-height: 35px;
     margin-bottom: 20px;
-  }  
+  }
 `;
 
 const WorkItemListWrapper = styled.div`
   width: 90vw;
   padding: 30px;
-  max-width: 1300px;
 
   display: flex;
   flex-direction: column;
@@ -88,13 +89,15 @@ const WorkItemListWrapper = styled.div`
 
   @media ${device.laptop} {
     flex-direction: row;
+    flex-wrap: wrap;
   }  
 `;
 
 const WorkItemWrapper = styled.div`
-  padding: 10px;
-  width: 80vw;
-  margin: 0 20px 20px 20px;
+  width: 80%;
+  height: auto;
+  padding: 30px;
+  margin: 0 20px 40px 20px;
   border-width: 2px;
   border-color: ${({ theme }): string => theme.itemBorder};
   border-color: ${({ theme }): string => theme.itemBorderTransparent};
@@ -108,8 +111,8 @@ const WorkItemWrapper = styled.div`
   align-items: center;
 
   @media ${device.laptop} {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    min-height: 350px;
   }  
 `;
 
@@ -128,15 +131,19 @@ const WorkImage = styled.img`
 `;
 
 const WorkTextWrapper = styled.div`
-  width: 90%;
-  height: auto;
-  padding: 10px 40px;
+  width: 80%;
+  padding: 30px;
   margin: 16px 0px;
+  white-space: pre-wrap;
   
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
+  @media ${device.laptop} {
+    width: 100%;
+  }
 `;
 
 const DescriptionText = styled.text`
@@ -213,9 +220,9 @@ function Work(props: Props): ReactElement {
   ];
 
   const workDescriptions = [
-    ['Comming Soon!', '', ''],
-    [getString('DOOBOOUI_DESCRIPTION_1'), getString('DOOBOOUI_DESCRIPTION_2'), getString('DOOBOOUI_DESCRIPTION_3')],
-    [getString('HACKATALK_DESCRIPTION_1'), getString('HACKATALK_DESCRIPTION_2'), getString('HACKATALK_DESCRIPTION_3')],
+    'Comming Soon!',
+    getString('DOOBOOUI_DESCRIPTION'),
+    getString('HACKATALK_DESCRIPTION'),
   ];
 
   const moveUrl = (inputPath: string): void => {
@@ -231,9 +238,7 @@ function Work(props: Props): ReactElement {
           <H2>{ getString('WORK') }</H2>
         </TitleWrapper>
         <DescriptionWrapper>
-          <BODY2>{ getString('WORK_DESCRIPTION_1') }</BODY2>
-          <BODY2>{ getString('WORK_DESCRIPTION_2') }</BODY2>
-          <BODY2>{ getString('WORK_DESCRIPTION_3') }</BODY2>
+          <BODY2>{ getString('WORK_DESCRIPTION') }</BODY2>
         </DescriptionWrapper>
         <WorkItemListWrapper>{
           works.map((work, i) => {
@@ -242,9 +247,7 @@ function Work(props: Props): ReactElement {
                 <WorkImage src={ work }/>
               </WorkImageWrapper>
               <WorkTextWrapper>
-                <DescriptionText>{ workDescriptions[works.indexOf(work)][0] }</DescriptionText>
-                <DescriptionText>{ workDescriptions[works.indexOf(work)][1] }</DescriptionText>
-                <DescriptionText>{ workDescriptions[works.indexOf(work)][2] }</DescriptionText>
+                <DescriptionText>{ workDescriptions[works.indexOf(work)] }</DescriptionText>
               </WorkTextWrapper>
               <ItemButtonWrapper>
                 {
