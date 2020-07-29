@@ -7,43 +7,43 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
       style="text-align: center;"
     >
       <div
-        class="sc-pRTZB jTBTkx"
+        class="sc-qapaw jxFNoV"
       >
         <div
-          class="sc-fzqPZZ bgrtwh"
+          class="sc-fzoxKX diFRYY"
         >
           <a
             href="/"
           >
             <button
-              class="sc-fzoyAV hdenKc"
+              class="sc-fzoLag ffxlA"
               style="display: flex; height: 60px;"
             >
               <div
-                class="sc-fzpmMD gxfWlb"
+                class="sc-fznxKY inBFRb"
               >
                 <img
-                  class="sc-fznxKY hzFube"
+                  class="sc-fznMAR bIoXxq"
                   src="test-file-stub"
                 />
               </div>
             </button>
           </a>
           <div
-            class="sc-fzoxKX dBJTyz"
+            class="sc-fzoKki epjsvh"
           >
             <a
               href="#story"
             >
               <button
-                class="sc-fzqNJr iAOmz"
+                class="sc-fzoyAV grfpyF"
               >
                 <div
-                  class="sc-fznMAR xNDbQ"
+                  class="sc-fznWOq eOxObL"
                 >
                   Story
                   <div
-                    class="sc-fznWOq kiglBr bottom_line"
+                    class="sc-fzolEj hThXyM bottom_line"
                   />
                 </div>
               </button>
@@ -52,14 +52,14 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
               href="#work"
             >
               <button
-                class="sc-fzqNJr iAOmz"
+                class="sc-fzoyAV grfpyF"
               >
                 <div
-                  class="sc-fznMAR xNDbQ"
+                  class="sc-fznWOq eOxObL"
                 >
                   Work
                   <div
-                    class="sc-fznWOq kiglBr bottom_line"
+                    class="sc-fzolEj hThXyM bottom_line"
                   />
                 </div>
               </button>
@@ -68,14 +68,14 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
               href="#people"
             >
               <button
-                class="sc-fzqNJr iAOmz"
+                class="sc-fzoyAV grfpyF"
               >
                 <div
-                  class="sc-fznMAR xNDbQ"
+                  class="sc-fznWOq eOxObL"
                 >
                   People
                   <div
-                    class="sc-fznWOq kiglBr bottom_line"
+                    class="sc-fzolEj hThXyM bottom_line"
                   />
                 </div>
               </button>
@@ -84,14 +84,14 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
               href="#contact"
             >
               <button
-                class="sc-fzqNJr iAOmz"
+                class="sc-fzoyAV grfpyF"
               >
                 <div
-                  class="sc-fznMAR xNDbQ"
+                  class="sc-fznWOq eOxObL"
                 >
                   Contact
                   <div
-                    class="sc-fznWOq kiglBr bottom_line"
+                    class="sc-fzolEj hThXyM bottom_line"
                   />
                 </div>
               </button>
@@ -99,62 +99,54 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
           </div>
         </div>
         <div
-          class="sc-fzokOt lidbvF"
+          class="sc-fzqBZW cObLic"
         >
           <test-file-stub />
         </div>
         <div
-          class="sc-qapaw brHgFZ"
+          class="sc-oTmZL ljTWlT"
         />
         <div
-          class="sc-fzqAui giUrEA"
+          class="sc-fzqMdD kTrftM"
         >
           <div
-            class="sc-fzqMdD hQHUmA"
+            class="sc-fzowVh gkGCIO"
           >
             <div
-              class="sc-fzowVh irEWce"
+              class="sc-fzoJus dwjXzU"
             >
               <text
-                class="sc-fznyYp frkdMp"
+                class="sc-fznLxA gNXIKc"
               >
-                Flexible innovation
-              </text>
-              <text
-                class="sc-fznyYp frkdMp"
-              >
-                starts with dooboolab.
+                Flexible innovation starts 
+with dooboolab.
               </text>
             </div>
             <div
-              class="sc-fzoJus gnybWJ"
+              class="sc-fzoVTD ksXrrJ"
             >
               <text
-                class="sc-fznLxA cFlFms"
+                class="sc-fznXWL ehdvxO"
               >
-                We manage strong open source community for individuals,
-              </text>
-              <text
-                class="sc-fznLxA cFlFms"
-              >
-                companies,and group of societies.
+                We manage strong open source community 
+for individuals, companies, and group of societies.
               </text>
             </div>
           </div>
           <div
-            class="sc-fzoVTD eRhhiC"
+            class="sc-fzpisO cKiDmG"
           >
             <div
-              class="sc-fzpisO jJcqSl"
+              class="sc-fznyYp gjBhfS"
             >
               <a
                 href="#contact"
               >
                 <button
-                  class="sc-fzoLag eTrQPm"
+                  class="sc-fzoXzr ecodRo"
                 >
                   <div
-                    class="sc-fzomuh iutntq"
+                    class="sc-fzqAui bAwQxd"
                   >
                     contact us
                   </div>
@@ -163,92 +155,64 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
             </div>
           </div>
           <div
-            class="sc-fznXWL laQFsM"
+            class="sc-fzokvW bgwumg"
             id="story"
           />
         </div>
         <div
-          class="sc-fznBtT heWmBE"
+          class="sc-fznNTe idCPzJ"
         >
           <div
-            class="sc-fznNTe hbHAlU"
+            class="sc-fzobTh jWUcGQ"
           >
             <div
-              class="sc-fzobTh bwNQkT"
+              class="sc-fzooss cUECYC"
             >
               <h2
-                class="sc-fznBMq hPhrzM"
+                class="sc-fznNvL jkA-Dlu"
               >
                 Story
               </h2>
             </div>
             <div
-              class="sc-fzooss dtpdjL"
+              class="sc-fzqyvX blBMqu"
             >
               <text
-                class="sc-fzocqA hHWLjd"
+                class="sc-fzonZV gGvMWw"
               >
-                We aim to find the IT services that the world needs.
-              </text>
-              <text
-                class="sc-fzocqA hHWLjd"
-              >
-                The goal is to consistently find and
-              </text>
-              <text
-                class="sc-fzocqA hHWLjd"
-              >
-                commercialize ideas
-              </text>
-              <text
-                class="sc-fzocqA hHWLjd"
-              >
-                hat have the potential to change the market.
+                We aim to find the IT services that the world needs. 
+The goal is to consistently find and commercialize ideas that have the potential to change the market.
               </text>
             </div>
             <div
-              class="sc-fzobTh bwNQkT"
+              class="sc-fzooss cUECYC"
             >
               <h3
-                class="sc-fznNvL hkPdao"
+                class="sc-fzocqA eBFlGO"
               >
                 vision & mission
               </h3>
             </div>
             <div
-              class="sc-fzooss dtpdjL"
+              class="sc-fzqyvX blBMqu"
             >
               <text
-                class="sc-fzocqA hHWLjd"
+                class="sc-fzonZV gGvMWw"
               >
-                dooboolab wishes to help out those
-              </text>
-              <text
-                class="sc-fzocqA hHWLjd"
-              >
-                who are in trouble of making better society.
-              </text>
-              <text
-                class="sc-fzocqA hHWLjd"
-              >
-                We are a group of experts who contribute to various platforms and
-              </text>
-              <text
-                class="sc-fzocqA hHWLjd"
-              >
-                open source projects to work publicly for creating benefits.
+                dooboolab wishes to help out those who are in trouble of making better society. 
+We are a group of experts who contribute to various platforms and open source projects to work publicly for creating benefits.
               </text>
               <div
-                class="sc-fzqyvX hPQKsJ"
+                class="sc-fzqKVi jNCdei"
               >
                 <a
                   href="/vision"
                 >
                   <button
-                    class="sc-fzpjYC jMwqFb"
+                    class="sc-fznxsB dpdnfw"
                   >
                     <div
-                      class="sc-fzpdbB dXwRwS"
+                      class="sc-fzppAM iYDtCS"
                     >
                       view more &gt;
                     </div>
@@ -258,45 +222,40 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
             </div>
           </div>
           <div
-            class="sc-fzqKVi btAoWO"
+            class="sc-fzoCUK gvqHjB"
           >
             <div
-              class="sc-fzobTh bwNQkT"
+              class="sc-fzooss cUECYC"
             >
               <h3
-                class="sc-fznNvL hkPdao"
+                class="sc-fzocqA eBFlGO"
               >
                 Community
               </h3>
             </div>
             <div
-              class="sc-fzooss dtpdjL"
+              class="sc-fzqyvX blBMqu"
             >
               <text
-                class="sc-fzocqA hHWLjd"
+                class="sc-fzonZV gGvMWw"
               >
-                Here are communities we are driving to collaborate
-              </text>
-              <text
-                class="sc-fzocqA hHWLjd"
-              >
-                with great people outside the company.
+                Here are communities we are driving to collaborate with great people outside the company.
               </text>
             </div>
             <div
-              class="sc-fzoCUK kdjQlc"
+              class="sc-fzoOEf KKhJd"
             >
               <div
-                class="sc-fzpdyU bzJaJl"
+                class="sc-fzppip keYDHc"
               >
                 <div
-                  class="sc-fzppip bcGmtI"
+                  class="sc-fznBMq hKCzzZ"
                 >
                   <button
-                    class="sc-fzoXzr cEmZbm"
+                    class="sc-fzpjYC vZtXl"
                   >
                     <div
-                      class="sc-fzppAM jptDKV"
+                      class="sc-fznBtT dPXRht"
                     >
                       View more
                     </div>
@@ -304,16 +263,16 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzoOEf jRszJq"
+                class="sc-fzpdyU bDvGGN"
               >
                 <div
-                  class="sc-fzppip bcGmtI"
+                  class="sc-fznBMq hKCzzZ"
                 >
                   <button
-                    class="sc-fzoXzr cEmZbm"
+                    class="sc-fzpjYC vZtXl"
                   >
                     <div
-                      class="sc-fzppAM jptDKV"
+                      class="sc-fznBtT dPXRht"
                     >
                       View more
                     </div>
@@ -323,195 +282,164 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
             </div>
           </div>
           <div
-            class="sc-fzonZV llgvdY"
+            class="sc-fzqyOu iTVqXn"
             id="work"
           />
         </div>
         <div
-          class="sc-fzqyOu fMiknG"
+          class="sc-fzqKxP iNCUnG"
         >
           <div
-            class="sc-fzqKxP crXoIz"
+            class="sc-pANHa gYCDWn"
           >
             <div
-              class="sc-pANHa lbajqD"
+              class="sc-pIJJz fVoEMG"
             >
               <text
-                class="sc-qQmou fWCzPd"
+                class="sc-qYiqT kivIBy"
               >
                 Work
               </text>
             </div>
             <div
-              class="sc-pIJJz ilOpkz"
+              class="sc-pRFjI gjnoAh"
             >
               <text
-                class="sc-qYiqT fYWazF"
+                class="sc-pAZqv eIIYHN"
               >
-                Below are what we are currently working on.
-              </text>
-              <text
-                class="sc-qYiqT fYWazF"
-              >
-                We wish to get together
-              </text>
-              <text
-                class="sc-qYiqT fYWazF"
-              >
-                with more great people around the world.
+                Below are what we are currently working on. 
+We wish to get together with more great people around the world.
               </text>
             </div>
             <div
-              class="sc-pRFjI jQfXxi"
+              class="sc-pZBmh cZgAgy"
             >
               <div
-                class="sc-pZBmh bmRWRz"
+                class="sc-oTbqq kNMdfj"
               >
                 <div
-                  class="sc-oTbqq jyLrBm"
+                  class="sc-paXsP fVddst"
                 >
                   <img
-                    class="sc-paXsP eXmyJI"
+                    class="sc-pjSSY kVhTJ"
                     src="test-file-stub"
                   />
                 </div>
                 <div
-                  class="sc-pjSSY hdaSkT"
+                  class="sc-prOVx bLnLLb"
                 >
                   <text
-                    class="sc-prOVx bGlWxR"
+                    class="sc-qQmou dqElEB"
                   >
                     Comming Soon!
                   </text>
-                  <text
-                    class="sc-prOVx bGlWxR"
-                  />
-                  <text
-                    class="sc-prOVx bGlWxR"
-                  />
                 </div>
                 <div
-                  class="sc-pAZqv dnViLj"
+                  class="sc-pJurq lbOvlH"
                 />
               </div>
               <div
-                class="sc-pZBmh bmRWRz"
+                class="sc-oTbqq kNMdfj"
               >
                 <div
-                  class="sc-oTbqq jyLrBm"
+                  class="sc-paXsP fVddst"
                 >
                   <img
-                    class="sc-paXsP eXmyJI"
+                    class="sc-pjSSY kVhTJ"
                     src="test-file-stub"
                   />
                 </div>
                 <div
-                  class="sc-pjSSY hdaSkT"
+                  class="sc-prOVx bLnLLb"
                 >
                   <text
-                    class="sc-prOVx bGlWxR"
+                    class="sc-qQmou dqElEB"
                   >
                     Comming Soon!
                   </text>
-                  <text
-                    class="sc-prOVx bGlWxR"
-                  />
-                  <text
-                    class="sc-prOVx bGlWxR"
-                  />
                 </div>
                 <div
-                  class="sc-pAZqv dnViLj"
+                  class="sc-pJurq lbOvlH"
                 />
               </div>
               <div
-                class="sc-pZBmh bmRWRz"
+                class="sc-oTbqq kNMdfj"
               >
                 <div
-                  class="sc-oTbqq jyLrBm"
+                  class="sc-paXsP fVddst"
                 >
                   <img
-                    class="sc-paXsP eXmyJI"
+                    class="sc-pjSSY kVhTJ"
                     src="test-file-stub"
                   />
                 </div>
                 <div
-                  class="sc-pjSSY hdaSkT"
+                  class="sc-prOVx bLnLLb"
                 >
                   <text
-                    class="sc-prOVx bGlWxR"
+                    class="sc-qQmou dqElEB"
                   >
                     Comming Soon!
                   </text>
-                  <text
-                    class="sc-prOVx bGlWxR"
-                  />
-                  <text
-                    class="sc-prOVx bGlWxR"
-                  />
                 </div>
                 <div
-                  class="sc-pAZqv dnViLj"
+                  class="sc-pJurq lbOvlH"
                 />
               </div>
             </div>
           </div>
           <div
-            class="sc-pJurq beosGJ"
+            class="sc-pRTZB cSGAoP"
             id="people"
           />
         </div>
         <div
-          class="sc-fznzqM biacsw"
+          class="sc-fznOgF ktxAxQ"
         >
           <div
-            class="sc-fznOgF iYpHKI"
+            class="sc-fznYue bXfyZj"
           >
             <div
-              class="sc-fznYue chYlLQ"
+              class="sc-fzonjX cxPGvg"
             >
               <text
-                class="sc-fzqzEs hzBnPU"
+                class="sc-fzqOul hKbLre"
               >
                 People
               </text>
             </div>
             <div
-              class="sc-fzonjX fDsOXQ"
+              class="sc-fzqzEs kXPfBF"
             >
               <text
-                class="sc-fzqOul cpgnSE"
+                class="sc-fzoCCn ixwERC"
               >
-                Work together
-              </text>
-              <text
-                class="sc-fzqOul cpgnSE"
-              >
-                Grow together
+                Work together 
+Grow together
               </text>
             </div>
             <div
-              class="sc-fzokvW dqLFMG"
+              class="sc-fzqzlV bwFWKm"
             >
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <img
-                  class="sc-fzoxnE jhYOfx"
+                  class="sc-fzoMdx kwYwSj"
                   src="test-file-stub"
                 />
                 <text
-                  class="sc-fzplgP hSxLtR"
+                  class="sc-fznzqM hzGYxi"
                 >
                   Hyo
                    / 
                   CEO
                 </text>
                 <div
-                  class="sc-fzoMdx hRMUhP"
+                  class="sc-fzoWqW ihkNID"
                 >
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -530,7 +458,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -549,7 +477,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -570,24 +498,24 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <img
-                  class="sc-fzoxnE jhYOfx"
+                  class="sc-fzoMdx kwYwSj"
                   src="test-file-stub"
                 />
                 <text
-                  class="sc-fzplgP hSxLtR"
+                  class="sc-fznzqM hzGYxi"
                 >
                   Terry
                    / 
                   Lead Developer
                 </text>
                 <div
-                  class="sc-fzoMdx hRMUhP"
+                  class="sc-fzoWqW ihkNID"
                 >
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -606,7 +534,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -625,7 +553,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -647,24 +575,24 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <img
-                  class="sc-fzoxnE jhYOfx"
+                  class="sc-fzoMdx kwYwSj"
                   src="test-file-stub"
                 />
                 <text
-                  class="sc-fzplgP hSxLtR"
+                  class="sc-fznzqM hzGYxi"
                 >
                   Joy
                    / 
                   Marketer
                 </text>
                 <div
-                  class="sc-fzoMdx hRMUhP"
+                  class="sc-fzoWqW ihkNID"
                 >
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -683,7 +611,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -703,7 +631,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -725,24 +653,24 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <img
-                  class="sc-fzoxnE jhYOfx"
+                  class="sc-fzoMdx kwYwSj"
                   src="test-file-stub"
                 />
                 <text
-                  class="sc-fzplgP hSxLtR"
+                  class="sc-fznzqM hzGYxi"
                 >
                   Song
                    / 
                   Developer
                 </text>
                 <div
-                  class="sc-fzoMdx hRMUhP"
+                  class="sc-fzoWqW ihkNID"
                 >
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -761,7 +689,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -780,7 +708,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -801,24 +729,24 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <img
-                  class="sc-fzoxnE jhYOfx"
+                  class="sc-fzoMdx kwYwSj"
                   src="test-file-stub"
                 />
                 <text
-                  class="sc-fzplgP hSxLtR"
+                  class="sc-fznzqM hzGYxi"
                 >
                   Jerry
                    / 
                   Developer
                 </text>
                 <div
-                  class="sc-fzoMdx hRMUhP"
+                  class="sc-fzoWqW ihkNID"
                 >
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -837,7 +765,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -856,7 +784,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -877,24 +805,24 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <img
-                  class="sc-fzoxnE jhYOfx"
+                  class="sc-fzoMdx kwYwSj"
                   src="test-file-stub"
                 />
                 <text
-                  class="sc-fzplgP hSxLtR"
+                  class="sc-fznzqM hzGYxi"
                 >
                   Yoon
                    / 
                   Designer
                 </text>
                 <div
-                  class="sc-fzoMdx hRMUhP"
+                  class="sc-fzoWqW ihkNID"
                 >
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -913,7 +841,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -932,7 +860,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -954,24 +882,24 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <img
-                  class="sc-fzoxnE jhYOfx"
+                  class="sc-fzoMdx kwYwSj"
                   src="test-file-stub"
                 />
                 <text
-                  class="sc-fzplgP hSxLtR"
+                  class="sc-fznzqM hzGYxi"
                 >
                   Daniel
                    / 
                   Developer
                 </text>
                 <div
-                  class="sc-fzoMdx hRMUhP"
+                  class="sc-fzoWqW ihkNID"
                 >
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -990,7 +918,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1009,7 +937,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1030,24 +958,24 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <img
-                  class="sc-fzoxnE jhYOfx"
+                  class="sc-fzoMdx kwYwSj"
                   src="test-file-stub"
                 />
                 <text
-                  class="sc-fzplgP hSxLtR"
+                  class="sc-fznzqM hzGYxi"
                 >
                   Jenny
                    / 
                   Developer
                 </text>
                 <div
-                  class="sc-fzoMdx hRMUhP"
+                  class="sc-fzoWqW ihkNID"
                 >
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1066,7 +994,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1085,7 +1013,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1106,24 +1034,24 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <img
-                  class="sc-fzoxnE jhYOfx"
+                  class="sc-fzoMdx kwYwSj"
                   src="test-file-stub"
                 />
                 <text
-                  class="sc-fzplgP hSxLtR"
+                  class="sc-fznzqM hzGYxi"
                 >
                   Clark
                    / 
                   Developer
                 </text>
                 <div
-                  class="sc-fzoMdx hRMUhP"
+                  class="sc-fzoWqW ihkNID"
                 >
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1142,7 +1070,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1161,7 +1089,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1182,24 +1110,24 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <img
-                  class="sc-fzoxnE jhYOfx"
+                  class="sc-fzoMdx kwYwSj"
                   src="test-file-stub"
                 />
                 <text
-                  class="sc-fzplgP hSxLtR"
+                  class="sc-fznzqM hzGYxi"
                 >
                   Hun
                    / 
                   Developer
                 </text>
                 <div
-                  class="sc-fzoMdx hRMUhP"
+                  class="sc-fzoWqW ihkNID"
                 >
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1218,7 +1146,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1237,7 +1165,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1258,24 +1186,24 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <img
-                  class="sc-fzoxnE jhYOfx"
+                  class="sc-fzoMdx kwYwSj"
                   src="test-file-stub"
                 />
                 <text
-                  class="sc-fzplgP hSxLtR"
+                  class="sc-fznzqM hzGYxi"
                 >
                   Sarah
                    / 
                   Designer
                 </text>
                 <div
-                  class="sc-fzoMdx hRMUhP"
+                  class="sc-fzoWqW ihkNID"
                 >
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1294,7 +1222,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1313,7 +1241,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1334,24 +1262,24 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <img
-                  class="sc-fzoxnE jhYOfx"
+                  class="sc-fzoMdx kwYwSj"
                   src="test-file-stub"
                 />
                 <text
-                  class="sc-fzplgP hSxLtR"
+                  class="sc-fznzqM hzGYxi"
                 >
                   Ethan
                    / 
                   Developer
                 </text>
                 <div
-                  class="sc-fzoMdx hRMUhP"
+                  class="sc-fzoWqW ihkNID"
                 >
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1370,7 +1298,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1389,7 +1317,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1410,24 +1338,24 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <img
-                  class="sc-fzoxnE jhYOfx"
+                  class="sc-fzoMdx kwYwSj"
                   src="test-file-stub"
                 />
                 <text
-                  class="sc-fzplgP hSxLtR"
+                  class="sc-fznzqM hzGYxi"
                 >
                   Rim
                    / 
                   Designer
                 </text>
                 <div
-                  class="sc-fzoMdx hRMUhP"
+                  class="sc-fzoWqW ihkNID"
                 >
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1446,7 +1374,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1465,7 +1393,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1486,24 +1414,24 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <img
-                  class="sc-fzoxnE jhYOfx"
+                  class="sc-fzoMdx kwYwSj"
                   src="test-file-stub"
                 />
                 <text
-                  class="sc-fzplgP hSxLtR"
+                  class="sc-fznzqM hzGYxi"
                 >
                   Dean
                    / 
                   Developer
                 </text>
                 <div
-                  class="sc-fzoMdx hRMUhP"
+                  class="sc-fzoWqW ihkNID"
                 >
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1522,7 +1450,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1541,7 +1469,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1562,24 +1490,24 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <img
-                  class="sc-fzoxnE jhYOfx"
+                  class="sc-fzoMdx kwYwSj"
                   src="test-file-stub"
                 />
                 <text
-                  class="sc-fzplgP hSxLtR"
+                  class="sc-fznzqM hzGYxi"
                 >
                   Jessie
                    / 
                   Developer
                 </text>
                 <div
-                  class="sc-fzoMdx hRMUhP"
+                  class="sc-fzoWqW ihkNID"
                 >
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1598,7 +1526,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1617,7 +1545,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                     </svg>
                   </div>
                   <div
-                    class="sc-fzoWqW hKDsPD"
+                    class="sc-fzplgP dDcobW"
                   >
                     <svg
                       aria-hidden="true"
@@ -1638,81 +1566,73 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fzqzlV cOExNp"
+                class="sc-fzqLLg dYoLJG"
               >
                 <div
-                  class="sc-fzqLLg kqQiDU"
+                  class="sc-fzoxnE gnysBC"
                 />
                 <div
-                  class="sc-fzqLLg kqQiDU"
+                  class="sc-fzoxnE gnysBC"
                 />
                 <div
-                  class="sc-fzqLLg kqQiDU"
+                  class="sc-fzoxnE gnysBC"
                 />
                 <div
-                  class="sc-fzqLLg kqQiDU"
+                  class="sc-fzoxnE gnysBC"
                 />
               </div>
             </div>
           </div>
           <div
-            class="sc-fzoPby eONoWx"
+            class="sc-fzpdbB dmquMp"
             id="contact"
           />
         </div>
         <div
-          class="sc-fznMnq gwECze"
+          class="sc-fzoant ljTLeW"
         >
           <div
-            class="sc-fzoant fowkDX"
+            class="sc-fzomME goWYlV"
           >
             <div
-              class="sc-fzqAbL btrOFo"
+              class="sc-fzqMAW iHBntI"
             >
               <div
-                class="sc-fzoJMP iKozIF"
+                class="sc-fzoYHE gozPkx"
               >
                 <text
-                  class="sc-fznLPX lhKGUD"
+                  class="sc-fzoaKM Wjlop"
                 >
-                  Who\`s next?
-                </text>
-              </div>
-              <div
-                class="sc-fzoJMP iKozIF"
-              >
-                <text
-                  class="sc-fznLPX lhKGUD"
-                >
-                  Feel free to talk.
+                  Who\`s next? 
+Feel free to talk.
                 </text>
               </div>
             </div>
             <div
-              class="sc-fzomME fQcCnB"
+              class="sc-fzqAbL RClEd"
             >
               <input
-                class="sc-fzqMAW gJjkKX"
+                class="sc-fzoydu fqHYCC"
                 placeholder="Please write your name"
                 value=""
               />
               <input
-                class="sc-fzqMAW gJjkKX"
+                class="sc-fzoydu fqHYCC"
                 placeholder="email@email.com"
                 value=""
               />
               <textarea
-                class="sc-fzoydu kpPTko"
+                class="sc-fzoJMP dtxtff"
                 placeholder="Please tell us your stories"
               />
               <div
-                class="sc-fzoYHE hibUwu"
+                class="sc-fzpkqZ fIWAah"
               >
                 <button
-                  class="sc-fznJRM jDUXHv"
+                  class="sc-fznWqX hZdzYA"
                 >
                   <div
-                    class="sc-fznzOf fvhdJ"
+                    class="sc-fznMnq kYlVUM"
                   >
                     Send
                   </div>
@@ -1721,67 +1641,67 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
             </div>
           </div>
           <div
-            class="sc-fzoJMP iKozIF"
+            class="sc-fzoYHE gozPkx"
           >
             <text
-              class="sc-fzoaKM fdQtLb"
+              class="sc-fzomuh eOMHYk"
             >
               powered by
             </text>
           </div>
           <div
-            class="sc-fzpkqZ dWNOjO"
+            class="sc-fznAgC drwXWx"
           >
             <img
-              class="sc-fznAgC cfdbVS"
+              class="sc-fznLPX fAjwWP"
               src="test-file-stub"
             />
             <img
-              class="sc-fznAgC cfdbVS"
+              class="sc-fznLPX fAjwWP"
               src="test-file-stub"
             />
             <img
-              class="sc-fznAgC cfdbVS"
+              class="sc-fznLPX fAjwWP"
               src="test-file-stub"
             />
             <img
-              class="sc-fznAgC cfdbVS"
+              class="sc-fznLPX fAjwWP"
               src="test-file-stub"
               style="height: 20px;"
             />
           </div>
         </div>
         <div
-          class="sc-fzqARJ bGHKRD"
+          class="sc-fzqNqU bQLtmQ"
         >
           <div
-            class="sc-fzqNqU cACZrM"
+            class="sc-fzoyTs hwkmJK"
           >
             <div
-              class="sc-fzoNJl docMjQ"
+              class="sc-fzoXWK OIfIA"
             >
               Address
             </div>
             <div
-              class="sc-fzoXWK bWojzG"
+              class="sc-fzpmMD iXmyZF"
             >
               203, 40, Seolleung-ro 93-gil, Gangnam-gu, Seoul, Republic of Korea
             </div>
           </div>
           <div
-            class="sc-fzqNqU cACZrM"
+            class="sc-fzoyTs hwkmJK"
           >
             <div
-              class="sc-fzoyTs dkOvHa"
+              class="sc-fzoNJl ceDHZg"
             >
               <a
                 href="/vision"
               >
                 <button
-                  class="sc-fznxsB fvvxWo"
+                  class="sc-fznJRM dwhjmc"
                 >
                   <div
-                    class="sc-fznWqX dyFXIB"
+                    class="sc-fzoiQi dFIAxr"
                   >
                     Our vision & mission
                   </div>
@@ -1791,10 +1711,10 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
                 href="/codeofconduct"
               >
                 <button
-                  class="sc-fznxsB fvvxWo"
+                  class="sc-fznJRM dwhjmc"
                 >
                   <div
-                    class="sc-fznWqX dyFXIB"
+                    class="sc-fzoiQi dFIAxr"
                   >
                     Code of conduct
                   </div>
@@ -1802,7 +1722,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
               </a>
             </div>
             <div
-              class="sc-fzoXWK bWojzG"
+              class="sc-fzpmMD iXmyZF"
             >
               © 2017-
               2020

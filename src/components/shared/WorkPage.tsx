@@ -89,7 +89,6 @@ const WorkItemListWrapper = styled.div`
 
   @media ${device.laptop} {
     flex-direction: row;
-    flex-wrap: wrap;
   }  
 `;
 
@@ -142,6 +141,10 @@ const WorkTextWrapper = styled.div`
   align-items: center;
 
   @media ${device.laptop} {
+    width: 230px;
+  }
+
+  @media ${device.laptopL} {
     width: 100%;
   }
 `;
